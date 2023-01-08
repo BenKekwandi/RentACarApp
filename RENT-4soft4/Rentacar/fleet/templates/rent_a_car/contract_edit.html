@@ -1,0 +1,982 @@
+{% extends 'layout.html' %}
+{% block extra_css %}
+<style>
+    .extend {
+        /* display: flex; */
+        /* justify-content:flex-end; */
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+
+    .extend .btn_extend {
+        position: absolute;
+        top: 0.75rem;
+        right: 7.25rem;
+    }
+
+    .extend .btn_change {
+        position: absolute;
+        top: 0.75rem;
+        right: 16.5rem;
+    }
+
+    .extend .btn_payment {
+        position: absolute;
+        top: 0.75rem;
+        right: 25.5rem;
+    }
+
+    .extend .btn_cancel {
+        position: absolute;
+        top: 0.75rem;
+        right: 34.5rem;
+    }
+
+    /* .modal-header {
+        background: #F7941E;
+        color: #fff;
+    } */
+
+    .required:after {
+        content: "*";
+        color: red;
+    }
+</style>
+{% endblock extra_css %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-success">
+
+            <h1 class="panel-title text-center">EDIT CONTRACT DETAILS</h1>
+
+            <div class="extend">
+                <button type="button" class="btn btn-outline-primary btn_extend" data-bs-toggle="modal"
+                    data-bs-target="#Extend">Extend contract</button>
+                <button type="button" class="btn btn-outline-secondary btn_change" data-bs-toggle="modal"
+                    data-bs-target="#Change">Change Vehicle</button>
+                <button type="button" class="btn btn-outline-danger btn_cancel" data-bs-toggle="modal"
+                    data-bs-target="#Cancel">Cancel Contract</button>
+                <button type="button" class="btn btn-outline-success btn_payment" data-bs-toggle="modal"
+                    data-bs-target="#Payment">Make Payment</button>
+            </div>
+            <!--Customer Type part-->
+            <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+                {% csrf_token %}
+                <div class="driver-info">
+                    <h3>Customer Type</h3>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-user-tie fa-lg"></i>
+                                <input type="text" name="addFullName1" id="addFullName1" placeholder="Name and Surname"
+                                    class="form-control" value="{{contract.customer_name}}" >
+                                <label for="addFullName1" class="form-label">Name and Surname</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-tag fa-lg"></i>
+                                <input type="text" name="addIdNo1" id="addIdNo1" class="form-control"
+                                    placeholder="Identification Number" value="{{contract.customer_id}}" >
+                                <label for="addIdNo1" class="form-label">Identification Number</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-tag fa-lg"></i>
+                                <input type="text" name="addPassportNumber1" id="addPassportNumber1"
+                                    class="form-control" placeholder="passport Number" value={{contract.passport}}
+                                    >
+                                <label for="addPassportNumber1" class="form-label">Passport Number</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-cake-candles fa-lg"></i>
+                                <input type="text" name="addBirthDate1" id="addBirthDate1" class="form-control"
+                                    placeholder="Birth Date" value="{{contract.birth_date}}" >
+                                <label for="addBirthDate1" class="form-label">Birth Date</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-earth fa-lg"></i>
+                                <input type="text" name="addNationality1" id="addNationality1" class="form-control"
+                                    placeholder="Nationality" value="{{contract.nationality}}" >
+                                <label for="addNationality1" class="form-label">Nationality</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-mobile fa-lg"></i>
+                                <input type="text" name="addtelephone1" id="addtelephone1" class="form-control"
+                                    placeholder="Telephone" value="{{contract.phone_number}}" >
+                                <label for="addtelephone1" class="form-label">Telephone</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-location-dot fa-lg"></i>
+                                <input type="text" name="birthPlace" id="birthPlace" class="form-control"
+                                    placeholder="Place of birth" value="{{contract.birth_place}}" >
+                                <label for="birthPlace" class="form-label">Place of birth</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-earth fa-lg"></i>
+                                <input type="text" name="country" id="country" class="form-control"
+                                    placeholder="Country" value={{contract.country}} >
+                                <label for="country" class="form-label">Country</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-person-dress fa-lg"></i>
+                                <input type="text" name="motherName" id="motherName" class="form-control"
+                                    placeholder="Mother Name" value={{contract.mother_name}} >
+                                <label for="motherName" class="form-label">Mother Name</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-person fa-lg"></i>
+                                <input type="text" name="fatherName" id="fatherName" class="form-control"
+                                    placeholder="Father Name" value={{contract.father_name}} >
+                                <label for="fatherName" class="form-label">Father Name</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gears fa-lg"></i>
+                                <input type="text" name="job" id="job" class="form-control" placeholder="Job"
+                                    value={{contract.job}} >
+                                <label for="job" class="form-label">Job</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Contact Information part -->
+                <div class="vehicle-info">
+                    <h3><i class="fa-solid fa-car"></i> Vehicle Information</h3>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gears fa-lg"></i>
+                                <input type="text" name="vehicleName" id="vehicleName" class="form-control"
+                                    placeholder="Vehicle" value={{contract.vehicle_name}} >
+                                <label for="vehicleName" class="form-label">Vehicle</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gears fa-lg"></i>
+                                <input type="text" name="issuePoint" id="issuePoint" class="form-control"
+                                    placeholder="Issue Point" value={{contract.issue_point}} >
+                                <label for="issuePoint" class="form-label">Issue Point</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gears fa-lg"></i>
+                                <input type="text" name="returnPoint" id="returnPoint" class="form-control"
+                                    placeholder="Return Point" value={{contract.return_point}} >
+                                <label for="returnPoint" class="form-label">Return Point</label>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="vehicleName">Vehicle
+                                        </label>
+                                    </div>
+                                    <select name="vehicleName" id="vehicleName" class="form-control">
+                                        
+                                        <option>{{contract.vehicle}}</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="issuePoint">Issue Point
+                                        </label>
+                                    </div>
+                                    <select name="issuePoint" id="issuePoint" class="form-control">
+                                        {% for place in places %}
+                                        <option>{{place.place_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="returnPoint">Return
+                                            Point
+                                        </label>
+                                    </div>
+                                    <select name="returnPoint" id="returnPoint" class="form-control">
+                                        {% for place in places %}
+                                        <option>{{place.place_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                <input type="date" name="issueDateAndTime" id="issueDateAndTime" class="form-control"
+                                    placeholder="Issue Date and Time" value={{contract.issue_date_and_time}} >
+                                <label for="issueDateAndTime" class="form-label">Issue Date and
+                                    Time</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                <input type="text" name="returnDateAndTime" id="returnDateAndTime" class="form-control"
+                                    placeholder="Early Delivery Date" value={{contract.return_date_and_time}} >
+                                <label for="returnDateAndTime" class="form-label">Return Date and Time
+                                    Date</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                <input type="text" name="rent_days" id="rent_days" class="form-control"
+                                    placeholder="Days" value={{contract.rent_days}} >
+                                <label for="rent_days" class="form-label">Days</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gas-pump fa-lg"></i>
+                                <input type="text" name="gasQuantity" id="gasQuantity" class="form-control"
+                                    placeholder="Gasoline Quantity" value={{contract.gas_quantity}} >
+                                <label for="gasQuantity" class="form-label">Gasoline
+                                    Quantity</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gauge-high fa-lg"></i>
+                                <input type="number" name="transmission" id="transmission" class="form-control"
+                                    placeholder="Transmission Km." value={{contract.transmission}} >
+                                <label for="transmission" class="form-label">Transmission
+                                    Km.</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-gauge-high fa-lg"></i>
+                                <input type="number" name="returnKm" id="returnKm" class="form-control"
+                                    placeholder="Return Km" value={{contract.return_km}} >
+                                <label for="returnKm" class="form-label">Return Km</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-road fa-lg fa-lg"></i>
+                                <input type="number" name="mileageLimit" id="mileageLimit" class="form-control"
+                                    placeholder="Mileage Limit" value={{contract.mileage_limit}} >
+                                <label for="mileageLimit" class="form-label">Mileage Limit</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 ">
+                            <div class="form-floating">
+                                <i class="icon-textarea fa-solid fa-home-user fa-lg"></i>
+                                <textarea name="vehicleReturnAddress" id="vehicleReturnAddress" class="form-control"
+                                    placeholder="Vehicle Return Address"
+                                    style="height: 100px">{{contract.vehicle_issue_address}}</textarea>
+                                <label for="vehicleReturnAddress" class="form-label">Vehicle Return
+                                    Address</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 ">
+                            <div class="form-floating">
+                                <i class="icon-textarea fa-solid fa-user-tie fa-lg"></i>
+                                <textarea name="vehicleIssueAddress" id="vehicleIssueAddress" class="form-control"
+                                    placeholder="Vehicle Issue Address"
+                                    style="height: 100px">{{contract.vehicle_return_address}}</textarea>
+                                <label for="vehicleIssueAddress" class="form-label">Vehicle Issue Address</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Driver License Information part -->
+                <div class="extra-info">
+                    <h3><i class="fa fa-plus"></i>Additional information</h3>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="condDoc" class="form-label">Contract Documents
+                                    (Visual)</label>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <i class="icon-textarea fa-solid fa-house-laptop fa-lg"></i>
+                                <textarea name="systemNote" id="systemNote" class="form-control"
+                                    placeholder="System Note" style="height: 100px">{{contract.system_note}}</textarea>
+                                <label for="systemNote" class="form-label">System Note</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <i class="icon-textarea fa-solid fa-user-tie fa-lg"></i>
+                                <textarea name="customerComment" id="customerComment" class="form-control"
+                                    placeholder="Customer Comment"
+                                    style="height: 100px">{{contract.customer_comment}}</textarea>
+                                <label for="customerComment" class="form-label">Customer Comment</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Currency Information part -->
+
+                <!-- PAYMENT INFORMATION -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Payment Information</h1>
+                    </div>
+                </div>
+                
+                <div class="col-md-12" align="right">
+                    <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                    <!--reset button instead of changing directories-->
+                    <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+
+                </div>
+                <div class="row">
+                    <button type="button" class="col-md-2 btn btn-primary btn_extend" style="margin:15px" data-bs-toggle="modal"
+                        data-bs-target="#Extend">Extend contract</button>
+                    <button type="button" class="col-md-2 btn btn-secondary btn_change" style="margin:15px" data-bs-toggle="modal"
+                        data-bs-target="#Change">Change Vehicle</button>
+                    <button type="button" class="col-md-2 btn btn-danger btn_cancel" style="margin:15px" data-bs-toggle="modal"
+                        data-bs-target="#Cancel">Cancel Contract</button>
+                    <button type="button" class="col-md-2 btn btn-success btn_payment" style="margin:15px" data-bs-toggle="modal"
+                        data-bs-target="#Payment">Make Payment</button>
+                </div>
+            
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Extend">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Extend Contract</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <div class"mb-1">
+                            <label class="form-label">Previous number of rental days</label>
+                            <input type="number" name="previous_rent_days" id="previous_rent_days" value={{contract.rent_days}} class="form-control" readonly>
+                        </div>
+                        <div class"mb-1">
+                            <label class="form-label required" style="font-weight:bolder">Number of extra days</label>
+                            <input type="number" name="extra_days" id="extra_days" class="form-control" required>
+                        </div>
+                        <div class"mb-1">
+                            <label class="form-label">Actual number of rent days</label>
+                            <input type="number" name="actual_days" id="actual_days" class="form-control" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">New Return date</label>
+                        <input type="datetime-local" name="new_return_date" id="new_return_date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Old total fee</label>
+                        <input type="text" name="old_fee" id="old_fee" class="form-control" value="{{contract.payment_total_fee}} {{contract.payment_currency}}                 paid:{{contract.amount_paid}}{{contract.payment_currency}}  debt:{{contract.debt}}{{contract.payment_currency}}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required" style="font-weight:bolder">Extra fee</label>
+                        <input type="number" name="extra_fee" id="extra_fee" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required" style="font-weight:bolder">Actual total fee</label>
+                        <input type="number" name="new_fee" id="new_fee" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Vehicle Return point</label>
+                        <input type="text" name="new_return_point" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Vehicle Return Address</label>
+                        <input type="text" name="new_return_address" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="contract_extension_submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Change">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Vehicle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label required">Vehicle End Position</label>
+                        <input type="text" name="end_position" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Change Date</label>
+                        <input type="datetime-local" name="change_date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Return Km</label>
+                        <input type="number" name="return_km" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required" style="font-weight:bolder">New Vehicle</label>
+                        <select class="form-select" name="new_vehicle" required>
+                            {% for vehicle in vehicles %}
+                            <option>{{vehicle.vehicle_plate_number}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Transmission Km</label>
+                        <input type="text" name="transmission_km" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Vehicle Change Reason</label>
+                        <textarea name="reason" class="form-control"></textarea>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" name="vehicle_change_submit" class="btn btn-primary">
+                <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+<!--Modal: modalConfirmDelete-->
+<div class="modal fade" id="Cancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+        <form method="post" action="">
+            {% csrf_token %}
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center">
+                <p class="heading">Contract Cancellation Confirmation</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                Are you sure you want to cancel the contract?
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+                <button type="submit" name="cancel_contract_submit" class="btn  btn-outline-danger">Yes</button>
+                <button type="submit" value="no" name="no_cancel" class="btn  btn-danger waves-effect" data-bs-dismiss="modal">No</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+<!-- <div class="modal fade" id="Cancel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cancel Contract</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label required">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">Type ypur message here</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="modal fade" id="Payment">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Make Payment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="id-info">
+                        <h3><i class="fa fa-credit-card"></i> Payment information</h3>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="totalFee" class="form-label">Total Fee</label>
+                                    <input type="text" name="totalFee" value="{{contract.debt}} {{contract.payment_currency}}" id="totalFee" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="agentPercent" class="form-label">Agent Percentage</label>
+                                    <input type="number" value={{contract.agent_percentage}} name="agentPercent" id="agentPercent" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="agentFee" class="form-label">Agent Fee</label>
+                                    <input type="number" value={{contract.agent_fee}} name="agentFee" id="agentFee" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="intermediaryCompanyAccount" class="form-label">Intermediary Company
+                                        Account</label>
+                                    <input type="text" value="{{contract.intermediary_company_account_name}}" name="intermediaryCompanyAccount" id="intermediaryCompanyAccount"
+                                        class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group" style="margin:30px">
+                                    <label for="payment_fee" style="color:blue;font-weight:bold" class="form-label required">PAYMENT FEE</label>
+                                    <input type="number" name="payment_fee" id="payment_fee" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group" style="margin:30px">
+                                    <label for="payment_currency" style="color:blue;font-weight:bold" class="form-label required">PAYMENT CURRENCY</label>
+                                    <select name="payment_currency" id="payment_currency" class="form-select">
+                                        {% for currency in currencies %}
+                                        <option>{{currency.currency_code}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group" style="margin:30px">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="paymentType">Payment Type
+                                            </label>
+                                        </div>
+                                        <select name="paymentType" id="paymentType" class="form-select" required>
+                                            <option></option>
+                                            {% for method in methods %}
+                                            <option>{{method.method}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mailOrder" id="mailOrder">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <select name="mailAccount" id="mailAccount"
+                                                class="form-select">
+                                            {% for account in credit_card_accounts %}
+                                            <option>{{account.account_name}}</option>
+                                            {% endfor %}
+                                            </select>
+                                            <label for="mailAccount" class="form-label">Mail Order Pos Account</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="brokerageFee" id="brokerageFee"
+                                                class="form-control" placeholder="Brokerage Fee">
+                                            <label for="brokerageFee" class="form-label">Brokerage Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="cardType">Card Type
+                                                    </label>
+                                                </div>
+                                                <select name="cardType" id="cardType" class="form-control">
+                                                    {% for currency in currencies %}
+                                                    <option>{{currency.currency_code}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardHolder" id="cardHolder"
+                                                class="form-control" placeholder="Card Holder ">
+                                            <label for="cardHolder" class="form-label">Card Holder</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardNumber" id="cardNumber"
+                                                class="form-control" placeholder="Card Number">
+                                            <label for="cardNumber" class="form-label">Card Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardExYear" id="cardExYear"
+                                                class="form-control" placeholder="Card Expiry Year">
+                                            <label for="cardExYear" class="form-label">Card Expiry Year</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardExMonth" id="cardExMonth"
+                                                class="form-control" placeholder="Card Expiry Month">
+                                            <label for="cardExMonth" class="form-label">Card Expiry
+                                                Month</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cvc" id="cvc" class="form-control"
+                                                placeholder="CVC">
+                                            <label for="cvc" class="form-label">CVC</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transfer" id="transfer">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <select name="transferredBankAcc" id="transferredBankAcc"
+                                                class="form-select">
+                                                {% for account in transfer_accounts %}
+                                                <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="transferredBankAcc" class="form-label"> Bank Account to
+                                                be
+                                                Transferred</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lookFor" id="lookFor">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <select name="debitedAcc" id="debitedAcc" class="form-select">
+                                                {% for account in customer_accounts %}
+                                                <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="debitedAcc" class="form-label">Account to be
+                                                debited</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href= '/fleet/account-create/';">Create
+                                            New
+                                            Current Account</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check" id="check">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkNumber" id="checkNumber"
+                                                class="form-control" placeholder="Check Number">
+                                            <label for="checkNumber" class="form-label">Check Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <select name="checkingAccount" id="checkingAccount" class="form-select">
+                                                {% for account in check_accounts %}
+                                                    <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="checkingAccount" class="form-label">Checking
+                                                Account</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkHolder" id="checkHolder"
+                                                class="form-control" placeholder="Check Holder ">
+                                            <label for="checkHolder" class="form-label">Check Holder</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkCash" id="checkCash"
+                                                class="form-control" placeholder="Check Cash ">
+                                            <label for="checkCash" class="form-label">Check Cash</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkReceipt" id="checkReceipt"
+                                                class="form-control" placeholder="Check Receipt ">
+                                            <label for="checkReceipt" class="form-label">Check Receipt</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="found" id="found">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <select name="cashAccount" id="cashAccount"
+                                                class="form-select">
+                                                {% for account in cash_accounts %}
+                                                    <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="cashAccount" class="form-label">Cash Account</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="creditCard" id="creditCard">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <select name="posAcc" id="posAcc" class="form-select">
+                                                {% for account in credit_card_accounts %}
+                                                <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="posAcc" class="form-label">Bank Pos Account</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="number" name="bankFee" id="bankFee" class="form-control"
+                                                placeholder="Bank Intermediation Fee">
+                                            <label for="bankFee" class="form-label">Bank Intermediation
+                                                Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardHolder" id="cardHolder"
+                                                class="form-control" placeholder="Card Holder ">
+                                            <label for="cardHolder" class="form-label">Card Holder</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" name="make_payment_submit" class="btn btn-primary">
+                        <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block page_script %}
+<script>
+    console.log('djdkhcufhvtrkvhtivgikjvlgkhb;ykbopyjbv  tkvjgtiojgv');
+    var x=8000;
+    if(document.getElementById('previous_rent_days')){
+        console.log('qaqaqaqaqaqaqaqaaaaaaaaaaaaaaaaaa');
+    };
+    $(document).ready(function () {
+        
+            function calculateRemaningDays() {
+            $("#previous_rent_days").val(
+                Date.parse($("returnDateAndTime").val())
+                - Date.parse($("issueDateAndTime").val())
+            );
+            $("#previous_rent_days").val(($("#days").val() / 86400000));
+
+    };
+    
+    $(document).on("input change", '#start_date,#end_date', function () {
+        calculateRemaningDays();
+    });
+        calculateRemaningDays();
+        $(".transfer").hide();
+        $(".lookFor").hide();
+        $(".check").hide();
+        $(".found").hide();
+        $(".creditCard").hide();
+        $(".mailOrder").hide();
+
+        const main = document.getElementById('paymentType');
+
+        const mailOrder = document.getElementById('mailOrder');
+        const transfer = document.getElementById('transfer');
+        const lookFor = document.getElementById('lookFor');
+        const check = document.getElementById('check');
+        const found = document.getElementById('found');
+        const creditCard = document.getElementById('creditCard');
+
+
+
+        main.addEventListener('change', function handleChange(event) {
+            if (event.target.value === 'Mail order') {
+                mailOrder.style.display = 'block';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'Transfer') {
+                transfer.style.display = 'block';
+                mailOrder.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'look for') {
+                lookFor.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'Check') {
+                check.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'found') {
+                found.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'Credit card') {
+                creditCard.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+            } else {
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            }
+        });
+    });
+
+
+    $('#actual_days').on("input change","#extra_days",function(){
+        console.log('yeah it is something');
+                $('#actual_days').val(
+                    $('#extra_days').val()
+                + $('#previous_rent_days').val());
+
+    })
+</script>
+{% endblock %}

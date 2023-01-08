@@ -1,0 +1,405 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border border-primary">
+            <div class="card-header bg bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-tag"></i>Vehicle Expense Record
+                </h3>
+            </div>
+            <div class="card-body row::before">
+
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" class="container-sm">
+                    {% csrf_token %}
+                    <div class="id-info">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="receivedServiceCompany" class="form-label">Service Received Company</label>
+                                    <select type="text" name="receivedServiceCompany" id="receivedServiceCompany" class="form-select">
+                                        {% for account in accounts %}
+                                        <option>{{account.account_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="vehicle" class="form-label">Vehicle</label>
+                                    <select type="text" name="vehicle" id="vehicle" class="form-select">
+                                        {% for vehicle in vehicles %}
+                                        <option>{{vehicle.vehicle_plate_number}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group" style="margin:30px">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="paymentType">Payment Type
+                                            </label>
+                                        </div>
+                                        <select name="paymentType" id="paymentType" class="form-select" required>
+                                            <option></option>
+                                            {% for method in methods %}
+                                            <option>{{method.method}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mailOrder" id="mailOrder">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select name="mailAccount" id="mailAccount"
+                                                class="form-select">
+                                            {% for account in credit_card_accounts %}
+                                            <option>{{account.account_name}}</option>
+                                            {% endfor %}
+                                            </select>
+                                            <label for="mailAccount" class="form-label">Mail Order Pos Account</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" name="brokerageFee" id="brokerageFee"
+                                                class="form-control" placeholder="Brokerage Fee">
+                                            <label for="brokerageFee" class="form-label">Brokerage Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="cardType">Card Type
+                                                    </label>
+                                                </div>
+                                                <select name="cardType" id="cardType" class="form-control">
+                                                    {% for currency in currencies %}
+                                                    <option>{{currency.currency_code}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="cardHolder" id="cardHolder"
+                                                class="form-control" placeholder="Card Holder ">
+                                            <label for="cardHolder" class="form-label">Card Holder</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="cardNumber" id="cardNumber"
+                                                class="form-control" placeholder="Card Number">
+                                            <label for="cardNumber" class="form-label">Card Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="cardExYear" id="cardExYear"
+                                                class="form-control" placeholder="Card Expiry Year">
+                                            <label for="cardExYear" class="form-label">Card Expiry Year</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="cardExMonth" id="cardExMonth"
+                                                class="form-control" placeholder="Card Expiry Month">
+                                            <label for="cardExMonth" class="form-label">Card Expiry
+                                                Month</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="cvc" id="cvc" class="form-control"
+                                                placeholder="CVC">
+                                            <label for="cvc" class="form-label">CVC</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transfer" id="transfer">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <select name="transferredBankAcc" id="transferredBankAcc"
+                                                class="form-select">
+                                                {% for account in transfer_accounts %}
+                                                <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="transferredBankAcc" class="form-label"> Bank Account to
+                                                be
+                                                Transferred</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lookFor" id="lookFor">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-floating">
+                                            <select name="debitedAcc" id="debitedAcc" class="form-select">
+                                                {% for account in customer_accounts %}
+                                                <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="debitedAcc" class="form-label">Account to be
+                                                debited</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href= '/fleet/account-create/';">Create
+                                            New
+                                            Current Account</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check" id="check">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="checkNumber" id="checkNumber"
+                                                class="form-control" placeholder="Check Number">
+                                            <label for="checkNumber" class="form-label">Check Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <select name="checkingAccount" id="checkingAccount" class="form-select">
+                                                {% for account in check_accounts %}
+                                                    <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="checkingAccount" class="form-label">Checking
+                                                Account</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="checkHolder" id="checkHolder"
+                                                class="form-control" placeholder="Check Holder ">
+                                            <label for="checkHolder" class="form-label">Check Holder</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="checkCash" id="checkCash"
+                                                class="form-control" placeholder="Check Cash ">
+                                            <label for="checkCash" class="form-label">Check Cash</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="checkReceipt" id="checkReceipt"
+                                                class="form-control" placeholder="Check Receipt ">
+                                            <label for="checkReceipt" class="form-label">Check Receipt</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="found" id="found">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <select name="cashAccount" id="cashAccount"
+                                                class="form-select">
+                                                {% for account in cash_accounts %}
+                                                    <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="cashAccount" class="form-label">Cash Account</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="creditCard" id="creditCard">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <select name="posAcc" id="posAcc" class="form-select">
+                                                {% for account in credit_card_accounts %}
+                                                <option>{{account.account_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <label for="posAcc" class="form-label">Bank Pos Account</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="number" name="bankFee" id="bankFee" class="form-control"
+                                                placeholder="Bank Intermediation Fee">
+                                            <label for="bankFee" class="form-label">Bank Intermediation
+                                                Fee</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="text" name="cardHolder" id="cardHolder"
+                                                class="form-control" placeholder="Card Holder ">
+                                            <label for="cardHolder" class="form-label">Card Holder</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="fee_amount" class="form-label">Total Amount</label>
+                                    <input type="number" name="fee_amount" id="fee_amount" value="0.0" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="currency" class="form-label">Currency</label>
+                                    <select name="currency" id="currency" class="form-select">
+                                        {% for currency in currencies %}
+                                        <option>{{currency.currency_code}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="paymentDate" class="form-label">Payment Date</label>
+                                    <input type="date" name="paymentDate" id="paymentDate" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exchangeRate" class="form-label">Exchange Rate</label>
+                                    <input type="text" name="exchangeRate" id="exchangeRate" value="1"
+                                        class="form-control">
+                                </div>
+                            </div>
+            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="mtvExplanation" class="form-label">Explanation</label>
+                                    <textarea name="mtvExplanation" id="mtvExplanation" class="form-control"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="col-md-12" align="right">
+                            <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                            <!--reset button instead of changing directories-->
+                            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block page_script %}
+<script>
+    $(document).ready(function () {
+        $(".transfer").hide();
+        $(".lookFor").hide();
+        $(".check").hide();
+        $(".found").hide();
+        $(".creditCard").hide();
+        $(".mailOrder").hide();
+
+        const main = document.getElementById('paymentType');
+        if(!main){
+            $(".transfer").hide();
+            $(".lookFor").hide();
+            $(".check").hide();
+            $(".found").hide();
+            $(".creditCard").hide();
+            $(".mailOrder").hide();
+        }
+
+        const mailOrder = document.getElementById('mailOrder');
+        const transfer = document.getElementById('transfer');
+        const lookFor = document.getElementById('lookFor');
+        const check = document.getElementById('check');
+        const found = document.getElementById('found');
+        const creditCard = document.getElementById('creditCard');
+
+
+
+        main.addEventListener('change', function handleChange(event) {
+            if (event.target.value === 'Mail order') {
+                mailOrder.style.display = 'block';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'Transfer') {
+                transfer.style.display = 'block';
+                mailOrder.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'look for') {
+                lookFor.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'Check') {
+                check.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'found') {
+                found.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                creditCard.style.display = 'none';
+            } else if (event.target.value === 'Credit card') {
+                creditCard.style.display = 'block';
+                mailOrder.style.display = 'none';
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+            } else {
+                transfer.style.display = 'none';
+                lookFor.style.display = 'none';
+                check.style.display = 'none';
+                found.style.display = 'none';
+                creditCard.style.display = 'none';
+            }
+        });
+    });
+
+
+    $('#actual_days').on("input change","#extra_days",function(){
+        console.log('yeah it is something');
+                $('#actual_days').val(
+                    $('#extra_days').val()
+                + $('#previous_rent_days').val());
+
+    })
+</script>
+{% endblock %}

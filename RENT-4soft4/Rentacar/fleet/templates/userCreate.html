@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+<div class="container card border-warning">
+    <div class="card-header bg-warning">
+        <h2 style="font-family:Courrier;font-weight:bolder;" class="card-title text-white">CREATE A NEW USER</h2>
+    </div>
+  
+    <form class="form-group" style="margin:15px;" method="post" action="" name="user_form" id="user_form">
+        {% csrf_token %}
+        <div class="row">
+        <label class="form-label" for="user_type">User Type</label>
+        <select class="form-control" id="user_type" name="user_type">
+            {% for user_type in user_types %}
+            <option value={{user_type.type}}>{{user_type.type}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="row">
+        <label class="form-label" for="user_name">Username</label>
+        {{form.name}}
+    </div>
+    <div class="row">
+        <label class="form-label" for="user_email">Email</label>
+        {{form.email}}
+    </div>
+    <div class="row">
+        <label class="form-label" for="user_password">Password</label>
+        {{form.password}}
+    </div>
+    <div class="row">
+        <label class="form-label" for="confirm_password">Confirm password</label>
+        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm the password">
+    </div>
+    <div class="row" style="margin-top:20px;">
+        <input type="submit" value="submit" class="btn btn-light btn-outline-warning" name="submit">
+    </div>
+</form>
+</div>
+{% endblock %}

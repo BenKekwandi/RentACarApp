@@ -1,0 +1,502 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="pagetitle ">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </nav>
+</div>
+<section class="section dashboard">
+    <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-6">
+            <div class="row">
+
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card sales-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">All Contracts</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Contracts <span>| On-going</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{data.ongoing_contract}}</h6>
+                                    <span class="text-success small pt-1 fw-bold">{{data.ongoing_contract}}</span> <span
+                                        class="text-muted small pt-2 ps-1">rented cars</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card revenue-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">All Cars</a></li>
+                                <li><a class="dropdown-item" href="#">Availbale</a></li>
+                                <li><a class="dropdown-item" href="#">Rented</a></li>
+                                <li><a class="dropdown-item" href="#">Maintenance</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Vehicles <span>| total</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{data.vehicles}}</h6>
+                                    <span class="text-success small pt-1 fw-bold"></span>{{data.vehicles}}<span
+                                        class="text-muted small pt-2 ps-1">vehicles</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card customers-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Customers <span>| total</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{data.customers}}</h6>
+                                    <span class="text-danger small pt-1 fw-bold">{{data.customers}}</span> <span
+                                        class="text-muted small pt-2 ps-1">customers</span>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card customers-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">In maintenance</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{data.maintenance_vehicles}}</h6>
+                                    <span class="text-danger small pt-1 fw-bold">{{data.maintenance_vehicles}}</span> 
+                                    <span>vehicles</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card revenue-card">
+
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">All Cars</a></li>
+                                <li><a class="dropdown-item" href="#">Availbale</a></li>
+                                <li><a class="dropdown-item" href="#">Rented</a></li>
+                                <li><a class="dropdown-item" href="#">Maintenance</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Vehicles <span>| Available</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{data.available_vehicles}}</h6>
+                                    <span class="text-success small pt-1 fw-bold"></span>{{data.available_vehicles}}<span
+                                        class="text-muted small pt-2 ps-1">vehicles</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card">
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+                        <div class="card-body pb-0">
+                            <h5 class="card-title">Income<span> |Today</span></h5>
+
+                            <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                    echarts.init(document.querySelector("#trafficChart")).setOption({
+                                        tooltip: {
+                                            trigger: 'item'
+                                        },
+                                        legend: {
+                                            top: '5%',
+                                            left: 'center'
+                                        },
+                                        series: [{
+                                            name: 'Access From',
+                                            type: 'pie',
+                                            radius: ['40%', '70%'],
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                show: false,
+                                                position: 'center'
+                                            },
+                                            emphasis: {
+                                                label: {
+                                                    show: true,
+                                                    fontSize: '18',
+                                                    fontWeight: 'bold'
+                                                }
+                                            },
+                                            labelLine: {
+                                                show: false
+                                            },
+                                            data: [{
+                                                value: 1048,
+                                                name: 'Turkish Lira'
+                                            },
+                                            {
+                                                value: 735,
+                                                name: 'Dollar'
+                                            },
+                                            {
+                                                value: 580,
+                                                name: 'Euro'
+                                            },
+                                            {
+                                                value: 484,
+                                                name: 'Pound'
+                                            }
+                                            ]
+                                        }]
+                                    });
+                                });
+                            </script>
+
+                        <!--/div>
+                    </div>
+                </div>
+            </div>
+        </div-->
+        
+        <div class="col-lg-6">
+            <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                    <h5 class="card-title">Cars to be Returned<span></span></h5>
+                    <table id="datatable" class="table table-borderless datatable">
+                        <thead>
+                        <th scope="col">Vehicles</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Return date</th>
+                        <th scope="col">Time remaining </th>
+                        <th scope="col">Transactions</th>
+                        </thead>
+                        <tbody>
+                        {% for vehicle in rented_vehicles %}
+                        <tr>
+                            <td scope="row"><a href="#" class="text-primary">{{ vehicle.vehicle_plate_number}}</a></td>
+                            <td scope="row"><a href="#" class="text-primary">{{vehicle.customer}}</a></td>
+                            <td scope="row"><a href="#" class="text-primary">{{vehicle.rent_end}}</a></td>
+                            <td scope="row"><a href="#" class="text-primary">{{vehicle.time_remaining}}</a></td>
+                            <td scope="row"><a href="#" class="text-primary"></a></td> 
+                        <tr>
+                        {% endfor %}
+                        </tbody>
+                </table>
+                    <!--table class="table table-borderless datatable">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Car</th>
+                                <th scope="col">booked Date</th>
+                                <th scope="col">Expected Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><a href="#">#2457</a></th>
+                                <td>Brandon Jacob</td>
+                                <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                                <td>$64</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2147</a></th>
+                                <td>Bridie Kessler</td>
+                                <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                                <td>$47</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2049</a></th>
+                                <td>Ashleigh Langosh</td>
+                                <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                                <td>$147</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2644</a></th>
+                                <td>Angus Grady</td>
+                                <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                                <td>$67</td>
+                                <td><span class="badge bg-danger">Rejected</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2457</a></th>
+                                <td>Brandon Jacob</td>
+                                <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                                <td>$64</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2147</a></th>
+                                <td>Bridie Kessler</td>
+                                <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                                <td>$47</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2049</a></th>
+                                <td>Ashleigh Langosh</td>
+                                <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                                <td>$147</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2644</a></th>
+                                <td>Angus Grady</td>
+                                <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                                <td>$67</td>
+                                <td><span class="badge bg-danger">Rejected</span></td>
+                            </tr> <tr>
+                                <th scope="row"><a href="#">#2457</a></th>
+                                <td>Brandon Jacob</td>
+                                <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                                <td>$64</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2147</a></th>
+                                <td>Bridie Kessler</td>
+                                <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                                <td>$47</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2049</a></th>
+                                <td>Ashleigh Langosh</td>
+                                <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                                <td>$147</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2644</a></th>
+                                <td>Angus Grady</td>
+                                <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                                <td>$67</td>
+                                <td><span class="badge bg-danger">Rejected</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="#">#2644</a></th>
+                                <td>Raheem Lehner</td>
+                                <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                                <td>$165</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                            </tr>
+                        </tbody>
+                    </table-->
+                </div>
+            </div>
+        </div>
+        <div class="col=12">
+        <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
+
+              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                      data: ['Allocated Budget', 'Actual Spending']
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [{
+                          name: 'Sales',
+                          max: 6500
+                        },
+                        {
+                          name: 'Administration',
+                          max: 16000
+                        },
+                        {
+                          name: 'Information Technology',
+                          max: 30000
+                        },
+                        {
+                          name: 'Customer Support',
+                          max: 38000
+                        },
+                        {
+                          name: 'Development',
+                          max: 52000
+                        },
+                        {
+                          name: 'Marketing',
+                          max: 25000
+                        }
+                      ]
+                    },
+                    series: [{
+                      name: 'Budget vs spending',
+                      type: 'radar',
+                      data: [{
+                          value: [4200, 3000, 20000, 35000, 50000, 18000],
+                          name: 'Allocated Budget'
+                        },
+                        {
+                          value: [5000, 14000, 28000, 26000, 42000, 21000],
+                          name: 'Actual Spending'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+{% block notifications %}
+    {% for reminder in reminders %}
+    <li class="notification-item">
+        <i class="bi bi-x-circle text-danger"></i>
+        <div>
+          <h4>{{reminder.title}}</h4>
+          <p>{{reminder.content}}</p>
+        </div>
+        <hr>
+      </li>
+    {% endfor %}
+{% endblock %}

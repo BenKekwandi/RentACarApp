@@ -1,0 +1,373 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<style type="text/css">
+    .nav-tabs-custom>.nav-tabs>li.active {
+        border-top-color: #00a65a !important;
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        display: none;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .rColorInfo {
+        color: blue;
+    }
+
+    .note {
+
+        margin: 0 0 20px;
+        padding: 15px 30px 15px 15px;
+        border-left: 3px solid #e5e5e5;
+        box-sizing: border-box;
+
+    }
+
+    .note-info {
+        border-color: #5bc0dc;
+        background: #d9edf7;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .custom .nav-link.active {
+
+        background-color: #21bc6c !important;
+
+    }
+
+    .card-header {
+       text-align: center;
+    }
+
+    .names {
+        font-size: 200%;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-warning">
+            <div class="card-header bg-warning">
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add vehicle Payment Reminder
+                </h3>
+            </div>
+            <div class="card-body row::before">
+
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" class="container-sm">
+                    {% csrf_token %}
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="customerTitle" class="form-label">Vehicel</label>
+                                <select name="customerTitle" id="customerTitle" class="form-select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- change later -->
+
+                    <hr>
+
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <span class="names">MTV</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="mtvPaymentDate" class="form-label">Payment Date</label>
+                                <input type="datetime-local" name="mtvPaymentDate" id="mtvPaymentDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="mtvPaymentAmount" class="form-label">Payment Amount</label>
+                                <input type="number" name="mtvPaymentAmount" id="mtvPaymentAmount" class="form-control" value="0.0"
+                                    step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="mtvCurrency" class="form-label">Currency</label>
+                                <select name="mtvCurrency" id="mtvCurrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="mtvExplanation" class="form-label">Explanation</label>
+                                <textarea name="mtvExplanation" id="mtvExplanation" class="form-control" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <span class="names">operating Permint</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="permintPaymentDate" class="form-label">Payment Date</label>
+                                <input type="datetime-local" name="permintPaymentDate" id="permintPaymentDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="permintPaymentAmount" class="form-label">Payment Amount</label>
+                                <input type="number" name="permintPaymentAmount" id="permintPaymentAmount" class="form-control" value="0.0"
+                                    step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="permintCurrency" class="form-label">Currency</label>
+                                <select name="permintCurrency" id="permintCurrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="permintExplanation" class="form-label">Explanation</label>
+                                <textarea name="permintExplanation" id="permintExplanation" class="form-control" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <span class="names">Peak</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="peakPaymentDate" class="form-label">Payment Date</label>
+                                <input type="datetime-local" name="peakPaymentDate" id="peakPaymentDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="peakPaymentAmount" class="form-label">Payment Amount</label>
+                                <input type="number" name="peakPaymentAmount" id="peakPaymentAmount" class="form-control" value="0.0"
+                                    step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="peakCurrency" class="form-label">Currency</label>
+                                <select name="peakCurrency" id="peakCurrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="peakExplanation" class="form-label">Explanation</label>
+                                <textarea name="peakExplanation" id="peakExplanation" class="form-control" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <span class="names"> Public insurance</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="insurancePaymentDate" class="form-label">Payment Date</label>
+                                <input type="datetime-local" name="insurancePaymentDate" id="insurancePaymentDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="insurancePaymentAmount" class="form-label">Payment Amount</label>
+                                <input type="number" name="insurancePaymentAmount" id="insurancePaymentAmount" class="form-control" value="0.0"
+                                    step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="insuranceCurrency" class="form-label">Currency</label>
+                                <select name="insuranceCurrency" id="insuranceCurrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="insuranceExplanation" class="form-label">Explanation</label>
+                                <textarea name="insuranceExplanation" id="insuranceExplanation" class="form-control" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                     <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <span class="names"> Private insurance</span>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="paymentDate" class="form-label">Payment Date</label>
+                                <input type="datetime-local" name="paymentDate" id="paymentDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="surname" class="form-label">Payment Amount</label>
+                                <input type="number" name="surname" id="surname" class="form-control" value="0.0"
+                                    step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="accounturrency" class="form-label">Currency</label>
+                                <select name="accounturrency" id="accounturrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="explanation" class="form-label">Explanation</label>
+                                <textarea name="explanation" id="explanation" class="form-control" rows="1"></textarea>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <hr>
+                    <br>
+
+                    <div class="col-md-12" align="right">
+                        <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                        <!--reset button instead of changing directories-->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

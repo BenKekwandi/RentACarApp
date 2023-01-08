@@ -1,0 +1,512 @@
+<style type="text/css">
+    .nav-tabs-custom>.nav-tabs>li.active {
+        border-top-color: #00a65a !important;
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        display: none;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .rColorInfo {
+        color: blue;
+    }
+
+    .note {
+
+        margin: 0 0 20px;
+        padding: 15px 30px 15px 15px;
+        border-left: 3px solid #e5e5e5;
+        box-sizing: border-box;
+
+    }
+
+    .note-info {
+        border-color: #5bc0dc;
+        background: #d9edf7;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .custom .nav-link.active {
+
+        background-color: #21bc6c !important;
+
+    }
+    .card-header{
+        text-align: center;
+    }
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-warning">
+            <div class="card-header bg-warning">
+                <h3 class="card-title text-white"><i class="fa fa-user-plus"></i> Add New Customer
+                </h3>
+            </div>
+
+            <!--Customer Type part-->
+            <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+                {% csrf_token %}
+                <div class="customer-type">
+                    <h3><i class="fa fa-user"></i> Customer Type</h3>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerType" class="form-label">Customer Type</label>
+                                <select name="customerType" id="customerType" class="form-control">
+                                    {% for customer_type in customer_types %}
+                                    <option>{{customer_type.type}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerBlackList" class="form-label">Black list selection</label>
+                                <select name="customerBlackList" id="customerBlackList" class="form-control">
+                                    {% for black_list in black_lists %}
+                                    <option>{{black_list.type}}</option>
+                                    {% endfor %} 
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="id-info">
+                    <h3><i class="fa fa-user"></i> ID information</h3>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="customerTitle" class="form-label">Customer Title</label>
+                                <input type="text" name="customerTitle" id="customerTitle" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">Name</label>
+                                <input type="text" name="firstName" id="firstName" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="surname" class="form-label">Surname</label>
+                                <input type="text" name="surname" id="surname" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="idNo" class="form-label">ID Number</label>
+                                <input type="text" name="idNo" id="idNo" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="passportNo" class="form-label">Passport Number</label>
+                                <input type="text" name="passportNo" id="passportNo" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="birthDate" class="form-label">Date of birth</label>
+                                <input type="date" name="birthDate" id="birthDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="birthPlace" class="form-label">Place of birth</label>
+                                <input type="text" name="birthPlace" id="birthPlace" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="country" class="form-label">Country</label>
+                                <input type="text" name="country" id="country" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="nationality" class="form-label">Nationality</label>
+                                <input type="text" name="nationality" id="nationality" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="motherName" class="form-label">Mother Name</label>
+                                <input type="text" name="motherName" id="motherName" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="fatherName" class="form-label">Father Name</label>
+                                <input type="text" name="fatherName" id="fatherName" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="job" class="form-label">Job</label>
+                                <input type="text" name="job" id="job" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Information part -->
+                <div class="contact-info">
+                    <h3> <i class="fa fa-phone-flip"></i> Contact information</h3>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="mobilePhone1" class="form-label">Mobile Phone</label>
+                                <input type="text" name="mobilePhone1" id="mobilePhone1" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="homePhone1" class="form-label">Home Phone</label>
+                                <input type="text" name="homePhone1" id="homePhone1" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="officePhone" class="form-label">Office Phone</label>
+                                <input type="text" name="officePhone" id="officePhone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="mobilePhone2" class="form-label">Mobile Phone 2</label>
+                                <input type="text" name="mobilePhone2" id="mobilePhone2" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="homePhone2" class="form-label">Home Phone 2</label>
+                                <input type="text" name="homePhone2" id="homePhone2" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="businessPhone" class="form-label">Business Phone</label>
+                                <input type="text" name="businessPhone" id="businessPhone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="text" name="email" id="email" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="email2" class="form-label">E-mail 2</label>
+                                <input type="text" name="email2" id="email2" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- Contact Information text area -->
+                        <div class="col-md-4 ">
+                            <div class="form-group">
+                                <label for="homeAddress" class="form-label">Home Address</label>
+                                <textarea name="homeAddress" id="homeAddress" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <div class="form-group">
+                                <label for="localAddress" class="form-label">Local Address</label>
+                                <textarea name="localAddress" id="localAddress" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <div class="form-group">
+                                <label for="businessAddress" class="form-label">Business Address</label>
+                                <textarea name="businessAddress" id="businessAddress" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Driver License Information part -->
+                <div class="driver-info">
+                    <h3><i class="fa fa-car"></i> Driver's Licence information</h3>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="licenseNo" class="form-label">Driver's License Number</label>
+                                <input type="text" name="licenseNo" id="licenseNo" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="licensePlace" class="form-label">License Issue Place</label>
+                                <input type="text" name="licensePlace" id="licensePlace" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="licenseDate" class="form-label">License Issue Date</label>
+                                <input type="date" name="licenseDate" id="licenseDate" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Education Information part -->
+                <div class="education-info">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education Information</h3>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="school" class="form-label">School</label>
+                                <input type="text" name="school" id="school" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="faculty" class="form-label">Faculty</label>
+                                <input type="text" name="faculty" id="faculty" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="section" class="form-label">Section</label>
+                                <input type="text" name="section" id="section" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="department" class="form-label">Department</label>
+                                <input type="text" name="department" id="department" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="studentNumber" class="form-label">Student Number</label>
+                                <input type="text" name="studentNumber" id="studentNumber" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Customer Currency Information part -->
+                <div class="currency-info">
+                    <h3><i class="fa fa-money-bill-1"></i> Customer Current Account</h3>
+                    <div class="row">
+
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <br><!-- for now keep the break -->
+                                <label for="accountName" class="form-label">Account Name</label>
+                                <input type="text" name="accountName1" id="accountName1" class="form-control">
+                                <br><!-- for now keep the break -->
+                                <input type="text" name="accountName2" id="accountName2" class="form-control">
+                                <br><!-- for now keep the break -->
+                                <input type="text" name="accountName3" id="accountName3" class="form-control">
+                                <br><!-- for now keep the break -->
+                                <input type="text" name="accountName4" id="accountName4" class="form-control">
+                                <br><!-- for now keep the break -->
+                                <input type="text" name="accountName5" id="accountName5" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <br><!-- for now keep the break -->
+                                <label for="accounturrency" class="form-label">Account Currency</label>
+                                <!-- This part for selecting information through options -->
+                                <select name="accounturrency" id="accounturrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                                <br><!-- for now keep the break -->
+                                <select name="accounturrency" id="accounturrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                                <br><!-- for now keep the break -->
+                                <select name="accounturrency" id="accounturrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                                <br><!-- for now keep the break -->
+                                <select name="accounturrency" id="accounturrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                                <br><!-- for now keep the break -->
+                                <select name="accounturrency" id="accounturrency" class="form-select">
+                                    <option>Turkish lira</option>
+                                    <option>Pound</option>
+                                    <option>Dollar</option>
+                                    <option>Euro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Additional Information part -->
+                <div class="extra-info">
+                    <h3><i class="fa fa-plus"></i>Additional information</h3>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="bloodGroup" class="form-label">Blood group</label>
+                                <select name="bloodGroup" id="bloodGroup" class="form-select">
+                                    <option>AB</option>
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>O</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information text area -->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="systemNote" class="form-label">System Note</label>
+                                <textarea name="systemNote" id="systemNote" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- file extraction area -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <br><!-- for now keep the break -->
+                                <label for="customerDoc" class="form-label">Customer Documents</label>
+                                <br><!-- for now keep the break -->
+                                {{form.customer_file1}}
+                                <br><!-- for now keep the break -->
+                                {{form.customer_file2}}
+                                <br><!-- for now keep the break -->
+                                {{form.customer_file3}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12" align="right">
+                    <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                    <!--reset button instead of changing directories-->
+                    <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>

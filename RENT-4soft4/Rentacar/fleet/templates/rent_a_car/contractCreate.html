@@ -1,0 +1,399 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border border-primary">
+            <div class="card-header bg bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add new Contract1
+                </h3>
+            </div>
+            <div class="card-body row::before">
+                
+                <!--h1 id="something">AMINA KOY</h1-->
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+                    {% csrf_token %}
+                    <label class="form-label" for="customer">Customer</option>
+                    <select class="form-select" name="customer" id="customer" required>
+                        <option></option>
+                        {% for customer in customers %}
+                            <option>{{customer.first_name}} {{customer.last_name}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- additional people Information part -->
+                    <div class="driver-info">
+                        <h3><i class="fa fa-users"></i> Additional people to use the Tool</h3>
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="addFullName1" class="form-label">Name and Surname</label>
+                                    <input type="text" name="addFullName1" id="addFullName1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="addIdNo1" class="form-label">Identification Number</label>
+                                    <input type="text" name="addIdNo1" id="addIdNo1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="addPassportNumber1" class="form-label">passport Number</label>
+                                    <input type="text" name="addIdNo1" id="addIdNo1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="addBirthDate1" class="form-label">Birth Date</label>
+                                    <input type="date" name="addBirthDate1" id="addBirthDate1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="addNationality1" class="form-label">Nationality</label>
+                                    <input type="text" name="addNationality1" id="addNationality1" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="addtelephone1" class="form-label">Telephone</label>
+                                    <input type="text" name="addtelephone1" id="addtelephone1" class="form-control">
+                                </div>
+                            </div>
+
+                            <hr style="border-style:dashed;">
+
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Information part -->
+                    <div class="vehicle-info">
+                        <h3><i class="fa-solid fa-car"></i> Vehicle Information</h3>
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="vehicleName" class="form-label">Vehicle</label>
+                                    <select type="text" name="vehicleName" id="vehicleName" class="form-control">
+                                        {% for vehicle in vehicles %}
+                                        <option>{{vehicle.vehicle_plate_number}}</option>
+                                        {% endfor%}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="issueDateAndTime" class="form-label">Issue Date and Time</label>
+                                    <input type="datetime-local" name="issueDateAndTime" id="issueDateAndTime"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- automatic calculation for days -->
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="returnDateAndTime" class="form-label">Return Date and Time</label>
+                                    <input type="datetime-local" name="returnDateAndTime" id="returnDateAndTime"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="rent_days" class="form-label">Rent days</label>
+                                    <input type="number" name="rent_days" id="rent_days"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="issuePoint" class="form-label">Issue Point</label>
+                                    <select name="issuePoint" id="issuePoint" class="form-control">
+                                        {% for place in places %}
+                                        <option>{{place.place_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="returnPoint" class="form-label">Return Point</label>
+                                    <select name="returnPoint" id="returnPoint" class="form-control">
+                                        {% for place in places %}
+                                        <option>{{place.place_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="vehicleIssueAddress" class="form-label">Vehicle Issue
+                                        Address</label>
+                                    <textarea name="vehicleIssueAddress" id="vehicleIssueAddress" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="vehicleReturnAddress" class="form-label">Vehicle Return Address</label>
+                                        <textarea name="vehicleReturnAddress" id="vehicleReturnAddress" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="deliveryDate" class="form-label">Early Delivery Date</label>
+                                        <input type="date" name="deliveryDate" id="deliveryDate" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="gasQuantity" class="form-label">Gasoline Quantity</label>
+                                        <input type="text" name="gasQuantity" id="gasQuantity" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="transmission" class="form-label">Transmission Km.</label>
+                                        <input type="text" name="transmission" id="transmission" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="returnKm" class="form-label">Return Km.</label>
+                                        <input type="text" name="returnKm" id="returnKm" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="mileageLimit" class="form-label">Mileage Limit</label>
+                                        <input type="text" name="mileageLimit" id="mileageLimit" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Additional Information part -->
+                        <div class="extra-info">
+                            <h3><i class="fa fa-plus"></i>Additional information</h3>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customerComment" class="form-label">Customer Comment</label>
+                                        <textarea name="customerComment" id="customerComment" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information text area -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="systemNote" class="form-label">System Note</label>
+                                    <textarea name="systemNote" id="systemNote" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- file extraction area -->
+                            <!--div class="col-md-6">
+                                <div-- class="form-group">
+                                    <div class="row">
+                                        <label for="condDoc" class="form-label">Contract Documents (Visual)</label>
+                                    </div>
+                                    <div class="row">
+                                        {{form.contract_file1}}
+                                    </div>
+                                    <div class="row">
+                                        
+                                        {{form.contract_file2}}
+                                    </div>
+                                    <div class="row">
+                                        
+                                        {{form.contract_file3}}
+                                    </div>
+                                    <div class="row">
+                                        
+                                        {{form.contract_file4}}
+                                    </div>
+                                 
+
+                                </div-->
+                         
+
+                        </div>
+                    </div>
+
+                    <div class="id-info">
+                        <h3><i class="fa fa-credit-card"></i> Payment information</h3>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="totalFee" class="form-label">Total Fee</label>
+                                    <input type="text" name="totalFee" id="totalFee" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="Currency" class="form-label">Currency</label>
+                                    <select name="Currency" id="Currency" class="form-control">
+                                        {% for currency in currencies %}
+                                        <option>{{currency.currency_code}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="agentPercent" class="form-label">Agent Percentage</label>
+                                    <input type="number" name="agentPercent" id="agentPercent" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="agentFee" class="form-label">Agent Fee</label>
+                                    <input type="number" name="agentFee" id="agentFee" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="intermediaryCompanyAccount" class="form-label">Intermediary Company
+                                        Account</label>
+                                    <select name="intermediaryCompanyAccount" id="intermediaryCompanyAccount"
+                                        class="form-select">
+                                        <option></option>
+                                    {% for account in company_accounts %}
+                                        <option>
+                                            {{account.account_name}}
+                                        </option>
+                                    {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" align="right">
+                        <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                        <!--reset button instead of changing directories-->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block page_script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+<script>
+$(document).ready(function () {
+    console.log('yeah man');
+    var select_box= document.querySelector('#customer');
+    /*$('#customer').select({
+        width: 'resolve'
+    });*/
+
+
+    $(".mailOrder").hide();
+    $(".transfer").hide();
+    $(".lookFor").hide();
+    $(".check").hide();
+    $(".found").hide();
+    $(".creditCard").hide();
+
+
+    const main = document.getElementById('paymentType');
+
+    const mailOrder = document.getElementById('mailOrder');
+    const transfer = document.getElementById('transfer');
+    const lookFor = document.getElementById('lookFor');
+    const check = document.getElementById('check');
+    const found = document.getElementById('found');
+    const creditCard = document.getElementById('creditCard');
+
+
+
+    main.addEventListener('change', function handleChange(event) {
+        if (event.target.value === 'Mail order') {
+            mailOrder.style.display = 'block';
+            transfer.style.display = 'none';
+            lookFor.style.display = 'none';
+            check.style.display = 'none';
+            found.style.display = 'none';
+            creditCard.style.display = 'none';
+        } else if (event.target.value === 'Transfer') {
+            transfer.style.display = 'block';
+            mailOrder.style.display = 'none';
+            lookFor.style.display = 'none';
+            check.style.display = 'none';
+            found.style.display = 'none';
+            creditCard.style.display = 'none';
+        } else if (event.target.value === 'look for') {
+            lookFor.style.display = 'block';
+            mailOrder.style.display = 'none';
+            transfer.style.display = 'none';
+            check.style.display = 'none';
+            found.style.display = 'none';
+            creditCard.style.display = 'none';
+        } else if (event.target.value === 'Check') {
+            check.style.display = 'block';
+            mailOrder.style.display = 'none';
+            transfer.style.display = 'none';
+            lookFor.style.display = 'none';
+            found.style.display = 'none';
+            creditCard.style.display = 'none';
+        } else if (event.target.value === 'found') {
+            found.style.display = 'block';
+            mailOrder.style.display = 'none';
+            transfer.style.display = 'none';
+            lookFor.style.display = 'none';
+            check.style.display = 'none';
+            creditCard.style.display = 'none';
+        } else if (event.target.value === 'Credit card') {
+            creditCard.style.display = 'block';
+            mailOrder.style.display = 'none';
+            transfer.style.display = 'none';
+            lookFor.style.display = 'none';
+            check.style.display = 'none';
+            found.style.display = 'none';
+        } else {
+            mailOrder.style.display = 'none';
+            transfer.style.display = 'none';
+            lookFor.style.display = 'none';
+            check.style.display = 'none';
+            found.style.display = 'none';
+            creditCard.style.display = 'none';
+        }
+    });
+});
+
+</script>
+{% endblock %}

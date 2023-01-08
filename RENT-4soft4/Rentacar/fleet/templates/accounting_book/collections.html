@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="pageholder">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border border-primary bg bg-white">
+                <div class="card-header bg-primary">
+                    <h3 class="card-title text-white">Income Report</h3>
+                </div>
+
+                <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
+
+
+                    <table id="contract" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Customer</th>
+                                <th>Account</th>
+                                <th>Invoice number</th>
+                                <th>Payment method</th>
+                                <th>Fee amount</th>
+                                <th>Currency</th>
+                                <th>Registration date</th>
+
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr >
+                               <th>id</th>
+                                <th>Customer</th>
+                                <th>Account</th>
+                                <th>Invoice number</th>
+                                <th>Payment method</th>
+                                <th>Fee amount</th>
+                                <th>Currency</th>
+                                <th>Registration date</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block page_script %}
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        var dataSet = [];
+        {
+        }
+        $.ajax({
+            url: 'http://127.0.0.1:8000/fleet/collection-json/',
+            dataType: "json",
+            error: function (request) {
+                alert("Error " + request);
+            },
+            success: function (array) {
+                for (var i = 0; i < array.length; i++) {
+                    dataSet.push([array[i].id
+                    , array[i].customer_name
+                    , array[i].account_name
+                    , array[i].invoice_number
+                    , array[i].payment_method
+                    , array[i].fee_amount
+                    , array[i].currency
+                    , array[i].payment_date
+                    ]);
+                }
+                var table = $('#contract').DataTable({
+                    data: dataSet
+
+
+                });
+
+                $("#contract tbody").on("dblclick", 'tr', function () {
+
+                    var row = table.row(this).data();
+                    var id = row[0];
+                    // alert("id" + id);
+                    var url = 'http://127.0.0.1:8000/fleet/account-edit/' + id;
+                    var options = 'width=800,height=600,scrollbars=no,menubar=no,status=yes,resizable=yes,screenx=200,screeny=0';
+                    var open_mode = "_blank";
+                    window.open(url, open_mode, options);
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

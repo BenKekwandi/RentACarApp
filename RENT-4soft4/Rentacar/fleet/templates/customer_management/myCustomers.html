@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<div class="pageholder">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border border-primary bg bg-white">
+                <div class="card-header bg-primary">
+                    <h3 class="text-white" style="text-align:center;">My Customers</h3>
+                </div>
+
+                <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
+
+
+                    <table id="customer" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Phone number</th>
+                                <th>Email</th>
+                                <th>Date of birth</th>
+                                <th>Passport No</th>
+                                <th>System Note</th>
+                                <th>Date of registration</th>
+                                <th>transactions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Phone number</th>
+                                <th>Email</th>
+                                <th>Date of birth</th>
+                                <th>Passport No</th>
+                                <th>System Note</th>
+                                <th>Date of registration</th>
+                                <th>transactions</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block page_script %}
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        var dataSet = [];
+        {
+        }
+        $.ajax({
+            url: 'http://127.0.0.1:8000/fleet/customer-json/',
+            dataType: "json",
+            error: function (request) {
+                alert("Error " + request);
+            },
+            success: function (array) {
+                for (var i = 0; i < array.length; i++) {
+                    dataSet.push([array[i].id
+                        , array[i].type
+                        , array[i].first_name
+                        , array[i].last_name
+                        , array[i].phone_number
+                        , array[i].email
+                        , array[i].date_of_birth
+                        , array[i].passport_no
+                        , array[i].system_note
+                        , array[i].created_at
+                        , array[i].transactions
+                    ]);
+                }
+                var table = $('#customer').DataTable({
+                    data: dataSet
+
+
+                });
+
+                $("#customer tbody").on("dblclick", 'tr', function () {
+
+                    var row = table.row(this).data();
+                    var id = row[0];
+                    // alert("id" + id);
+                    var url = 'http://192.168.5.121:8000/fleet/customer-edit/' + id;
+                    var options = 'width=800,height=600,scrollbars=no,menubar=no,status=yes,resizable=yes,screenx=200,screeny=0';
+                    var open_mode = "_blank";
+                    window.open(url, open_mode, options);
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

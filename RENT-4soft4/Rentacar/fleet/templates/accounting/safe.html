@@ -1,0 +1,519 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div style="position:sticky">
+<div class="pagetitle ">
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">ACCOUNTING</a></li>
+            <li class="breadcrumb-item active">Safe</li>
+        </ol>
+    </nav>
+</div>
+<section class="section dashboard">
+    <div class="row border border-primary">
+
+        <div class="header border border-primary" style="margin-bottom:35px;"> <h3 class="" style="text-align:center;color:#B0F2B6;">TODAY</h3></div>
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+            <div class="row">
+<div class="col-md-3">
+
+    <div class="card info-card customers-card">
+
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Turkish lira <span>| today</span></h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-turkish-lira-sign"></i>
+                </div>
+                <div class="ps-3">
+                    <h6>{{data.tl_daily}}</h6>
+                    <span class="text-danger small pt-1 fw-bold">{{data.tl_daily}}</span> <span
+                        class="text-muted small pt-2 ps-1">Turkish Lira</span>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="col-md-3">
+
+    <div class="card info-card customers-card">
+
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Dollar <span>| today</span></h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="ps-3">
+                    <h6>{{data.dollar_daily}}</h6>
+                    <span class="text-danger small pt-1 fw-bold">{{data.dollar_daily}}</span> <span
+                        class="text-muted small pt-2 ps-1">USD dollar</span>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>
+
+<div class="col-md-3">
+
+    <div class="card info-card customers-card">
+
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Euro <span>| today</span></h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-euro-sign"></i>
+                </div>
+                <div class="ps-3">
+                    <h6>{{data.euro_daily}}</h6>
+                    <span class="text-danger small pt-1 fw-bold">{{data.euro_daily}}</span> <span
+                        class="text-muted small pt-2 ps-1">euro</span>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>
+
+
+<div class="col-md-3">
+
+    <div class="card info-card customers-card">
+
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+
+            </ul>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Pound <span>| today</span></h5>
+
+            <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-sterling-sign"></i>
+                </div>
+                <div class="ps-3">
+                    <h6>{{data.pound_daily}}</h6>
+                    <span class="text-danger small pt-1 fw-bold">{{data.pound_daily}}</span> <span
+                        class="text-muted small pt-2 ps-1">Pound</span>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>
+
+
+</div>
+
+<div class="row border border-primary">
+    <div class="header border border-primary" style="margin-bottom:35px;"> <h3 class="" style="text-align:center;color:#B0F2B6;">This Month</h3></div>
+    <div class="col-md-3">
+    
+        <div class="card info-card customers-card">
+    
+            <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                    </li>
+    
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+    
+                </ul>
+            </div>
+    
+            <div class="card-body">
+                <h5 class="card-title">Turkish lira <span>| this month</span></h5>
+    
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-turkish-lira-sign"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6>{{data.tl_month}}</h6>
+                        <span class="text-danger small pt-1 fw-bold">{{data.tl_month}}</span> <span
+                            class="text-muted small pt-2 ps-1">Turkish Lira</span>
+    
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div class="col-md-3">
+    
+        <div class="card info-card customers-card">
+    
+            <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                    </li>
+    
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+    
+                </ul>
+            </div>
+    
+            <div class="card-body">
+                <h5 class="card-title">Dollar <span>| this month</span></h5>
+    
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6>{{data.dollar_month}}</h6>
+                        <span class="text-danger small pt-1 fw-bold">{{data.dollar_month}}</span> <span
+                            class="text-muted small pt-2 ps-1">USD dollar</span>
+    
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    <div class="col-md-3">
+    
+        <div class="card info-card customers-card">
+    
+            <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                    </li>
+    
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+    
+                </ul>
+            </div>
+    
+            <div class="card-body">
+                <h5 class="card-title">Euro <span>| this month</span></h5>
+    
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-euro-sign"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6>{{data.euro_month}}</h6>
+                        <span class="text-danger small pt-1 fw-bold">{{data.euro_month}}</span> <span
+                            class="text-muted small pt-2 ps-1">Euro</span>
+    
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    
+    <div class="col-md-3">
+    
+        <div class="card info-card customers-card">
+    
+            <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                    </li>
+    
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+    
+                </ul>
+            </div>
+    
+            <div class="card-body">
+                <h5 class="card-title">Pound <span>| this month</span></h5>
+    
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-sterling-sign"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6>{{data.pound_month}}</h6>
+                        <span class="text-danger small pt-1 fw-bold">{{data.pound_month}}</span> <span
+                            class="text-muted small pt-2 ps-1">Pound</span>
+    
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+    
+    </div>
+    
+    
+    </div>
+
+
+    <div class="row border border-primary">
+        <div class="header border border-primary" style="margin-bottom:35px;"> <h3 class="" style="text-align:center;color:#B0F2B6;">TOTAL SAVES</h3></div>
+        <div class="col-md-3">
+        
+            <div class="card info-card customers-card">
+        
+                <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                            <h6>Filter</h6>
+                        </li>
+        
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+        
+                    </ul>
+                </div>
+        
+                <div class="card-body">
+                    <h5 class="card-title">Turkish lira <span>| TOTAL</span></h5>
+        
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-turkish-lira-sign"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>{{data.total_safe}}</h6>
+                            <span class="text-danger small pt-1 fw-bold">{{data.total_safe}}</span> <span
+                                class="text-muted small pt-2 ps-1">Turkish Lira</span>
+        
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        <div class="col-md-3">
+        
+            <div class="card info-card customers-card">
+        
+                <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                            <h6>Filter</h6>
+                        </li>
+        
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+        
+                    </ul>
+                </div>
+        
+                <div class="card-body">
+                    <h5 class="card-title">Dollar <span>| TOTAL</span></h5>
+        
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>{{data.dollar_safe}}</h6>
+                            <span class="text-danger small pt-1 fw-bold">{{data.dollar_safe}}</span> <span
+                                class="text-muted small pt-2 ps-1">USD dollar</span>
+        
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        <div class="col-md-3">
+        
+            <div class="card info-card customers-card">
+        
+                <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                            <h6>Filter</h6>
+                        </li>
+        
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+        
+                    </ul>
+                </div>
+        
+                <div class="card-body">
+                    <h5 class="card-title">Euro <span>| TOTAL</span></h5>
+        
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-euro-sign"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>{{data.euro_safe}}</h6>
+                            <span class="text-danger small pt-1 fw-bold">{{data.euro_safe}}</span> <span
+                                class="text-muted small pt-2 ps-1">Euro</span>
+        
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        
+        <div class="col-md-3">
+        
+            <div class="card info-card customers-card">
+        
+                <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                            <h6>Filter</h6>
+                        </li>
+        
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+        
+                    </ul>
+                </div>
+        
+                <div class="card-body">
+                    <h5 class="card-title">Pound <span>| TOTAL</span></h5>
+        
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-sterling-sign"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>{{data.pound_safe}}</h6>
+                            <span class="text-danger small pt-1 fw-bold">{{data.pound_safe}}</span> <span
+                                class="text-muted small pt-2 ps-1">Pound</span>
+        
+                        </div>
+                    </div>
+        
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        
+        </div>
+
+
+</div>
+</div>
+</section>
+</div>
+
+{% endblock %}
+{% block extra_css %}
+
+#pound{
+    background-color:green;
+}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="test_input_1" class="form-label">FIRST INPUT</label>
+    <input name="test_input_1" class="form-control" type="text">
+    <input name="submit1" type="submit" value="Submit1">
+</form>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="test_input_2" class="form-label">SECOND INPUT</label>
+    <input name="test_input_2"  class="form-control" type="text">
+    <input name="submit2" type="submit" value="Submit2">
+</form>
+{% endblock %}

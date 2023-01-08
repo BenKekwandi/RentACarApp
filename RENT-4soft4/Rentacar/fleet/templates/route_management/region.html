@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<div class="pageholder">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border border-primary bg bg-white">
+                <div class="card-header bg-primary">
+                    <h3 class="card-title text-white">Regions</h3>
+                </div>
+
+                <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
+
+
+                    <table id="contract" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Region Name</th>
+                                <th>Zone Type</th>
+                                <th>Upper Region</th>
+
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr >
+                                <th>id</th>
+                                <th>Region Name</th>
+                                <th>Zone Type</th>
+                                <th>Upper Region</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block page_script %}
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        var dataSet = [];
+        {
+        }
+        $.ajax({
+            url: 'http://127.0.0.1:8000/fleet/region-json/',
+            dataType: "json",
+            error: function (request) {
+                alert("Error " + request);
+            },
+            success: function (array) {
+                for (var i = 0; i < array.length; i++) {
+                    dataSet.push([array[i].id
+                        , array[i].region_name
+                        , array[i].zone_type
+                        , array[i].upper_region
+                    ]);
+                }
+                var table = $('#contract').DataTable({
+                    data: dataSet
+
+                });
+
+                $("#contract tbody").on("dblclick", 'tr', function () {
+
+                    var row = table.row(this).data();
+                    var id = row[0];
+                    // alert("id" + id);
+                    var url = 'http://192.168.5.121:8000/fleet/region-edit/' + id;
+                    var options = 'width=800,height=600,scrollbars=no,menubar=no,status=yes,resizable=yes,screenx=200,screeny=0';
+                    var open_mode = "_blank";
+                    window.open(url, open_mode, options);
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}
+{% block extra_css %}
+    i{
+        background-color:white;
+    }
+{% endblock %}

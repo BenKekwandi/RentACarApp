@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- login Css -->
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<!-- <script src="{% static '/js/login.js' %}"></script> -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.13/sass.min.js"
+		integrity="sha512-2TS/isObkFqph49a+ek8pjntAhlN67dxtPwVXLEtiB0JqBu1Z+5dVCgmJwEePYqHqdGWoaBueE28vp5YNqV43g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.13/sass.js"
+		integrity="sha512-NqSr3wn0EO38ZQ86uddR1bik9Lze/dsTM5aZ0uZzHnkSY7f6aqbPnfZ+e6btXQEhPeyzI6RFy7f/eJ8zm0OVmQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.13/sass.sync.js"
+		integrity="sha512-QD0LRe/NdW0GWaHiP909HB97dvSuYLTVBp88hEg/JgJRhh481lxftIVIM1OC/t7WYtxBMHlYHjTE1ffAx75FCQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.13/sass.sync.min.js"
+		integrity="sha512-IQhi5trO3vGe9Q/6jNePbepH6geKAxBiHNuo5+8T4/cDAY/9MgEuMRipZXhl0KEIlK//csceXKgB75P8Xj3ODw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.13/sass.worker.js"
+		integrity="sha512-SK118FM6kSxCGcQ9yOoPSuHl8CK2E5w200rlIvVk21uEao69P6zNLEpdX8ZgzhObP7k/DsrG/LREuK7wf4+lFg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.13/sass.worker.min.js"
+		integrity="sha512-oRS5DH0jcvQE6EtUx3f7KgVZ+TPYB/vrTv7QLxr3PcIRBP48WDLfLMDLhKY0DEdyXG/vj5AU2BaPZTOzeXjtOw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>login</title>
+</head>
+
+<body>
+<div class="header">
+
+    <!--Content before waves-->
+    <div class="inner-header flex">
+        <!--Just the logo.. Don't mind this-->
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login_background.css' %}">
+        <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve">
+            <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
+   
+        </svg>
+        <h1></h1>
+    </div>
+
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+       
+    </div>
+    <!--Waves end-->
+
+</div>
+<!--Header ends-->
+
+{% block content %}
+{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block page_script %}
+{% endblock%}
+{% block page_script_2%}
+{% endblock %}
+
+</body>
+
+</html>
