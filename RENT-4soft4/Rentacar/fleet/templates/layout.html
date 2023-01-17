@@ -46,9 +46,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
-  <!-- Jquery Date Tables buttons-->
-  <script src="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css"></script>
-  <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+  <!-- Jquery Date Tables-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"
+    integrity="sha512-RtZU3AyMVArmHLiW0suEZ9McadTdegwbgtiQl5Qqo9kunkVg1ofwueXD8/8wv3Af8jkME3DDe3yLfR8HSJfT2g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
@@ -78,9 +82,7 @@
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <!-- Custom script -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <!-- <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="jquery-3.6.1.min.js"></script> -->
+ 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.4.1
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -88,6 +90,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 
 <body>
 
@@ -129,8 +132,8 @@
           </a><!-- End Notification Icon -->
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
-              You have {{counter}} new notifications
-              <a href="/fleet/contracts/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              You have {{counter}} contracts with debt
+              <a href="/fleet/contract-in-debt/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             {% endwith %}
             {% endif %}
@@ -172,7 +175,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li class="dropdown-header">
-              You have {{counter}} new messages
+              You have {{counter}} vehicles returning soon
               <a href="/fleet/instant-availability/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             {% endwith %}
@@ -213,8 +216,8 @@
   
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
               <li class="dropdown-header">
-                You have {{counter}} new messages
-                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                You have {{counter}} vehicle payment reminders
+                <a href="/fleet/vehicle-payment/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
               </li>
               {% endwith %}
               {% endif %}
@@ -278,13 +281,6 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="account-settings">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-
-            <li>
               <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
@@ -324,18 +320,18 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#customerMan-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Customer Management</span><i
+          <i class="fa-regular fa-circle-user"></i><span>Customer Management</span><i
             class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="customerMan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/customer-create/">
-              <i class="bi bi-circle"></i><span>New Customer</span>
+              <i class="fa-solid fa-user-plus"></i><span>New Customer</span>
             </a>
           </li>
           <li>
             <a href="/fleet/my-customer/">
-              <i class="bi bi-circle"></i><span>My Customers</span>
+              <i class="fa-solid fa-users"></i></i><span>My Customers</span>
             </a>
           </li>
 
@@ -345,71 +341,71 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#rentaCar-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Rent A Car</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-car"></i><span>Rent A Car</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="rentaCar-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/contract-create/">
-              <i class="bi bi-circle"></i><span>New Contract</span>
+              <i class="fa-solid fa-pen-to-square"></i><span>New Contract</span>
             </a>
           </li>
           <li>
             <a href="/fleet/reservation-create/">
-              <i class="bi bi-circle"></i><span>New Reservation</span>
+              <i class="bi bi-clipboard-check-fill"></i><span>New Reservation</span>
             </a>
           </li>
           <li>
             <a href="/fleet/contracts/">
-              <i class="bi bi-circle"></i><span>Vehicle Sales Contract</span>
+              <i class="bi bi-file-text-fill"></i><span>Vehicle Sales Contract</span>
             </a>
           </li>
           <li>
             <a href="/fleet/reservations/">
-              <i class="bi bi-circle"></i><span>My Reservation</span>
+              <i class="bi bi-stickies-fill"></i><span>My Reservation</span>
             </a>
           </li>
           <li>
             <a href="/fleet/instant-availability/">
-              <i class="bi bi-circle"></i><span>Instant Availbility</span>
+              <i class="bx bxs-alarm-exclamation"></i><span>Instant Availbility</span>
             </a>
           </li>
           <li>
             <a href="/fleet/general-availability/">
-              <i class="bi bi-circle"></i><span>General Availbility</span>
+              <i class="bi bi-calendar-date-fill"></i><span>General Availbility</span>
             </a>
           </li>
           <li>
             <a href="/fleet/additional-service/">
-              <i class="bi bi-circle"></i><span>Additional Service Management</span>
+              <i class="ri ri-checkbox-multiple-fill"></i><span>Additional Service Management</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#route-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>Route Management</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-signs-post"></i><span>Route Management</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="route-nav" class="nav-content collapse " data-bs-parent="#rentaCar-nav">
 
               <li>
                 <a href="/fleet/regions/">
-                  <i class="bi bi-circle"></i><span>Regions</span>
+                  <i class="fa-solid fa-globe"></i><span>Regions</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/region-create/">
-                  <i class="bi bi-circle"></i><span>Add Region</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add Region</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/stops/">
-                  <i class="bi bi-circle"></i><span>Stops</span>
+                  <i class="bi bi-geo-alt-fill"></i><span>Stops</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/stop-create/">
-                  <i class="bi bi-circle"></i><span>Add Stop</span>
+                  <i class="fa-solid fa-square-plus"></i></i><span>Add Stop</span>
                 </a>
               </li>
 
@@ -421,26 +417,26 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#vhicleMan-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Vehicle Management</span><i
+          <i class="fa-solid fa-screwdriver-wrench"></i><span>Vehicle Management</span><i
             class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="vhicleMan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#mytools-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>My Tools</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-truck"></i><span>My Tools</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="mytools-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle/">
-                  <i class="bi bi-circle"></i><span>Vehicle List</span>
+                  <i class="fa-solid fa-truck-fast"></i><span>Vehicle List</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicle-create/">
-                  <i class="bi bi-circle"></i><span>Add Vehicle</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle</span>
                 </a>
               </li>
 
@@ -449,35 +445,35 @@
 
           <li>
             <a href="/fleet/vehicle-history/">
-              <i class="bi bi-circle"></i><span>Vehicle History</span>
+              <i class="fa-solid fa-clock-rotate-left"></i><span>Vehicle History</span>
             </a>
           </li>
           <li>
             <a href="/fleet/vehicle-maintenance-record/">
-              <i class="bi bi-circle"></i><span>Vehicle Maintenance Records</span>
+              <i class="bx bxs-car-mechanic"></i><span>Vehicle Maintenance Records</span>
             </a>
           </li>
           <li>
-            <a href="/fleet/vehicle-maintenance/">
-              <i class="bi bi-circle"></i><span>Car Care</span>
+            <a href="/fleet/car-care/">
+              <i class="bi bi-gear-fill"></i><span>Car Care</span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#vehicleType-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>Vehicle Type</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-share-nodes"></i><span>Vehicle Type</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="vehicleType-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle-type/">
-                  <i class="bi bi-circle"></i><span>Vehicle Type</span>
+                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Type</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicleType-create">
-                  <i class="bi bi-circle"></i><span>Add Vehicle Type</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Type</span>
                 </a>
               </li>
 
@@ -486,19 +482,19 @@
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#vehicleBrand-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>Vehicle Brand</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-copyright"></i><span>Vehicle Brand</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="vehicleBrand-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle-Brand/">
-                  <i class="bi bi-circle"></i><span>Vehicle Brand</span>
+                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Brand</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicleBrand-create/">
-                  <i class="bi bi-circle"></i><span>Add Vehicle Brand</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Brand</span>
                 </a>
               </li>
 
@@ -507,19 +503,19 @@
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#vehicleModel-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>Vehicle Model</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-tags"></i><span>Vehicle Model</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="vehicleModel-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle-model/">
-                  <i class="bi bi-circle"></i><span>Vehicle Model</span>
+                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Model</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicleModel-create/">
-                  <i class="bi bi-circle"></i><span>Add Vehicle Model</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Model</span>
                 </a>
               </li>
 
@@ -532,19 +528,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#author-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Authorization</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-user-lock"></i><span>Authorization</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="author-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/my-account/">
-              <i class="bi bi-circle"></i><span>My Account</span>
-            </a>
-          </li>
-        </ul>
-        <ul id="author-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="/fleet/account-settings/">
-              <i class="bi bi-circle"></i><span>Account settings</span>
+              <i class="bi bi-shield-lock-fill"></i><span>My Account</span>
             </a>
           </li>
         </ul>
@@ -558,63 +547,59 @@
         <ul id="accounting-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/safe/">
-              <i class="bi bi-circle"></i><span>Safe</span>
+              <i class="ri ri-safe-fill"></i><span>Safe</span>
             </a>
           </li>
           <li>
             <a href="/fleet/income-report/">
-              <i class="bi bi-circle"></i><span>Income Report</span>
+              <i class="bi bi-clipboard-minus"></i><span>Income Report</span>
             </a>
           </li>
           <li>
             <a href="/fleet/expense-report/">
-              <i class="bi bi-circle"></i><span>Expense Report</span>
+              <i class="bi bi-clipboard-plus"></i><span>Expense Report</span>
             </a>
           </li>
           <li>
             <!-- Double tree inside each other -->
             <a class="nav-link collapsed" data-bs-target="#mybook-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>My Accounting Book</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-book"></i><span>My Accounting Book</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="mybook-nav" class="nav-content collapse " data-bs-parent="#accounting-nav">
 
               <li>
-                <a href="/fleet/collections/">
-                  <i class="bi bi-circle"></i><span>All Records</span>
+                <a href="/fleet/current-accounts/">
+                  <i class="bx bxs-chevrons-right"></i><span>All Records</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicle-expenses/">
-                  <i class="bi bi-circle"></i><span>Vehicle Expense</span>
+                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Expense</span>
                 </a>
               </li>
 
               <li>
-                <a href="/fleet/collection-create/">
-                  <i class="bi bi-circle"></i><span>Collection</span>
+                <a href="/fleet/collections/">
+                  <i class="fa-solid fa-hand-holding-dollar"></i><span>Collection</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/expenses/">
-                  <i class="bi bi-circle"></i><span>Expense Records</span>
+                  <i class="fa-solid fa-minus"></i><span>Expense Records</span>
                 </a>
               </li>
-              <li>
-                <a href="/fleet/expense-create/">
-                  <i class="bi bi-circle"></i><span>Add Expense</span>
-                </a>
-              </li>
+
               <li>
                 <a href="/fleet/sales-create/">
-                  <i class="bi bi-circle"></i><span>Sales Invoice</span>
+                  <i class="fa-solid fa-plus"></i><span>Sales Invoice</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicle-expense-create/">
-                  <i class="bi bi-circle"></i><span>Add Vehicle Expense Record</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Expense Record</span>
                 </a>
               </li>
 
@@ -625,37 +610,37 @@
 
           <li>
             <a class="nav-link collapsed" data-bs-target="#currentAccount-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>Current Accounts</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-list-check"></i><span>Current Accounts</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="currentAccount-nav" class="nav-content collapse " data-bs-parent="#accounting-nav">
 
               <li>
                 <a href="/fleet/current-accounts/">
-                  <i class="bi bi-circle"></i><span>All Curent Accounts</span>
+                  <i class="bx bxs-chevrons-right"></i><span>All Curent Accounts</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/account-create/">
-                  <i class="bi bi-circle"></i><span>Add Current Account</span>
+                  <i class="fa-solid fa-square-plus"></i></i><span>Add Current Account</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/merge-account/">
-                  <i class="bi bi-circle"></i><span>Merge Current Account</span>
+                  <i class="fa-solid fa-object-group"></i><span>Merge Current Account</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/current-account-status/">
-                  <i class="bi bi-circle"></i><span>Status Statement</span>
+                  <i class="bx bx-trending-up"></i><span>Status Statement</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/current-account-statement/">
-                  <i class="bi bi-circle"></i><span>Account Statement</span>
+                  <i class="bi bi-stickies-fill"></i><span>Account Statement</span>
                 </a>
               </li>
 
@@ -664,19 +649,19 @@
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#accountItems-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-circle"></i><span>Accounting Items</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-chart-pie"></i><span>Accounting Items</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="accountItems-nav" class="nav-content collapse " data-bs-parent="#accounting-nav">
 
               <li>
                 <a href="/fleet/items/">
-                  <i class="bi bi-circle"></i><span>All Items</span>
+                  <i class="bx bxs-chevrons-right"></i><span>All Items</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/item-create/">
-                  <i class="bi bi-circle"></i><span>Add New Item</span>
+                  <i class="fa-solid fa-square-plus"></i><span>Add New Item</span>
                 </a>
               </li>
 
@@ -689,27 +674,28 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#reminder-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Reminders</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-bell"></i><span>Reminders</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="reminder-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/vehicle-payment/">
-              <i class="bi bi-circle"></i><span>Vehicle Payment Reminders</span>
+              <i class="bi bi-calendar-day-fill"></i><span>Vehicle Payment Reminders</span>
             </a>
           </li>
           <li>
             <a href="/fleet/add-vehicle-payment/">
-              <i class="bi bi-circle"></i><span>Add Vehicle Payment Reminders</span>
+              <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Payment Reminders</span>
             </a>
           </li>
           <li>
             <a href="/fleet/bulk-vehicle-payment/">
-              <i class="bi bi-circle"></i><span>Bulk Add Vehicle Payment Reminders</span>
+              <i class="fa-solid fa-square-plus"></i><span>Bulk Add Vehicle Payment Reminders</span>
             </a>
           </li>
         </ul>
       </li>
     </ul>
+
 
   </aside>
   <!-- End Sidebar-->
@@ -725,7 +711,13 @@
     </div>
   </main><!-- End Page Title -->
 
+  <footer id="footer" class="footer" style="position:relative">
 
+    <div class="copyright">
+      &copy; Copyright <strong><span>4Soft4</span></strong>. All Rights Reserved
+    </div>
+
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>

@@ -28,11 +28,9 @@ class FileTypeModel(models.Model):
     updated_at=models.DateTimeField(auto_now_add=True)
     class Meta:
         db_table="file_type"
-class UserModel(models.Model):
-    user_type_id=models.IntegerField()
-    name=models.CharField(max_length=100)
-    email=models.EmailField(max_length=100)
-    password=models.CharField(max_length=100)
+class UserProfileModel(models.Model):
+    profile_picture=models.CharField(max_length=250)
+    auth_user_id=models.IntegerField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
     class Meta:

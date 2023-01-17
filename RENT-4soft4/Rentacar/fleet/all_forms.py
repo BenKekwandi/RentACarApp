@@ -30,7 +30,7 @@ from fleet.models import PaymentStatusModel
 from fleet.models import PricingMethodModel
 from fleet.models import PlaceModel
 from fleet.models import AdditionalToolUserModel
-from fleet.models import UserModel
+from fleet.models import UserProfileModel
 from fleet.models import UserTypeModel
 from fleet.models import AccountingEventModel
 from fleet.models import AccountingEventTypeModel
@@ -52,7 +52,7 @@ class FileTypeForm(ModelForm):
         fields='__all__'
 class UserForm(ModelForm):
     class Meta:
-        model=UserModel
+        model=UserProfileModel
         fields='__all__'
 class CustomerTypeForm(ModelForm):
     class Meta:

@@ -1,0 +1,4 @@
+django
+pymysql
+django-crispy-forms
+forex_python

@@ -46,7 +46,7 @@ from fleet.models import AccountHistoryModel
 from random import randint
 #from fleet.forms import CustomerForm
 #from fleet.forms import UserForm
-from fleet.models import UserModel
+from fleet.models import UserProfileModel
 from fleet.models import UserTypeModel
 from fleet.models import AccountingEventModel
 from fleet.models import AccountingEventTypeModel
@@ -357,12 +357,13 @@ def account_statement(account_id,category,payment_date,notes,fee_amount):
     statement.fee_amount=fee_amount
     statement.notes=notes
     statement.save()
-def acc_history(account_id,amount_fee,currency_id,notes):
+def acc_history(account_id,amount_fee,currency_id,notes,acc_event):
     acc_history=AccountHistoryModel()
     acc_history.account_id=account_id
     acc_history.amount=amount_fee
     acc_history.currency_id=currency_id
     acc_history.notes=notes
+    acc_history.accounting_event=acc_event
     acc_history.save()
 def payment_insert(method,status,fee_amount,payment_for):
     payment=PaymentModel()
@@ -646,6 +647,11 @@ def contracts(request):
     contracts=ContractModel.objects.all()
     return render(request,'rent_a_car/contracts.html',{'contracts':contracts,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
+def contract_in_debt(request):
+    reminders=reminder(request)
+    contracts=ContractModel.objects.all()
+    return render(request,'rent_a_car/contract_in_debt.html',{'contracts':contracts,'reminders':reminders})
+@login_required(login_url='/./authentication/admin-login')
 def view_contract(request,id):
     reminders=reminder(request)
     contract=ContractModel.objects.get(id=id)
@@ -784,7 +790,8 @@ def edit_contract(request,id):
             contract.save()
             acc(payment_id)
             notes=note
-            acc_history(ac,paid_fee,CurrencyModel.objects.get(currency_code=payment_currency).id,notes)
+            acc_event=AccountingEventTypeModel.objects.get(event_type="income").id
+            acc_history(ac,paid_fee,CurrencyModel.objects.get(currency_code=payment_currency).id,notes,acc_event)
             return redirect('/fleet/contracts/')
         if request.POST.get('cancel_contract_submit'):
             contract=ContractModel.objects.get(id=id)
@@ -1109,8 +1116,9 @@ def vehicle(request):
 @login_required(login_url='/./authentication/admin-login')
 def authorization(request):
     reminders=reminder(request)
-    accounts=CurrentAccountModel.objects.all()
-    return render(request, 'authorization/myAccount.html',{'accounts':accounts,'reminders':reminders})
+    profile=UserProfileModel.objects.get(auth_user_id=request.user.id)
+    print(profile.profile_picture)
+    return render(request, 'authorization/myAccount.html',{'profile':profile,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
 def auth_setting(request):
     reminders=reminder(request)
@@ -1362,12 +1370,8 @@ def bulkvehiclePaymentReminder(request):
     return render(request, 'reminders/bulkVehiclePayment.html',{'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
 def vehiclePaymentReminder(request):
-    remind=reminder(request)
-    reminders=VehiclePaymentReminderModel.objects.all()
-    for reminder in reminders:
-        reminder.currency=CurrencyModel.objects.get(id=reminder.currency_id).currency_code
-        reminder.vehicle=VehicleModel.objects.get(id=reminder.vehicle_id).vehicle_plate_number
-    return render(request, 'reminders/vehiclePayment.html',{'reminders':remind})
+    reminders=reminder(request)
+    return render(request, 'reminders/vehiclePayment.html',{'reminders':reminders})
 # end of Reminders
 
 
@@ -1513,26 +1517,28 @@ def insert_collection(request):
         payment_fee=(paid_fee*payment_exchange_rate)/payment_exchange_rate
         payment_id=payment_insert(request.POST.get('paymentType'),'pending',payment_fee,'income')
         ac=0
+        note=''
         if request.POST.get('paymentType')=='Mail order':
-            ac=MailOrderPayment_insert(payment_id,request.POST.get('mailAccount'),request.POST.get('cardNumber'),request.POST.get('cardHolder'),request.POST.get('cvc'),request.POST.get('cardExYear'),request.POST.get('cardExMonth'))
+            ac,note=MailOrderPayment_insert(payment_id,request.POST.get('mailAccount'),request.POST.get('cardNumber'),request.POST.get('cardHolder'),request.POST.get('cvc'),request.POST.get('cardExYear'),request.POST.get('cardExMonth'))
         if request.POST.get('paymentType')=='Check':
-            ac=CheckPayment_insert(payment_id,request.POST.get('checkingNumber'),request.POST.get('checkingAccount'),request.POST.get('checkHolder'),request.POST.get('checkCash'),request.POST.get('checkReceipt'))
+            ac,note=CheckPayment_insert(payment_id,request.POST.get('checkingNumber'),request.POST.get('checkingAccount'),request.POST.get('checkHolder'),request.POST.get('checkCash'),request.POST.get('checkReceipt'))
         if request.POST.get('paymentType')=='Transfer':
-            ac=TransferPayment_insert(payment_id,request.POST.get('transferredBankAcc'))
+            ac,note=TransferPayment_insert(payment_id,request.POST.get('transferredBankAcc'))
         if request.POST.get('paymentType')=='Credit card':
-            ac=CreditCardPayment_insert(payment_id,request.POST.get('posAcc'),request.POST.get('bankFee'),request.POST.get('cardHolder'))
+            ac,note=CreditCardPayment_insert(payment_id,request.POST.get('posAcc'),request.POST.get('bankFee'),request.POST.get('cardHolder'))
         if request.POST.get('paymentType')=='found':
-            ac=FoundPayment_insert(payment_id,request.POST.get('cashAccount'))
+            ac,note=FoundPayment_insert(payment_id,request.POST.get('cashAccount'))
         if request.POST.get('paymentType')=='look for':
-            ac=DefaultPayment_insert(payment_id,request.POST.get('debitedAcc'))
+            ac,note=DefaultPayment_insert(payment_id,request.POST.get('debitedAcc'))
         collection.save()
         category=collection.collection_category
         payment_date=collection.payment_date
         notes=str(collection.fee_amount)+str(CurrencyModel.objects.get(collection.currency_id).currency_code)+ ' paid by '+str(CurrentAccountModel.objects.get(account_name=request.POST.get('providerAccount')).account_name)+' for '+str(collection.collection_category)
         fee_amount=collection.fee_amount
         account_statement(account.id,category,payment_date,notes,fee_amount)
-        #notes=''
-        acc_history(ac,paid_fee,collection.currency_id,notes)
+        notes=note
+        acc_event=AccountingEventTypeModel.objects.get(event_type="income").id
+        acc_history(ac,paid_fee,collection.currency_id,notes,acc_event)
 def insert_expense(request):
     if request.method == 'POST':
         expense=ExpenseModel()
@@ -1552,26 +1558,28 @@ def insert_expense(request):
         payment_fee=(paid_fee*payment_exchange_rate)/payment_exchange_rate
         payment_id=payment_insert(request.POST.get('paymentType'),'pending',payment_fee,'income')
         ac=0
+        note=''
         if request.POST.get('paymentType')=='Mail order':
-            ac=MailOrderPayment_insert(payment_id,request.POST.get('mailAccount'),request.POST.get('cardNumber'),request.POST.get('cardHolder'),request.POST.get('cvc'),request.POST.get('cardExYear'),request.POST.get('cardExMonth'))
+            ac,note=MailOrderPayment_insert(payment_id,request.POST.get('mailAccount'),request.POST.get('cardNumber'),request.POST.get('cardHolder'),request.POST.get('cvc'),request.POST.get('cardExYear'),request.POST.get('cardExMonth'))
         if request.POST.get('paymentType')=='Check':
-            ac=CheckPayment_insert(payment_id,request.POST.get('checkingNumber'),request.POST.get('checkingAccount'),request.POST.get('checkHolder'),request.POST.get('checkCash'),request.POST.get('checkReceipt'))
+            ac,note=CheckPayment_insert(payment_id,request.POST.get('checkingNumber'),request.POST.get('checkingAccount'),request.POST.get('checkHolder'),request.POST.get('checkCash'),request.POST.get('checkReceipt'))
         if request.POST.get('paymentType')=='Transfer':
-            ac=TransferPayment_insert(payment_id,request.POST.get('transferredBankAcc'))
+            ac,note=TransferPayment_insert(payment_id,request.POST.get('transferredBankAcc'))
         if request.POST.get('paymentType')=='Credit card':
-            ac=CreditCardPayment_insert(payment_id,request.POST.get('posAcc'),request.POST.get('bankFee'),request.POST.get('cardHolder'))
+            ac,note=CreditCardPayment_insert(payment_id,request.POST.get('posAcc'),request.POST.get('bankFee'),request.POST.get('cardHolder'))
         if request.POST.get('paymentType')=='found':
-            ac=FoundPayment_insert(payment_id,request.POST.get('cashAccount'))
+            ac,note=FoundPayment_insert(payment_id,request.POST.get('cashAccount'))
         if request.POST.get('paymentType')=='look for':
-            ac=DefaultPayment_insert(payment_id,request.POST.get('debitedAcc'))
+            ac,note=DefaultPayment_insert(payment_id,request.POST.get('debitedAcc'))
         expense.save()
         category=expense.expense_category
         payment_date=expense.payment_date
         notes=str(expense.fee_amount)+str(CurrencyModel.objects.get(expense.currency_id).currency_code)+ ' paid to '+str(CurrentAccountModel.objects.get(account_name=request.POST.get('providerAccount')).account_name)+' for '+str(expense.expense_category)
         fee_amount=0
         account_statement(account.id,category,payment_date,notes,fee_amount)
-        #notes=''
-        acc_history(ac,paid_fee,expense.currency_id,notes)
+        notes=note
+        acc_event=AccountingEventTypeModel.objects.get(event_type="expense").id
+        acc_history(ac,paid_fee,expense.currency_id,notes,acc_event)
 def insert_vehicle_expense(request):
     if request.method=='POST':
         vehicle_expense=VehicleExpenseModel()
@@ -1812,3 +1820,11 @@ def availability_json(request):
 @login_required(login_url='/./authentication/admin-login')
 def general_availability_json(request):
     pass
+@login_required(login_url='/./authentification/admin-login')
+def reminder_json(request):
+    data=VehiclePaymentReminderModel.objects.all().values()
+    new_data=list(data)
+    for dt in new_data:
+        dt['currency']=CurrencyModel.objects.get(id=dt['currency_id']).currency_code
+        dt['vehicle']=VehicleModel.objects.get(id=dt['vehicle_id']).vehicle_plate_number
+    return JsonResponse(new_data,safe=False)

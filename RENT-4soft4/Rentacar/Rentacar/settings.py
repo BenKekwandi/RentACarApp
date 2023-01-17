@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'Rentacar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rentacar_django',
+        'NAME': 'fleet_django',
         'USER': 'root',
         'HOST': 'localhost',
         'PORT': '3306',

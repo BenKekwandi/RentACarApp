@@ -20,6 +20,7 @@ urlpatterns = [
     #contract
     path('contract-create/', views.contractCreate),
     path('contracts/', views.contracts),
+    path('contract-in-debt/',views.contract_in_debt),
     path('contract-view/<int:id>/', views.view_contract),
     path('contract-edit/<int:id>/', views.edit_contract),
     path('contract-delete/<int:id>/', views.delete_contract),
@@ -173,6 +174,7 @@ urlpatterns = [
     path('vehicle-model-json',views.vehicle_model_json),
     path('item-json/',views.item_json),
     path('region-json/',views.region_json),
-    path('stop-json/',views.stop_json)
+    path('stop-json/',views.stop_json),
+    path('reminder-json/',views.reminder_json)
     
 ]
