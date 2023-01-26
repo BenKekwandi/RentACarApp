@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
+{% load i18n %}
 <style type="text/css">
     .nav-tabs-custom>.nav-tabs>li.active {
         border-top-color: #00a65a !important;
@@ -98,7 +99,7 @@
     <div class="col-md-12">
         <div class="card border-warning">
             <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add Vehicle
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i>{% trans "Add Vehicle" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -113,14 +114,14 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="plate" class="form-label">Plate</label>
+                                    <label for="plate" class="form-label">{% trans "Plate number" %}</label>
                                     <input type="text" name="plate" id="plate" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="model" class="form-label">Model</label>
+                                    <label for="model" class="form-label">{% trans "Model" %}</label>
                                     <select name="model" id="model" class="form-control">
 
                                         {% for model in models %}
@@ -136,7 +137,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="trafficYear" class="form-label">Traffic Release Year</label>
+                                    <label for="trafficYear" class="form-label">{% trans "Traffic Release Year" %}</label>
                                     <input type="number" min=2000 max=2050 step=1 name="trafficYear" id="trafficYear" class="form-control">
                                 </div>
                             </div>
@@ -144,7 +145,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="vehicleStatus" class="form-label">Vehicle Status</label>
+                                    <label for="vehicleStatus" class="form-label">{% trans "Vehicle Status" %}</label>
                                     <select name="vehicleStatus" id="vehicleStatus" class="form-control">
 
 
@@ -160,13 +161,13 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="vehicleLocation" class="form-label">Location of Vehicle</label>
+                                    <label for="vehicleLocation" class="form-label">{% trans "Location of Vehicle" %}</label>
                                     <input type="text" name="vehicleLocation" id="vehicleLocation" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="vehiclePicture" class="form-label">Picture of the vehicle</label>
+                                    <label for="vehiclePicture" class="form-label">{% trans "Picture of the vehicle" %}</label>
                                     {{form.vehicle_picture}}
                                 </div>
                             </div>

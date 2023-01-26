@@ -1,10 +1,11 @@
 {% extends 'layout.html'%}
 {% block content %}
+{% load i18n %}
 <div class="row">
     <div class="col-md-12">
         <div class="card card-success">
 
-            <h1 class="panel-title text-center">Add New Customer</h1>
+            <h1 class="panel-title text-center">{% trans "Add New Customer" %}</h1>
 
 
 
@@ -13,17 +14,17 @@
                 {% csrf_token %}
                 <div class="customer-type">
                     <br>
-                    <h3>Customer Type</h3>
+                    <h3>{% trans "Customer Type" %}</h3>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <label class="input-group-text" for="customerType">Customer Type</label>
+                                        <label class="input-group-text" for="customerType">{% trans "Customer Type" %}</label>
                                     </div>
                                     <select name="customerType" id="customerType" class="form-control">
                                         {% for customer_type in customer_types %}
-                                        <option>{{customer_type.type}}</option>
+                                        <option>customer_type.type</option>
                                         {% endfor %}
                                     </select>
                                 </div>
@@ -34,7 +35,7 @@
                 </div>
 
                 <div class="id-info">
-                    <h3><i class="fa fa-user"></i>ID information</h3>
+                    <h3><i class="fa fa-user"></i>{% trans "ID information" %}</h3>
                     <div class="row">
 
                         <div class="col-md-12">
@@ -42,7 +43,7 @@
                                 <i class="icon fa-solid fa-tag fa-lg"></i>
                                 <input type="text" name="customerTitle" id="customerTitle" placeholder="Customer Title"
                                     class="form-control">
-                                <label for="customerTitle" class="form-label">Customer Title</label>
+                                <label for="customerTitle" class="form-label">{% trans "Customer Title" %}</label>
                             </div>
                         </div>
 
@@ -52,7 +53,7 @@
                                 <i class="icon fa-solid fa-user-tie fa-lg"></i>
                                 <input type="text" name="firstName" id="firstName" class="form-control"
                                     placeholder="Name">
-                                <label for="firstName" class="form-label">Name</label>
+                                <label for="firstName" class="form-label">{% trans "Name" %}</label>
                             </div>
                         </div>
 
@@ -61,7 +62,7 @@
                                 <i class="icon fa-solid fa-user-tie fa-lg"></i>
                                 <input type="text" name="surname" id="surname" class="form-control"
                                     placeholder="Surname">
-                                <label for="surname" class="form-label">Surname</label>
+                                <label for="surname" class="form-label">{% trans "Surname" %}</label>
                             </div>
                         </div>
 
@@ -69,7 +70,7 @@
                             <div class="form-floating">
                                 <i class="icon fa-solid fa-pen-to-square fa-lg"></i>
                                 <input type="text" name="idNo" id="idNo" class="form-control" placeholder="ID Number">
-                                <label for="idNo" class="form-label">ID Number</label>
+                                <label for="idNo" class="form-label">{% trans "ID Number" %}</label>
                             </div>
                         </div>
 
@@ -78,7 +79,7 @@
                                 <i class="icon fa-solid fa-pen-to-square fa-lg"></i>
                                 <input type="text" name="passportNo" id="passportNo" class="form-control"
                                     placeholder="Passport Number">
-                                <label for="passportNo" class="form-label">Passport Number</label>
+                                <label for="passportNo" class="form-label">{% trans "Passport Number" %}</label>
                             </div>
                         </div>
 
@@ -87,7 +88,7 @@
                                 <i class="icon fa-solid fa-cake-candles fa-lg"></i>
                                 <input type="date" name="birthDate" id="birthDate" class="form-control"
                                     placeholder="Date of birth">
-                                <label for="birthDate" class="form-label">Date of birth</label>
+                                <label for="birthDate" class="form-label">{% trans "Date of birth" %}</label>
                             </div>
                         </div>
 
@@ -96,7 +97,7 @@
                                 <i class="icon fa-solid fa-location-dot fa-lg"></i>
                                 <input type="text" name="birthPlace" id="birthPlace" class="form-control"
                                     placeholder="Place of birth">
-                                <label for="birthPlace" class="form-label">Place of birth</label>
+                                <label for="birthPlace" class="form-label">{% trans  "Place of birth" %}</label>
                             </div>
                         </div>
 
@@ -105,7 +106,7 @@
                                 <i class="icon fa-solid fa-earth fa-lg"></i>
                                 <input type="text" name="country" id="country" class="form-control"
                                     placeholder="Country">
-                                <label for="country" class="form-label">Country</label>
+                                <label for="country" class="form-label">{% trans "Country" %}</label>
                             </div>
                         </div>
 
@@ -114,7 +115,7 @@
                                 <i class="icon fa-solid fa-users fa-lg"></i>
                                 <input type="text" name="nationality" id="nationality" class="form-control"
                                     placeholder="Nationality">
-                                <label for="nationality" class="form-label">Nationality</label>
+                                <label for="nationality" class="form-label">{% trans "Nationality" %}</label>
                             </div>
                         </div>
 
@@ -123,7 +124,7 @@
                                 <i class="icon fa-solid fa-person-dress fa-lg"></i>
                                 <input type="text" name="motherName" id="motherName" class="form-control"
                                     placeholder="Mother Name">
-                                <label for="motherName" class="form-label">Mother Name</label>
+                                <label for="motherName" class="form-label">{% trans "Mother Name" %}</label>
                             </div>
                         </div>
 
@@ -132,7 +133,7 @@
                                 <i class="icon fa-solid fa-person fa-lg"></i>
                                 <input type="text" name="fatherName" id="fatherName" class="form-control"
                                     placeholder="Father Name">
-                                <label for="fatherName" class="form-label">Father Name</label>
+                                <label for="fatherName" class="form-label">{% trans "Father Name" %}</label>
                             </div>
                         </div>
 
@@ -140,7 +141,7 @@
                             <div class="form-floating">
                                 <i class="icon fa-solid fa-gears fa-lg"></i>
                                 <input type="text" name="job" id="job" class="form-control" placeholder="Job">
-                                <label for="job" class="form-label">Job</label>
+                                <label for="job" class="form-label">{% trans "Job" %}</label>
                             </div>
                         </div>
 
@@ -149,7 +150,7 @@
 
                 <!-- Contact Information part -->
                 <div class="contact-info">
-                    <h3> <i class="fa fa-phone-flip"></i> Contact information</h3>
+                    <h3> <i class="fa fa-phone-flip"></i>{% trans "Contact information" %}</h3>
                     <div class="row">
 
                         <div class="col-md-3">
@@ -157,7 +158,7 @@
                                 <i class="icon fa-solid fa-mobile fa-lg"></i>
                                 <input type="text" name="mobilePhone1" id="mobilePhone1" class="form-control"
                                     placeholder="Mobile Phone">
-                                <label for="mobilePhone1" class="form-label">Mobile Phone</label>
+                                <label for="mobilePhone1" class="form-label">{% trans "Mobile Phone" %}</label>
                             </div>
                         </div>
 
@@ -167,7 +168,7 @@
 
                                 <input type="text" name="homePhone1" id="homePhone1" class="form-control"
                                     placeholder="Home Phone">
-                                <label for="homePhone1" class="form-label">Home Phone</label>
+                                <label for="homePhone1" class="form-label">{% trans "Home Phone" %}</label>
                             </div>
                         </div>
 
@@ -176,7 +177,7 @@
                                 <i class="icon fa-solid fa-phone-volume fa-lg"></i>
                                 <input type="text" name="officePhone" id="officePhone" class="form-control"
                                     placeholder="Office Phone">
-                                <label for="officePhone" class="form-label">Office Phone</label>
+                                <label for="officePhone" class="form-label">{% trans "Office Phone" %}</label>
                             </div>
                         </div>
 
@@ -185,7 +186,7 @@
                                 <i class="icon fa-solid fa-mobile fa-lg"></i>
                                 <input type="text" name="mobilePhone2" id="mobilePhone2" class="form-control"
                                     placeholder="Mobile Phone 2">
-                                <label for="mobilePhone2" class="form-label">Mobile Phone 2</label>
+                                <label for="mobilePhone2" class="form-label">{% trans "Mobile Phone" %} 2</label>
                             </div>
                         </div>
 
@@ -194,7 +195,7 @@
                                 <i class="icon fa-solid fa-phone fa-lg"></i>
                                 <input type="text" name="homePhone2" id="homePhone2" class="form-control"
                                     placeholder="Home Phone 2">
-                                <label for="homePhone2" class="form-label">Home Phone 2</label>
+                                <label for="homePhone2" class="form-label">{% trans "Home Phone" %} 2</label>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -202,7 +203,7 @@
                                 <i class="icon fa-solid fa-mobile-screen-button fa-lg"></i>
                                 <input type="text" name="businessPhone" id="businessPhone" class="form-control"
                                     placeholder="Business Phone">
-                                <label for="businessPhone" class="form-label">Business Phone</label>
+                                <label for="businessPhone" class="form-label">{% trans "Business Phone" %}</label>
                             </div>
                         </div>
 
@@ -210,7 +211,7 @@
                             <div class="form-floating">
                                 <i class="icon fa-solid fa-envelope fa-lg"></i>
                                 <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
-                                <label for="email" class="form-label">E-mail</label>
+                                <label for="email" class="form-label">{% trans "E-mail" %}</label>
                             </div>
                         </div>
 
@@ -219,7 +220,7 @@
                                 <i class="icon fa-solid fa-envelope fa-lg"></i>
                                 <input type="email" name="email2" id="email2" class="form-control"
                                     placeholder="E-mail 2">
-                                <label for="email2" class="form-label">E-mail 2</label>
+                                <label for="email2" class="form-label">{% trans "E-mail" %} 2</label>
                             </div>
                         </div>
 
@@ -229,7 +230,7 @@
                                 <i class="icon-textarea fa-solid fa-home-user fa-lg"></i>
                                 <textarea name="homeAddress" id="homeAddress" class="form-control" placeholder="Home Address"
                                     style="height: 100px"></textarea>
-                                <label for="homeAddress" class="form-label">Home Address</label>
+                                <label for="homeAddress" class="form-label">{% trans "Home Address" %}</label>
                             </div>
                         </div>
 
@@ -238,7 +239,7 @@
                                 <i class="icon-textarea fa-solid fa-user-tie fa-lg"></i>
                                 <textarea name="localAddress" id="localAddress" class="form-control"
                                     placeholder="Local Address" style="height: 100px"></textarea>
-                                <label for="localAddress" class="form-label">Local Address</label>
+                                <label for="localAddress" class="form-label">{% trans "Local Address" %}</label>
                             </div>
                         </div>
 
@@ -247,7 +248,7 @@
                                 <i class="icon-textarea fa-solid fa-house-laptop fa-lg"></i>
                                 <textarea name="businessAddress" id="businessAddress" class="form-control"
                                     placeholder="Business Address" style="height: 100px"></textarea>
-                                <label for="businessAddress" class="form-label">Business Address</label>
+                                <label for="businessAddress" class="form-label">{% trans "Business Address" %}</label>
                             </div>
                         </div>
 
@@ -256,7 +257,7 @@
 
                 <!-- Driver License Information part -->
                 <div class="driver-info">
-                    <h3><i class="fa fa-car"></i> Driver's Licence information</h3>
+                    <h3><i class="fa fa-car"></i> {% trans "Driver's Licence information" %}</h3>
                     <div class="row">
 
                         <div class="col-md-4">
@@ -264,7 +265,7 @@
                                 <i class="icon fa-solid fa-id-card fa-lg"></i>
                                 <input type="text" name="licenseNo" id="licenseNo" class="form-control"
                                     placeholder="Driver's License Number">
-                                <label for="licenseNo" class="form-label">Driver's License Number</label>
+                                <label for="licenseNo" class="form-label">{% trans "Driver's License Number" %}</label>
                             </div>
                         </div>
 
@@ -273,7 +274,7 @@
                                 <i class="icon fa-solid fa-location-dot fa-lg"></i>
                                 <input type="text" name="licensePlace" id="licensePlace" class="form-control"
                                     placeholder="License Issue Place">
-                                <label for="licensePlace" class="form-label">License Issue Place</label>
+                                <label for="licensePlace" class="form-label">{% trans "License Issue Place" %}</label>
                             </div>
                         </div>
 
@@ -282,7 +283,7 @@
                                 <i class="icon fa-solid fa-calendar fa-lg"></i>
                                 <input type="date" name="licenseDate" id="licenseDate" class="form-control"
                                     placeholder="License Issue Date">
-                                <label for="licenseDate" class="form-label">License Issue Date</label>
+                                <label for="licenseDate" class="form-label">{% trans "License Issue Date" %}</label>
                             </div>
                         </div>
 
@@ -291,14 +292,14 @@
 
                 <!-- Education Information part -->
                 <div class="education-info">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Education Information</h3>
+                    <h3><i class="fa-solid fa-graduation-cap"></i>{% trans "Education Information" %}</h3>
                     <div class="row">
 
                         <div class="col-md-3">
                             <div class="form-floating">
                                 <i class="icon fa-solid fa-school fa-lg"></i>
                                 <input type="text" name="school" id="school" class="form-control" placeholder="School">
-                                <label for="school" class="form-label">School</label>
+                                <label for="school" class="form-label">{% trans "School" %}</label>
                             </div>
                         </div>
 
@@ -307,7 +308,7 @@
                                 <i class="icon fa-solid fa-building-user fa-lg"></i>
                                 <input type="text" name="faculty" id="faculty" class="form-control"
                                     placeholder="Faculty">
-                                <label for="faculty" class="form-label">Faculty</label>
+                                <label for="faculty" class="form-label">{% trans "Faculty" %}</label>
                             </div>
                         </div>
 
@@ -316,7 +317,7 @@
                                 <i class="icon fa-solid fa-pen fa-lg"></i>
                                 <input type="text" name="section" id="section" class="form-control"
                                     placeholder="Section">
-                                <label for="section" class="form-label">Section</label>
+                                <label for="section" class="form-label">{% trans "Section" %}</label>
                             </div>
                         </div>
 
@@ -325,7 +326,7 @@
                                 <i class="icon fa-solid fa-hashtag fa-lg"></i>
                                 <input type="text" name="studentNumber" id="studentNumber" class="form-control"
                                     placeholder="Student Number">
-                                <label for="studentNumber" class="form-label">Student Number</label>
+                                <label for="studentNumber" class="form-label">{% trans "Student Number" %}</label>
                             </div>
                         </div>
 
@@ -336,8 +337,8 @@
                 <div class="haveCheckbox">
                     <div class="row">
                         <div class="form-check checkbox-xl">
-                            <label class="form-check-label" for="checkbox-3"><i class="fa fa-money-bill-1"></i> Customer
-                                Current Account</label>
+                            <label class="form-check-label" for="checkbox-3"><i class="fa fa-money-bill-1"></i> 
+                                {% trans "Customer Current Account" %}</label>
                             <span class="move1"><input class="form-check-input" type="checkbox" value=""
                                     id="have" /></span>
                         </div>
@@ -348,7 +349,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <br><!-- for now keep the break -->
-                                <label for="accountName" class="form-label">Account Name</label>
+                                <label for="accountName" class="form-label">{% trans "Account Name" %}</label>
                                 <input type="text" name="accountName1" id="accountName1" class="form-control">
                                 <br><!-- for now keep the break -->
                                 <input type="text" name="accountName2" id="accountName2" class="form-control">
@@ -370,7 +371,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <br><!-- for now keep the break -->
-                                <label for="accounturrency" class="form-label">Account Currency</label>
+                                <label for="accounturrency" class="form-label">{% trans "Account Currency" %}</label>
                                 <!-- This part for selecting information through options -->
                                 <select name="accounturrency" id="accounturrency" class="form-select">
                                     <option>Turkish lira</option>
@@ -418,7 +419,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="bloodGroup" class="form-label">Blood group</label>
+                                <label for="bloodGroup" class="form-label">{% trans "Blood group" %}</label>
                                 <select name="bloodGroup" id="bloodGroup" class="form-select">
                                     <option>AB</option>
                                     <option>A</option>
@@ -434,7 +435,7 @@
                                 <i class="icon-textarea fa-solid fa-comments fa-lg"></i>
                                 <textarea name="systemNote" id="systemNote" class="form-control" rows="3"
                                     placeholder="System Note" style="height: 100px"></textarea>
-                                <label for="systemNote" class="form-label">System Note</label>
+                                <label for="systemNote" class="form-label">{% trans "System Note" %}</label>
                             </div>
                         </div>
 
@@ -442,7 +443,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <br><!-- for now keep the break -->
-                                <label for="customerDoc" class="form-label">Customer Documents</label>
+                                <label for="customerDoc" class="form-label">{% trans "Customer Documents" %}</label>
                                 <br><!-- for now keep the break -->
                                 <input type="file" name="customerDoc1" id="customerDoc1" class="form-control" multiple>
                             </div>

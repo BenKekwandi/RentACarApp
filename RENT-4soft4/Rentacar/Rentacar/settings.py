@@ -11,11 +11,17 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+LOCALE_PATHS= [
+    BASE_DIR+'/fleet/locale',
+]
 
+print(LOCALE_PATHS)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -49,7 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fleet',
     'authentication',
-    'crispy_forms'
+    'crispy_forms',
+    'rosetta'
     #'captcha'
 ]
 
@@ -63,6 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 ROOT_URLCONF = 'Rentacar.urls'
@@ -134,7 +142,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+LANGUAGES=(
+    ('en','English'),
+    ('tr','Turkish'),
+    ('ru','Russian'),
+    ('fr','French')
+)
 
 TIME_ZONE = 'UTC'
 
@@ -150,9 +165,9 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR/"static",
-    BASE_DIR/"assets",
-    BASE_DIR/"uploads"
+    BASE_DIR+"/static",
+    BASE_DIR+"/assets",
+    BASE_DIR+"/uploads"
 ]
 
 # Default primary key field type

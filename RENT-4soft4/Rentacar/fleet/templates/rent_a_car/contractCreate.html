@@ -1,297 +1,571 @@
 {% extends 'layout.html' %}
 {% block content %}
-
+{% load i18n %}
 
 <div class="row">
     <div class="col-md-12">
         <div class="card border border-primary">
-            <div class="card-header bg bg-primary">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add new Contract1
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i> {% trans "Add new Contract" %}
                 </h3>
             </div>
             <div class="card-body row::before">
-                
+
                 <!--h1 id="something">AMINA KOY</h1-->
                 <!--  Everything inside the body -->
 
                 <!-- Customer Type part-->
                 <form method="post" action="" enctype="multipart/form-data" class="container-sm">
                     {% csrf_token %}
-                    <label class="form-label" for="customer">Customer</option>
-                    <select class="form-select" name="customer" id="customer" required>
-                        <option></option>
-                        {% for customer in customers %}
-                            <option>{{customer.first_name}} {{customer.last_name}}</option>
-                        {% endfor %}
-                    </select>
-
-                    <!-- additional people Information part -->
                     <div class="driver-info">
-                        <h3><i class="fa fa-users"></i> Additional people to use the Tool</h3>
+                        <h3><i class="fa fa-users"></i>{% trans "Additional people to use the Tool" %}</h3>
                         <div class="row">
 
-                            <div class="col-md-2">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="addFullName1" class="form-label">Name and Surname</label>
-                                    <input type="text" name="addFullName1" id="addFullName1" class="form-control">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="customer">{% trans "Customers" %}
+                                            </label>
+                                        </div>
+                                        <select name="customer" id="customer" class="form-control">
+                                            {% for customer in customers %}
+                                            <option>{{customer.first_name}} {{customer.last_name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-user-tie fa-lg"></i>
+                                    <input type="text" name="addFullName1" id="addFullName1"
+                                        placeholder="Name and Surname" class="form-control">
+                                    <label for="addFullName1" class="form-label">{% trans "Name and Surname" %}</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="addIdNo1" class="form-label">Identification Number</label>
-                                    <input type="text" name="addIdNo1" id="addIdNo1" class="form-control">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-tag fa-lg"></i>
+                                    <input type="text" name="addIdNo1" id="addIdNo1" class="form-control"
+                                        placeholder="Identification Number">
+                                    <label for="addIdNo1" class="form-label">{% trans "Identification Number" %}</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="addPassportNumber1" class="form-label">passport Number</label>
-                                    <input type="text" name="addIdNo1" id="addIdNo1" class="form-control">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-tag fa-lg"></i>
+                                    <input type="text" name="addPassportNumber1" id="addPassportNumber1"
+                                        class="form-control" placeholder="passport Number">
+                                    <label for="addPassportNumber1" class="form-label">{% trans "Passport Number" %}</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="addBirthDate1" class="form-label">Birth Date</label>
-                                    <input type="date" name="addBirthDate1" id="addBirthDate1" class="form-control">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-cake-candles fa-lg"></i>
+                                    <input type="date" name="addBirthDate1" id="addBirthDate1" class="form-control"
+                                        placeholder="Birth Date">
+                                    <label for="addBirthDate1" class="form-label">{% trans "Birth Date" %}</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="addNationality1" class="form-label">Nationality</label>
-                                    <input type="text" name="addNationality1" id="addNationality1" class="form-control">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-earth fa-lg"></i>
+                                    <input type="text" name="addNationality1" id="addNationality1" class="form-control"
+                                        placeholder="Nationality">
+                                    <label for="addNationality1" class="form-label">{% trans "Nationality" %}</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="addtelephone1" class="form-label">Telephone</label>
-                                    <input type="text" name="addtelephone1" id="addtelephone1" class="form-control">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-mobile fa-lg"></i>
+                                    <input type="text" name="addtelephone1" id="addtelephone1" class="form-control"
+                                        placeholder="Telephone">
+                                    <label for="addtelephone1" class="form-label">{% trans "Telephone" %}</label>
                                 </div>
                             </div>
-
-                            <hr style="border-style:dashed;">
-
                         </div>
                     </div>
+
 
                     <!-- Vehicle Information part -->
                     <div class="vehicle-info">
-                        <h3><i class="fa-solid fa-car"></i> Vehicle Information</h3>
+                        <h3><i class="fa-solid fa-car"></i> {% trans "Vehicle Information" %}</h3>
                         <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="vehicleName">{% trans "Vehicle" %}
+                                                    </label>
+                                                </div>
+                                                <select name="vehicleName" id="vehicleName" class="form-control">
+                                                    {% for vehicle in vehicles %}
+                                                    <option>{{vehicle.vehicle_plate_number}}</option>
+                                                    {% endfor%}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="issuePoint">{% trans "Issue Point" %}
+                                                    </label>
+                                                </div>
+                                                <select name="issuePoint" id="issuePoint" class="form-control">
+                                                    {% for place in places %}
+                                                    <option>{{place.place_name}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="vehicleName" class="form-label">Vehicle</label>
-                                    <select type="text" name="vehicleName" id="vehicleName" class="form-control">
-                                        {% for vehicle in vehicles %}
-                                        <option>{{vehicle.vehicle_plate_number}}</option>
-                                        {% endfor%}
-                                    </select>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="returnPoint">{% trans "Return Point" %}
+                                                    </label>
+                                                </div>
+                                                <select name="returnPoint" id="returnPoint" class="form-control">
+                                                    {% for place in places %}
+                                                    <option>{{place.place_name}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                            <input type="date" name="issueDateAndTime" id="issueDateAndTime"
+                                                class="form-control" placeholder="Issue Date and Time">
+                                            <label for="issueDateAndTime" class="form-label">
+                                                {% trans "Issue Date and Time" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                            <input type="date" name="returnDateAndTime" id="returnDateAndTime"
+                                                class="form-control">
+                                            <label for="returnDateAndTime" class="form-label">{% trans "Return Date and Time" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                            <input type="number" name="rent_days" id="rent_days" class="form-control"
+                                                placeholder="Days">
+                                            <label for="rent_days" class="form-label">{% trans "Days" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-calendar fa-lg"></i>
+                                            <input type="date" name="deliveryDate" id="deliveryDate" class="form-control">
+                                            <label for="deliveryDate" class="form-label">{% trans "Early delivery Date" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-gas-pump fa-lg"></i>
+                                            <input type="text" name="gasQuantity" id="gasQuantity" class="form-control"
+                                                placeholder="Gasoline Quantity">
+                                            <label for="gasQuantity" class="form-label">{% trans "Gasoline Quantity" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-gauge-high fa-lg"></i>
+                                            <input type="text" name="transmission" id="transmission"
+                                                class="form-control" placeholder="Transmission Km.">
+                                            <label for="transmission" class="form-label">{% trans "Transmission Km." %}</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-gauge-high fa-lg"></i>
+                                            <input type="returnKm" name="returnKm" id="returnKm" class="form-control"
+                                                placeholder="Return Km">
+                                            <label for="returnKm" class="form-label">{% trans "Return Km" %}</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-road fa-lg fa-lg"></i>
+                                            <input type="text" name="mileageLimit" id="mileageLimit"
+                                                class="form-control" placeholder="Mileage Limit">
+                                            <label for="mileageLimit" class="form-label">{% trans "Mileage Limit" %}</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <!-- Contact Information text area -->
+                                <div class="col-md-12 ">
+                                    <div class="form-floating">
+                                        <i class="icon-textarea fa-solid fa-home-user fa-lg"></i>
+                                        <textarea name="vehicleReturnAddress" id="vehicleReturnAddress"
+                                            class="form-control" placeholder="Vehicle Return Address"
+                                            style="height: 187px"></textarea>
+                                        <label for="vehicleReturnAddress" class="form-label">{% trans "Vehicle Return Address" %}</label>
+                                    </div>
+                                </div>
 
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="issueDateAndTime" class="form-label">Issue Date and Time</label>
-                                    <input type="datetime-local" name="issueDateAndTime" id="issueDateAndTime"
-                                        class="form-control">
+                                <div class="col-md-12 ">
+                                    <div class="form-floating">
+                                        <i class="icon-textarea fa-solid fa-user-tie fa-lg"></i>
+                                        <textarea name="vehicleIssueAddress" id="vehicleIssueAddress"
+                                            class="form-control" placeholder="Vehicle Issue Address"
+                                            style="height: 187px"></textarea>
+                                        <label for="vehicleIssueAddress" class="form-label">{% trans "Vehicle Issue Address" %}</label>
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- automatic calculation for days -->
-
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="returnDateAndTime" class="form-label">Return Date and Time</label>
-                                    <input type="datetime-local" name="returnDateAndTime" id="returnDateAndTime"
-                                        class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="rent_days" class="form-label">Rent days</label>
-                                    <input type="number" name="rent_days" id="rent_days"
-                                        class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="issuePoint" class="form-label">Issue Point</label>
-                                    <select name="issuePoint" id="issuePoint" class="form-control">
-                                        {% for place in places %}
-                                        <option>{{place.place_name}}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="returnPoint" class="form-label">Return Point</label>
-                                    <select name="returnPoint" id="returnPoint" class="form-control">
-                                        {% for place in places %}
-                                        <option>{{place.place_name}}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="vehicleIssueAddress" class="form-label">Vehicle Issue
-                                        Address</label>
-                                    <textarea name="vehicleIssueAddress" id="vehicleIssueAddress" class="form-control"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="vehicleReturnAddress" class="form-label">Vehicle Return Address</label>
-                                        <textarea name="vehicleReturnAddress" id="vehicleReturnAddress" class="form-control"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="deliveryDate" class="form-label">Early Delivery Date</label>
-                                        <input type="date" name="deliveryDate" id="deliveryDate" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="gasQuantity" class="form-label">Gasoline Quantity</label>
-                                        <input type="text" name="gasQuantity" id="gasQuantity" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="transmission" class="form-label">Transmission Km.</label>
-                                        <input type="text" name="transmission" id="transmission" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="returnKm" class="form-label">Return Km.</label>
-                                        <input type="text" name="returnKm" id="returnKm" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="mileageLimit" class="form-label">Mileage Limit</label>
-                                        <input type="text" name="mileageLimit" id="mileageLimit" class="form-control">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Additional Information part -->
-                        <div class="extra-info">
-                            <h3><i class="fa fa-plus"></i>Additional information</h3>
-                            <div class="row">
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="customerComment" class="form-label">Customer Comment</label>
-                                        <textarea name="customerComment" id="customerComment" class="form-control" rows="3"></textarea>
-                                </div>
-                            </div>
-
-                            <!-- Contact Information text area -->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="systemNote" class="form-label">System Note</label>
-                                    <textarea name="systemNote" id="systemNote" class="form-control" rows="3"></textarea>
-                                </div>
-                            </div>
-
-                            <!-- file extraction area -->
-                            <!--div class="col-md-6">
-                                <div-- class="form-group">
-                                    <div class="row">
-                                        <label for="condDoc" class="form-label">Contract Documents (Visual)</label>
-                                    </div>
-                                    <div class="row">
-                                        {{form.contract_file1}}
-                                    </div>
-                                    <div class="row">
-                                        
-                                        {{form.contract_file2}}
-                                    </div>
-                                    <div class="row">
-                                        
-                                        {{form.contract_file3}}
-                                    </div>
-                                    <div class="row">
-                                        
-                                        {{form.contract_file4}}
-                                    </div>
-                                 
-
-                                </div-->
-                         
 
                         </div>
                     </div>
 
-                    <div class="id-info">
-                        <h3><i class="fa fa-credit-card"></i> Payment information</h3>
+
+                    <!-- Additional Information part -->
+                    <div class="extra-info">
+                        <h3><i class="fa fa-plus"></i>{% trans "Additional information" %}</h3>
                         <div class="row">
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="totalFee" class="form-label">Total Fee</label>
-                                    <input type="text" name="totalFee" id="totalFee" class="form-control">
+                            <!--div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label for="condDoc" class="form-label">Contract Documents
+                                                    (Visual)</label>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        {{form.contract_file1}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        {{form.contract_file2}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        {{form.contract_file3}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        {{form.contract_file4}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="Currency" class="form-label">Currency</label>
-                                    <select name="Currency" id="Currency" class="form-control">
-                                        {% for currency in currencies %}
-                                        <option>{{currency.currency_code}}</option>
-                                        {% endfor %}
-                                    </select>
+                            </div-->
+                            <div class="row col-lg-12">
+                                <div class="col-lg-6">
+                                    <div class="form-floating">
+                                        <i class="icon-textarea fa-solid fa-house-laptop fa-lg"></i>
+                                        <textarea name="systemNote" id="systemNote" class="form-control"
+                                            placeholder="System Note" style="height: 110px"></textarea>
+                                        <label for="systemNote" class="form-label">{% trans "System Note" %}</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-floating">
+                                        <i class="icon-textarea fa-solid fa-user-tie fa-lg"></i>
+                                        <textarea name="customerComment" id="customerComment" class="form-control"
+                                            placeholder="Customer Comment" style="height: 110px"></textarea>
+                                        <label for="customerComment" class="form-label">{% trans "Customer Comment" %}</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="payment-info">
+                        <h3><i class="fa fa-credit-card"></i> {% trans "Payment information" %}</h3>
                         <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="agentPercent" class="form-label">Agent Percentage</label>
-                                    <input type="number" name="agentPercent" id="agentPercent" class="form-control">
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-money-bill-1 fa-lg"></i>
+                                    <input type="number" name="totalFee" id="totalFee" class="form-control"
+                                        placeholder="Total Fee">
+                                    <label for="totalFee" class="form-label">{% trans "Total Fee" %}</label>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="agentFee" class="form-label">Agent Fee</label>
-                                    <input type="number" name="agentFee" id="agentFee" class="form-control">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-percent fa-lg"></i>
+                                    <input type="number" name="agentPercent" id="agentPercent" class="form-control"
+                                        placeholder="Agent Percentage">
+                                    <label for="agentPercent" class="form-label">{% trans "Agent Percentage" %}</label>
                                 </div>
                             </div>
 
+                            <div class="col-md-4">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-money-bill-1 fa-lg"></i>
+                                    <input type="number" name="agentFee" id="agentFee" class="form-control"
+                                        placeholder="Agent Fee">
+                                    <label for="agentFee" class="form-label">{% trans "Agent Fee" %}</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-magnifying-glass fa-lg"></i>
+                                    <select type="text" name="intermediaryCompanyAccount" id="intermediaryCompanyAccount"
+                                        class="form-select" placeholder="Intermediary Company Account">
+                                        <option></option>
+                                        {% for account in company_accounts %}
+                                        <option>{{account.account_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <label for="intermediaryCompanyAccount" class="form-label">{% trans "Intermediary Company Account" %}</label>
+                                </div>
+                            </div>
+
+                            <!--div class="col-md-12">
+                                <div class="form-floating">
+                                    <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                    <input type="text" name="invoiceNo" id="invoiceNo" class="form-control"
+                                        placeholder="Invoice No.">
+                                    <label for="invoiceNo" class="form-label">Invoice No.</label>
+                                </div>
+                            </div-->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="intermediaryCompanyAccount" class="form-label">Intermediary Company
-                                        Account</label>
-                                    <select name="intermediaryCompanyAccount" id="intermediaryCompanyAccount"
-                                        class="form-select">
-                                        <option></option>
-                                    {% for account in company_accounts %}
-                                        <option>
-                                            {{account.account_name}}
-                                        </option>
-                                    {% endfor %}
-                                    </select>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="paymentType">{% trans "Payment Type" %}
+                                            </label>
+                                        </div>
+                                        <select name="paymentType" id="paymentType" class="form-select">
+                                            <option></option>
+                                            {% for method in methods %}
+                                            <option>{{method.method}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="currency">{% trans "Currency Point" %}
+                                            </label>
+                                        </div>
+                                        <select name="currency" id="currency" class="form-control">
+                                            {% for currency in currencies %}
+                                            <option>{{currency.currency_code}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mailOrder" id="mailOrder">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="mailAccount" id="mailAccount" class="form-control"
+                                                placeholder="Mail Order Pos Account">
+                                            <label for="mailAccount" class="form-label">{% trans "Mail Order Pos Account" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="brokerageFee" id="brokerageFee"
+                                                class="form-control" placeholder="Brokerage Fee">
+                                            <label for="brokerageFee" class="form-label">{% trans "Brokerage Fee" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="cardType">{% trans "Card Type" %}
+                                                    </label>
+                                                </div>
+                                                <select name="cardType" id="cardType" class="form-control">
+                                                    {% for currency in currencies %}
+                                                    <option>{{currency.currency_code}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardHolder" id="cardHolder" class="form-control"
+                                                placeholder="Card Holder ">
+                                            <label for="cardHolder" class="form-label">{% trans "Card Holder" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardNumber" id="cardNumber" class="form-control"
+                                                placeholder="Card Number">
+                                            <label for="cardNumber" class="form-label">{% trans "Card Number" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardExYear" id="cardExYear" class="form-control"
+                                                placeholder="Card Expiry Year">
+                                            <label for="cardExYear" class="form-label">{% trans "Card Expiry Year" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardExMonth" id="cardExMonth" class="form-control"
+                                                placeholder="Card Expiry Month">
+                                            <label for="cardExMonth" class="form-label">{% trans "Card Expiry Month" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cvc" id="cvc" class="form-control"
+                                                placeholder="CVC">
+                                            <label for="cvc" class="form-label">CVC</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transfer" id="transfer">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="transferredBankAcc" id="transferredBankAcc"
+                                                class="form-control" placeholder=" Bank Account to be Transferred">
+                                            <label for="transferredBankAcc" class="form-label">{% trans "Bank Account to be Transferred" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lookFor" id="lookFor">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="debitedAcc" id="debitedAcc" class="form-control"
+                                                placeholder="Account to be debited">
+                                            <label for="debitedAcc" class="form-label">{% trans "Account to be debited" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-outline-primary"
+                                            onclick="window.location.href= '/fleet/account-create/';">
+                                            {% trans "Create New Current Account" %}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check" id="check">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkNumber" id="checkNumber" class="form-control"
+                                                placeholder="Check Number">
+                                            <label for="checkNumber" class="form-label">{% trans "Check Number" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkingAccount" id="checkingAccount"
+                                                class="form-control" placeholder="Checking Account">
+                                            <label for="checkingAccount" class="form-label">{% trans "Checking Account" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkHolder" id="checkHolder" class="form-control"
+                                                placeholder="Check Holder ">
+                                            <label for="checkHolder" class="form-label">{% trans "Check Holder" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkCash" id="checkCash" class="form-control"
+                                                placeholder="Check Cash ">
+                                            <label for="checkCash" class="form-label">{% trans "Check Cash" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="checkReceipt" id="checkReceipt"
+                                                class="form-control" placeholder="Check Receipt ">
+                                            <label for="checkReceipt" class="form-label">{% trans "Check Receipt" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="found" id="found">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cashAccount" id="cashAccount" class="form-control"
+                                                placeholder="Cash Account">
+                                            <label for="cashAccount" class="form-label">{% trans "Cash Account" %}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="creditCard" id="creditCard">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="posAcc" id="posAcc" class="form-control"
+                                                placeholder="Bank Pos Account">
+                                            <label for="posAcc" class="form-label">{% trans "Bank Pos Account" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="bankFee" id="bankFee" class="form-control"
+                                                placeholder="Bank Intermediation Fee">
+                                            <label for="bankFee" class="form-label">{% trans "Bank Intermediation Fee" %}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
+                                            <input type="text" name="cardHolder" id="cardHolder" class="form-control"
+                                                placeholder="Card Holder ">
+                                            <label for="cardHolder" class="form-label">{% trans "Card Holder" %}</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -395,5 +669,32 @@ $(document).ready(function () {
     });
 });
 
+</script>
+<script>
+    function calculateRemaningDays() {
+       
+            $("#rent_days").val(
+                Date.parse($("#returnDateAndTime").val())
+                - Date.parse($("#issueDateAndTime").val())
+            );
+            $("#rent_days").val(($("#rent_days").val() / 86400000));
+            if($("#returnDateAndTime").val()== "" && $("#issueDateAndTime").val() == ""){
+                $("#rent_days").val(0)
+            }
+    };
+    $(document).on("input change", '#issueDateAndTime,#returnDateAndTime', function () {
+        calculateRemaningDays();
+    });
+    function calculateAgentFee() {
+       
+        parseFloat($("#agentFee").val(
+        parseFloat($("#totalFee").val() /100)
+           * parseFloat($("#agentPercent").val())
+        ));
+        // $("#agentFee").val(parseFloat($("#agentFee").val()));
+};
+    $(document).on("input change", '#totalFee,#agentPercent', function () {
+        calculateAgentFee();
+    });
 </script>
 {% endblock %}

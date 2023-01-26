@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 {% block content %}
 
 <div class="row">
     <div class="col-md-12">
         <div class="card border border-light">
             <div class="card-header bg bg-primary">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add Vehicle Maintenance Record
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i>{% trans "Add Vehicle Maintenance Record" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -16,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="vehicle" class="form-label">Vehicle</label>
+                                    <label for="vehicle" class="form-label">{% trans "Vehicle" %}</label>
                                     <select name="vehicle" id="vehicle" class="form-control">
                                         {% for vehicle in vehicles %}
                                         <option>{{vehicle.vehicle_plate_number}}</option>
@@ -28,21 +29,21 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="loginDate" class="form-label">login Date</label>
+                                    <label for="loginDate" class="form-label">{% trans "login Date" %}</label>
                                     <input type="date" name="loginDate" id="loginDate" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="releaseDate" class="form-label">Release Date</label>
+                                    <label for="releaseDate" class="form-label">{% trans "Release Date" %}</label>
                                     <input type="date" name="releaseDate" id="releaseDate" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="lastMaintenance" class="form-label">Last Maintenance Km</label>
+                                    <label for="lastMaintenance" class="form-label">{% trans "Last Maintenance Km" %}</label>
                                     <input type="number" name="lastMaintenance" id="lastMaintenance"
                                         class="form-control">
                                 </div>
@@ -50,21 +51,21 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="inputKm" class="form-label">Input Km</label>
+                                    <label for="inputKm" class="form-label">{% trans "Input Km" %}</label>
                                     <input type="number" name="inputKm" id="inputKm" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="totalAmount" class="form-label">Total Amount</label>
+                                    <label for="totalAmount" class="form-label">{% trans "Total Amount" %}</label>
                                     <input type="text" name="totalAmount" id="totalAmount" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="currency" class="form-label">Currency</label>
+                                    <label for="currency" class="form-label">{% trans "Currency" %}</label>
                                     <select name="currency" id="currency" class="form-select">
                                         <option>Turkish lira</option>
                                         <option>Pound</option>
@@ -76,13 +77,13 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="caring" class="form-label">Maintenance place</label>
+                                    <label for="caring" class="form-label">{% trans "Maintenance place" %}</label>
                                     <input type="text" name="carePlace" id="carePlace" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="explanation" class="form-label">Explanation</label>
+                                    <label for="explanation" class="form-label">{% trans "Explanation" %}</label>
                                     <textarea name="explanation" id="explanation" class="form-control"
                                         rows="3"></textarea>
                                 </div>

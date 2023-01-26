@@ -1,12 +1,20 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 
 <div class="pagetitle ">
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item"><a href="">{% translate "home" %}</a></li>
+            <li class="breadcrumb-item active">{% translate "dashboard" %}</li>
+                <!--strong>{% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <li>{{language.name}} {{language.code}}</li>
+                            <br>
+                {% endfor %}
+                </strong-->
         </ol>
     </nav>
 </div>
@@ -23,7 +31,7 @@
 
 
                         <div class="card-body">
-                            <h5 class="card-title">Contracts <span>| On-going</span></h5>
+                            <h5 class="card-title">{% trans "Contracts" %}<span>| {% trans "On-going" %}</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -32,7 +40,7 @@
                                 <div class="ps-3">
                                     <h6>{{data.ongoing_contract}}</h6>
                                     <span class="text-success small pt-1 fw-bold">{{data.ongoing_contract}}</span> <span
-                                        class="text-muted small pt-2 ps-1">rented cars</span>
+                                        class="text-muted small pt-2 ps-1">{% trans "rented cars" %}</span>
 
                                 </div>
                             </div>
@@ -48,7 +56,7 @@
 
 
                         <div class="card-body">
-                            <h5 class="card-title">Vehicles <span>| total</span></h5>
+                            <h5 class="card-title">{% trans "Vehicles" %}<span>| {% trans "total" %}</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -57,7 +65,7 @@
                                 <div class="ps-3">
                                     <h6>{{data.vehicles}}</h6>
                                     <span class="text-success small pt-1 fw-bold"></span>{{data.vehicles}}<span
-                                        class="text-muted small pt-2 ps-1">vehicles</span>
+                                        class="text-muted small pt-2 ps-1">{% trans "vehicles" %}</span>
 
                                 </div>
                             </div>
@@ -73,7 +81,7 @@
 
                         <a href="/fleet/my-customer/">
                         <div class="card-body">
-                            <h5 class="card-title">Customers <span>| total</span></h5>
+                            <h5 class="card-title">{% trans "Customers" %} <span>| {% trans "total" %}</span></h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -82,7 +90,7 @@
                                 <div class="ps-3">
                                     <h6>{{data.customers}}</h6>
                                     <span class="text-danger small pt-1 fw-bold">{{data.customers}}</span> <span
-                                        class="text-muted small pt-2 ps-1">customers</span>
+                                        class="text-muted small pt-2 ps-1">{% trans "customers" %}</span>
 
                                 </div>
                             </div>
@@ -99,7 +107,7 @@
 
 
                         <div class="card-body">
-                            <h5 class="card-title">In maintenance</h5>
+                            <h5 class="card-title">{% trans "In maintenance" %}</h5>
 
                             <div class="d-flex align-items-center">
                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -108,7 +116,7 @@
                                 <div class="ps-3">
                                     <h6>{{data.maintenance_vehicles}}</h6>
                                     <span class="text-danger small pt-1 fw-bold">{{data.maintenance_vehicles}}</span>
-                                    <span>vehicles</span>
+                                    <span>{% trans "vehicles" %}</span>
                                 </div>
                             </div>
 
@@ -124,7 +132,7 @@
 
 
                             <div class="card-body">
-                                <h5 class="card-title">Vehicles <span>| Available</span></h5>
+                                <h5 class="card-title">{% trans "Vehicles" %}<span>| {% trans "Available" %}</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -134,7 +142,7 @@
                                         <h6>{{data.available_vehicles}}</h6>
                                         <span
                                             class="text-success small pt-1 fw-bold"></span>{{data.available_vehicles}}<span
-                                            class="text-muted small pt-2 ps-1">vehicles</span>
+                                            class="text-muted small pt-2 ps-1">{% trans "vehicles" %}</span>
 
                                     </div>
                                 </div>
@@ -148,7 +156,7 @@
                     <div class="card">
 
                         <div class="card-body pb-0">
-                            <h5 class="card-title">Income<span> |Today</span></h5>
+                            <h5 class="card-title">{% trans "Income" %}<span> |{% trans "Today" %}</span></h5>
 
                             <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
 
@@ -213,14 +221,14 @@
             <div class="card recent-sales overflow-auto">
                 <a href="/fleet/instant-availability/">
                 <div class="card-body">
-                    <h5 class="card-title">Cars to be Returned<span></span></h5>
+                    <h5 class="card-title">{% trans "Cars to be Returned" %}<span></span></h5>
                     <table id="datatable" class="table table-borderless datatable">
                         <thead>
-                            <th scope="col">Vehicles</th>
-                            <th scope="col">Customer</th>
-                            <th scope="col">Return date</th>
-                            <th scope="col">Time remaining </th>
-                            <th scope="col">Transactions</th>
+                            <th scope="col">{% trans "Vehicles" %}</th>
+                            <th scope="col">{% trans "Customer" %}</th>
+                            <th scope="col">{% trans "Return date" %}</th>
+                            <th scope="col">{% trans "Time remaining" %} </th>
+                            <th scope="col">{% trans "Transactions" %}</th>
                         </thead>
                         <tbody>
                             {% for vehicle in rented_vehicles %}
@@ -242,7 +250,7 @@
                 <a href="/fleet/income-report/">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Revenues</h5>
+                        <h5 class="card-title">{% trans "Revenues" %}</h5>
 
                         <!-- Column Chart -->
                         <div id="columnChart"></div>

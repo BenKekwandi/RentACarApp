@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
+{% load i18n %}
 <style type="text/css">
     .nav-tabs-custom>.nav-tabs>li.active {
         border-top-color: #00a65a !important;
@@ -99,7 +100,7 @@
     <div class="col-md-12">
         <div class="card border border-primary">
             <div class="card-header bg-primary">
-                <h3 class="card-title text-white"><i class="fa-sharp fa-solid fa-bell"></i> Add vehicle Payment Reminder
+                <h3 class="card-title text-white"><i class="fa-sharp fa-solid fa-bell"></i>{% trans "Add vehicle Payment Reminder" %}
                 </h3>
             </div>
             <div class="card-body row::before">

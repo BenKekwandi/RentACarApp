@@ -1,6 +1,269 @@
 {% extends 'layout.html' %}
-
 {% block content %}
 
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-user-plus"></i> New Reservation(Based on Vehicle
+                    Model)
+                </h3>
+            </div>
+
+
+
+            <!--Customer Type part-->
+            <form method="post" action="" class="container-sm">
+                {% csrf_token %}
+                <div class="resv-status">
+                    <h3><i class="fa fa-circle-info"></i>Reservation Status</h3>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="customer">Customer</label>
+                                    </div>
+                                    <select name="customer" id="customer" class="form-control" readonly>
+                                        {% for customer in customers %}
+                                        <option>{{customer.first_name}} {{customer.last_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="reservationStatus">Reservation
+                                            Status</label>
+                                    </div>
+                                    <select name="reservationStatus" id="reservationStatus" class="form-control" readonly>
+                                        {% for stat in statuses %}
+                                        <option>{{stat.status}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="vehicle-info">
+                    <h3> <i class="fa fa-car"></i>Vehicle Purchase Information</h3>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="vehicleModel">Vehicle
+                                            Model</label>
+                                    </div>
+                                    <select name="vehicleModel" id="vehicleModel" class="form-control" readonly>
+                                        {% for model in models %}
+                                        <option>{{model.vehicle_model}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="plateNumber">Vehicle plate
+                                            Number</label>
+                                    </div>
+                                    <select name="plateNumber" id="plateNumber" class="form-control" readonly>
+                                        {% for model in models %}
+                                        <option>{{model.vehicle_model}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-users fa-lg"></i>
+                                <input type="date" name="purchaseDate" id="purchaseDate" class="form-control"
+                                    placeholder="Purchase Date" value={{customer.}} readonly>
+                                <label for="purchaseDate" class="form-label">Purchase Date</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-users fa-lg"></i>
+                                <input type="time" name="pickupTime" id="pickupTime" class="form-control"
+                                    placeholder="Pickup Time" value={{customer.nationality}} readonly>
+                                <label for="pickupTime" class="form-label">Pickup Time</label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-users fa-lg"></i>
+                                <input type="text" name="flightNumber" id="flightNumber" class="form-control"
+                                    placeholder="Flight Number" value={{customer.flightNumber}} readonly>
+                                <label for="flightNumber" class="form-label">Flight Number</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="pickupPlace">Pickup
+                                            Place</label>
+                                    </div>
+                                    <select name="pickupPlace" id="pickupPlace" class="form-control" readonly>
+                                        {% for place in places %}
+                                        <option> {{place.place_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <i class="icon-textarea fa-solid fa-house-laptop fa-lg"></i>
+                                <textarea name="PickupAddress" id="PickupAddress" class="form-control"
+                                    placeholder="Pickup Address"
+                                    style="height: 100px" readonly>{{customer.business_address}}</textarea>
+                                <label for="PickupAddress" class="form-label">Pickup Address</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Vehicle Return Information part -->
+                <div class="return-info">
+                    <h3><i class="fa fa-arrow-left"></i> Vehicle Return information</h3>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-users fa-lg"></i>
+                                <input type="date" name="deliveryDate" id="deliveryDate" class="form-control"
+                                    placeholder="Delivery Date" value={{customer.}} readonly>
+                                <label for="deliveryDate" class="form-label">Delivery Date</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-users fa-lg"></i>
+                                <input type="time" name="deliveryTime" id="deliveryTime" class="form-control"
+                                    placeholder="Delivery Time" value={{customer.nationality}} readonly>
+                                <label for="deliveryTime" class="form-label">Delivery Time</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <i class="icon fa-solid fa-users fa-lg"></i>
+                                <input type="text" name="returnFlightNumber" id="returnFlightNumber"
+                                    class="form-control" placeholder="Flight Number" value={{customer.flightNumber}} readonly>
+                                <label for="returnFlightNumber" class="form-label">Flight Number</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="deliveryPlace">Vehicle Return
+                                            Place</label>
+                                    </div>
+                                    <select name="deliveryPlace" id="deliveryPlace" class="form-control" readonly>
+                                        {% for place in places %}
+                                        <option> {{place.place_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <i class="icon-textarea fa-solid fa-house fa-lg"></i>
+                                <textarea name="deliveryAddress" id="deliveryAddress" class="form-control"
+                                    placeholder="Return Address"
+                                    style="height: 100px">{{customer.business_address}}</textarea>
+                                <label for="deliveryAddress" class="form-label">Return Address</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="services-info">
+                        <h3><i class="fa fa-plus"></i> Additional services</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon-textarea fa-solid fa-house-laptop fa-lg"></i>
+                                    <textarea name="systemNote" id="systemNote" class="form-control"
+                                        placeholder="System Note" style="height: 100px" readonly></textarea>
+                                    <label for="systemNote" class="form-label">System Note</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <i class="icon-textarea fa-solid fa-user-tie fa-lg"></i>
+                                    <textarea name="customerComment" id="customerComment" class="form-control"
+                                        placeholder="Customer Comment" style="height: 100px" readonly></textarea>
+                                    <label for="customerComment" class="form-label">Customer Comment</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-info">
+                        <h3><i class="fa fa-money-bill-1"></i> Payment Information</h3>
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="totalFee" class="form-label">Total Fee</label>
+                                    <input type="number" name="totalFee" id="totalFee" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Currency" class="form-label">Currency</label>
+                                    <select name="Currency" id="Currency" class="form-control">
+                                        {% for currency in currencies %}
+                                        <option>{{currency.currency_code}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" align="right">
+                    <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                    <!--reset button instead of changing directories-->
+                    <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
 
 {% endblock %}

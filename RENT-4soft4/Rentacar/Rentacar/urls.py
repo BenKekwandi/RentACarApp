@@ -14,14 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.conf import settings
+from django.urls import path, include,re_path
+from django.conf.urls.i18n import i18n_patterns 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fleet/', include('fleet.urls')),
-    path('authentication/',include('authentication.urls'))
-    #path('captcha/', include('captcha.urls'))
+    path(r'^i18n',include('django.conf.urls.i18n'))
 ]
-
+urlpatterns+= i18n_patterns(
+    path('fleet/', include('fleet.urls')),
+    path('authentication/',include('authentication.urls')),
+    prefix_default_language=False
+)
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        re_path(r'^rosetta/', include('rosetta.urls'))
+    ]
 handler404 = 'fleet.views.handler404'
 handler500= 'fleet.views.handler500'

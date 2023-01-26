@@ -817,10 +817,9 @@
                                     <div class="col-md-12">
                                         <div class="form-floating">
                                             <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <select name="cashAccount" id="cashAccount"
-                                                class="form-select">
+                                            <select name="cashAccount" id="cashAccount"class="form-select">
                                                 {% for account in cash_accounts %}
-                                                    <option>{{account.account_name}}</option>
+                                                    <option value="{{account.account_name}}">{{account.account_name}}</option>
                                                 {% endfor %}
                                             </select>
                                             <label for="cashAccount" class="form-label">Cash Account</label>
@@ -897,7 +896,7 @@
     
     $(document).on("input change", '#start_date,#end_date', function () {
         calculateRemaningDays();
-    });
+    }); 
         calculateRemaningDays();
         $(".transfer").hide();
         $(".lookFor").hide();

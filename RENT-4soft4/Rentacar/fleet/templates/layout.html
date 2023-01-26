@@ -1,4 +1,5 @@
-{% load static%}
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,7 +94,8 @@
 
 
 <body>
-
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
   <!-- ======= Header ======= -->
   <nav id="header" class="header fixed-top d-flex align-items-center">
 
@@ -122,6 +124,26 @@
         </li><!-- End Search Icon-->
 
         <li class="nav-item dropdown">
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-globe"></i>
+            <span>{{language.code}}</span>
+          </a>
+          <ul class="dropdown-menu" role="menu" id="language-list">
+            {% for language in languages %}
+                <li>
+                  {% if language.code == 'en' %}
+                  <a href="{{request.path}}" data-language-code="{{language.code}}">
+                  {% endif %}
+                  <a href="/{{language.code}}{{request.path}}" data-language-code="{{language.code}}">
+                {% if language.code == LANGUAGE_CODE %}&#10003;{% else %}&nbsp;&nbsp;{% endif %}
+                <img src="{% static '/img/flags/{{language.code}}.png' %}">
+                {{ language.name_local }} 
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="fa-solid fa-money-bill-transfer"></i>
@@ -132,7 +154,7 @@
           </a><!-- End Notification Icon -->
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
-              You have {{counter}} contracts with debt
+              {% trans "You have" %} {{counter}} {% trans "contracts with debt" %}
               <a href="/fleet/contract-in-debt/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             {% endwith %}
@@ -175,7 +197,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li class="dropdown-header">
-              You have {{counter}} vehicles returning soon
+              {% trans "You have" %} {{counter}} {% trans "vehicles returning soon" %}
               <a href="/fleet/instant-availability/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             {% endwith %}
@@ -216,7 +238,7 @@
   
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
               <li class="dropdown-header">
-                You have {{counter}} vehicle payment reminders
+                {% trans "You have" %} {{counter}} {% trans "vehicle payment reminders" %}
                 <a href="/fleet/vehicle-payment/"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
               </li>
               {% endwith %}
@@ -273,7 +295,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="/fleet/my-account/">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>{% trans "My Profile" %}</span>
               </a>
             </li>
             <li>
@@ -283,7 +305,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                 <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
+                <span>{% trans "Need Help" %}?</span>
               </a>
             </li>
             <li>
@@ -293,7 +315,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="/./authentication/admin-logout/">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>{% trans "Sign Out" %}</span>
               </a>
             </li>
 
@@ -313,25 +335,25 @@
       <li class="nav-item">
         <a class="nav-link " href='/fleet/'>
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>{% trans "Dashboard" %}</span>
         </a>
       </li>
       <!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#customerMan-nav" data-bs-toggle="collapse" href="#">
-          <i class="fa-regular fa-circle-user"></i><span>Customer Management</span><i
+          <i class="fa-regular fa-circle-user"></i><span>{% trans "Customer Management" %}</span><i
             class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="customerMan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/customer-create/">
-              <i class="fa-solid fa-user-plus"></i><span>New Customer</span>
+              <i class="fa-solid fa-user-plus"></i><span>{% trans "New Customer" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/my-customer/">
-              <i class="fa-solid fa-users"></i></i><span>My Customers</span>
+              <i class="fa-solid fa-users"></i></i><span>{% trans "My Customers" %}</span>
             </a>
           </li>
 
@@ -341,71 +363,71 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#rentaCar-nav" data-bs-toggle="collapse" href="#">
-          <i class="fa-solid fa-car"></i><span>Rent A Car</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-car"></i><span>{% trans "Rent A Car" %}</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="rentaCar-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/contract-create/">
-              <i class="fa-solid fa-pen-to-square"></i><span>New Contract</span>
+              <i class="fa-solid fa-pen-to-square"></i><span>{% trans "New Contract" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/reservation-create/">
-              <i class="bi bi-clipboard-check-fill"></i><span>New Reservation</span>
+              <i class="bi bi-clipboard-check-fill"></i><span>{% trans "New Reservation" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/contracts/">
-              <i class="bi bi-file-text-fill"></i><span>Vehicle Sales Contract</span>
+              <i class="bi bi-file-text-fill"></i><span>{% trans "Vehicle Sales Contract" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/reservations/">
-              <i class="bi bi-stickies-fill"></i><span>My Reservation</span>
+              <i class="bi bi-stickies-fill"></i><span>{% trans "My Reservation" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/instant-availability/">
-              <i class="bx bxs-alarm-exclamation"></i><span>Instant Availbility</span>
+              <i class="bx bxs-alarm-exclamation"></i><span>{% trans "Instant Availbility" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/general-availability/">
-              <i class="bi bi-calendar-date-fill"></i><span>General Availbility</span>
+              <i class="bi bi-calendar-date-fill"></i><span>{% trans "General Availbility" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/additional-service/">
-              <i class="ri ri-checkbox-multiple-fill"></i><span>Additional Service Management</span>
+              <i class="ri ri-checkbox-multiple-fill"></i><span>{% trans "Additional Service Management" %}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#route-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-signs-post"></i><span>Route Management</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-signs-post"></i><span>{% trans "Route Management" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="route-nav" class="nav-content collapse " data-bs-parent="#rentaCar-nav">
 
               <li>
                 <a href="/fleet/regions/">
-                  <i class="fa-solid fa-globe"></i><span>Regions</span>
+                  <i class="fa-solid fa-globe"></i><span>{% trans "Regions" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/region-create/">
-                  <i class="fa-solid fa-square-plus"></i><span>Add Region</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Region" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/stops/">
-                  <i class="bi bi-geo-alt-fill"></i><span>Stops</span>
+                  <i class="bi bi-geo-alt-fill"></i><span>{% trans "Stops" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/stop-create/">
-                  <i class="fa-solid fa-square-plus"></i></i><span>Add Stop</span>
+                  <i class="fa-solid fa-square-plus"></i></i><span>{% trans "Add Stop" %}</span>
                 </a>
               </li>
 
@@ -417,26 +439,26 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#vhicleMan-nav" data-bs-toggle="collapse" href="#">
-          <i class="fa-solid fa-screwdriver-wrench"></i><span>Vehicle Management</span><i
+          <i class="fa-solid fa-screwdriver-wrench"></i><span>{% trans "Vehicle Management" %}</span><i
             class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="vhicleMan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#mytools-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-truck"></i><span>My Tools</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-truck"></i><span>{% trans "My Tools" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="mytools-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle/">
-                  <i class="fa-solid fa-truck-fast"></i><span>Vehicle List</span>
+                  <i class="fa-solid fa-truck-fast"></i><span>{% trans "Vehicle List" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicle-create/">
-                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Vehicle" %}</span>
                 </a>
               </li>
 
@@ -445,35 +467,35 @@
 
           <li>
             <a href="/fleet/vehicle-history/">
-              <i class="fa-solid fa-clock-rotate-left"></i><span>Vehicle History</span>
+              <i class="fa-solid fa-clock-rotate-left"></i><span>{% trans "Vehicle History" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/vehicle-maintenance-record/">
-              <i class="bx bxs-car-mechanic"></i><span>Vehicle Maintenance Records</span>
+              <i class="bx bxs-car-mechanic"></i><span>{% trans "Vehicle Maintenance Records" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/car-care/">
-              <i class="bi bi-gear-fill"></i><span>Car Care</span>
+              <i class="bi bi-gear-fill"></i><span>{% trans "Car Care" %}</span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#vehicleType-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-share-nodes"></i><span>Vehicle Type</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-share-nodes"></i><span>{% trans "Vehicle Type" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="vehicleType-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle-type/">
-                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Type</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "Vehicle Type" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicleType-create">
-                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Type</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Vehicle Type" %}</span>
                 </a>
               </li>
 
@@ -482,19 +504,19 @@
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#vehicleBrand-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-copyright"></i><span>Vehicle Brand</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-copyright"></i><span>{% trans "Vehicle Brand" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="vehicleBrand-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle-Brand/">
-                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Brand</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "Vehicle Brand" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicleBrand-create/">
-                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Brand</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Vehicle Brand" %}</span>
                 </a>
               </li>
 
@@ -503,19 +525,19 @@
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#vehicleModel-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-tags"></i><span>Vehicle Model</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-tags"></i><span>{% trans "Vehicle Model" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="vehicleModel-nav" class="nav-content collapse " data-bs-parent="#vhicleMan-nav">
 
               <li>
                 <a href="/fleet/vehicle-model/">
-                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Model</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "Vehicle Model" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicleModel-create/">
-                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Model</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Vehicle Model" %}</span>
                 </a>
               </li>
 
@@ -528,12 +550,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#author-nav" data-bs-toggle="collapse" href="#">
-          <i class="fa-solid fa-user-lock"></i><span>Authorization</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-user-lock"></i><span>{% trans "Authorization" %}</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="author-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/my-account/">
-              <i class="bi bi-shield-lock-fill"></i><span>My Account</span>
+              <i class="bi bi-shield-lock-fill"></i><span>{% trans "My Account" %}</span>
             </a>
           </li>
         </ul>
@@ -542,64 +564,64 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#accounting-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Accounting</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-gem"></i><span>{% trans "Accounting" %}</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="accounting-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/safe/">
-              <i class="ri ri-safe-fill"></i><span>Safe</span>
+              <i class="ri ri-safe-fill"></i><span>{% trans "Safe" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/income-report/">
-              <i class="bi bi-clipboard-minus"></i><span>Income Report</span>
+              <i class="bi bi-clipboard-minus"></i><span>{% trans "Income Report" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/expense-report/">
-              <i class="bi bi-clipboard-plus"></i><span>Expense Report</span>
+              <i class="bi bi-clipboard-plus"></i><span>{% trans "Expense Report" %}</span>
             </a>
           </li>
           <li>
             <!-- Double tree inside each other -->
             <a class="nav-link collapsed" data-bs-target="#mybook-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-book"></i><span>My Accounting Book</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-book"></i><span>{% trans "My Accounting Book" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="mybook-nav" class="nav-content collapse " data-bs-parent="#accounting-nav">
 
               <li>
                 <a href="/fleet/current-accounts/">
-                  <i class="bx bxs-chevrons-right"></i><span>All Records</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "All Records" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicle-expenses/">
-                  <i class="bx bxs-chevrons-right"></i><span>Vehicle Expense</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "Vehicle Expense" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/collections/">
-                  <i class="fa-solid fa-hand-holding-dollar"></i><span>Collection</span>
+                  <i class="fa-solid fa-hand-holding-dollar"></i><span>{% trans "Collection" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/expenses/">
-                  <i class="fa-solid fa-minus"></i><span>Expense Records</span>
+                  <i class="fa-solid fa-minus"></i><span>{% trans "Expense Records" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/sales-create/">
-                  <i class="fa-solid fa-plus"></i><span>Sales Invoice</span>
+                  <i class="fa-solid fa-plus"></i><span>{% trans "Sales Invoice" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/vehicle-expense-create/">
-                  <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Expense Record</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Vehicle Expense Record" %}</span>
                 </a>
               </li>
 
@@ -610,37 +632,37 @@
 
           <li>
             <a class="nav-link collapsed" data-bs-target="#currentAccount-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-list-check"></i><span>Current Accounts</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-list-check"></i><span>{% trans "Current Accounts" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="currentAccount-nav" class="nav-content collapse " data-bs-parent="#accounting-nav">
 
               <li>
                 <a href="/fleet/current-accounts/">
-                  <i class="bx bxs-chevrons-right"></i><span>All Curent Accounts</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "All Curent Accounts" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/account-create/">
-                  <i class="fa-solid fa-square-plus"></i></i><span>Add Current Account</span>
+                  <i class="fa-solid fa-square-plus"></i></i><span>{% trans "Add Current Account" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/merge-account/">
-                  <i class="fa-solid fa-object-group"></i><span>Merge Current Account</span>
+                  <i class="fa-solid fa-object-group"></i><span>{% trans "Merge Current Account" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/current-account-status/">
-                  <i class="bx bx-trending-up"></i><span>Status Statement</span>
+                  <i class="bx bx-trending-up"></i><span>{% trans "Status Statement" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/current-account-statement/">
-                  <i class="bi bi-stickies-fill"></i><span>Account Statement</span>
+                  <i class="bi bi-stickies-fill"></i><span>{% trans "Account Statement" %}</span>
                 </a>
               </li>
 
@@ -649,19 +671,19 @@
 
           <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#accountItems-nav" data-bs-toggle="collapse" href="#">
-              <i class="fa-solid fa-chart-pie"></i><span>Accounting Items</span><i class="bi bi-chevron-down ms-auto"></i>
+              <i class="fa-solid fa-chart-pie"></i><span>{% trans "Accounting Items" %}</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="accountItems-nav" class="nav-content collapse " data-bs-parent="#accounting-nav">
 
               <li>
                 <a href="/fleet/items/">
-                  <i class="bx bxs-chevrons-right"></i><span>All Items</span>
+                  <i class="bx bxs-chevrons-right"></i><span>{% trans "All Items" %}</span>
                 </a>
               </li>
 
               <li>
                 <a href="/fleet/item-create/">
-                  <i class="fa-solid fa-square-plus"></i><span>Add New Item</span>
+                  <i class="fa-solid fa-square-plus"></i><span>{% trans "Add New Item" %}</span>
                 </a>
               </li>
 
@@ -674,22 +696,22 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#reminder-nav" data-bs-toggle="collapse" href="#">
-          <i class="fa-solid fa-bell"></i><span>Reminders</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-bell"></i><span>{% trans "Reminders" %}</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="reminder-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="/fleet/vehicle-payment/">
-              <i class="bi bi-calendar-day-fill"></i><span>Vehicle Payment Reminders</span>
+              <i class="bi bi-calendar-day-fill"></i><span>{% trans "Vehicle Payment Reminders" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/add-vehicle-payment/">
-              <i class="fa-solid fa-square-plus"></i><span>Add Vehicle Payment Reminders</span>
+              <i class="fa-solid fa-square-plus"></i><span>{% trans "Add Vehicle Payment Reminders" %}</span>
             </a>
           </li>
           <li>
             <a href="/fleet/bulk-vehicle-payment/">
-              <i class="fa-solid fa-square-plus"></i><span>Bulk Add Vehicle Payment Reminders</span>
+              <i class="fa-solid fa-square-plus"></i><span>{% trans "Bulk Add Vehicle Payment Reminders" %}</span>
             </a>
           </li>
         </ul>
@@ -714,7 +736,7 @@
   <footer id="footer" class="footer" style="position:relative">
 
     <div class="copyright">
-      &copy; Copyright <strong><span>4Soft4</span></strong>. All Rights Reserved
+      &copy;Copyright <strong><span>4Soft4</span></strong>. All Rights Reserved
     </div>
 
   </footer><!-- End Footer -->
@@ -735,7 +757,7 @@
   <!-- Template Main JS File -->
   <script src="{% static '/js/main.js' %}"></script>
   <script src="{% static 'calender/main.js' %}"></script>
-
+  <!--script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script-->
   <!-- Made script -->
   <!-- <script src="{% static 'js/js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'js/popper.js' %}"></script>
@@ -748,6 +770,24 @@
   {% endblock extra_css %}
   {% block page_script %}
   {% endblock %}
+<!--script>
+  $('#language-list a').on('click', function(event) {
+    console.log('shit');
+    event.preventDefault();
+    var target = $(event.target);
+    var addr=target.attr("href")+{{request.path}};
+    var language_code = target.data('language-code');
+    console.log(addr)
+    $.ajax({
+        type: 'POST',
+        url:addr,
+        data: {language: language_code},
+        //headers: {"X-CSRFToken": getCookie('csrftoken')}
+    }).done(function(data, textStatus, jqXHR) {
+        reload_page();
+    });
+});
+</script-->
 
 </body>
 

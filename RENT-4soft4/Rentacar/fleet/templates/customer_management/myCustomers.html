@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-
+{% load i18n %}
 {% block content %}
 
 <div class="pageholder">
@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <div class="card border border-primary bg bg-white">
                 <div class="card-header bg-primary">
-                    <h3 class="text-white" style="text-align:center;">My Customers</h3>
+                    <h3 class="text-white" style="text-align:center;">{% trans "My Customers" %}</h3>
                 </div>
 
                 <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
@@ -18,32 +18,32 @@
                     <table id="customer" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>Type</th>
-                                <th>Name</th>
-                                <th>Surname</th>
-                                <th>Phone number</th>
-                                <th>Email</th>
-                                <th>Date of birth</th>
-                                <th>Passport No</th>
-                                <th>System Note</th>
-                                <th>Date of registration</th>
-                                <th>transactions</th>
+                                <th>{% trans "id" %}</th>
+                                <th>{% trans "Type" %}</th>
+                                <th>{% trans "Name"%}</th>
+                                <th>{% trans "Surname" %}</th>
+                                <th>{% trans "Phone number"%}</th>
+                                <th>{% trans "Email" %}</th>
+                                <th>{% trans "Date of birth" %}</th>
+                                <th>{% trans "Passport No" %}</th>
+                                <th>{% trans "System Note" %}</th>
+                                <th>{% trans "Date of registration" %}</th>
+                                <th>{% trans "transactions" %}</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>id</th>
-                                <th>Type</th>
-                                <th>Name</th>
-                                <th>Surname</th>
-                                <th>Phone number</th>
-                                <th>Email</th>
-                                <th>Date of birth</th>
-                                <th>Passport No</th>
-                                <th>System Note</th>
-                                <th>Date of registration</th>
-                                <th>transactions</th>
+                                <th>{% trans "id" %}</th>
+                                <th>{% trans "Type" %}</th>
+                                <th>{% trans "Name" %}</th>
+                                <th>{% trans "Surname" %}</th>
+                                <th>{% trans "Phone number" %}</th>
+                                <th>{% trans "Email" %}</th>
+                                <th>{% trans "Date of birth" %}</th>
+                                <th>{% trans "Passport No" %}</th>
+                                <th>{% trans "System Note" %}</th>
+                                <th>{% trans "Date of registration" %}</th>
+                                <th>{% trans "transactions" %}</th>
                             </tr>
                         </tfoot>
                         <tbody>

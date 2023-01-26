@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
-
+{% load i18n %}
 {% block content %}
 
 <div class="card border border-primary bg bg-light">
     <div class="card-header bg-primary">
-        <h3 class="text-white" style="text-align:center;">INSTANT AVAILABILITY</h3>
+        <h3 class="text-white" style="text-align:center;">{% trans "INSTANT AVAILABILITY" %}</h3>
     </div>
     <div style="margin:20px;">
         <div class="row">
             <div class="col-md-3">
-                <label class="form-label" for="vehicle" class="form-label">Vehicle</label>
+                <label class="form-label" for="vehicle" class="form-label">{% trans "Vehicle" %}</label>
                 <select class="form-control" name="vehicle">
                 {% for vehicle in vehicles %}
                 <option>{{vehicle.vehicle_plate_number}}</option>
@@ -17,7 +17,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label" for="vehicleModel" class="form-label">Vehicle Model</label>
+                <label class="form-label" for="vehicleModel" class="form-label">{% trans "Vehicle Model" %}</label>
                 <select class="form-control" name="vehicleModel">
                 {% for model in models %}
                 <option>{{model.vehicle_model}}</option>
@@ -25,7 +25,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label" for="vehicleBrand" class="form-label">Vehicle Brand</label>
+                <label class="form-label" for="vehicleBrand" class="form-label">{% trans "Vehicle Brand" %}</label>
                 <select class="form-control" name="vehicleBrand">
                     {% for type in types %}
                     <option>{{type.type_name}}</option> 
@@ -33,7 +33,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label" for="vehicleType" class="form-label">Vehicle Type</label>
+                <label class="form-label" for="vehicleType" class="form-label">{% trans "Vehicle Type" %}</label>
                 <select class="form-control" name="VehicleType">
                     {% for brand in brands %}
                     <option>{{brand.brand_name}}</option>
@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <label class="form-label" for="year" class="form-label">Year</label>
+                <label class="form-label" for="year" class="form-label">{% trans "Year" %}</label>
                 <select class="form-control" name="year">
                     {% for year in years %}
                     <option>{{year}}</option> 
@@ -51,7 +51,7 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label class="form-label" for="month" class="form-label">Month</label>
+                <label class="form-label" for="month" class="form-label">{% trans "Month" %}</label>
                 <select class="form-control" name="month">
                     {% for year_month in year_months %}
                     <option>{{year_month}}</option> 
@@ -65,22 +65,22 @@
     <table id="contract" class="table table-responsive" cellspacing="0" width="100%" style="margin:45px;padding:45px">
         <thead>
         <!--tr-->
-            <th class="bg bg-primary border  border-primary text-white">id</th>
-            <th class="bg bg-primary border  border-primary text-white">Vehicle</th>
-            <th class="bg bg-primary border  border-primary text-white">Customer</th>
-            <th class="bg bg-primary border  border-primary text-white">Date of issue</th>
-            <th class="bg bg-primary border  border-primary text-white">Return Date</th>
-            <th class="bg bg-primary border  border-primary text-white">Time remaining</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "id" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Customer" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Date of issue" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Return Date" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Time remaining" %}</th>
         <!--/tr-->
         </thead>
         <tfoot>
             <tr >
-                <th class="bg bg-primary border  border-primary text-white">id</th>
-                <th class="bg bg-primary border  border-primary text-white">Vehicle</th>
-                <th class="bg bg-primary border  border-primary text-white">Customer</th>
-                <th class="bg bg-primary border  border-primary text-white">Date of issue</th>
-                <th class="bg bg-primary border  border-primary text-white">Return Date</th>
-                <th class="bg bg-primary border  border-primary text-white">Time remaining</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "id" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Customer" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Date of issue" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Return Date" %}</th>
+            <th class="bg bg-primary border  border-primary text-white">{% trans "Time remaining" %}</th>
             </tr>
         </tfoot>
         <tbody>
@@ -94,22 +94,22 @@
         <table id="available" class="table table-responsive" cellspacing="0" width="100%" style="margin:45px;padding:45px">
             <thead>
             <!--tr-->
-                <th class="bg bg-primary border  border-primary text-white">id</th>
-                <th class="bg bg-primary border  border-primary text-white">Vehicle</th>
-                <th class="bg bg-primary border  border-primary text-white">Vehicle Model</th>
-                <th class="bg bg-primary border  border-primary text-white">Region Location</th>
-                <th class="bg bg-primary border  border-primary text-white">Vehicle status</th>
-                <th class="bg bg-primary border  border-primary text-white">Transactions</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "id" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle Model" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Region Location" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle status" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Transactions" %}</th>
             <!--/tr-->
             </thead>
             <tfoot>
                 <tr >
-                    <th class="bg bg-primary border  border-primary text-white">id</th>
-                    <th class="bg bg-primary border  border-primary text-white">Vehicle</th>
-                    <th class="bg bg-primary border  border-primary text-white">Vehicle Model</th>
-                    <th class="bg bg-primary border  border-primary text-white">Region Location</th>
-                    <th class="bg bg-primary border  border-primary text-white">Vehicle status</th>
-                    <th class="bg bg-primary border  border-primary text-white">Transactions</th>
+                    <th class="bg bg-primary border  border-primary text-white">{% trans "id" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle Model" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Region Location" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Vehicle status" %}</th>
+                <th class="bg bg-primary border  border-primary text-white">{% trans "Transactions" %}</th>
                 </tr>
             </tfoot>
             <tbody>

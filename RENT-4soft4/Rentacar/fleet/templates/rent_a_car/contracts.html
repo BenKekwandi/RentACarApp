@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
-
-
+{% load i18n %}
 {% block content %}
 
 <div class="pageholder">
@@ -21,40 +20,40 @@
 
                     <table id="contract" class="display" cellspacing="0" width="100%">
                         <thead>
-                            <th>id</th>
-                            <th>Customer</th>
-                            <th>Vehicle</th>
-                            <th>Phone number</th>
-                            <th>Issue Date</th>
-                            <th>Return Date</th>
-                            <th>Pick Up address</th>
-                            <th>Drop address</th>
-                            <th>Fee</th>
-                            <th>Amount Paid</th>
-                            <th>Debt</th>
-                            <th>Payment Status</th>
-                            <th>Status</th>
-                            <th>Registration date</th>
-                            <th>Transactions</th>
+                            <th>{% trans "id" %}</th>
+                            <th>{%  trans "Customer" %}</th>
+                            <th>{% trans "Vehicle" %}</th>
+                            <th>{% trans "Phone number" %}</th>
+                            <th>{% trans "Issue Date" %}</th>
+                            <th>{% trans "Return Date" %}</th>
+                            <th>{% trans "Pick Up address" %}</th>
+                            <th>{% trans "Drop address" %}</th>
+                            <th>{% trans "Fee" %}</th>
+                            <th>{% trans "Amount Paid" %}</th>
+                            <th>{% trans "Debt" %}</th>
+                            <th>{% trans "Payment Status" %}</th>
+                            <th>{% trans "Status" %}</th>
+                            <th>{% trans "Registration date" %}</th>
+                            <th>{% trans "Transactions" %}</th>
                         </tr>
                         </thead>
                         <tfoot>
                             <tr >
-                                <th>id</th>
-                                <th>Customer</th>
-                                <th>Vehicle</th>
-                                <th>Phone number</th>
-                                <th>Issue Date</th>
-                                <th>Return Date</th>
-                                <th>Pick Up address</th>
-                                <th>Drop address</th>
-                                <th>Fee</th>
-                                <th>Amount Paid</th>
-                                <th>Debt</th>
-                                <th>Payment Status</th>
-                                <th>Status</th>
-                                <th>Registration date</th>
-                                <th>Transactions</th>
+                            <th>{% trans "id" %}</th>
+                            <th>{%  trans "Customer" %}</th>
+                            <th>{% trans "Vehicle" %}</th>
+                            <th>{% trans "Phone number" %}</th>
+                            <th>{% trans "Issue Date" %}</th>
+                            <th>{% trans "Return Date" %}</th>
+                            <th>{% trans "Pick Up address" %}</th>
+                            <th>{% trans "Drop address" %}</th>
+                            <th>{% trans "Fee" %}</th>
+                            <th>{% trans "Amount Paid" %}</th>
+                            <th>{% trans "Debt" %}</th>
+                            <th>{% trans "Payment Status" %}</th>
+                            <th>{% trans "Status" %}</th>
+                            <th>{% trans "Registration date" %}</th>
+                            <th>{% trans "Transactions" %}</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -387,7 +386,7 @@
         {
         }
         $.ajax({
-            url: 'http://127.0.0.1:8000/fleet/contract-json/',
+            url: '/fleet/contract-json/',
             dataType: "json",
             error: function (request) {
                 alert("Error " + request);

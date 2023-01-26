@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 {% block content %}
 <style type="text/css">
     .nav-tabs-custom>.nav-tabs>li.active {
@@ -98,7 +99,7 @@
     <div class="col-md-12">
         <div class="card border-warning">
             <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-tag"></i> Add Vehicle Model
+                <h3 class="card-title text-white"><i class="fa fa-tag"></i>{% trans "Add Vehicle Model" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -112,7 +113,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="vehicleBrand" class="form-label">Vehicle Brand</label>
+                                    <label for="vehicleBrand" class="form-label">{% trans "Vehicle Brand" %}</label>
                                     <select name="vehicleBrand" id="vehicleBrand" class="form-select">
 
                                         {% for brand in brands %}
@@ -127,43 +128,43 @@
 
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label for="vehicleModel" class="form-label">Vehicle Model Name</label>
+                                    <label for="vehicleModel" class="form-label">{% trans "Vehicle Model Name" %}</label>
                                     <input type="text" name="vehicleModel" id="vehicleModel" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label for="fuelType" class="form-label">Fuel Type</label>
+                                    <label for="fuelType" class="form-label">{% trans "Fuel Type" %}</label>
                                     <select name="fuelType" id="fuelType" class="form-select">
-                                        <option>Petrol</option>
-                                        <option>Diesel</option>
-                                        <option>LPG</option>
+                                        <option>{% trans "Petrol" %}</option>
+                                        <option>{% trans "Diesel" %}</option>
+                                        <option>{% trans "LP" %}"</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label for="gear" class="form-label">Gear</label>
+                                    <label for="gear" class="form-label">{% trans "Gear" %}</label>
                                     <select name="gear" id="gear" class="form-select">
-                                        <option>Manual Gear</option>
-                                        <option>Automatic Transaction</option>
-                                        <option>Triptonik</option>
+                                        <option>{% trans "Manual Gear" %}</option>
+                                        <option>{% trans "Automatic Transaction" %}</option>
+                                        <option>{% trnas "Triptonik" %}</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label for="modelYear" class="form-label">Model Year</label>
+                                    <label for="modelYear" class="form-label">{% trans "Model Year" %}</label>
                                     <input type="number" min=1990 max=2030 step=1 name="modelYear" id="modelYear" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label for="vehicleType" class="form-label">Vehicle Type</label>
+                                    <label for="vehicleType" class="form-label">{% trans "Vehicle Type" %}</label>
                                     <select name="vehicleType" id="vehicleType" class="form-select">
 
                                         {% for type in types %}
@@ -177,7 +178,7 @@
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label for="classPrice" class="form-label">Price class</label>
+                                    <label for="classPrice" class="form-label">{% trans "Price class" %}</label>
                                     <select name="classPrice" id="classPrice" class="form-select">
                                        {% for prc in price_classes %}
                                        <option>{{prc.price_class}}</option>
@@ -188,7 +189,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="maxNoPeople" class="form-label">Maximum Number of people</label>
+                                    <label for="maxNoPeople" class="form-label">{% trans "Maximum Number of people" %}</label>
                                     <input type="number"  name="maxNoPeople" id="maxNoPeople" class="form-control">
                                 </div>
                             </div>
@@ -196,7 +197,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="smallSuitcase" class="form-label">Maximum Number of Suitcase(small)</label>
+                                    <label for="smallSuitcase" class="form-label">{% trans "Maximum Number of Suitcase(small)" %}</label>
                                     <input type="number" name="smallSuitcase" id="smallSuitcase" class="form-control">
                                 </div>
                             </div>
@@ -204,14 +205,14 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="largeSuitcase" class="form-label">Maximum Number of Suitcase(large)</label>
+                                    <label for="largeSuitcase" class="form-label">{% trans "Maximum Number of Suitcase(large)" %}</label>
                                     <input type="number" name="largeSuitcase" id="largeSuitcase" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="doorsNumbers" class="form-label">Number of Doors</label>
+                                    <label for="doorsNumbers" class="form-label">{% trans "Number of Doors" %}</label>
                                     <input type="number" name="doorsNumbers" id="doorsNumbers" class="form-control" min="2" max="6">
                                 </div>
                             </div>
@@ -222,7 +223,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="row">
-                                        <label for="vehicleComponents" class="form-label">Vehicle Components</label>
+                                        <label for="vehicleComponents" class="form-label">{% trans "Vehicle Components" %}</label>
                                     </div>
                                     {% for component in components %}
 
@@ -239,7 +240,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="vehiclePic" class="form-label">Vehicle Pictures</label>
+                                    <label for="vehiclePic" class="form-label">{% trans "Vehicle Pictures" %}</label>
                                     {{form.vehicle_model_picture1}}
                                     {{form.vehicle_model_picture2}}
                                     {{form.vehicle_model_picture3}}

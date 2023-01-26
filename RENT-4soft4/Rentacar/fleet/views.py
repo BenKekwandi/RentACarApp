@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse,Http404
 from django.contrib import messages
 from django.template import Context,Template
+from django.utils.translation import gettext,pgettext
 from datetime import timedelta
 import datetime
 from datetime import date
@@ -342,7 +343,7 @@ def acc(paymentId):
     if PaymentMethodModel.objects.get(id=payment.payment_method_id).method=='Transfer':
         account=TransferPaymentModel.objects.get(payment_id=paymentId).transfer_account
         notes=notes+' Payment Method: Transfer'
-    if PaymentMethodModel.objects.get(id=payment.payment_method_id).method=='Found':
+    if PaymentMethodModel.objects.get(id=payment.payment_method_id).method=='found':
         account=FoundPaymentModel.objects.get(payment_id=paymentId).cash_account
         notes=notes+' Payment Method: Cash'
     if PaymentMethodModel.objects.get(id=payment.payment_method_id).method=='look for': 
@@ -456,6 +457,8 @@ def FoundPayment_insert(payment_id,cash_account):
     account.balance=account.balance+float(PaymentModel.objects.get(id=payment_id).amount_fee)
     account.save()
     return found.cash_account,note
+def test_function():
+    pass
 # dashboard page
 @login_required(login_url='/./authentication/admin-login')
 def dashboard(request):
@@ -1568,7 +1571,7 @@ def insert_expense(request):
         if request.POST.get('paymentType')=='Credit card':
             ac,note=CreditCardPayment_insert(payment_id,request.POST.get('posAcc'),request.POST.get('bankFee'),request.POST.get('cardHolder'))
         if request.POST.get('paymentType')=='found':
-            ac,note=FoundPayment_insert(payment_id,request.POST.get('cashAccount'))
+            ac,note=FoundPayment_insert(payment_id,str(request.POST.get('cashAccount')))
         if request.POST.get('paymentType')=='look for':
             ac,note=DefaultPayment_insert(payment_id,request.POST.get('debitedAcc'))
         expense.save()
@@ -1655,12 +1658,12 @@ def contract_json(request):
         if status=='ON-GOING':
             dt['contract_status']='<span class="btn btn-outline-primary">On-going</span>'
         else:
-            dt['contract_status']='<span class="btn btn-outline-danger">Terminated</span>'
+            dt['contract_status']='<span class="btn btn-outline-danger">Terminated</span>' 
         if dt['payment_completion']==0:
             dt['payment']='<span class="btn btn-outline-warning">'+'pending'+'</span>'
         else:
             dt['payment']='<span class="btn btn-outline-success">'+'completed'+'</span>'
-        dt['transactions']='<a href="/fleet/contract-edit/'+str(dt['id'])+'/"'+'class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/contract-delete/'+str(dt['id'])+'"'+'class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/contract-view/'+str(dt['id'])+'"'+'class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'+'<a href="/fleet/contract-view/'+str(dt['id'])+'"'+'class="col btn btn-outline-warning btn-xs" data-bs-toggle="modal" data-bs-target="#Payment"><i class="fa-solid fa-dollar-sign"></i></a>'
+        dt['transactions']='<a href="/fleet/contract-edit/'+str(dt['id'])+'/"'+'class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/contract-delete/'+str(dt['id'])+'"'+'class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/contract-view/'+str(dt['id'])+'"'+'class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'
     return JsonResponse(new_data,safe=False)
 @login_required(login_url='/./authentication/admin-login')
 def customer_json(request):

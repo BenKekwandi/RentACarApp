@@ -2,3 +2,6 @@ django
 pymysql
 crispy
 forex_python
+python-gettext
+django_rosetta
+pillow

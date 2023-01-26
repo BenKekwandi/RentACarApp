@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
-
+{% load i18n %}
 {% block content %}
 
 <div class="card border border-primary bg bg-light">
     <div class="card-header bg-primary">
-        <h3 class="text-white" style="text-align:center;">GENERAL AVAILABILITY</h3>
+        <h3 class="text-white" style="text-align:center;">{% trans "GENERAL AVAILABILITY" %}</h3>
     </div>
     <div style="margin:20px;">
         <div class="row">
             <div class="col-md-3">
-                <label class="form-label" for="vehicle" class="form-label">Vehicle</label>
+                <label class="form-label" for="vehicle" class="form-label">{% trans "Vehicle" %}</label>
                 <select class="form-control" name="vehicle">
                 {% for vehicle in vehicles %}
                 <option>{{vehicle.vehicle_plate_number}}</option>
@@ -17,7 +17,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label" for="vehicleModel" class="form-label">Vehicle Model</label>
+                <label class="form-label" for="vehicleModel" class="form-label">{% trans "Vehicle Model" %}</label>
                 <select class="form-control" name="vehicleModel">
                 {% for model in models %}
                 <option>{{model.vehicle_model}}</option>
@@ -25,7 +25,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label" for="vehicleBrand" class="form-label">Vehicle Brand</label>
+                <label class="form-label" for="vehicleBrand" class="form-label">{% trans "Vehicle Brand" %}</label>
                 <select class="form-control" name="vehicleBrand">
                     {% for type in types %}
                     <option>{{type.type_name}}</option> 
@@ -33,7 +33,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <label class="form-label" for="vehicleType" class="form-label">Vehicle Type</label>
+                <label class="form-label" for="vehicleType" class="form-label">{% trans "Vehicle Type" %}</label>
                 <select class="form-control" name="VehicleType">
                     {% for brand in brands %}
                     <option>{{brand.brand_name}}</option>
@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <label class="form-label" for="year" class="form-label">Year</label>
+                <label class="form-label" for="year" class="form-label">{% trans "Year" %}</label>
                 <select class="form-control" name="year">
                     {% for year in years %}
                     <option>{{year}}</option> 
@@ -51,7 +51,7 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label class="form-label" for="month" class="form-label">Month</label>
+                <label class="form-label" for="month" class="form-label">{% trans "Month" %}</label>
                 <select class="form-control" name="month">
                     {% for year_month in year_months %}
                     <option>{{year_month}}</option> 
@@ -61,25 +61,85 @@
         </div>
         
     </div>
-    <div class="" style="margin:50px;">
-        <table class="table table-responsive table-striped table-bordered">
+    <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
+
+
+        <table id="general_table" class="display" cellspacing="0" width="100%">
             <thead>
-                <th class="bg bg-light border border-primary">Vehicles</th>
-                {% for i in months %}
-                <th class="bg bg-light border border-primary">{{i}}</th>
-                {% endfor %}
+                <tr>
+                    <th>{% trans "id" %}</th>
+                    <th>{% trans "Vehicle" %}</th>
+                    <th>{% trans "Vehicle Model" %}</th>
+                    <th>{% trans "Vehicle Brand" %}</th>
+                    <th>{% trans "Vehicle Type" %}</th>
+                    <th>{% trans "Year" %}</th>
+                    <th>{% trans "Status" %}</th>
+                </tr>
             </thead>
-                {% for vehicle in vehicles %}
+            <tfoot>
                 <tr>
-                    <td class="bg bg-light border border-primary">{{ vehicle.vehicle_plate_number}}</td>
-                    {% for i in months %}
-                        <td class="bg bg-light border border-primary">0</td>
-                    {% endfor %}
+                    <th>{% trans "id" %}</th>
+                    <th>{% trans "Vehicle" %}</th>
+                    <th>{% trans "Vehicle Model" %}</th>
+                    <th>{% trans "Vehicle Brand" %}</th>
+                    <th>{% trans "Vehicle Type" %}</th>
+                    <th>{% trans "Year" %}</th>
+                    <th>{% trans "Status" %}</th>
+
+                </tr>
+            </tfoot>
+            <tbody>
                 <tr>
-                {% endfor %}
+
+                </tr>
+            </tbody>
         </table>
     </div>
-    <div></div>
-    <div></div>
+    
 </div>
+{% endblock %}
+
+{% block page_script %}
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        var dataSet = [];
+        {
+        }
+        $.ajax({
+            url: 'http://127.0.0.1:8000/fleet/customer-json/',
+            dataType: "json",
+            error: function (request) {
+                alert("Error " + request);
+            },
+            success: function (array) {
+                for (var i = 0; i < array.length; i++) {
+                    dataSet.push([array[i].id
+                        , array[i].type
+                        , array[i].first_name
+                        , array[i].last_name
+                        , array[i].phone_number
+                        , array[i].email
+                        , array[i].date_of_birth
+
+                    ]);
+                }
+                var table = $('#general_table').DataTable({
+                    data: dataSet,
+                    responsive:true,
+                    scrollX:200,
+                });
+
+                // $("#general_table tbody").on("dblclick", 'tr', function () {
+
+                //     var row = table.row(this).data();
+                //     var id = row[0];
+                //     // alert("id" + id);
+                //     var url = 'http://192.168.5.121:8000/fleet/customer-edit/' + id;
+                //     window.location.replace(url);
+                // });
+            }
+        });
+    });
+</script>
 {% endblock %}

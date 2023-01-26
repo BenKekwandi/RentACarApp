@@ -7,6 +7,7 @@ urlpatterns = [
     #path('user-create/',views.user_create),
     #Dashboard path
     path('test/',views.test),
+    #path('translation/',views.translation),
     path('',views.dashboard),
     # Customer path
     path('customer-create/', views.customerCreate),
