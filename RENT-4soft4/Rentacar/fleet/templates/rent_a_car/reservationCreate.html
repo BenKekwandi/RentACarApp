@@ -5,13 +5,11 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card border-primary">
+        <div class="card border-primary border border-primary">
             <div class="card-header bg-primary">
-                <h3 class="card-title text-white"><i class="fa fa-user-plus"></i> {% trans "New Reservation(Based on Vehicle Model)" %}
+                <h3 class="card-title text-center text-white"><i class="fa fa-user-plus"></i> {% trans "New Reservation" %} ({% trans "Based on Vehicle Model" %})
                 </h3>
             </div>
-
-
 
             <!--Customer Type part-->
             <form method="post" action="" class="container-sm">
@@ -79,8 +77,8 @@
                                         <label class="input-group-text" for="plateNumber">{% trans "Vehicle plate Number" %}</label>
                                     </div>
                                     <select name="plateNumber" id="plateNumber" class="form-control">
-                                        {% for model in models %}
-                                        <option>{{model.vehicle_model}}</option>
+                                        {% for vehicle in vehicles %}
+                                        <option>{{vehicle.vehicle_plate_number}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>

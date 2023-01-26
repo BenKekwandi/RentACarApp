@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% loadn i18n %}
 {% block content %}
 <style type="text/css">
     .nav-tabs-custom>.nav-tabs>li.active {
@@ -98,7 +99,7 @@
     <div class="col-md-12">
         <div class="card border-warning">
             <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-tag"></i>New Sales Invoice
+                <h3 class="card-title text-white"><i class="fa fa-tag"></i>{% trans "New Sales Invoice" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -112,7 +113,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="incomeItem" class="form-label">Income Item</label>
+                                    <label for="incomeItem" class="form-label">{% trans "Income Item" %}</label>
                                     <select name="incomeItem" id="incomeItem" class="form-select">
                                         {% for item in items %}
                                         <option>{{item.item_name}}</option>
@@ -124,15 +125,14 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="invoiceNumber" class="form-label">Invoice/Receipt/Document
-                                        Number</label>
+                                    <label for="invoiceNumber" class="form-label">{% trans "Invoice/Receipt/Document Number" %}</label>
                                     <input type="text" name="invoiceNumber" id="collectionInvoice" value="{{invoice_number}}" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="debitedAccount" class="form-label">Account to be Debited</label>
+                                    <label for="debitedAccount" class="form-label">{% "Account to be Debited" %}</label>
                                     <select name="debitedAccount" id="debitedAccount" class="form-select">
                                     {% for account in accounts %}
                                     <option>{{account.account_name}}</option>
@@ -143,14 +143,14 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="amount" class="form-label">Total Amount</label>
+                                    <label for="amount" class="form-label">{% trans "Total Amount" %}</label>
                                     <input type="number" name="amount" id="amount" value="0.0" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="currency" class="form-label">Currency</label>
+                                    <label for="currency" class="form-label">{% trans "Currency" %}</label>
                                     <input type="text" name="currency" id="currency" value="Turkish lira" disabled
                                         class="form-control">
                                 </div>
@@ -158,14 +158,14 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="collectionDate" class="form-label">Collection Date</label>
+                                    <label for="collectionDate" class="form-label">{% trans "Collection Date" %}</label>
                                     <input type="date" name="collectionDate" id="invoiceDate" class="form-control">
                                 </div>
                             </div>
                          
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="mtvExplanation" class="form-label">Explanation</label>
+                                    <label for="mtvExplanation" class="form-label">{% trans "Explanation" %}</label>
                                     <textarea name="mtvExplanation" id="mtvExplanation" class="form-control"
                                         rows="3"></textarea>
                                 </div>
@@ -174,7 +174,7 @@
                         </div>
                         <br>
 
-                        <div class="col-md-12" align="right">
+                        <div class="col-md-12" text-align="right">
                             <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
                             <!--reset button instead of changing directories-->
                             <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">

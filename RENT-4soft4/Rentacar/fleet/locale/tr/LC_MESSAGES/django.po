@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-20 07:09-0800\n"
-"PO-Revision-Date: 2023-01-20 09:40+0000\n"
+"POT-Creation-Date: 2023-01-26 06:33-0800\n"
+"PO-Revision-Date: 2023-01-26 07:46+0000\n"
 "Last-Translator: Gizem Olurdu <gizem.olurdu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,187 +19,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\fleet\templates\customer_management\customerCreate.html:8
-msgid "Add New Customer"
-msgstr "Yeni müşteri ekle"
+#: .\fleet\templates\accounting\account_history.html:12
+msgid "ACCOUNT HISTORY"
+msgstr ""
 
-#: .\fleet\templates\customer_management\customerCreate.html:17
-#: .\fleet\templates\customer_management\customerCreate.html:23
-msgid "Customer Type"
-msgstr "Müşteri türü"
-
-#: .\fleet\templates\customer_management\customerCreate.html:38
-msgid "ID information"
-msgstr "Kimlik bilgisi"
-
-#: .\fleet\templates\customer_management\customerCreate.html:46
-msgid "Customer Title"
-msgstr "Müşteri ünvanı"
-
-#: .\fleet\templates\customer_management\customerCreate.html:56
-#: .\fleet\templates\customer_management\myCustomers.html:23
-#: .\fleet\templates\customer_management\myCustomers.html:38
-msgid "Name"
-msgstr "Ad"
-
-#: .\fleet\templates\customer_management\customerCreate.html:65
-#: .\fleet\templates\customer_management\myCustomers.html:24
-#: .\fleet\templates\customer_management\myCustomers.html:39
-msgid "Surname"
-msgstr "Soyad"
-
-#: .\fleet\templates\customer_management\customerCreate.html:73
-msgid "ID Number"
-msgstr "Kimlik Num."
-
-#: .\fleet\templates\customer_management\customerCreate.html:82
-#: .\fleet\templates\rent_a_car\contractCreate.html:62
-msgid "Passport Number"
-msgstr "Pasaport Num."
-
-#: .\fleet\templates\customer_management\customerCreate.html:91
-#: .\fleet\templates\customer_management\myCustomers.html:27
-#: .\fleet\templates\customer_management\myCustomers.html:42
-msgid "Date of birth"
-msgstr "Doğum Tarihi"
-
-#: .\fleet\templates\customer_management\customerCreate.html:100
-msgid "Place of birth"
-msgstr "Doğum Yeri"
-
-#: .\fleet\templates\customer_management\customerCreate.html:109
-msgid "Country"
-msgstr "ülke"
-
-#: .\fleet\templates\customer_management\customerCreate.html:118
-#: .\fleet\templates\rent_a_car\contractCreate.html:80
-msgid "Nationality"
-msgstr "Uyruk"
-
-#: .\fleet\templates\customer_management\customerCreate.html:127
-msgid "Mother Name"
-msgstr "Ana Adı"
-
-#: .\fleet\templates\customer_management\customerCreate.html:136
-msgid "Father Name"
-msgstr "Baba Adı"
-
-#: .\fleet\templates\customer_management\customerCreate.html:144
-msgid "Job"
-msgstr "Meslek"
-
-#: .\fleet\templates\customer_management\customerCreate.html:153
-msgid "Contact information"
-msgstr "İletişim bigileri"
-
-#: .\fleet\templates\customer_management\customerCreate.html:161
-#: .\fleet\templates\customer_management\customerCreate.html:189
-msgid "Mobile Phone"
-msgstr "Cep Telefonu"
-
-#: .\fleet\templates\customer_management\customerCreate.html:171
-#: .\fleet\templates\customer_management\customerCreate.html:198
-msgid "Home Phone"
-msgstr "Ev Telefonu"
-
-#: .\fleet\templates\customer_management\customerCreate.html:180
-msgid "Office Phone"
-msgstr "ofis Telefonu"
-
-#: .\fleet\templates\customer_management\customerCreate.html:206
-msgid "Business Phone"
-msgstr "iş Telefonu"
-
-#: .\fleet\templates\customer_management\customerCreate.html:214
-#: .\fleet\templates\customer_management\customerCreate.html:223
-msgid "E-mail"
-msgstr "E-posta"
-
-#: .\fleet\templates\customer_management\customerCreate.html:233
-msgid "Home Address"
-msgstr "Ev-adresi"
-
-#: .\fleet\templates\customer_management\customerCreate.html:242
-msgid "Local Address"
-msgstr "Yerel adres"
-
-#: .\fleet\templates\customer_management\customerCreate.html:251
-msgid "Business Address"
-msgstr "iş adresi"
-
-#: .\fleet\templates\customer_management\customerCreate.html:260
-msgid "Driver's Licence information"
-msgstr "Ehliyet Bilgileri"
-
-#: .\fleet\templates\customer_management\customerCreate.html:268
-msgid "Driver's License Number"
-msgstr "Ehliyet Numarası"
-
-#: .\fleet\templates\customer_management\customerCreate.html:277
-msgid "License Issue Place"
-msgstr "Ehliyet Veriliş Yeri"
-
-#: .\fleet\templates\customer_management\customerCreate.html:286
-msgid "License Issue Date"
-msgstr "Ehliyet Veriliş Tarihi"
-
-#: .\fleet\templates\customer_management\customerCreate.html:295
-msgid "Education Information"
-msgstr "Öğrenim Bilgileri"
-
-#: .\fleet\templates\customer_management\customerCreate.html:302
-msgid "School"
-msgstr "Okul"
-
-#: .\fleet\templates\customer_management\customerCreate.html:311
-msgid "Faculty"
-msgstr "Fakülte"
-
-#: .\fleet\templates\customer_management\customerCreate.html:320
-msgid "Section"
-msgstr "Bölüm"
-
-#: .\fleet\templates\customer_management\customerCreate.html:329
-msgid "Student Number"
-msgstr "Öğrenci Numarası"
-
-#: .\fleet\templates\customer_management\customerCreate.html:341
-msgid "Customer Current Account"
-msgstr " Müşteri Cari Hesapları"
-
-#: .\fleet\templates\customer_management\customerCreate.html:352
-msgid "Account Name"
-msgstr "Hesap Adı"
-
-#: .\fleet\templates\customer_management\customerCreate.html:374
-msgid "Account Currency"
-msgstr "Hesap Para Birimi"
-
-#: .\fleet\templates\customer_management\customerCreate.html:422
-msgid "Blood group"
-msgstr "Kan Grubu"
-
-#: .\fleet\templates\customer_management\customerCreate.html:438
-#: .\fleet\templates\customer_management\myCustomers.html:29
-#: .\fleet\templates\customer_management\myCustomers.html:44
-#: .\fleet\templates\rent_a_car\contractCreate.html:286
-#: .\fleet\templates\rent_a_car\reservationCreate.html:210
-msgid "System Note"
-msgstr "Sistem Notu"
-
-#: .\fleet\templates\customer_management\customerCreate.html:446
-msgid "Customer Documents"
-msgstr "Müşteri Evrakları"
-
-#: .\fleet\templates\customer_management\myCustomers.html:12
-#: .\fleet\templates\layout.html:356
-msgid "My Customers"
-msgstr "Müşterilerim"
-
+#: .\fleet\templates\accounting\account_history.html:22
+#: .\fleet\templates\accounting\account_history.html:32
+#: .\fleet\templates\accounting_book\collections.html:20
+#: .\fleet\templates\accounting_book\collections.html:33
+#: .\fleet\templates\accounting_book\expenses.html:21
+#: .\fleet\templates\accounting_book\expenses.html:34
+#: .\fleet\templates\accounting_items\items.html:21
+#: .\fleet\templates\accounting_items\items.html:29
+#: .\fleet\templates\current_accounts\accounts_statement.html:20
+#: .\fleet\templates\current_accounts\accounts_statement.html:33
+#: .\fleet\templates\current_accounts\accounts_status.html:20
+#: .\fleet\templates\current_accounts\accounts_status.html:33
+#: .\fleet\templates\current_accounts\current_accounts.html:20
+#: .\fleet\templates\current_accounts\current_accounts.html:32
 #: .\fleet\templates\customer_management\myCustomers.html:21
 #: .\fleet\templates\customer_management\myCustomers.html:36
 #: .\fleet\templates\my_tools\vehicle.html:21
 #: .\fleet\templates\my_tools\vehicle.html:32
+#: .\fleet\templates\reminders\vehiclePayment.html:21
+#: .\fleet\templates\reminders\vehiclePayment.html:32
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:20
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:34
 #: .\fleet\templates\rent_a_car\contracts.html:23
 #: .\fleet\templates\rent_a_car\contracts.html:42
 #: .\fleet\templates\rent_a_car\general_availability.html:70
@@ -210,6 +55,10 @@ msgstr "Müşterilerim"
 #: .\fleet\templates\rent_a_car\instant_availability.html:107
 #: .\fleet\templates\rent_a_car\reservations.html:21
 #: .\fleet\templates\rent_a_car\reservations.html:39
+#: .\fleet\templates\route_management\region.html:21
+#: .\fleet\templates\route_management\region.html:30
+#: .\fleet\templates\route_management\stop.html:21
+#: .\fleet\templates\route_management\stop.html:32
 #: .\fleet\templates\vehicle_brands\myVehicleBrands.html:21
 #: .\fleet\templates\vehicle_brands\myVehicleBrands.html:29
 #: .\fleet\templates\vehicle_management\vehicle_history.html:21
@@ -221,108 +70,446 @@ msgstr "Müşterilerim"
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:22
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:31
 msgid "id"
-msgstr "İd"
+msgstr ""
 
-#: .\fleet\templates\customer_management\myCustomers.html:22
-#: .\fleet\templates\customer_management\myCustomers.html:37
-msgid "Type"
-msgstr "Tür"
+#: .\fleet\templates\accounting\account_history.html:23
+#: .\fleet\templates\accounting\account_history.html:33
+#: .\fleet\templates\customer_management\customerCreate.html:352
+msgid "Account Name"
+msgstr ""
 
-#: .\fleet\templates\customer_management\myCustomers.html:25
-#: .\fleet\templates\customer_management\myCustomers.html:40
-#: .\fleet\templates\rent_a_car\contracts.html:26
-#: .\fleet\templates\rent_a_car\contracts.html:45
-#: .\fleet\templates\rent_a_car\reservations.html:25
-#: .\fleet\templates\rent_a_car\reservations.html:43
-msgid "Phone number"
-msgstr "Telefon Numarası"
+#: .\fleet\templates\accounting\account_history.html:24
+#: .\fleet\templates\accounting\account_history.html:34
+#: .\fleet\templates\reminders\vehiclePayment.html:24
+#: .\fleet\templates\reminders\vehiclePayment.html:35
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:23
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:37
+msgid "Amount"
+msgstr ""
 
-#: .\fleet\templates\customer_management\myCustomers.html:26
-#: .\fleet\templates\customer_management\myCustomers.html:41
-#: .\fleet\templates\rent_a_car\reservations.html:26
-#: .\fleet\templates\rent_a_car\reservations.html:44
-msgid "Email"
-msgstr "E-posta"
+#: .\fleet\templates\accounting\account_history.html:25
+#: .\fleet\templates\accounting\account_history.html:35
+#: .\fleet\templates\accounting_book\collections.html:26
+#: .\fleet\templates\accounting_book\collections.html:39
+#: .\fleet\templates\accounting_book\expenseCreate.html:262
+#: .\fleet\templates\accounting_book\expenses.html:27
+#: .\fleet\templates\accounting_book\expenses.html:40
+#: .\fleet\templates\accounting_book\invoiceCreate.html:153
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:260
+#: .\fleet\templates\current_accounts\accounts_status.html:24
+#: .\fleet\templates\current_accounts\accounts_status.html:37
+#: .\fleet\templates\current_accounts\current_accounts.html:24
+#: .\fleet\templates\current_accounts\current_accounts.html:36
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:159
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:205
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:250
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:295
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:341
+#: .\fleet\templates\reminders\vehiclePayment.html:25
+#: .\fleet\templates\reminders\vehiclePayment.html:36
+#: .\fleet\templates\rent_a_car\reservationCreate.html:237
+#: .\fleet\templates\rent_a_car\reservations.html:31
+#: .\fleet\templates\rent_a_car\reservations.html:49
+#: .\fleet\templates\vehicle_management\carCare.html:68
+msgid "Currency"
+msgstr ""
 
-#: .\fleet\templates\customer_management\myCustomers.html:28
-#: .\fleet\templates\customer_management\myCustomers.html:43
-msgid "Passport No"
-msgstr "Doğum Tarihi"
+#: .\fleet\templates\accounting\account_history.html:26
+#: .\fleet\templates\accounting\account_history.html:36
+#: .\fleet\templates\current_accounts\accounts_statement.html:25
+#: .\fleet\templates\current_accounts\accounts_statement.html:38
+msgid "Notes"
+msgstr ""
 
-#: .\fleet\templates\customer_management\myCustomers.html:30
-#: .\fleet\templates\customer_management\myCustomers.html:45
-msgid "Date of registration"
-msgstr "Kimlik Numarası"
+#: .\fleet\templates\accounting\account_history.html:27
+#: .\fleet\templates\accounting\account_history.html:37
+#: .\fleet\templates\accounting_book\collections.html:27
+#: .\fleet\templates\accounting_book\collections.html:40
+#: .\fleet\templates\accounting_book\expenses.html:28
+#: .\fleet\templates\accounting_book\expenses.html:41
+#: .\fleet\templates\accounting_items\items.html:24
+#: .\fleet\templates\accounting_items\items.html:32
+#: .\fleet\templates\current_accounts\accounts_status.html:27
+#: .\fleet\templates\current_accounts\accounts_status.html:40
+#: .\fleet\templates\current_accounts\current_accounts.html:26
+#: .\fleet\templates\current_accounts\current_accounts.html:38
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:29
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:43
+#: .\fleet\templates\rent_a_car\contracts.html:36
+#: .\fleet\templates\rent_a_car\contracts.html:55
+#: .\fleet\templates\rent_a_car\reservations.html:32
+#: .\fleet\templates\rent_a_car\reservations.html:50
+#: .\fleet\templates\route_management\region.html:33
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:23
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:31
+#: .\fleet\templates\vehicle_management\vehicle_history.html:26
+#: .\fleet\templates\vehicle_management\vehicle_history.html:37
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:29
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:43
+msgid "Registration date"
+msgstr ""
 
-#: .\fleet\templates\customer_management\myCustomers.html:31
-#: .\fleet\templates\customer_management\myCustomers.html:46
-msgid "transactions"
-msgstr "İşlemler"
+#: .\fleet\templates\accounting\safe.html:8
+msgid "ACCOUNTING"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:9
-msgid "home"
-msgstr "Merkez"
+#: .\fleet\templates\accounting\safe.html:9 .\fleet\templates\layout.html:572
+msgid "Safe"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:10
-msgid "dashboard"
-msgstr "Merkez"
+#: .\fleet\templates\accounting\safe.html:16
+msgid "TODAY"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:34
-msgid "Contracts"
-msgstr "Toplam Sözleşme"
-
-#: .\fleet\templates\dashboard.html:34
-msgid "On-going"
-msgstr "Devam eden"
-
-#: .\fleet\templates\dashboard.html:43
-msgid "rented cars"
-msgstr "kiralık araçlar"
-
-#: .\fleet\templates\dashboard.html:59 .\fleet\templates\dashboard.html:135
-#: .\fleet\templates\dashboard.html:227
-msgid "Vehicles"
-msgstr "Araçlar"
-
-#: .\fleet\templates\dashboard.html:59 .\fleet\templates\dashboard.html:84
-msgid "total"
-msgstr "toplam"
-
-#: .\fleet\templates\dashboard.html:68 .\fleet\templates\dashboard.html:119
-#: .\fleet\templates\dashboard.html:145
-msgid "vehicles"
-msgstr "Araçlar"
-
-#: .\fleet\templates\dashboard.html:84
-#: .\fleet\templates\rent_a_car\contractCreate.html:28
-msgid "Customers"
-msgstr "Müşteriler"
-
-#: .\fleet\templates\dashboard.html:93
-msgid "customers"
-msgstr "müşteriler"
-
-#: .\fleet\templates\dashboard.html:110
-msgid "In maintenance"
-msgstr "Bakımdaki araçlar"
-
-#: .\fleet\templates\dashboard.html:135
-msgid "Available"
-msgstr "Mevcut arabalar"
-
-#: .\fleet\templates\dashboard.html:159
-msgid "Income"
-msgstr "Gelir"
-
+#: .\fleet\templates\accounting\safe.html:32
+#: .\fleet\templates\accounting\safe.html:194
+#: .\fleet\templates\accounting\safe.html:233
+#: .\fleet\templates\accounting\safe.html:272
+#: .\fleet\templates\accounting\safe.html:312
+#: .\fleet\templates\accounting\safe.html:357
 #: .\fleet\templates\dashboard.html:159
 msgid "Today"
-msgstr "Bugün"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:224
-msgid "Cars to be Returned"
-msgstr "araçlar yakında dönüyor"
+#: .\fleet\templates\accounting\safe.html:33
+#: .\fleet\templates\accounting\safe.html:182
+#: .\fleet\templates\accounting\safe.html:195
+#: .\fleet\templates\accounting\safe.html:234
+#: .\fleet\templates\accounting\safe.html:273
+#: .\fleet\templates\accounting\safe.html:313
+#: .\fleet\templates\accounting\safe.html:358
+#| msgid "Month"
+msgid "This Month"
+msgstr ""
 
+#: .\fleet\templates\accounting\safe.html:34
+#: .\fleet\templates\accounting\safe.html:196
+#: .\fleet\templates\accounting\safe.html:235
+#: .\fleet\templates\accounting\safe.html:274
+#: .\fleet\templates\accounting\safe.html:314
+#: .\fleet\templates\accounting\safe.html:359
+#| msgid "Year"
+msgid "This Year"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:40
+#: .\fleet\templates\accounting\safe.html:202
+#: .\fleet\templates\accounting\safe.html:365
+msgid "Turkish lira"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:40
+#: .\fleet\templates\accounting\safe.html:79
+#: .\fleet\templates\accounting\safe.html:118
+#: .\fleet\templates\accounting\safe.html:158
+#| msgid "Today"
+msgid "today"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:49
+#: .\fleet\templates\accounting\safe.html:211
+#: .\fleet\templates\accounting\safe.html:374
+msgid "Turkish Lira"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:79
+#: .\fleet\templates\accounting\safe.html:241
+#: .\fleet\templates\accounting\safe.html:404
+msgid "Dollar"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:88
+#: .\fleet\templates\accounting\safe.html:250
+#: .\fleet\templates\accounting\safe.html:413
+msgid "USD dollar"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:118
+#: .\fleet\templates\accounting\safe.html:280
+#: .\fleet\templates\accounting\safe.html:289
+#: .\fleet\templates\accounting\safe.html:443
+#: .\fleet\templates\accounting\safe.html:452
+msgid "Euro"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:127
+msgid "euro"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:158
+#: .\fleet\templates\accounting\safe.html:167
+#: .\fleet\templates\accounting\safe.html:320
+#: .\fleet\templates\accounting\safe.html:329
+#: .\fleet\templates\accounting\safe.html:483
+#: .\fleet\templates\accounting\safe.html:492
+msgid "Pound"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:191
+#: .\fleet\templates\accounting\safe.html:230
+#: .\fleet\templates\accounting\safe.html:269
+#: .\fleet\templates\accounting\safe.html:309
+#: .\fleet\templates\accounting\safe.html:354
+msgid "Filter"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:202
+#: .\fleet\templates\accounting\safe.html:241
+#: .\fleet\templates\accounting\safe.html:280
+#: .\fleet\templates\accounting\safe.html:320
+msgid "this month"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:345
+msgid "TOTAL SAVES"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:365
+#: .\fleet\templates\accounting\safe.html:404
+#: .\fleet\templates\accounting\safe.html:443
+#: .\fleet\templates\accounting\safe.html:483
+msgid "TOTAL"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:9
+#| msgid "Collection"
+msgid "Collection Entry"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:23
+#| msgid "Customer Current Account"
+msgid "Paying Customer Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:35
+#| msgid "Collection"
+msgid "Collection Item"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:50
+#: .\fleet\templates\accounting_book\expenseCreate.html:50
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:48
+#: .\fleet\templates\rent_a_car\contractCreate.html:356
+#: .\fleet\templates\rent_a_car\contract_edit.html:629
+msgid "Payment Type"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:73
+#: .\fleet\templates\accounting_book\expenseCreate.html:73
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:71
+#: .\fleet\templates\rent_a_car\contractCreate.html:390
+#: .\fleet\templates\rent_a_car\contract_edit.html:652
+msgid "Mail Order Pos Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:80
+#: .\fleet\templates\accounting_book\expenseCreate.html:80
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:78
+#: .\fleet\templates\rent_a_car\contractCreate.html:398
+#: .\fleet\templates\rent_a_car\contract_edit.html:659
+msgid "Brokerage Fee"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:87
+#: .\fleet\templates\accounting_book\expenseCreate.html:87
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:85
+#: .\fleet\templates\rent_a_car\contractCreate.html:405
+#: .\fleet\templates\rent_a_car\contract_edit.html:666
+msgid "Card Type"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:109
+#: .\fleet\templates\accounting_book\expenseCreate.html:109
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:107
+#: .\fleet\templates\rent_a_car\contractCreate.html:429
+#: .\fleet\templates\rent_a_car\contract_edit.html:688
+msgid "Card Number"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:116
+#: .\fleet\templates\accounting_book\expenseCreate.html:116
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:114
+#: .\fleet\templates\rent_a_car\contractCreate.html:437
+#: .\fleet\templates\rent_a_car\contract_edit.html:695
+msgid "Card Expiry Year"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:123
+#: .\fleet\templates\accounting_book\expenseCreate.html:123
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:121
+#: .\fleet\templates\rent_a_car\contractCreate.html:445
+#: .\fleet\templates\rent_a_car\contract_edit.html:702
+msgid "Card Expiry Month"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:130
+#: .\fleet\templates\accounting_book\expenseCreate.html:130
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:128
+#: .\fleet\templates\rent_a_car\contract_edit.html:709
+msgid "CVC"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:145
+#: .\fleet\templates\accounting_book\expenseCreate.html:145
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:143
+#: .\fleet\templates\rent_a_car\contractCreate.html:465
+#: .\fleet\templates\rent_a_car\contract_edit.html:724
+msgid "Bank Account to be Transferred"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:159
+#: .\fleet\templates\accounting_book\expenseCreate.html:159
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:157
+#: .\fleet\templates\rent_a_car\contractCreate.html:477
+#: .\fleet\templates\rent_a_car\contract_edit.html:738
+msgid "Account to be debited"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:163
+#: .\fleet\templates\accounting_book\expenseCreate.html:163
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:161
+#: .\fleet\templates\rent_a_car\contractCreate.html:483
+#: .\fleet\templates\rent_a_car\contract_edit.html:742
+msgid "Create New Current Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:173
+#: .\fleet\templates\accounting_book\expenseCreate.html:173
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:171
+#: .\fleet\templates\rent_a_car\contractCreate.html:494
+#: .\fleet\templates\rent_a_car\contract_edit.html:752
+msgid "Check Number"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:183
+#: .\fleet\templates\accounting_book\expenseCreate.html:183
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:181
+#: .\fleet\templates\rent_a_car\contractCreate.html:502
+#: .\fleet\templates\rent_a_car\contract_edit.html:762
+msgid "Checking Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:190
+#: .\fleet\templates\accounting_book\expenseCreate.html:190
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:188
+#: .\fleet\templates\rent_a_car\contractCreate.html:510
+#: .\fleet\templates\rent_a_car\contract_edit.html:769
+msgid "Check Holder"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:197
+#: .\fleet\templates\accounting_book\expenseCreate.html:197
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:195
+#: .\fleet\templates\rent_a_car\contractCreate.html:518
+#: .\fleet\templates\rent_a_car\contract_edit.html:776
+msgid "Check Cash"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:204
+#: .\fleet\templates\accounting_book\expenseCreate.html:204
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:202
+#: .\fleet\templates\rent_a_car\contractCreate.html:526
+#: .\fleet\templates\rent_a_car\contract_edit.html:783
+msgid "Check Receipt"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:219
+#: .\fleet\templates\accounting_book\expenseCreate.html:219
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:217
+#: .\fleet\templates\rent_a_car\contractCreate.html:538
+#: .\fleet\templates\rent_a_car\contract_edit.html:798
+msgid "Cash Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:233
+#: .\fleet\templates\accounting_book\expenseCreate.html:233
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:231
+#: .\fleet\templates\rent_a_car\contractCreate.html:550
+#: .\fleet\templates\rent_a_car\contract_edit.html:812
+msgid "Bank Pos Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:240
+#: .\fleet\templates\accounting_book\expenseCreate.html:240
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:238
+#: .\fleet\templates\rent_a_car\contractCreate.html:558
+#: .\fleet\templates\rent_a_car\contract_edit.html:819
+msgid "Bank Intermediation Fee"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:247
+#: .\fleet\templates\accounting_book\expenseCreate.html:247
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:245
+#: .\fleet\templates\rent_a_car\contractCreate.html:421
+#: .\fleet\templates\rent_a_car\contractCreate.html:566
+#: .\fleet\templates\rent_a_car\contract_edit.html:826
+msgid "Card Holder"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:254
+#: .\fleet\templates\accounting_book\collections.html:25
+#: .\fleet\templates\accounting_book\collections.html:38
+#: .\fleet\templates\accounting_book\expenses.html:26
+#: .\fleet\templates\accounting_book\expenses.html:39
+#| msgid "Amount"
+msgid "Fee amount"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:262
+#: .\fleet\templates\accounting_book\expenseCreate.html:273
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:271
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:144
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:190
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:235
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:280
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:326
+#| msgid "Payment Status"
+msgid "Payment Date"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:269
+#: .\fleet\templates\accounting_book\expenseCreate.html:280
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:278
+msgid "Exchange Rate"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:276
+#| msgid "Collection"
+msgid "Collection Category"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:288
+#: .\fleet\templates\accounting_book\expenseCreate.html:299
+#: .\fleet\templates\accounting_book\invoiceCreate.html:168
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:286
+#: .\fleet\templates\current_accounts\accountsCreate.html:160
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:171
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:217
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:262
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:307
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:353
+#: .\fleet\templates\reminders\vehiclePayment.html:26
+#: .\fleet\templates\reminders\vehiclePayment.html:37
+#: .\fleet\templates\vehicle_management\carCare.html:86
+msgid "Explanation"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collections.html:11
+#: .\fleet\templates\layout.html:577
+msgid "Income Report"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collections.html:21
+#: .\fleet\templates\accounting_book\collections.html:34
+#: .\fleet\templates\accounting_book\expenses.html:22
+#: .\fleet\templates\accounting_book\expenses.html:35
+#: .\fleet\templates\current_accounts\accounts_status.html:21
+#: .\fleet\templates\current_accounts\accounts_status.html:34
+#: .\fleet\templates\current_accounts\current_accounts.html:21
+#: .\fleet\templates\current_accounts\current_accounts.html:33
 #: .\fleet\templates\dashboard.html:228
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:21
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:35
 #: .\fleet\templates\rent_a_car\contracts.html:24
 #: .\fleet\templates\rent_a_car\contracts.html:43
 #: .\fleet\templates\rent_a_car\instant_availability.html:70
@@ -331,391 +518,85 @@ msgstr "araçlar yakında dönüyor"
 #: .\fleet\templates\rent_a_car\reservations.html:22
 #: .\fleet\templates\rent_a_car\reservations.html:40
 msgid "Customer"
-msgstr "Müsteri"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:229
-msgid "Return date"
-msgstr "Dönüş tarihi"
+#: .\fleet\templates\accounting_book\collections.html:22
+#: .\fleet\templates\accounting_book\collections.html:35
+#: .\fleet\templates\accounting_book\expenses.html:23
+#: .\fleet\templates\accounting_book\expenses.html:36
+#| msgid "My Account"
+msgid "Account"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:230
-#: .\fleet\templates\rent_a_car\instant_availability.html:73
-#: .\fleet\templates\rent_a_car\instant_availability.html:83
-msgid "Time remaining"
-msgstr "kalan süre"
+#: .\fleet\templates\accounting_book\collections.html:23
+#: .\fleet\templates\accounting_book\collections.html:36
+#: .\fleet\templates\accounting_book\expenses.html:24
+#: .\fleet\templates\accounting_book\expenses.html:37
+#| msgid "Phone number"
+msgid "Invoice number"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:231
-#: .\fleet\templates\my_tools\vehicle.html:27
-#: .\fleet\templates\my_tools\vehicle.html:38
-#: .\fleet\templates\rent_a_car\contracts.html:37
-#: .\fleet\templates\rent_a_car\contracts.html:56
-#: .\fleet\templates\rent_a_car\instant_availability.html:102
-#: .\fleet\templates\rent_a_car\instant_availability.html:112
-#: .\fleet\templates\rent_a_car\reservations.html:33
-#: .\fleet\templates\rent_a_car\reservations.html:51
-msgid "Transactions"
-msgstr "İşlemler"
+#: .\fleet\templates\accounting_book\collections.html:24
+#: .\fleet\templates\accounting_book\collections.html:37
+#: .\fleet\templates\accounting_book\expenses.html:25
+#: .\fleet\templates\accounting_book\expenses.html:38
+#| msgid "Payment information"
+msgid "Payment method"
+msgstr ""
 
-#: .\fleet\templates\dashboard.html:253
-msgid "Revenues"
-msgstr "gelirler"
+#: .\fleet\templates\accounting_book\expenseCreate.html:255
+#: .\fleet\templates\accounting_book\invoiceCreate.html:146
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:253
+#: .\fleet\templates\vehicle_management\carCare.html:61
+msgid "Total Amount"
+msgstr ""
 
-#: .\fleet\templates\layout.html:157 .\fleet\templates\layout.html:200
-#: .\fleet\templates\layout.html:241
-msgid "You have"
-msgstr "Var"
+#: .\fleet\templates\accounting_book\expenseCreate.html:288
+#| msgid "Expense Report"
+msgid "Expense Category"
+msgstr ""
 
-#: .\fleet\templates\layout.html:157
-msgid "contracts with debt"
-msgstr "Borçlu Sözleşmeler"
-
-#: .\fleet\templates\layout.html:200
-msgid "vehicles returning soon"
-msgstr "araçlar yakında dönüyor"
-
-#: .\fleet\templates\layout.html:241
-msgid "vehicle payment reminders"
-msgstr "Araç ödeme hatırlatıcıları"
-
-#: .\fleet\templates\layout.html:298
-msgid "My Profile"
-msgstr "Kullanıcı yönetimi"
-
-#: .\fleet\templates\layout.html:308
-msgid "Need Help"
-msgstr "Yardım Edin"
-
-#: .\fleet\templates\layout.html:318
-msgid "Sign Out"
-msgstr "oturumu Kapat"
-
-#: .\fleet\templates\layout.html:338
-msgid "Dashboard"
-msgstr "Merkez"
-
-#: .\fleet\templates\layout.html:345
-msgid "Customer Management"
-msgstr "Müşteri Yönetimi"
-
-#: .\fleet\templates\layout.html:351
-msgid "New Customer"
-msgstr "Yeni Müsteri"
-
-#: .\fleet\templates\layout.html:366
-msgid "Rent A Car"
-msgstr "Araç Kiralama"
-
-#: .\fleet\templates\layout.html:371
-msgid "New Contract"
-msgstr "Yeni Sözleme"
-
-#: .\fleet\templates\layout.html:376
-msgid "New Reservation"
-msgstr "Yeni Reservasyon"
-
-#: .\fleet\templates\layout.html:381
-msgid "Vehicle Sales Contract"
-msgstr "Araç Satiş Sözleşmeleri"
-
-#: .\fleet\templates\layout.html:386
-msgid "My Reservation"
-msgstr "Rezervasyonlarim"
-
-#: .\fleet\templates\layout.html:391
-msgid "Instant Availbility"
-msgstr "Anlik Doluluk Durumu"
-
-#: .\fleet\templates\layout.html:396
-msgid "General Availbility"
-msgstr "Genel Dululuk Durumu"
-
-#: .\fleet\templates\layout.html:401
-msgid "Additional Service Management"
-msgstr "Ek Hizmetler Yönetimi"
-
-#: .\fleet\templates\layout.html:406
-msgid "Route Management"
-msgstr "Güzergah Yönetimi"
-
-#: .\fleet\templates\layout.html:412
-msgid "Regions"
-msgstr "Bölgeler"
-
-#: .\fleet\templates\layout.html:418
-msgid "Add Region"
-msgstr "Bölge Ekle"
-
-#: .\fleet\templates\layout.html:424
-msgid "Stops"
-msgstr "Durak Noktaları"
-
-#: .\fleet\templates\layout.html:430
-msgid "Add Stop"
-msgstr "Durak Noktası Ekle"
-
-#: .\fleet\templates\layout.html:442
-msgid "Vehicle Management"
-msgstr "Araç Yönetimi"
-
-#: .\fleet\templates\layout.html:449
-msgid "My Tools"
-msgstr "Araçlarim"
-
-#: .\fleet\templates\layout.html:455
-msgid "Vehicle List"
-msgstr "Araç listem"
-
-#: .\fleet\templates\layout.html:461
-#: .\fleet\templates\my_tools\vehicleCreate.html:102
-msgid "Add Vehicle"
-msgstr "Araç ekle"
-
-#: .\fleet\templates\layout.html:470
-#: .\fleet\templates\vehicle_management\vehicle_history.html:12
-msgid "Vehicle History"
-msgstr "Araç Geçmişi"
-
-#: .\fleet\templates\layout.html:475
-msgid "Vehicle Maintenance Records"
-msgstr "Araç Bakım Listesi"
-
-#: .\fleet\templates\layout.html:480
-msgid "Car Care"
-msgstr "Araç Bakımı Ekle"
-
-#: .\fleet\templates\layout.html:486 .\fleet\templates\layout.html:492
-#: .\fleet\templates\rent_a_car\general_availability.html:36
-#: .\fleet\templates\rent_a_car\general_availability.html:74
-#: .\fleet\templates\rent_a_car\general_availability.html:85
-#: .\fleet\templates\rent_a_car\instant_availability.html:36
-#: .\fleet\templates\vehicle_models\myVehicleModel.html:23
-#: .\fleet\templates\vehicle_models\myVehicleModel.html:40
-#: .\fleet\templates\vehicle_models\vehicleModelCreate.html:167
-#: .\fleet\templates\vehicle_types\myVehicleTypes.html:23
-#: .\fleet\templates\vehicle_types\myVehicleTypes.html:32
-msgid "Vehicle Type"
-msgstr "Araç Türleri"
-
-#: .\fleet\templates\layout.html:498
-#: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:102
-msgid "Add Vehicle Type"
-msgstr "Araç Türleri ekle"
-
-#: .\fleet\templates\layout.html:507 .\fleet\templates\layout.html:513
-#: .\fleet\templates\rent_a_car\general_availability.html:28
-#: .\fleet\templates\rent_a_car\general_availability.html:73
-#: .\fleet\templates\rent_a_car\general_availability.html:84
-#: .\fleet\templates\rent_a_car\instant_availability.html:28
-#: .\fleet\templates\vehicle_models\vehicleModelCreate.html:116
-msgid "Vehicle Brand"
-msgstr "Araç Markaları"
-
-#: .\fleet\templates\layout.html:519
-#: .\fleet\templates\vehicle_brands\vehicleBrandCreate.html:102
-msgid "Add Vehicle Brand"
-msgstr "Araç Markaları ekle"
-
-#: .\fleet\templates\layout.html:528 .\fleet\templates\layout.html:534
-#: .\fleet\templates\my_tools\vehicle.html:23
-#: .\fleet\templates\my_tools\vehicle.html:34
-#: .\fleet\templates\rent_a_car\general_availability.html:20
-#: .\fleet\templates\rent_a_car\general_availability.html:72
-#: .\fleet\templates\rent_a_car\general_availability.html:83
-#: .\fleet\templates\rent_a_car\instant_availability.html:20
-#: .\fleet\templates\rent_a_car\instant_availability.html:99
-#: .\fleet\templates\rent_a_car\instant_availability.html:109
-#: .\fleet\templates\rent_a_car\reservationCreate.html:64
-#: .\fleet\templates\rent_a_car\reservations.html:24
-#: .\fleet\templates\rent_a_car\reservations.html:42
-msgid "Vehicle Model"
-msgstr "Araç modelleri"
-
-#: .\fleet\templates\layout.html:540
-#: .\fleet\templates\vehicle_models\vehicleModelCreate.html:102
-msgid "Add Vehicle Model"
-msgstr "Araç modelleri ekle"
-
-#: .\fleet\templates\layout.html:553
-msgid "Authorization"
-msgstr "Yetkilendirme"
-
-#: .\fleet\templates\layout.html:558
-msgid "My Account"
-msgstr "Kullanıcı Yönetimi"
-
-#: .\fleet\templates\layout.html:567
-msgid "Accounting"
-msgstr "Muhasebe"
-
-#: .\fleet\templates\layout.html:572
-msgid "Safe"
-msgstr "Kasalar"
-
-#: .\fleet\templates\layout.html:577
-msgid "Income Report"
-msgstr "Gelir raporu"
-
+#: .\fleet\templates\accounting_book\expenses.html:12
 #: .\fleet\templates\layout.html:582
 msgid "Expense Report"
-msgstr "Gider raporu"
+msgstr ""
 
-#: .\fleet\templates\layout.html:588
-msgid "My Accounting Book"
-msgstr "Muhasebe defterim"
+#: .\fleet\templates\accounting_book\invoiceCreate.html:102
+#| msgid "Sales Invoice"
+msgid "New Sales Invoice"
+msgstr ""
 
-#: .\fleet\templates\layout.html:594
-msgid "All Records"
-msgstr "Tüm Kayıtlar"
+#: .\fleet\templates\accounting_book\invoiceCreate.html:116
+#| msgid "Income"
+msgid "Income Item"
+msgstr ""
 
-#: .\fleet\templates\layout.html:600
-msgid "Vehicle Expense"
-msgstr "Araç Gıderleri"
+#: .\fleet\templates\accounting_book\invoiceCreate.html:128
+msgid "Invoice/Receipt/Document Number"
+msgstr ""
 
-#: .\fleet\templates\layout.html:606
-msgid "Collection"
-msgstr "Tahsilat"
+#: .\fleet\templates\accounting_book\invoiceCreate.html:161
+#| msgid "Collection"
+msgid "Collection Date"
+msgstr ""
 
-#: .\fleet\templates\layout.html:612
-msgid "Expense Records"
-msgstr "Gider Kaydı"
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:9
+#| msgid "Add Vehicle Expense Record"
+msgid "Vehicle Expense Record"
+msgstr ""
 
-#: .\fleet\templates\layout.html:618
-msgid "Sales Invoice"
-msgstr "Satış Faturası"
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:23
+msgid "Service Received Company"
+msgstr ""
 
-#: .\fleet\templates\layout.html:624
-msgid "Add Vehicle Expense Record"
-msgstr "Araç Gider Kaydı Ekle"
-
-#: .\fleet\templates\layout.html:635
-msgid "Current Accounts"
-msgstr "Cari Hesaplar"
-
-#: .\fleet\templates\layout.html:641
-msgid "All Curent Accounts"
-msgstr "Tüm Cari Hesaplar"
-
-#: .\fleet\templates\layout.html:647
-msgid "Add Current Account"
-msgstr "Cari hesapekle ekle"
-
-#: .\fleet\templates\layout.html:653
-msgid "Merge Current Account"
-msgstr "Cari hesap Birlleştir"
-
-#: .\fleet\templates\layout.html:659
-msgid "Status Statement"
-msgstr "Cari Durum Tablosu"
-
-#: .\fleet\templates\layout.html:665
-msgid "Account Statement"
-msgstr "Cari Hesap Dökümü"
-
-#: .\fleet\templates\layout.html:674
-msgid "Accounting Items"
-msgstr "Muhasebe Kalemleri"
-
-#: .\fleet\templates\layout.html:680
-msgid "All Items"
-msgstr "Tüm Kalemleri"
-
-#: .\fleet\templates\layout.html:686
-msgid "Add New Item"
-msgstr "Yeni Kalem Ekle"
-
-#: .\fleet\templates\layout.html:699
-msgid "Reminders"
-msgstr "Hatırlatmalar"
-
-#: .\fleet\templates\layout.html:704
-msgid "Vehicle Payment Reminders"
-msgstr "Araç ödeme Hatırlatmaları"
-
-#: .\fleet\templates\layout.html:709
-msgid "Add Vehicle Payment Reminders"
-msgstr "Araç ödeme Hatırlatmalası Ekle"
-
-#: .\fleet\templates\layout.html:714
-msgid "Bulk Add Vehicle Payment Reminders"
-msgstr "Araç ödeme Hatırlatmalası Toplu ekle"
-
-#: .\fleet\templates\my_tools\vehicle.html:12
-msgid "All vehicles"
-msgstr "Tüm Araçlar"
-
-#: .\fleet\templates\my_tools\vehicle.html:22
-#: .\fleet\templates\my_tools\vehicle.html:33
-msgid "Vehicle Plate number"
-msgstr "araç plaka numarası"
-
-#: .\fleet\templates\my_tools\vehicle.html:24
-#: .\fleet\templates\my_tools\vehicle.html:35
-msgid "traffic_release_year"
-msgstr "Trafik yayın yılı"
-
-#: .\fleet\templates\my_tools\vehicle.html:25
-#: .\fleet\templates\my_tools\vehicle.html:36
-#: .\fleet\templates\rent_a_car\instant_availability.html:100
-#: .\fleet\templates\rent_a_car\instant_availability.html:110
-msgid "Region Location"
-msgstr "bölge konumu"
-
-#: .\fleet\templates\my_tools\vehicle.html:26
-#: .\fleet\templates\my_tools\vehicle.html:37
-#: .\fleet\templates\my_tools\vehicleCreate.html:148
-msgid "Vehicle Status"
-msgstr "araç durumu"
-
-#: .\fleet\templates\my_tools\vehicleCreate.html:117
-msgid "Plate number"
-msgstr "Plaka numarası"
-
-#: .\fleet\templates\my_tools\vehicleCreate.html:124
-#: .\fleet\templates\vehicle_models\myVehicleModel.html:22
-#: .\fleet\templates\vehicle_models\myVehicleModel.html:39
-msgid "Model"
-msgstr "Modeli"
-
-#: .\fleet\templates\my_tools\vehicleCreate.html:140
-msgid "Traffic Release Year"
-msgstr "Trafik yayın yılı"
-
-#: .\fleet\templates\my_tools\vehicleCreate.html:164
-msgid "Location of Vehicle"
-msgstr "aracın konumu"
-
-#: .\fleet\templates\my_tools\vehicleCreate.html:170
-msgid "Picture of the vehicle"
-msgstr "aracın resmi"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:9
-msgid "Add new Contract"
-msgstr "Yeni Sözleşme"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:21
-msgid "Additional people to use the Tool"
-msgstr "Aracı kullanacak ek kişiler"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:44
-msgid "Name and Surname"
-msgstr "Ad ve Soyad"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:53
-msgid "Identification Number"
-msgstr "Kimlik Numarası"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:71
-msgid "Birth Date"
-msgstr "Doğüm Tarihi"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:89
-msgid "Telephone"
-msgstr "Telefonu"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:98
-msgid "Vehicle Information"
-msgstr "Araç bilgisi"
-
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:34
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:124
+#: .\fleet\templates\reminders\vehiclePayment.html:22
+#: .\fleet\templates\reminders\vehiclePayment.html:33
 #: .\fleet\templates\rent_a_car\contractCreate.html:106
+#: .\fleet\templates\rent_a_car\contract_edit.html:184
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:22
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:36
 #: .\fleet\templates\rent_a_car\contracts.html:25
 #: .\fleet\templates\rent_a_car\contracts.html:44
 #: .\fleet\templates\rent_a_car\general_availability.html:12
@@ -734,572 +615,1584 @@ msgstr "Araç bilgisi"
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:22
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:36
 msgid "Vehicle"
-msgstr "Araç"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\itemCreate.html:103
+#| msgid "Accounting Items"
+msgid "Add Accounting Item"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\itemCreate.html:118
+#: .\fleet\templates\accounting_items\items.html:22
+#: .\fleet\templates\accounting_items\items.html:30
+#: .\fleet\templates\route_management\region.html:31
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:22
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:30
+msgid "Item Name"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\itemCreate.html:125
+msgid "Top Category"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\items.html:12
+msgid "ACCOUNTING ITEMS"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\items.html:23
+#: .\fleet\templates\accounting_items\items.html:31
+#: .\fleet\templates\current_accounts\accounts_statement.html:22
+#: .\fleet\templates\current_accounts\accounts_statement.html:35
+#: .\fleet\templates\route_management\region.html:32
+msgid "Category"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:10
+#: .\fleet\templates\layout.html:338
+msgid "Dashboard"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:11
+#: .\fleet\templates\layout.html:553
+msgid "Authorization"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:12
+#| msgid "My Profile"
+msgid "Profile"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:27
+#| msgid "My Profile"
+msgid "Profile Image"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:41
+#| msgid "Accounting Items"
+msgid "Account Opening Date"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:48
+#| msgid "login Date"
+msgid "Last Login Date"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:55
+#| msgid "Registration date"
+msgid "Expiration date"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:62
+msgid "Language Preference"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:69
+#| msgid "Account Statement"
+msgid "Account Status"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:78
+#| msgid "Surname"
+msgid "Full name"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:85
+#| msgid "Passport No"
+msgid "Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:92
+#: .\fleet\templates\customer_management\customerCreate.html:214
+#: .\fleet\templates\customer_management\customerCreate.html:223
+msgid "E-mail"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:130
+#| msgid "Currency Point"
+msgid "Current Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:137
+msgid "New Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:144
+msgid "Re-enter New Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:152
+msgid "Change Password"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:104
+#| msgid "Add Current Account"
+msgid "Add a Current Account"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:119
+#| msgid "Current Accounts"
+msgid "Current Account Type"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:130
+#| msgid "Current Accounts"
+msgid "Current Account Holder"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:142
+#| msgid "Current Accounts"
+msgid "Current Account Name"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:149
+#| msgid "Account Currency"
+msgid "Current Account Currency"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:11
+#| msgid "Account Statement"
+msgid "Current Account Statement"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:21
+#: .\fleet\templates\current_accounts\accounts_statement.html:34
+#: .\fleet\templates\current_accounts\accounts_status.html:22
+#: .\fleet\templates\current_accounts\accounts_status.html:35
+#: .\fleet\templates\current_accounts\current_accounts.html:22
+#: .\fleet\templates\current_accounts\current_accounts.html:34
+#| msgid "Account Name"
+msgid "Account name"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:23
+#: .\fleet\templates\current_accounts\accounts_statement.html:36
+#| msgid "Payment Status"
+msgid "Payment date"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:24
+#: .\fleet\templates\current_accounts\accounts_statement.html:37
+#| msgid "Section"
+msgid "Situation"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:26
+#: .\fleet\templates\current_accounts\accounts_statement.html:39
+#| msgid "Amount"
+msgid "fee_amount"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:27
+#: .\fleet\templates\current_accounts\accounts_statement.html:40
+#| msgid "Registration date"
+msgid "registration date"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:11
+#| msgid "Current Accounts"
+msgid "Current Account Status"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:23
+#: .\fleet\templates\current_accounts\accounts_status.html:36
+#: .\fleet\templates\current_accounts\current_accounts.html:23
+#: .\fleet\templates\current_accounts\current_accounts.html:35
+#| msgid "Account Name"
+msgid "Account Type"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:25
+#: .\fleet\templates\current_accounts\accounts_status.html:38
+msgid "Balance"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:26
+#: .\fleet\templates\current_accounts\current_accounts.html:25
+#: .\fleet\templates\current_accounts\current_accounts.html:37
+#| msgid "System Note"
+msgid "System notes"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:39
+#| msgid "System Note"
+msgid "sSystem notes"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\current_accounts.html:11
+#| msgid "All Curent Accounts"
+msgid "All Current accounts"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:109
+#| msgid "Merge Current Account"
+msgid "Merge Current Accounts"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:126
+msgid "Accounts to be merged must be in the same currency"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:134
+#| msgid "My Account"
+msgid "Main Account"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:146
+#| msgid "Account to be debited"
+msgid "Account to Merge"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:8
+msgid "Add New Customer"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:17
+#: .\fleet\templates\customer_management\customerCreate.html:23
+msgid "Customer Type"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:38
+msgid "ID information"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:46
+msgid "Customer Title"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:56
+#: .\fleet\templates\customer_management\myCustomers.html:23
+#: .\fleet\templates\customer_management\myCustomers.html:38
+#: .\fleet\templates\route_management\stop.html:23
+#: .\fleet\templates\route_management\stop.html:34
+msgid "Name"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:65
+#: .\fleet\templates\customer_management\myCustomers.html:24
+#: .\fleet\templates\customer_management\myCustomers.html:39
+msgid "Surname"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:73
+msgid "ID Number"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:82
+#: .\fleet\templates\rent_a_car\contractCreate.html:62
+#: .\fleet\templates\rent_a_car\contract_edit.html:96
+msgid "Passport Number"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:91
+#: .\fleet\templates\customer_management\myCustomers.html:27
+#: .\fleet\templates\customer_management\myCustomers.html:42
+msgid "Date of birth"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:100
+#: .\fleet\templates\rent_a_car\contract_edit.html:132
+msgid "Place of birth"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:109
+#: .\fleet\templates\rent_a_car\contract_edit.html:141
+msgid "Country"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:118
+#: .\fleet\templates\rent_a_car\contractCreate.html:80
+#: .\fleet\templates\rent_a_car\contract_edit.html:114
+msgid "Nationality"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:127
+#: .\fleet\templates\rent_a_car\contract_edit.html:150
+msgid "Mother Name"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:136
+#: .\fleet\templates\rent_a_car\contract_edit.html:159
+msgid "Father Name"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:144
+#: .\fleet\templates\rent_a_car\contract_edit.html:168
+msgid "Job"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:153
+msgid "Contact information"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:161
+#: .\fleet\templates\customer_management\customerCreate.html:189
+msgid "Mobile Phone"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:171
+#: .\fleet\templates\customer_management\customerCreate.html:198
+msgid "Home Phone"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:180
+msgid "Office Phone"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:206
+msgid "Business Phone"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:233
+msgid "Home Address"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:242
+msgid "Local Address"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:251
+msgid "Business Address"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:260
+msgid "Driver's Licence information"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:268
+msgid "Driver's License Number"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:277
+msgid "License Issue Place"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:286
+msgid "License Issue Date"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:295
+msgid "Education Information"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:302
+msgid "School"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:311
+msgid "Faculty"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:320
+msgid "Section"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:329
+msgid "Student Number"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:341
+msgid "Customer Current Account"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:374
+msgid "Account Currency"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:422
+msgid "Blood group"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:438
+#: .\fleet\templates\customer_management\myCustomers.html:29
+#: .\fleet\templates\customer_management\myCustomers.html:44
+#: .\fleet\templates\rent_a_car\contractCreate.html:286
+#: .\fleet\templates\rent_a_car\contract_edit.html:352
+#: .\fleet\templates\rent_a_car\reservationCreate.html:210
+msgid "System Note"
+msgstr ""
+
+#: .\fleet\templates\customer_management\customerCreate.html:446
+msgid "Customer Documents"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:12
+#: .\fleet\templates\layout.html:356
+msgid "My Customers"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:22
+#: .\fleet\templates\customer_management\myCustomers.html:37
+#: .\fleet\templates\route_management\stop.html:22
+#: .\fleet\templates\route_management\stop.html:33
+msgid "Type"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:25
+#: .\fleet\templates\customer_management\myCustomers.html:40
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:23
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:37
+#: .\fleet\templates\rent_a_car\contracts.html:26
+#: .\fleet\templates\rent_a_car\contracts.html:45
+#: .\fleet\templates\rent_a_car\reservations.html:25
+#: .\fleet\templates\rent_a_car\reservations.html:43
+msgid "Phone number"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:26
+#: .\fleet\templates\customer_management\myCustomers.html:41
+#: .\fleet\templates\rent_a_car\reservations.html:26
+#: .\fleet\templates\rent_a_car\reservations.html:44
+msgid "Email"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:28
+#: .\fleet\templates\customer_management\myCustomers.html:43
+msgid "Passport No"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:30
+#: .\fleet\templates\customer_management\myCustomers.html:45
+msgid "Date of registration"
+msgstr ""
+
+#: .\fleet\templates\customer_management\myCustomers.html:31
+#: .\fleet\templates\customer_management\myCustomers.html:46
+msgid "transactions"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:9
+msgid "home"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:10
+msgid "dashboard"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:34
+msgid "Contracts"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:34
+msgid "On-going"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:43
+msgid "rented cars"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:59 .\fleet\templates\dashboard.html:135
+#: .\fleet\templates\dashboard.html:227
+msgid "Vehicles"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:59 .\fleet\templates\dashboard.html:84
+msgid "total"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:68 .\fleet\templates\dashboard.html:119
+#: .\fleet\templates\dashboard.html:145
+msgid "vehicles"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:84
+#: .\fleet\templates\rent_a_car\contractCreate.html:28
+msgid "Customers"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:93
+msgid "customers"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:110
+msgid "In maintenance"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:135
+msgid "Available"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:159
+msgid "Income"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:224
+msgid "Cars to be Returned"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:229
+msgid "Return date"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:230
+#: .\fleet\templates\rent_a_car\instant_availability.html:73
+#: .\fleet\templates\rent_a_car\instant_availability.html:83
+msgid "Time remaining"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:231
+#: .\fleet\templates\my_tools\vehicle.html:27
+#: .\fleet\templates\my_tools\vehicle.html:38
+#: .\fleet\templates\rent_a_car\contracts.html:37
+#: .\fleet\templates\rent_a_car\contracts.html:56
+#: .\fleet\templates\rent_a_car\instant_availability.html:102
+#: .\fleet\templates\rent_a_car\instant_availability.html:112
+#: .\fleet\templates\rent_a_car\reservations.html:33
+#: .\fleet\templates\rent_a_car\reservations.html:51
+msgid "Transactions"
+msgstr ""
+
+#: .\fleet\templates\dashboard.html:253
+msgid "Revenues"
+msgstr ""
+
+#: .\fleet\templates\layout.html:157 .\fleet\templates\layout.html:200
+#: .\fleet\templates\layout.html:241
+msgid "You have"
+msgstr ""
+
+#: .\fleet\templates\layout.html:157
+msgid "contracts with debt"
+msgstr ""
+
+#: .\fleet\templates\layout.html:200
+msgid "vehicles returning soon"
+msgstr ""
+
+#: .\fleet\templates\layout.html:241
+msgid "vehicle payment reminders"
+msgstr ""
+
+#: .\fleet\templates\layout.html:298
+msgid "My Profile"
+msgstr ""
+
+#: .\fleet\templates\layout.html:308
+msgid "Need Help"
+msgstr ""
+
+#: .\fleet\templates\layout.html:318
+msgid "Sign Out"
+msgstr ""
+
+#: .\fleet\templates\layout.html:345
+msgid "Customer Management"
+msgstr ""
+
+#: .\fleet\templates\layout.html:351
+msgid "New Customer"
+msgstr ""
+
+#: .\fleet\templates\layout.html:366
+msgid "Rent A Car"
+msgstr ""
+
+#: .\fleet\templates\layout.html:371
+msgid "New Contract"
+msgstr ""
+
+#: .\fleet\templates\layout.html:376
+msgid "New Reservation"
+msgstr ""
+
+#: .\fleet\templates\layout.html:381
+msgid "Vehicle Sales Contract"
+msgstr ""
+
+#: .\fleet\templates\layout.html:386
+msgid "My Reservation"
+msgstr ""
+
+#: .\fleet\templates\layout.html:391
+msgid "Instant Availbility"
+msgstr ""
+
+#: .\fleet\templates\layout.html:396
+msgid "General Availbility"
+msgstr ""
+
+#: .\fleet\templates\layout.html:401
+msgid "Additional Service Management"
+msgstr ""
+
+#: .\fleet\templates\layout.html:406
+msgid "Route Management"
+msgstr ""
+
+#: .\fleet\templates\layout.html:412
+#: .\fleet\templates\route_management\region.html:12
+msgid "Regions"
+msgstr ""
+
+#: .\fleet\templates\layout.html:418
+#: .\fleet\templates\route_management\regionCreate.html:103
+msgid "Add Region"
+msgstr ""
+
+#: .\fleet\templates\layout.html:424
+#: .\fleet\templates\route_management\stop.html:12
+msgid "Stops"
+msgstr ""
+
+#: .\fleet\templates\layout.html:430
+msgid "Add Stop"
+msgstr ""
+
+#: .\fleet\templates\layout.html:442
+msgid "Vehicle Management"
+msgstr ""
+
+#: .\fleet\templates\layout.html:449
+msgid "My Tools"
+msgstr ""
+
+#: .\fleet\templates\layout.html:455
+msgid "Vehicle List"
+msgstr ""
+
+#: .\fleet\templates\layout.html:461
+#: .\fleet\templates\my_tools\vehicleCreate.html:102
+msgid "Add Vehicle"
+msgstr ""
+
+#: .\fleet\templates\layout.html:470
+#: .\fleet\templates\vehicle_management\vehicle_history.html:12
+msgid "Vehicle History"
+msgstr ""
+
+#: .\fleet\templates\layout.html:475
+msgid "Vehicle Maintenance Records"
+msgstr ""
+
+#: .\fleet\templates\layout.html:480
+msgid "Car Care"
+msgstr ""
+
+#: .\fleet\templates\layout.html:486 .\fleet\templates\layout.html:492
+#: .\fleet\templates\rent_a_car\general_availability.html:36
+#: .\fleet\templates\rent_a_car\general_availability.html:74
+#: .\fleet\templates\rent_a_car\general_availability.html:85
+#: .\fleet\templates\rent_a_car\instant_availability.html:36
+#: .\fleet\templates\vehicle_models\myVehicleModel.html:23
+#: .\fleet\templates\vehicle_models\myVehicleModel.html:40
+#: .\fleet\templates\vehicle_models\vehicleModelCreate.html:167
+#: .\fleet\templates\vehicle_types\myVehicleTypes.html:23
+#: .\fleet\templates\vehicle_types\myVehicleTypes.html:32
+msgid "Vehicle Type"
+msgstr ""
+
+#: .\fleet\templates\layout.html:498
+#: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:102
+msgid "Add Vehicle Type"
+msgstr ""
+
+#: .\fleet\templates\layout.html:507 .\fleet\templates\layout.html:513
+#: .\fleet\templates\rent_a_car\general_availability.html:28
+#: .\fleet\templates\rent_a_car\general_availability.html:73
+#: .\fleet\templates\rent_a_car\general_availability.html:84
+#: .\fleet\templates\rent_a_car\instant_availability.html:28
+#: .\fleet\templates\vehicle_models\vehicleModelCreate.html:116
+msgid "Vehicle Brand"
+msgstr ""
+
+#: .\fleet\templates\layout.html:519
+#: .\fleet\templates\vehicle_brands\vehicleBrandCreate.html:102
+msgid "Add Vehicle Brand"
+msgstr ""
+
+#: .\fleet\templates\layout.html:528 .\fleet\templates\layout.html:534
+#: .\fleet\templates\my_tools\vehicle.html:23
+#: .\fleet\templates\my_tools\vehicle.html:34
+#: .\fleet\templates\rent_a_car\general_availability.html:20
+#: .\fleet\templates\rent_a_car\general_availability.html:72
+#: .\fleet\templates\rent_a_car\general_availability.html:83
+#: .\fleet\templates\rent_a_car\instant_availability.html:20
+#: .\fleet\templates\rent_a_car\instant_availability.html:99
+#: .\fleet\templates\rent_a_car\instant_availability.html:109
+#: .\fleet\templates\rent_a_car\reservationCreate.html:64
+#: .\fleet\templates\rent_a_car\reservations.html:24
+#: .\fleet\templates\rent_a_car\reservations.html:42
+msgid "Vehicle Model"
+msgstr ""
+
+#: .\fleet\templates\layout.html:540
+#: .\fleet\templates\vehicle_models\vehicleModelCreate.html:102
+msgid "Add Vehicle Model"
+msgstr ""
+
+#: .\fleet\templates\layout.html:558
+msgid "My Account"
+msgstr ""
+
+#: .\fleet\templates\layout.html:567
+msgid "Accounting"
+msgstr ""
+
+#: .\fleet\templates\layout.html:588
+msgid "My Accounting Book"
+msgstr ""
+
+#: .\fleet\templates\layout.html:594
+msgid "All Records"
+msgstr ""
+
+#: .\fleet\templates\layout.html:600
+msgid "Vehicle Expense"
+msgstr ""
+
+#: .\fleet\templates\layout.html:606
+msgid "Collection"
+msgstr ""
+
+#: .\fleet\templates\layout.html:612
+msgid "Expense Records"
+msgstr ""
+
+#: .\fleet\templates\layout.html:618
+msgid "Sales Invoice"
+msgstr ""
+
+#: .\fleet\templates\layout.html:624
+msgid "Add Vehicle Expense Record"
+msgstr ""
+
+#: .\fleet\templates\layout.html:635
+msgid "Current Accounts"
+msgstr ""
+
+#: .\fleet\templates\layout.html:641
+msgid "All Curent Accounts"
+msgstr ""
+
+#: .\fleet\templates\layout.html:647
+msgid "Add Current Account"
+msgstr ""
+
+#: .\fleet\templates\layout.html:653
+msgid "Merge Current Account"
+msgstr ""
+
+#: .\fleet\templates\layout.html:659
+msgid "Status Statement"
+msgstr ""
+
+#: .\fleet\templates\layout.html:665
+msgid "Account Statement"
+msgstr ""
+
+#: .\fleet\templates\layout.html:674
+msgid "Accounting Items"
+msgstr ""
+
+#: .\fleet\templates\layout.html:680
+msgid "All Items"
+msgstr ""
+
+#: .\fleet\templates\layout.html:686
+msgid "Add New Item"
+msgstr ""
+
+#: .\fleet\templates\layout.html:699
+msgid "Reminders"
+msgstr ""
+
+#: .\fleet\templates\layout.html:704
+#: .\fleet\templates\reminders\vehiclePayment.html:12
+msgid "Vehicle Payment Reminders"
+msgstr ""
+
+#: .\fleet\templates\layout.html:709
+msgid "Add Vehicle Payment Reminders"
+msgstr ""
+
+#: .\fleet\templates\layout.html:714
+msgid "Bulk Add Vehicle Payment Reminders"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicle.html:12
+msgid "All vehicles"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicle.html:22
+#: .\fleet\templates\my_tools\vehicle.html:33
+msgid "Vehicle Plate number"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicle.html:24
+#: .\fleet\templates\my_tools\vehicle.html:35
+msgid "traffic_release_year"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicle.html:25
+#: .\fleet\templates\my_tools\vehicle.html:36
+#: .\fleet\templates\rent_a_car\instant_availability.html:100
+#: .\fleet\templates\rent_a_car\instant_availability.html:110
+msgid "Region Location"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicle.html:26
+#: .\fleet\templates\my_tools\vehicle.html:37
+#: .\fleet\templates\my_tools\vehicleCreate.html:148
+msgid "Vehicle Status"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicleCreate.html:117
+msgid "Plate number"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicleCreate.html:124
+#: .\fleet\templates\vehicle_models\myVehicleModel.html:22
+#: .\fleet\templates\vehicle_models\myVehicleModel.html:39
+msgid "Model"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicleCreate.html:140
+msgid "Traffic Release Year"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicleCreate.html:164
+msgid "Location of Vehicle"
+msgstr ""
+
+#: .\fleet\templates\my_tools\vehicleCreate.html:170
+msgid "Picture of the vehicle"
+msgstr ""
+
+#: .\fleet\templates\reminders\addVehiclePayment.html:103
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:109
+#| msgid "Add Vehicle Payment Reminders"
+msgid "Add vehicle Payment Reminder"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:137
+msgid "MTV"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:151
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:197
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:242
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:287
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:333
+#| msgid "Payment information"
+msgid "Payment Amount"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:183
+msgid "operating Permint"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:228
+msgid "Peak"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:273
+msgid "Public insurance"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:319
+msgid "Private insurance"
+msgstr ""
+
+#: .\fleet\templates\reminders\vehiclePayment.html:23
+#: .\fleet\templates\reminders\vehiclePayment.html:34
+msgid "Date"
+msgstr ""
+
+#: .\fleet\templates\reminders\vehiclePayment.html:27
+#: .\fleet\templates\reminders\vehiclePayment.html:38
+#| msgid "Registration date"
+msgid "Registration"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:9
+msgid "Add new Contract"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:21
+msgid "Additional people to use the Tool"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:44
+#: .\fleet\templates\rent_a_car\contract_edit.html:77
+msgid "Name and Surname"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:53
+#: .\fleet\templates\rent_a_car\contract_edit.html:86
+msgid "Identification Number"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:71
+#: .\fleet\templates\rent_a_car\contract_edit.html:105
+msgid "Birth Date"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:89
+#: .\fleet\templates\rent_a_car\contract_edit.html:123
+msgid "Telephone"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contractCreate.html:98
+#: .\fleet\templates\rent_a_car\contract_edit.html:176
+msgid "Vehicle Information"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:121
+#: .\fleet\templates\rent_a_car\contract_edit.html:193
 msgid "Issue Point"
-msgstr "sorun noktası"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:137
+#: .\fleet\templates\rent_a_car\contract_edit.html:201
 msgid "Return Point"
-msgstr "dönüş noktası"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:155
+#: .\fleet\templates\rent_a_car\contract_edit.html:258
 msgid "Issue Date and Time"
-msgstr "Yayın tarihi ve saati"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:163
+#: .\fleet\templates\rent_a_car\contract_edit.html:266
 msgid "Return Date and Time"
-msgstr "Dönüş tarihi ve saati"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:171
+#: .\fleet\templates\rent_a_car\contract_edit.html:275
 msgid "Days"
-msgstr "Günler"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:178
 msgid "Early delivery Date"
-msgstr "Erken teslimat tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:186
+#: .\fleet\templates\rent_a_car\contract_edit.html:284
 msgid "Gasoline Quantity"
-msgstr "Benzin miktarı"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:194
+#: .\fleet\templates\rent_a_car\contract_edit.html:292
 msgid "Transmission Km."
-msgstr "İletim kilometresi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:203
+#: .\fleet\templates\rent_a_car\contract_edit.html:301
+#: .\fleet\templates\rent_a_car\contract_edit.html:474
 msgid "Return Km"
-msgstr "Dönüş kilometresi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:212
+#: .\fleet\templates\rent_a_car\contract_edit.html:310
 msgid "Mileage Limit"
-msgstr "kilometre sınırı"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:225
+#: .\fleet\templates\rent_a_car\contract_edit.html:320
+#: .\fleet\templates\rent_a_car\contract_edit.html:443
 msgid "Vehicle Return Address"
-msgstr "Araç İade Adresi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:235
+#: .\fleet\templates\rent_a_car\contract_edit.html:330
 msgid "Vehicle Issue Address"
-msgstr "Araç Verme Adresi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:246
+#: .\fleet\templates\rent_a_car\contract_edit.html:339
 msgid "Additional information"
-msgstr "ek bilgi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:294
+#: .\fleet\templates\rent_a_car\contract_edit.html:361
 #: .\fleet\templates\rent_a_car\reservationCreate.html:218
 msgid "Customer Comment"
-msgstr "müşteri yorumu"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:301
+#: .\fleet\templates\rent_a_car\contract_edit.html:573
 msgid "Payment information"
-msgstr "Ödeme bilgileri"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:308
+#: .\fleet\templates\rent_a_car\contract_edit.html:578
 #: .\fleet\templates\rent_a_car\reservationCreate.html:230
 msgid "Total Fee"
-msgstr "Toplam ücret"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:317
+#: .\fleet\templates\rent_a_car\contract_edit.html:587
 msgid "Agent Percentage"
-msgstr "Ajan Yüzdesi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:326
+#: .\fleet\templates\rent_a_car\contract_edit.html:594
 msgid "Agent Fee"
-msgstr "Ajan ücreti"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:340
+#: .\fleet\templates\rent_a_car\contract_edit.html:601
 msgid "Intermediary Company Account"
-msgstr "Aracı Firma Hesabı"
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:356
-msgid "Payment Type"
-msgstr "Ödeme Şekli"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:372
 msgid "Currency Point"
-msgstr "para birimi noktası"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:390
-msgid "Mail Order Pos Account"
-msgstr "Mail order Pos"
+#: .\fleet\templates\rent_a_car\contract_edit.html:53
+msgid "EDIT CONTRACT DETAILS"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:398
-msgid "Brokerage Fee"
-msgstr "Aracılık ücreti"
+#: .\fleet\templates\rent_a_car\contract_edit.html:57
+#: .\fleet\templates\rent_a_car\contract_edit.html:384
+#| msgid "New Contract"
+msgid "Extend contract"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:405
-msgid "Card Type"
-msgstr "Kart Türü Sağlayıcısı"
+#: .\fleet\templates\rent_a_car\contract_edit.html:59
+#: .\fleet\templates\rent_a_car\contract_edit.html:386
+#: .\fleet\templates\rent_a_car\contract_edit.html:459
+#| msgid "Vehicle"
+msgid "Change Vehicle"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:421
-#: .\fleet\templates\rent_a_car\contractCreate.html:566
-msgid "Card Holder"
-msgstr "Kart Sahibi Ad Soyad"
+#: .\fleet\templates\rent_a_car\contract_edit.html:61
+#: .\fleet\templates\rent_a_car\contract_edit.html:388
+#| msgid "New Contract"
+msgid "Cancel Contract"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:429
-msgid "Card Number"
-msgstr "Kart Numarası"
+#: .\fleet\templates\rent_a_car\contract_edit.html:63
+#: .\fleet\templates\rent_a_car\contract_edit.html:390
+#: .\fleet\templates\rent_a_car\contract_edit.html:566
+msgid "Make Payment"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:437
-msgid "Card Expiry Year"
-msgstr "Kartın Son Kullanım Yılı"
+#: .\fleet\templates\rent_a_car\contract_edit.html:343
+#| msgid "Customer Documents"
+msgid "Contract Documents"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:445
-msgid "Card Expiry Month"
-msgstr "Kartın Son Kullanım Ayı"
+#: .\fleet\templates\rent_a_car\contract_edit.html:343
+msgid "Visual"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:465
-msgid "Bank Account to be Transferred"
-msgstr "Havale Yapılacak Banka Hesabı"
+#: .\fleet\templates\rent_a_car\contract_edit.html:372
+#: .\fleet\templates\rent_a_car\reservationCreate.html:224
+msgid "Payment Information"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:477
-msgid "Account to be debited"
-msgstr "Borçlandırılacak Hesap"
+#: .\fleet\templates\rent_a_car\contract_edit.html:402
+#| msgid "New Contract"
+msgid "Extend Contract"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:483
-msgid "Create New Current Account"
-msgstr "Cari Hesap Tercihi"
+#: .\fleet\templates\rent_a_car\contract_edit.html:410
+msgid "Previous number of rental days"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:494
-msgid "Check Number"
-msgstr "Çek No."
+#: .\fleet\templates\rent_a_car\contract_edit.html:414
+#| msgid "Number of doors"
+msgid "Number of extra days"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:502
-msgid "Checking Account"
-msgstr "Çek Hesabı"
+#: .\fleet\templates\rent_a_car\contract_edit.html:418
+msgid "Actual number of rent days"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:510
-msgid "Check Holder"
-msgstr "Çek Sahibi"
+#: .\fleet\templates\rent_a_car\contract_edit.html:423
+#| msgid "Return date"
+msgid "New Return date"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:518
-msgid "Check Cash"
-msgstr "Çek Bozdurma Tarihi"
+#: .\fleet\templates\rent_a_car\contract_edit.html:427
+#| msgid "Total Fee"
+msgid "Old total fee"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:526
-msgid "Check Receipt"
-msgstr "Çek Alınma Tarihi"
+#: .\fleet\templates\rent_a_car\contract_edit.html:431
+msgid "Extra fee"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:538
-msgid "Cash Account"
-msgstr "Nakit Hesap"
+#: .\fleet\templates\rent_a_car\contract_edit.html:435
+msgid "Actual total fee"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:550
-msgid "Bank Pos Account"
-msgstr "Banka Pos Hesabı"
+#: .\fleet\templates\rent_a_car\contract_edit.html:439
+#| msgid "Vehicle Return information"
+msgid "Vehicle Return point"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:558
-msgid "Bank Intermediation Fee"
-msgstr "Banka Aracılık Ücreti"
+#: .\fleet\templates\rent_a_car\contract_edit.html:447
+msgid "Submit"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:448
+#: .\fleet\templates\rent_a_car\contract_edit.html:496
+msgid "Cancel"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:466
+#| msgid "Vehicle Information"
+msgid "Vehicle End Position"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:470
+#| msgid "Purchase Date"
+msgid "Change Date"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:478
+#| msgid "Vehicle"
+msgid "New Vehicle"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:486
+#| msgid "Transmission Km."
+msgid "Transmission Km"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:490
+#| msgid "Vehicle Management"
+msgid "Vehicle Change Reason"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:512
+#| msgid "Contact information"
+msgid "Contract Cancellation Confirmation"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:518
+msgid "Are you sure you want to cancel the contract"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:524
+msgid "Yes"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:525
+msgid "No"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:609
+msgid "PAYMENT FEE"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:616
+msgid "PAYMENT CURRENCY"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:24
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:38
+#: .\fleet\templates\rent_a_car\contracts.html:31
+#: .\fleet\templates\rent_a_car\contracts.html:50
+#: .\fleet\templates\rent_a_car\reservations.html:30
+#: .\fleet\templates\rent_a_car\reservations.html:48
+msgid "Fee"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:25
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:39
+#: .\fleet\templates\rent_a_car\contracts.html:32
+#: .\fleet\templates\rent_a_car\contracts.html:51
+msgid "Amount Paid"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:26
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:40
+#: .\fleet\templates\rent_a_car\contracts.html:33
+#: .\fleet\templates\rent_a_car\contracts.html:52
+msgid "Debt"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:27
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:41
+#: .\fleet\templates\rent_a_car\contracts.html:34
+#: .\fleet\templates\rent_a_car\contracts.html:53
+msgid "Payment Status"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:28
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:42
+#: .\fleet\templates\rent_a_car\contracts.html:35
+#: .\fleet\templates\rent_a_car\contracts.html:54
+#: .\fleet\templates\rent_a_car\general_availability.html:76
+#: .\fleet\templates\rent_a_car\general_availability.html:87
+msgid "Status"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contracts.html:27
 #: .\fleet\templates\rent_a_car\contracts.html:46
 msgid "Issue Date"
-msgstr "düzenleme tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contracts.html:28
 #: .\fleet\templates\rent_a_car\contracts.html:47
 #: .\fleet\templates\rent_a_car\instant_availability.html:72
 #: .\fleet\templates\rent_a_car\instant_availability.html:82
 msgid "Return Date"
-msgstr "dönüş tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contracts.html:29
 #: .\fleet\templates\rent_a_car\contracts.html:48
 msgid "Pick Up address"
-msgstr "Adresi almak"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\contracts.html:30
 #: .\fleet\templates\rent_a_car\contracts.html:49
 msgid "Drop address"
-msgstr "Adres bırak"
-
-#: .\fleet\templates\rent_a_car\contracts.html:31
-#: .\fleet\templates\rent_a_car\contracts.html:50
-#: .\fleet\templates\rent_a_car\reservations.html:30
-#: .\fleet\templates\rent_a_car\reservations.html:48
-msgid "Fee"
-msgstr "ücret"
-
-#: .\fleet\templates\rent_a_car\contracts.html:32
-#: .\fleet\templates\rent_a_car\contracts.html:51
-msgid "Amount Paid"
-msgstr "Ödenen miktar"
-
-#: .\fleet\templates\rent_a_car\contracts.html:33
-#: .\fleet\templates\rent_a_car\contracts.html:52
-msgid "Debt"
-msgstr "Borç"
-
-#: .\fleet\templates\rent_a_car\contracts.html:34
-#: .\fleet\templates\rent_a_car\contracts.html:53
-msgid "Payment Status"
-msgstr "ödeme durumu"
-
-#: .\fleet\templates\rent_a_car\contracts.html:35
-#: .\fleet\templates\rent_a_car\contracts.html:54
-#: .\fleet\templates\rent_a_car\general_availability.html:76
-#: .\fleet\templates\rent_a_car\general_availability.html:87
-msgid "Status"
-msgstr "Durum"
-
-#: .\fleet\templates\rent_a_car\contracts.html:36
-#: .\fleet\templates\rent_a_car\contracts.html:55
-#: .\fleet\templates\rent_a_car\reservations.html:32
-#: .\fleet\templates\rent_a_car\reservations.html:50
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:23
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:31
-#: .\fleet\templates\vehicle_management\vehicle_history.html:26
-#: .\fleet\templates\vehicle_management\vehicle_history.html:37
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:29
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:43
-msgid "Registration date"
-msgstr "Kayıt Tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\general_availability.html:7
 msgid "GENERAL AVAILABILITY"
-msgstr "genel kullanılabilirlik"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\general_availability.html:46
 #: .\fleet\templates\rent_a_car\general_availability.html:75
 #: .\fleet\templates\rent_a_car\general_availability.html:86
 #: .\fleet\templates\rent_a_car\instant_availability.html:46
 msgid "Year"
-msgstr "yıl"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\general_availability.html:54
 #: .\fleet\templates\rent_a_car\instant_availability.html:54
 msgid "Month"
-msgstr "Ay"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\instant_availability.html:7
 msgid "INSTANT AVAILABILITY"
-msgstr "anında kullanılabilirlik"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\instant_availability.html:71
 #: .\fleet\templates\rent_a_car\instant_availability.html:81
 msgid "Date of issue"
-msgstr "Veriliş tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\instant_availability.html:101
 #: .\fleet\templates\rent_a_car\instant_availability.html:111
 msgid "Vehicle status"
-msgstr "araç durumu"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:10
 msgid "New Reservation(Based on Vehicle Model)"
-msgstr "Yeni Rezervasyon"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:20
 #: .\fleet\templates\rent_a_car\reservationCreate.html:42
 msgid "Reservation Status"
-msgstr "Rezervasyon durumu"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:57
 msgid "Vehicle Purchase Information"
-msgstr "Araç Satın Alma Bilgileri"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:79
 msgid "Vehicle plate Number"
-msgstr "Araç plaka numarası"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:94
 #: .\fleet\templates\rent_a_car\reservations.html:27
 #: .\fleet\templates\rent_a_car\reservations.html:45
 msgid "Purchase Date"
-msgstr "Satınalma tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:102
 msgid "Pickup Time"
-msgstr "Alma vakti"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:112
 #: .\fleet\templates\rent_a_car\reservationCreate.html:171
 msgid "Flight Number"
-msgstr "Uçuş numarası"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:120
 msgid "Pickup Place"
-msgstr "Alım Yeri"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:137
 msgid "Pickup Address"
-msgstr "Adresi almak"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:146
 msgid "Vehicle Return information"
-msgstr "Araç İade bilgileri"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:154
 msgid "Delivery Date"
-msgstr "Teslim tarihi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:162
 msgid "Delivery Time"
-msgstr "Teslim Saati"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:179
 msgid "Vehicle Return Place"
-msgstr "Araç iade yeri"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:196
 msgid "Return Address"
-msgstr "İade adresi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservationCreate.html:203
 msgid "Additional services"
-msgstr "ek hizmetler"
-
-#: .\fleet\templates\rent_a_car\reservationCreate.html:224
-msgid "Payment Information"
-msgstr "ödeme bilgileri"
-
-#: .\fleet\templates\rent_a_car\reservationCreate.html:237
-#: .\fleet\templates\rent_a_car\reservations.html:31
-#: .\fleet\templates\rent_a_car\reservations.html:49
-#: .\fleet\templates\vehicle_management\carCare.html:68
-msgid "Currency"
-msgstr "para birimi"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservations.html:12
 msgid "RESERVATIONS"
-msgstr "Rezervasyonlar"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservations.html:28
 #: .\fleet\templates\rent_a_car\reservations.html:46
 msgid "Pick Up place"
-msgstr "teslim alma yeri"
+msgstr ""
 
 #: .\fleet\templates\rent_a_car\reservations.html:29
 #: .\fleet\templates\rent_a_car\reservations.html:47
 msgid "Pick Up Time"
-msgstr "Alma vakti"
+msgstr ""
+
+#: .\fleet\templates\route_management\region.html:22
+#: .\fleet\templates\route_management\regionCreate.html:132
+#| msgid "Regions"
+msgid "Region Name"
+msgstr ""
+
+#: .\fleet\templates\route_management\region.html:23
+#| msgid "Account Name"
+msgid "Zone Type"
+msgstr ""
+
+#: .\fleet\templates\route_management\region.html:24
+#: .\fleet\templates\route_management\regionCreate.html:118
+#| msgid "Add Region"
+msgid "Upper Region"
+msgstr ""
+
+#: .\fleet\templates\route_management\regionCreate.html:125
+#| msgid "Operation Type"
+msgid "Region Type"
+msgstr ""
+
+#: .\fleet\templates\route_management\stop.html:24
+#: .\fleet\templates\route_management\stop.html:35
+#| msgid "Home Address"
+msgid "Address"
+msgstr ""
+
+#: .\fleet\templates\route_management\stop.html:25
+#: .\fleet\templates\route_management\stop.html:36
+#| msgid "Regions"
+msgid "Region"
+msgstr ""
+
+#: .\fleet\templates\route_management\stop.html:26
+#: .\fleet\templates\route_management\stop.html:37
+msgid "Sequence No"
+msgstr ""
 
 #: .\fleet\templates\vehicle_brands\myVehicleBrands.html:12
 msgid "Vehicle Brands"
-msgstr "Araç markaları"
-
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:22
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:30
-msgid "Item Name"
-msgstr "öğe adı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_brands\vehicleBrandCreate.html:117
 msgid "New Vehicle Brand Name"
-msgstr "Yeni Araç Marka Adı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_brands\vehicleBrandCreate.html:125
 msgid "Offcial logo Mark"
-msgstr "Resmi logo İşareti"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\carCare.html:9
 msgid "Add Vehicle Maintenance Record"
-msgstr "Araç Bakım Kaydı Ekle"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\carCare.html:32
 msgid "login Date"
-msgstr "giriş tarihi"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\carCare.html:39
 msgid "Release Date"
-msgstr "Yayın tarihi"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\carCare.html:46
 msgid "Last Maintenance Km"
-msgstr "Son Bakım Km"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\carCare.html:54
 msgid "Input Km"
-msgstr "Giriş km"
-
-#: .\fleet\templates\vehicle_management\carCare.html:61
-msgid "Total Amount"
-msgstr "Toplam ücret"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\carCare.html:80
 msgid "Maintenance place"
-msgstr "Bakım yeri"
-
-#: .\fleet\templates\vehicle_management\carCare.html:86
-msgid "Explanation"
-msgstr "Açıklama"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_history.html:22
 #: .\fleet\templates\vehicle_management\vehicle_history.html:33
 msgid "Operation Type"
-msgstr "Operasyon türü"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_history.html:24
 #: .\fleet\templates\vehicle_management\vehicle_history.html:35
 msgid "Title"
-msgstr "Başlık"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_history.html:25
 #: .\fleet\templates\vehicle_management\vehicle_history.html:36
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:28
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:42
 msgid "Description"
-msgstr "Açıklama"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:12
 msgid "Vehicle Maintenance records"
-msgstr "Araç Bakım kayıtları"
-
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:23
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:37
-msgid "Amount"
-msgstr "Ücret"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:24
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:38
 msgid "Entry Date"
-msgstr "Giriş tarihi"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:25
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:39
 msgid "Release date"
-msgstr "Yayın tarihi"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:26
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:40
 msgid "Input km"
-msgstr "Giriş km"
+msgstr ""
 
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:27
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:41
 msgid "Car place"
-msgstr "Bakım yeri"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:12
 msgid "Vehicle Models"
-msgstr "araç modelleri"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:24
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:41
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:181
 msgid "Price class"
-msgstr "Fiyat sınıfı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:25
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:42
 msgid "Number of doors"
-msgstr "kapı sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:26
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:43
 msgid "Number of passengers"
-msgstr "Yolcuların sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:27
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:44
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:26
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:35
 msgid "Maximum number of large suitcases"
-msgstr "Maksimum büyük valiz sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:28
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:45
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:25
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:34
 msgid "Maximum number of small suitcases"
-msgstr "Maksimum küçük valiz sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:29
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:46
 msgid "Model year"
-msgstr "model yılı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:30
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:47
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:149
 msgid "Gear"
-msgstr "Vites"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:31
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:48
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:138
 msgid "Fuel Type"
-msgstr "Yakıt tipi"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:32
 #: .\fleet\templates\vehicle_models\myVehicleModel.html:49
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:226
 msgid "Vehicle Components"
-msgstr "araç bileşenleri"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:131
 msgid "Vehicle Model Name"
-msgstr "araç modeli adı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:140
 msgid "Petrol"
-msgstr "Benzin"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:141
 msgid "Diesel"
-msgstr "Dizel"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:142
 msgid "LP"
-msgstr "kiralama satın alma"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:151
 msgid "Manual Gear"
-msgstr "Manüel vites"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:152
 msgid "Automatic Transaction"
-msgstr "Otomatik İşlem"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:160
 msgid "Model Year"
-msgstr "model yılı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:192
 #: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:126
 msgid "Maximum Number of people"
-msgstr "Maksimum kişi sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:200
 msgid "Maximum Number of Suitcase(small)"
-msgstr "Maksimum Bavul Sayısı(küçük)"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:208
 msgid "Maximum Number of Suitcase(large)"
-msgstr "Maksimum Bavul Sayısı(büyük)"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:215
 msgid "Number of Doors"
-msgstr "kapı sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_models\vehicleModelCreate.html:243
 msgid "Vehicle Pictures"
-msgstr "Araç resimleri"
+msgstr ""
 
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:13
 msgid "Vehicle Types"
-msgstr "Araç Türülar"
+msgstr ""
 
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:24
 #: .\fleet\templates\vehicle_types\myVehicleTypes.html:33
 msgid "Maximum number of people"
-msgstr "Maksimum kişi sayısı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:119
 msgid "New Vehicle type name"
-msgstr "Yeni Araç tipi adı"
+msgstr ""
 
 #: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:134
 msgid "Maximum Number of Suitcase (small)"
-msgstr "Maksimum Bavul Sayısı (küçük)"
+msgstr ""
 
 #: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:142
 msgid "Maximum Number of Suitcase (large)"
-msgstr "Maksimum Bavul Sayısı (büyük)"
+msgstr ""
 
 #: .\fleet\templates\vehicle_types\vehicleTypeCreate.html:151
 msgid "Vehicle Type Image"
-msgstr "Araç tipi resim resmi"
+msgstr ""

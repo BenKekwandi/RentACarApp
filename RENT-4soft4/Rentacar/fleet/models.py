@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
-    image=models.ImageField(default='default.jpg',upload_to='profile_pics')
+    #user_id=models.IntegerField()
+    profile_picture=models.ImageField(default='default.jpg')
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return 'user_profile'
 #customer models
-class UserTypeModel(models.Model):
+class UserTypeModel(models.Model): 
     type=models.CharField(max_length=255)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
@@ -28,13 +29,6 @@ class FileTypeModel(models.Model):
     updated_at=models.DateTimeField(auto_now_add=True)
     class Meta:
         db_table="file_type"
-class UserProfileModel(models.Model):
-    profile_picture=models.CharField(max_length=250)
-    auth_user_id=models.IntegerField()
-    created_at=models.DateTimeField(auto_now_add=True)
-    updated_at=models.DateTimeField(auto_now_add=True)
-    class Meta:
-        db_table="users"
 class CustomerTypeModel(models.Model):
     type=models.CharField(max_length=100)
     created_at=models.DateTimeField(auto_now_add=True)

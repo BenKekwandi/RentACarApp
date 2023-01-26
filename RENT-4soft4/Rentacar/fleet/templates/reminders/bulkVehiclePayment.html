@@ -106,7 +106,7 @@
     <div class="col-md-12">
         <div class="card border-warning">
             <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add vehicle Payment Reminder
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i>{% trans "Add vehicle Payment Reminder" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -121,7 +121,7 @@
 
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="customerTitle" class="form-label">Vehicel</label>
+                                <label for="customerTitle" class="form-label">{% trans "Vehicle" %}</label>
                                 <select name="customerTitle" id="customerTitle" class="form-select"></select>
                             </div>
                         </div>
@@ -134,21 +134,21 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <span class="names">MTV</span>
+                                <span class="names">{% trans "MTV" %}</span>
 
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="mtvPaymentDate" class="form-label">Payment Date</label>
+                                <label for="mtvPaymentDate" class="form-label">{% trans "Payment Date" %}</label>
                                 <input type="datetime-local" name="mtvPaymentDate" id="mtvPaymentDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="mtvPaymentAmount" class="form-label">Payment Amount</label>
+                                <label for="mtvPaymentAmount" class="form-label">{% trans "Payment Amount" %}</label>
                                 <input type="number" name="mtvPaymentAmount" id="mtvPaymentAmount" class="form-control" value="0.0"
                                     step="0.1">
                             </div>
@@ -156,7 +156,7 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="mtvCurrency" class="form-label">Currency</label>
+                                <label for="mtvCurrency" class="form-label">{% trans "Currency" %}</label>
                                 <select name="mtvCurrency" id="mtvCurrency" class="form-select">
                                     <option>Turkish lira</option>
                                     <option>Pound</option>
@@ -168,7 +168,7 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="mtvExplanation" class="form-label">Explanation</label>
+                                <label for="mtvExplanation" class="form-label">{% trans "Explanation" %}</label>
                                 <textarea name="mtvExplanation" id="mtvExplanation" class="form-control" rows="1"></textarea>
                             </div>
                         </div>
@@ -180,21 +180,21 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <span class="names">operating Permint</span>
+                                <span class="names">{% trans "operating Permint" %}</span>
 
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="permintPaymentDate" class="form-label">Payment Date</label>
+                                <label for="permintPaymentDate" class="form-label">{% trans "Payment Date" %}</label>
                                 <input type="datetime-local" name="permintPaymentDate" id="permintPaymentDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="permintPaymentAmount" class="form-label">Payment Amount</label>
+                                <label for="permintPaymentAmount" class="form-label">{% trans "Payment Amount" %}</label>
                                 <input type="number" name="permintPaymentAmount" id="permintPaymentAmount" class="form-control" value="0.0"
                                     step="0.1">
                             </div>
@@ -202,7 +202,7 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="permintCurrency" class="form-label">Currency</label>
+                                <label for="permintCurrency" class="form-label">{% trans "Currency" %}</label>
                                 <select name="permintCurrency" id="permintCurrency" class="form-select">
                                     <option>Turkish lira</option>
                                     <option>Pound</option>
@@ -214,7 +214,7 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="permintExplanation" class="form-label">Explanation</label>
+                                <label for="permintExplanation" class="form-label">{% trans "Explanation" %}</label>
                                 <textarea name="permintExplanation" id="permintExplanation" class="form-control" rows="1"></textarea>
                             </div>
                         </div>
@@ -225,21 +225,21 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <span class="names">Peak</span>
+                                <span class="names">{% trans "Peak" %}</span>
 
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="peakPaymentDate" class="form-label">Payment Date</label>
+                                <label for="peakPaymentDate" class="form-label">{% trans "Payment Date" %}</label>
                                 <input type="datetime-local" name="peakPaymentDate" id="peakPaymentDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="peakPaymentAmount" class="form-label">Payment Amount</label>
+                                <label for="peakPaymentAmount" class="form-label">{% trans "Payment Amount" %}</label>
                                 <input type="number" name="peakPaymentAmount" id="peakPaymentAmount" class="form-control" value="0.0"
                                     step="0.1">
                             </div>
@@ -247,7 +247,7 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="peakCurrency" class="form-label">Currency</label>
+                                <label for="peakCurrency" class="form-label">{% trans "Currency" %}</label>
                                 <select name="peakCurrency" id="peakCurrency" class="form-select">
                                     <option>Turkish lira</option>
                                     <option>Pound</option>
@@ -259,7 +259,7 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="peakExplanation" class="form-label">Explanation</label>
+                                <label for="peakExplanation" class="form-label">{% trans "Explanation" %}</label>
                                 <textarea name="peakExplanation" id="peakExplanation" class="form-control" rows="1"></textarea>
                             </div>
                         </div>
@@ -270,21 +270,21 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <span class="names"> Public insurance</span>
+                                <span class="names">{% trans "Public insurance" %}</span>
 
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="insurancePaymentDate" class="form-label">Payment Date</label>
+                                <label for="insurancePaymentDate" class="form-label">{% trans "Payment Date" %}</label>
                                 <input type="datetime-local" name="insurancePaymentDate" id="insurancePaymentDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="insurancePaymentAmount" class="form-label">Payment Amount</label>
+                                <label for="insurancePaymentAmount" class="form-label">{% trans "Payment Amount" %}</label>
                                 <input type="number" name="insurancePaymentAmount" id="insurancePaymentAmount" class="form-control" value="0.0"
                                     step="0.1">
                             </div>
@@ -292,7 +292,7 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="insuranceCurrency" class="form-label">Currency</label>
+                                <label for="insuranceCurrency" class="form-label">{% trans "Currency" %}</label>
                                 <select name="insuranceCurrency" id="insuranceCurrency" class="form-select">
                                     <option>Turkish lira</option>
                                     <option>Pound</option>
@@ -304,7 +304,7 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="insuranceExplanation" class="form-label">Explanation</label>
+                                <label for="insuranceExplanation" class="form-label">{% trans "Explanation" %}</label>
                                 <textarea name="insuranceExplanation" id="insuranceExplanation" class="form-control" rows="1"></textarea>
                             </div>
                         </div>
@@ -316,21 +316,21 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <span class="names"> Private insurance</span>
+                                <span class="names">{% trans "Private insurance" %}</span>
 
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="paymentDate" class="form-label">Payment Date</label>
+                                <label for="paymentDate" class="form-label">{% trans "Payment Date" %}</label>
                                 <input type="datetime-local" name="paymentDate" id="paymentDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="surname" class="form-label">Payment Amount</label>
+                                <label for="surname" class="form-label">{% trans "Payment Amount" %}</label>
                                 <input type="number" name="surname" id="surname" class="form-control" value="0.0"
                                     step="0.1">
                             </div>
@@ -338,7 +338,7 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label for="accounturrency" class="form-label">Currency</label>
+                                <label for="accounturrency" class="form-label">{% trans "Currency" %}</label>
                                 <select name="accounturrency" id="accounturrency" class="form-select">
                                     <option>Turkish lira</option>
                                     <option>Pound</option>
@@ -350,7 +350,7 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="explanation" class="form-label">Explanation</label>
+                                <label for="explanation" class="form-label">{% trans "Explanation" %}</label>
                                 <textarea name="explanation" id="explanation" class="form-control" rows="1"></textarea>
                             </div>
                         </div>

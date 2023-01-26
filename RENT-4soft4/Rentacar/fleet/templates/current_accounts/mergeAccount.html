@@ -106,7 +106,7 @@
     <div class="col-md-12">
         <div class="card border-warning">
             <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Merge Current Accounts
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i>{% trans "Merge Current Accounts" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -123,7 +123,7 @@
                                     <div class="note note-warning">
                                         <h3>
                                             <i class="fa fa-warning rColorInfo"></i>
-                                            Accounts to be merged must be in the same currency
+                                            {% trans "Accounts to be merged must be in the same currency" %}
                                         </h3>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="mainAccount" class="form-label">Main Account</label>
+                                    <label for="mainAccount" class="form-label">{% trans "Main Account" %}</label>
                                     <select name="mainAccount" id="mainAccount" class="form-select">
                                         {% for account in accounts %}
                                             <option>{{account.account_name}}</option>
@@ -143,7 +143,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accountToMerge" class="form-label">Account to Merge</label>
+                                    <label for="accountToMerge" class="form-label">{% trans "Account to Merge" %}</label>
                                     <select name="accountToMerge" id="accountToMerge" class="form-select">
                                         {% for account in accounts %}
                                             <option>{{account.account_name}}</option>

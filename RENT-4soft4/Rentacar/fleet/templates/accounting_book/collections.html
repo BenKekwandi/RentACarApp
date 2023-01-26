@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+{% load i18n %}
 {% block content %}
 
 <div class="pageholder">
@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="card border border-primary bg bg-white">
                 <div class="card-header bg-primary">
-                    <h3 class="card-title text-white">Income Report</h3>
+                    <h3 class="card-title text-white">{% trans "Income Report" %}</h3>
                 </div>
 
                 <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
@@ -17,27 +17,27 @@
                     <table id="contract" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>Customer</th>
-                                <th>Account</th>
-                                <th>Invoice number</th>
-                                <th>Payment method</th>
-                                <th>Fee amount</th>
-                                <th>Currency</th>
-                                <th>Registration date</th>
+                                <th>{% trans "id" %}</th>
+                                <th>{% trans "Customer" %}</th>
+                                <th>{% trans "Account" %}</th>
+                                <th>{% trans "Invoice number" %}</th>
+                                <th>{% trans "Payment method" %}</th>
+                                <th>{% trans "Fee amount" %}</th>
+                                <th>{% trans "Currency" %}</th>
+                                <th>{% trans "Registration date" %}</th>
 
                             </tr>
                         </thead>
                         <tfoot>
                             <tr >
-                               <th>id</th>
-                                <th>Customer</th>
-                                <th>Account</th>
-                                <th>Invoice number</th>
-                                <th>Payment method</th>
-                                <th>Fee amount</th>
-                                <th>Currency</th>
-                                <th>Registration date</th>
+                                <th>{% trans "id" %}</th>
+                                <th>{% trans "Customer" %}</th>
+                                <th>{% trans "Account" %}</th>
+                                <th>{% trans "Invoice number" %}</th>
+                                <th>{% trans "Payment method" %}</th>
+                                <th>{% trans "Fee amount" %}</th>
+                                <th>{% trans "Currency" %}</th>
+                                <th>{% trans "Registration date" %}</th>
                             </tr>
                         </tfoot>
                         <tbody>

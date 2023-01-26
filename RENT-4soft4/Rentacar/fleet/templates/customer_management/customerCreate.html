@@ -3,11 +3,10 @@
 {% load i18n %}
 <div class="row">
     <div class="col-md-12">
-        <div class="card card-success">
-
-            <h1 class="panel-title text-center">{% trans "Add New Customer" %}</h1>
-
-
+        <div class="card border border-primary bg bg-white">
+            <div class="card-header bg bg-primary">
+            <h1 class="panel-title text-center text-white">{% trans "Add New Customer" %}</h1>
+            </div>
 
             <!--Customer Type part-->
             <form method="post" action="" class="container-sm">
@@ -22,9 +21,9 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="customerType">{% trans "Customer Type" %}</label>
                                     </div>
-                                    <select name="customerType" id="customerType" class="form-control">
+                                    <select name="customerType" id="customerType" class="form-select">
                                         {% for customer_type in customer_types %}
-                                        <option>customer_type.type</option>
+                                        <option>{{customer_type.type}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>

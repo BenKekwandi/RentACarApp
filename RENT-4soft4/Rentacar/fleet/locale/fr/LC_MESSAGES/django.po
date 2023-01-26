@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-20 07:10-0800\n"
+"POT-Creation-Date: 2023-01-26 06:35-0800\n"
 "PO-Revision-Date: 2023-01-20 04:31+0000\n"
 "Last-Translator: Gizem Olurdu <gizem.olurdu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,879 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\fleet\templates\accounting\account_history.html:12
+msgid "ACCOUNT HISTORY"
+msgstr ""
+
+#: .\fleet\templates\accounting\account_history.html:22
+#: .\fleet\templates\accounting\account_history.html:32
+#: .\fleet\templates\accounting_book\collections.html:20
+#: .\fleet\templates\accounting_book\collections.html:33
+#: .\fleet\templates\accounting_book\expenses.html:21
+#: .\fleet\templates\accounting_book\expenses.html:34
+#: .\fleet\templates\accounting_items\items.html:21
+#: .\fleet\templates\accounting_items\items.html:29
+#: .\fleet\templates\current_accounts\accounts_statement.html:20
+#: .\fleet\templates\current_accounts\accounts_statement.html:33
+#: .\fleet\templates\current_accounts\accounts_status.html:20
+#: .\fleet\templates\current_accounts\accounts_status.html:33
+#: .\fleet\templates\current_accounts\current_accounts.html:20
+#: .\fleet\templates\current_accounts\current_accounts.html:32
+#: .\fleet\templates\customer_management\myCustomers.html:21
+#: .\fleet\templates\customer_management\myCustomers.html:36
+#: .\fleet\templates\my_tools\vehicle.html:21
+#: .\fleet\templates\my_tools\vehicle.html:32
+#: .\fleet\templates\reminders\vehiclePayment.html:21
+#: .\fleet\templates\reminders\vehiclePayment.html:32
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:20
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:34
+#: .\fleet\templates\rent_a_car\contracts.html:23
+#: .\fleet\templates\rent_a_car\contracts.html:42
+#: .\fleet\templates\rent_a_car\general_availability.html:70
+#: .\fleet\templates\rent_a_car\general_availability.html:81
+#: .\fleet\templates\rent_a_car\instant_availability.html:68
+#: .\fleet\templates\rent_a_car\instant_availability.html:78
+#: .\fleet\templates\rent_a_car\instant_availability.html:97
+#: .\fleet\templates\rent_a_car\instant_availability.html:107
+#: .\fleet\templates\rent_a_car\reservations.html:21
+#: .\fleet\templates\rent_a_car\reservations.html:39
+#: .\fleet\templates\route_management\region.html:21
+#: .\fleet\templates\route_management\region.html:30
+#: .\fleet\templates\route_management\stop.html:21
+#: .\fleet\templates\route_management\stop.html:32
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:21
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:29
+#: .\fleet\templates\vehicle_management\vehicle_history.html:21
+#: .\fleet\templates\vehicle_management\vehicle_history.html:32
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:21
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:35
+#: .\fleet\templates\vehicle_models\myVehicleModel.html:21
+#: .\fleet\templates\vehicle_models\myVehicleModel.html:38
+#: .\fleet\templates\vehicle_types\myVehicleTypes.html:22
+#: .\fleet\templates\vehicle_types\myVehicleTypes.html:31
+msgid "id"
+msgstr ""
+
+#: .\fleet\templates\accounting\account_history.html:23
+#: .\fleet\templates\accounting\account_history.html:33
+#: .\fleet\templates\customer_management\customerCreate.html:352
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Account Name"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\accounting\account_history.html:24
+#: .\fleet\templates\accounting\account_history.html:34
+#: .\fleet\templates\reminders\vehiclePayment.html:24
+#: .\fleet\templates\reminders\vehiclePayment.html:35
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:23
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:37
+#, fuzzy
+#| msgid "My Account"
+msgid "Amount"
+msgstr "Mon compte"
+
+#: .\fleet\templates\accounting\account_history.html:25
+#: .\fleet\templates\accounting\account_history.html:35
+#: .\fleet\templates\accounting_book\collections.html:26
+#: .\fleet\templates\accounting_book\collections.html:39
+#: .\fleet\templates\accounting_book\expenseCreate.html:262
+#: .\fleet\templates\accounting_book\expenses.html:27
+#: .\fleet\templates\accounting_book\expenses.html:40
+#: .\fleet\templates\accounting_book\invoiceCreate.html:153
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:260
+#: .\fleet\templates\current_accounts\accounts_status.html:24
+#: .\fleet\templates\current_accounts\accounts_status.html:37
+#: .\fleet\templates\current_accounts\current_accounts.html:24
+#: .\fleet\templates\current_accounts\current_accounts.html:36
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:159
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:205
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:250
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:295
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:341
+#: .\fleet\templates\reminders\vehiclePayment.html:25
+#: .\fleet\templates\reminders\vehiclePayment.html:36
+#: .\fleet\templates\rent_a_car\reservationCreate.html:237
+#: .\fleet\templates\rent_a_car\reservations.html:31
+#: .\fleet\templates\rent_a_car\reservations.html:49
+#: .\fleet\templates\vehicle_management\carCare.html:68
+msgid "Currency"
+msgstr ""
+
+#: .\fleet\templates\accounting\account_history.html:26
+#: .\fleet\templates\accounting\account_history.html:36
+#: .\fleet\templates\current_accounts\accounts_statement.html:25
+#: .\fleet\templates\current_accounts\accounts_statement.html:38
+msgid "Notes"
+msgstr ""
+
+#: .\fleet\templates\accounting\account_history.html:27
+#: .\fleet\templates\accounting\account_history.html:37
+#: .\fleet\templates\accounting_book\collections.html:27
+#: .\fleet\templates\accounting_book\collections.html:40
+#: .\fleet\templates\accounting_book\expenses.html:28
+#: .\fleet\templates\accounting_book\expenses.html:41
+#: .\fleet\templates\accounting_items\items.html:24
+#: .\fleet\templates\accounting_items\items.html:32
+#: .\fleet\templates\current_accounts\accounts_status.html:27
+#: .\fleet\templates\current_accounts\accounts_status.html:40
+#: .\fleet\templates\current_accounts\current_accounts.html:26
+#: .\fleet\templates\current_accounts\current_accounts.html:38
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:29
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:43
+#: .\fleet\templates\rent_a_car\contracts.html:36
+#: .\fleet\templates\rent_a_car\contracts.html:55
+#: .\fleet\templates\rent_a_car\reservations.html:32
+#: .\fleet\templates\rent_a_car\reservations.html:50
+#: .\fleet\templates\route_management\region.html:33
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:23
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:31
+#: .\fleet\templates\vehicle_management\vehicle_history.html:26
+#: .\fleet\templates\vehicle_management\vehicle_history.html:37
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:29
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:43
+#, fuzzy
+#| msgid "Return date"
+msgid "Registration date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\accounting\safe.html:8
+msgid "ACCOUNTING"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:9 .\fleet\templates\layout.html:572
+msgid "Safe"
+msgstr "Revenues"
+
+#: .\fleet\templates\accounting\safe.html:16
+msgid "TODAY"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:32
+#: .\fleet\templates\accounting\safe.html:194
+#: .\fleet\templates\accounting\safe.html:233
+#: .\fleet\templates\accounting\safe.html:272
+#: .\fleet\templates\accounting\safe.html:312
+#: .\fleet\templates\accounting\safe.html:357
+#: .\fleet\templates\dashboard.html:159
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#: .\fleet\templates\accounting\safe.html:33
+#: .\fleet\templates\accounting\safe.html:182
+#: .\fleet\templates\accounting\safe.html:195
+#: .\fleet\templates\accounting\safe.html:234
+#: .\fleet\templates\accounting\safe.html:273
+#: .\fleet\templates\accounting\safe.html:313
+#: .\fleet\templates\accounting\safe.html:358
+msgid "This Month"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:34
+#: .\fleet\templates\accounting\safe.html:196
+#: .\fleet\templates\accounting\safe.html:235
+#: .\fleet\templates\accounting\safe.html:274
+#: .\fleet\templates\accounting\safe.html:314
+#: .\fleet\templates\accounting\safe.html:359
+msgid "This Year"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:40
+#: .\fleet\templates\accounting\safe.html:202
+#: .\fleet\templates\accounting\safe.html:365
+msgid "Turkish lira"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:40
+#: .\fleet\templates\accounting\safe.html:79
+#: .\fleet\templates\accounting\safe.html:118
+#: .\fleet\templates\accounting\safe.html:158
+#, fuzzy
+#| msgid "Today"
+msgid "today"
+msgstr "Aujourd'hui"
+
+#: .\fleet\templates\accounting\safe.html:49
+#: .\fleet\templates\accounting\safe.html:211
+#: .\fleet\templates\accounting\safe.html:374
+msgid "Turkish Lira"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:79
+#: .\fleet\templates\accounting\safe.html:241
+#: .\fleet\templates\accounting\safe.html:404
+msgid "Dollar"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:88
+#: .\fleet\templates\accounting\safe.html:250
+#: .\fleet\templates\accounting\safe.html:413
+msgid "USD dollar"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:118
+#: .\fleet\templates\accounting\safe.html:280
+#: .\fleet\templates\accounting\safe.html:289
+#: .\fleet\templates\accounting\safe.html:443
+#: .\fleet\templates\accounting\safe.html:452
+msgid "Euro"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:127
+msgid "euro"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:158
+#: .\fleet\templates\accounting\safe.html:167
+#: .\fleet\templates\accounting\safe.html:320
+#: .\fleet\templates\accounting\safe.html:329
+#: .\fleet\templates\accounting\safe.html:483
+#: .\fleet\templates\accounting\safe.html:492
+msgid "Pound"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:191
+#: .\fleet\templates\accounting\safe.html:230
+#: .\fleet\templates\accounting\safe.html:269
+#: .\fleet\templates\accounting\safe.html:309
+#: .\fleet\templates\accounting\safe.html:354
+msgid "Filter"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:202
+#: .\fleet\templates\accounting\safe.html:241
+#: .\fleet\templates\accounting\safe.html:280
+#: .\fleet\templates\accounting\safe.html:320
+msgid "this month"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:345
+msgid "TOTAL SAVES"
+msgstr ""
+
+#: .\fleet\templates\accounting\safe.html:365
+#: .\fleet\templates\accounting\safe.html:404
+#: .\fleet\templates\accounting\safe.html:443
+#: .\fleet\templates\accounting\safe.html:483
+msgid "TOTAL"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:9
+#, fuzzy
+#| msgid "Collection"
+msgid "Collection Entry"
+msgstr "Entrees"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:23
+#, fuzzy
+#| msgid "Merge Current Account"
+msgid "Paying Customer Account"
+msgstr "Fusionner des comptes"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:35
+#, fuzzy
+#| msgid "Collection"
+msgid "Collection Item"
+msgstr "Entrees"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:50
+#: .\fleet\templates\accounting_book\expenseCreate.html:50
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:48
+#: .\fleet\templates\rent_a_car\contractCreate.html:356
+#: .\fleet\templates\rent_a_car\contract_edit.html:629
+msgid "Payment Type"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:73
+#: .\fleet\templates\accounting_book\expenseCreate.html:73
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:71
+#: .\fleet\templates\rent_a_car\contractCreate.html:390
+#: .\fleet\templates\rent_a_car\contract_edit.html:652
+msgid "Mail Order Pos Account"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:80
+#: .\fleet\templates\accounting_book\expenseCreate.html:80
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:78
+#: .\fleet\templates\rent_a_car\contractCreate.html:398
+#: .\fleet\templates\rent_a_car\contract_edit.html:659
+msgid "Brokerage Fee"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:87
+#: .\fleet\templates\accounting_book\expenseCreate.html:87
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:85
+#: .\fleet\templates\rent_a_car\contractCreate.html:405
+#: .\fleet\templates\rent_a_car\contract_edit.html:666
+msgid "Card Type"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:109
+#: .\fleet\templates\accounting_book\expenseCreate.html:109
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:107
+#: .\fleet\templates\rent_a_car\contractCreate.html:429
+#: .\fleet\templates\rent_a_car\contract_edit.html:688
+msgid "Card Number"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:116
+#: .\fleet\templates\accounting_book\expenseCreate.html:116
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:114
+#: .\fleet\templates\rent_a_car\contractCreate.html:437
+#: .\fleet\templates\rent_a_car\contract_edit.html:695
+msgid "Card Expiry Year"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:123
+#: .\fleet\templates\accounting_book\expenseCreate.html:123
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:121
+#: .\fleet\templates\rent_a_car\contractCreate.html:445
+#: .\fleet\templates\rent_a_car\contract_edit.html:702
+msgid "Card Expiry Month"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:130
+#: .\fleet\templates\accounting_book\expenseCreate.html:130
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:128
+#: .\fleet\templates\rent_a_car\contract_edit.html:709
+msgid "CVC"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:145
+#: .\fleet\templates\accounting_book\expenseCreate.html:145
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:143
+#: .\fleet\templates\rent_a_car\contractCreate.html:465
+#: .\fleet\templates\rent_a_car\contract_edit.html:724
+msgid "Bank Account to be Transferred"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:159
+#: .\fleet\templates\accounting_book\expenseCreate.html:159
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:157
+#: .\fleet\templates\rent_a_car\contractCreate.html:477
+#: .\fleet\templates\rent_a_car\contract_edit.html:738
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Account to be debited"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:163
+#: .\fleet\templates\accounting_book\expenseCreate.html:163
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:161
+#: .\fleet\templates\rent_a_car\contractCreate.html:483
+#: .\fleet\templates\rent_a_car\contract_edit.html:742
+#, fuzzy
+#| msgid "Merge Current Account"
+msgid "Create New Current Account"
+msgstr "Fusionner des comptes"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:173
+#: .\fleet\templates\accounting_book\expenseCreate.html:173
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:171
+#: .\fleet\templates\rent_a_car\contractCreate.html:494
+#: .\fleet\templates\rent_a_car\contract_edit.html:752
+msgid "Check Number"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:183
+#: .\fleet\templates\accounting_book\expenseCreate.html:183
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:181
+#: .\fleet\templates\rent_a_car\contractCreate.html:502
+#: .\fleet\templates\rent_a_car\contract_edit.html:762
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Checking Account"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:190
+#: .\fleet\templates\accounting_book\expenseCreate.html:190
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:188
+#: .\fleet\templates\rent_a_car\contractCreate.html:510
+#: .\fleet\templates\rent_a_car\contract_edit.html:769
+msgid "Check Holder"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:197
+#: .\fleet\templates\accounting_book\expenseCreate.html:197
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:195
+#: .\fleet\templates\rent_a_car\contractCreate.html:518
+#: .\fleet\templates\rent_a_car\contract_edit.html:776
+msgid "Check Cash"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:204
+#: .\fleet\templates\accounting_book\expenseCreate.html:204
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:202
+#: .\fleet\templates\rent_a_car\contractCreate.html:526
+#: .\fleet\templates\rent_a_car\contract_edit.html:783
+msgid "Check Receipt"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:219
+#: .\fleet\templates\accounting_book\expenseCreate.html:219
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:217
+#: .\fleet\templates\rent_a_car\contractCreate.html:538
+#: .\fleet\templates\rent_a_car\contract_edit.html:798
+#, fuzzy
+#| msgid "My Account"
+msgid "Cash Account"
+msgstr "Mon compte"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:233
+#: .\fleet\templates\accounting_book\expenseCreate.html:233
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:231
+#: .\fleet\templates\rent_a_car\contractCreate.html:550
+#: .\fleet\templates\rent_a_car\contract_edit.html:812
+#, fuzzy
+#| msgid "My Account"
+msgid "Bank Pos Account"
+msgstr "Mon compte"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:240
+#: .\fleet\templates\accounting_book\expenseCreate.html:240
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:238
+#: .\fleet\templates\rent_a_car\contractCreate.html:558
+#: .\fleet\templates\rent_a_car\contract_edit.html:819
+msgid "Bank Intermediation Fee"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:247
+#: .\fleet\templates\accounting_book\expenseCreate.html:247
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:245
+#: .\fleet\templates\rent_a_car\contractCreate.html:421
+#: .\fleet\templates\rent_a_car\contractCreate.html:566
+#: .\fleet\templates\rent_a_car\contract_edit.html:826
+msgid "Card Holder"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:254
+#: .\fleet\templates\accounting_book\collections.html:25
+#: .\fleet\templates\accounting_book\collections.html:38
+#: .\fleet\templates\accounting_book\expenses.html:26
+#: .\fleet\templates\accounting_book\expenses.html:39
+#, fuzzy
+#| msgid "My Account"
+msgid "Fee amount"
+msgstr "Mon compte"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:262
+#: .\fleet\templates\accounting_book\expenseCreate.html:273
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:271
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:144
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:190
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:235
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:280
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:326
+#, fuzzy
+#| msgid "Return date"
+msgid "Payment Date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:269
+#: .\fleet\templates\accounting_book\expenseCreate.html:280
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:278
+msgid "Exchange Rate"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:276
+#, fuzzy
+#| msgid "Collection"
+msgid "Collection Category"
+msgstr "Entrees"
+
+#: .\fleet\templates\accounting_book\collectionCreate.html:288
+#: .\fleet\templates\accounting_book\expenseCreate.html:299
+#: .\fleet\templates\accounting_book\invoiceCreate.html:168
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:286
+#: .\fleet\templates\current_accounts\accountsCreate.html:160
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:171
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:217
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:262
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:307
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:353
+#: .\fleet\templates\reminders\vehiclePayment.html:26
+#: .\fleet\templates\reminders\vehiclePayment.html:37
+#: .\fleet\templates\vehicle_management\carCare.html:86
+#, fuzzy
+#| msgid "Transactions"
+msgid "Explanation"
+msgstr "Operations"
+
+#: .\fleet\templates\accounting_book\collections.html:11
+#: .\fleet\templates\layout.html:577
+msgid "Income Report"
+msgstr "Rapport des revenues"
+
+#: .\fleet\templates\accounting_book\collections.html:21
+#: .\fleet\templates\accounting_book\collections.html:34
+#: .\fleet\templates\accounting_book\expenses.html:22
+#: .\fleet\templates\accounting_book\expenses.html:35
+#: .\fleet\templates\current_accounts\accounts_status.html:21
+#: .\fleet\templates\current_accounts\accounts_status.html:34
+#: .\fleet\templates\current_accounts\current_accounts.html:21
+#: .\fleet\templates\current_accounts\current_accounts.html:33
+#: .\fleet\templates\dashboard.html:228
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:21
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:35
+#: .\fleet\templates\rent_a_car\contracts.html:24
+#: .\fleet\templates\rent_a_car\contracts.html:43
+#: .\fleet\templates\rent_a_car\instant_availability.html:70
+#: .\fleet\templates\rent_a_car\instant_availability.html:80
+#: .\fleet\templates\rent_a_car\reservationCreate.html:27
+#: .\fleet\templates\rent_a_car\reservations.html:22
+#: .\fleet\templates\rent_a_car\reservations.html:40
+msgid "Customer"
+msgstr "Client"
+
+#: .\fleet\templates\accounting_book\collections.html:22
+#: .\fleet\templates\accounting_book\collections.html:35
+#: .\fleet\templates\accounting_book\expenses.html:23
+#: .\fleet\templates\accounting_book\expenses.html:36
+#, fuzzy
+#| msgid "My Account"
+msgid "Account"
+msgstr "Mon compte"
+
+#: .\fleet\templates\accounting_book\collections.html:23
+#: .\fleet\templates\accounting_book\collections.html:36
+#: .\fleet\templates\accounting_book\expenses.html:24
+#: .\fleet\templates\accounting_book\expenses.html:37
+msgid "Invoice number"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\collections.html:24
+#: .\fleet\templates\accounting_book\collections.html:37
+#: .\fleet\templates\accounting_book\expenses.html:25
+#: .\fleet\templates\accounting_book\expenses.html:38
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Payment method"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\accounting_book\expenseCreate.html:255
+#: .\fleet\templates\accounting_book\invoiceCreate.html:146
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:253
+#: .\fleet\templates\vehicle_management\carCare.html:61
+msgid "Total Amount"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\expenseCreate.html:288
+#, fuzzy
+#| msgid "Expense Report"
+msgid "Expense Category"
+msgstr "Rapport des depenses"
+
+#: .\fleet\templates\accounting_book\expenses.html:12
+#: .\fleet\templates\layout.html:582
+msgid "Expense Report"
+msgstr "Rapport des depenses"
+
+#: .\fleet\templates\accounting_book\invoiceCreate.html:102
+#, fuzzy
+#| msgid "Sales Invoice"
+msgid "New Sales Invoice"
+msgstr "Facture"
+
+#: .\fleet\templates\accounting_book\invoiceCreate.html:116
+#, fuzzy
+#| msgid "Income"
+msgid "Income Item"
+msgstr "Revenue"
+
+#: .\fleet\templates\accounting_book\invoiceCreate.html:128
+msgid "Invoice/Receipt/Document Number"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\invoiceCreate.html:161
+#, fuzzy
+#| msgid "Collection"
+msgid "Collection Date"
+msgstr "Entrees"
+
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:9
+#, fuzzy
+#| msgid "Add Vehicle Expense Record"
+msgid "Vehicle Expense Record"
+msgstr "Faire une depense"
+
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:23
+msgid "Service Received Company"
+msgstr ""
+
+#: .\fleet\templates\accounting_book\vehicleExpenseCreate.html:34
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:124
+#: .\fleet\templates\reminders\vehiclePayment.html:22
+#: .\fleet\templates\reminders\vehiclePayment.html:33
+#: .\fleet\templates\rent_a_car\contractCreate.html:106
+#: .\fleet\templates\rent_a_car\contract_edit.html:184
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:22
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:36
+#: .\fleet\templates\rent_a_car\contracts.html:25
+#: .\fleet\templates\rent_a_car\contracts.html:44
+#: .\fleet\templates\rent_a_car\general_availability.html:12
+#: .\fleet\templates\rent_a_car\general_availability.html:71
+#: .\fleet\templates\rent_a_car\general_availability.html:82
+#: .\fleet\templates\rent_a_car\instant_availability.html:12
+#: .\fleet\templates\rent_a_car\instant_availability.html:69
+#: .\fleet\templates\rent_a_car\instant_availability.html:79
+#: .\fleet\templates\rent_a_car\instant_availability.html:98
+#: .\fleet\templates\rent_a_car\instant_availability.html:108
+#: .\fleet\templates\rent_a_car\reservations.html:23
+#: .\fleet\templates\rent_a_car\reservations.html:41
+#: .\fleet\templates\vehicle_management\carCare.html:20
+#: .\fleet\templates\vehicle_management\vehicle_history.html:23
+#: .\fleet\templates\vehicle_management\vehicle_history.html:34
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:22
+#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:36
+#, fuzzy
+#| msgid "Vehicles"
+msgid "Vehicle"
+msgstr "Voitures"
+
+#: .\fleet\templates\accounting_items\itemCreate.html:103
+#, fuzzy
+#| msgid "Accounting Items"
+msgid "Add Accounting Item"
+msgstr "Elements comptables"
+
+#: .\fleet\templates\accounting_items\itemCreate.html:118
+#: .\fleet\templates\accounting_items\items.html:22
+#: .\fleet\templates\accounting_items\items.html:30
+#: .\fleet\templates\route_management\region.html:31
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:22
+#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:30
+msgid "Item Name"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\itemCreate.html:125
+msgid "Top Category"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\items.html:12
+msgid "ACCOUNTING ITEMS"
+msgstr ""
+
+#: .\fleet\templates\accounting_items\items.html:23
+#: .\fleet\templates\accounting_items\items.html:31
+#: .\fleet\templates\current_accounts\accounts_statement.html:22
+#: .\fleet\templates\current_accounts\accounts_statement.html:35
+#: .\fleet\templates\route_management\region.html:32
+msgid "Category"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:10
+#: .\fleet\templates\layout.html:338
+msgid "Dashboard"
+msgstr "Accueil"
+
+#: .\fleet\templates\authorization\myAccount.html:11
+#: .\fleet\templates\layout.html:553
+msgid "Authorization"
+msgstr "Confidentialite"
+
+#: .\fleet\templates\authorization\myAccount.html:12
+#, fuzzy
+#| msgid "My Profile"
+msgid "Profile"
+msgstr "Mon Profile"
+
+#: .\fleet\templates\authorization\myAccount.html:27
+#, fuzzy
+#| msgid "My Profile"
+msgid "Profile Image"
+msgstr "Mon Profile"
+
+#: .\fleet\templates\authorization\myAccount.html:41
+#, fuzzy
+#| msgid "Accounting Items"
+msgid "Account Opening Date"
+msgstr "Elements comptables"
+
+#: .\fleet\templates\authorization\myAccount.html:48
+msgid "Last Login Date"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:55
+#, fuzzy
+#| msgid "Return date"
+msgid "Expiration date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\authorization\myAccount.html:62
+msgid "Language Preference"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:69
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Account Status"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\authorization\myAccount.html:78
+msgid "Full name"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:85
+msgid "Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:92
+#: .\fleet\templates\customer_management\customerCreate.html:214
+#: .\fleet\templates\customer_management\customerCreate.html:223
+msgid "E-mail"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:130
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Current Password"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\authorization\myAccount.html:137
+msgid "New Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:144
+msgid "Re-enter New Password"
+msgstr ""
+
+#: .\fleet\templates\authorization\myAccount.html:152
+msgid "Change Password"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:104
+#, fuzzy
+#| msgid "Add Current Account"
+msgid "Add a Current Account"
+msgstr "Ajouter un compte"
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:119
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Current Account Type"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:130
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Current Account Holder"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:142
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Current Account Name"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\current_accounts\accountsCreate.html:149
+#, fuzzy
+#| msgid "Accounting"
+msgid "Current Account Currency"
+msgstr "Comptabilite"
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:11
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Current Account Statement"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:21
+#: .\fleet\templates\current_accounts\accounts_statement.html:34
+#: .\fleet\templates\current_accounts\accounts_status.html:22
+#: .\fleet\templates\current_accounts\accounts_status.html:35
+#: .\fleet\templates\current_accounts\current_accounts.html:22
+#: .\fleet\templates\current_accounts\current_accounts.html:34
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Account name"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:23
+#: .\fleet\templates\current_accounts\accounts_statement.html:36
+#, fuzzy
+#| msgid "Return date"
+msgid "Payment date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:24
+#: .\fleet\templates\current_accounts\accounts_statement.html:37
+#, fuzzy
+#| msgid "Collection"
+msgid "Situation"
+msgstr "Entrees"
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:26
+#: .\fleet\templates\current_accounts\accounts_statement.html:39
+#, fuzzy
+#| msgid "My Account"
+msgid "fee_amount"
+msgstr "Mon compte"
+
+#: .\fleet\templates\current_accounts\accounts_statement.html:27
+#: .\fleet\templates\current_accounts\accounts_statement.html:40
+#, fuzzy
+#| msgid "Return date"
+msgid "registration date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\current_accounts\accounts_status.html:11
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Current Account Status"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\current_accounts\accounts_status.html:23
+#: .\fleet\templates\current_accounts\accounts_status.html:36
+#: .\fleet\templates\current_accounts\current_accounts.html:23
+#: .\fleet\templates\current_accounts\current_accounts.html:35
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Account Type"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\current_accounts\accounts_status.html:25
+#: .\fleet\templates\current_accounts\accounts_status.html:38
+msgid "Balance"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:26
+#: .\fleet\templates\current_accounts\current_accounts.html:25
+#: .\fleet\templates\current_accounts\current_accounts.html:37
+msgid "System notes"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\accounts_status.html:39
+msgid "sSystem notes"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\current_accounts.html:11
+#, fuzzy
+#| msgid "All Curent Accounts"
+msgid "All Current accounts"
+msgstr "Liste des comptes"
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:109
+#, fuzzy
+#| msgid "Merge Current Account"
+msgid "Merge Current Accounts"
+msgstr "Fusionner des comptes"
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:126
+msgid "Accounts to be merged must be in the same currency"
+msgstr ""
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:134
+#, fuzzy
+#| msgid "My Account"
+msgid "Main Account"
+msgstr "Mon compte"
+
+#: .\fleet\templates\current_accounts\mergeAccount.html:146
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Account to Merge"
+msgstr "Historique des comptes"
 
 #: .\fleet\templates\customer_management\customerCreate.html:8
 #, fuzzy
@@ -45,6 +918,8 @@ msgstr "Client"
 #: .\fleet\templates\customer_management\customerCreate.html:56
 #: .\fleet\templates\customer_management\myCustomers.html:23
 #: .\fleet\templates\customer_management\myCustomers.html:38
+#: .\fleet\templates\route_management\stop.html:23
+#: .\fleet\templates\route_management\stop.html:34
 msgid "Name"
 msgstr ""
 
@@ -60,6 +935,7 @@ msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:82
 #: .\fleet\templates\rent_a_car\contractCreate.html:62
+#: .\fleet\templates\rent_a_car\contract_edit.html:96
 msgid "Passport Number"
 msgstr ""
 
@@ -70,27 +946,33 @@ msgid "Date of birth"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:100
+#: .\fleet\templates\rent_a_car\contract_edit.html:132
 msgid "Place of birth"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:109
+#: .\fleet\templates\rent_a_car\contract_edit.html:141
 msgid "Country"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:118
 #: .\fleet\templates\rent_a_car\contractCreate.html:80
+#: .\fleet\templates\rent_a_car\contract_edit.html:114
 msgid "Nationality"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:127
+#: .\fleet\templates\rent_a_car\contract_edit.html:150
 msgid "Mother Name"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:136
+#: .\fleet\templates\rent_a_car\contract_edit.html:159
 msgid "Father Name"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:144
+#: .\fleet\templates\rent_a_car\contract_edit.html:168
 msgid "Job"
 msgstr ""
 
@@ -114,11 +996,6 @@ msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:206
 msgid "Business Phone"
-msgstr ""
-
-#: .\fleet\templates\customer_management\customerCreate.html:214
-#: .\fleet\templates\customer_management\customerCreate.html:223
-msgid "E-mail"
 msgstr ""
 
 #: .\fleet\templates\customer_management\customerCreate.html:233
@@ -177,12 +1054,6 @@ msgstr ""
 msgid "Customer Current Account"
 msgstr "Fusionner des comptes"
 
-#: .\fleet\templates\customer_management\customerCreate.html:352
-#, fuzzy
-#| msgid "Account Statement"
-msgid "Account Name"
-msgstr "Historique des comptes"
-
 #: .\fleet\templates\customer_management\customerCreate.html:374
 #, fuzzy
 #| msgid "Accounting"
@@ -197,6 +1068,7 @@ msgstr ""
 #: .\fleet\templates\customer_management\myCustomers.html:29
 #: .\fleet\templates\customer_management\myCustomers.html:44
 #: .\fleet\templates\rent_a_car\contractCreate.html:286
+#: .\fleet\templates\rent_a_car\contract_edit.html:352
 #: .\fleet\templates\rent_a_car\reservationCreate.html:210
 msgid "System Note"
 msgstr ""
@@ -212,40 +1084,17 @@ msgstr "Gestion des clients"
 msgid "My Customers"
 msgstr "Mes clients"
 
-#: .\fleet\templates\customer_management\myCustomers.html:21
-#: .\fleet\templates\customer_management\myCustomers.html:36
-#: .\fleet\templates\my_tools\vehicle.html:21
-#: .\fleet\templates\my_tools\vehicle.html:32
-#: .\fleet\templates\rent_a_car\contracts.html:23
-#: .\fleet\templates\rent_a_car\contracts.html:42
-#: .\fleet\templates\rent_a_car\general_availability.html:70
-#: .\fleet\templates\rent_a_car\general_availability.html:81
-#: .\fleet\templates\rent_a_car\instant_availability.html:68
-#: .\fleet\templates\rent_a_car\instant_availability.html:78
-#: .\fleet\templates\rent_a_car\instant_availability.html:97
-#: .\fleet\templates\rent_a_car\instant_availability.html:107
-#: .\fleet\templates\rent_a_car\reservations.html:21
-#: .\fleet\templates\rent_a_car\reservations.html:39
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:21
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:29
-#: .\fleet\templates\vehicle_management\vehicle_history.html:21
-#: .\fleet\templates\vehicle_management\vehicle_history.html:32
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:21
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:35
-#: .\fleet\templates\vehicle_models\myVehicleModel.html:21
-#: .\fleet\templates\vehicle_models\myVehicleModel.html:38
-#: .\fleet\templates\vehicle_types\myVehicleTypes.html:22
-#: .\fleet\templates\vehicle_types\myVehicleTypes.html:31
-msgid "id"
-msgstr ""
-
 #: .\fleet\templates\customer_management\myCustomers.html:22
 #: .\fleet\templates\customer_management\myCustomers.html:37
+#: .\fleet\templates\route_management\stop.html:22
+#: .\fleet\templates\route_management\stop.html:33
 msgid "Type"
 msgstr ""
 
 #: .\fleet\templates\customer_management\myCustomers.html:25
 #: .\fleet\templates\customer_management\myCustomers.html:40
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:23
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:37
 #: .\fleet\templates\rent_a_car\contracts.html:26
 #: .\fleet\templates\rent_a_car\contracts.html:45
 #: .\fleet\templates\rent_a_car\reservations.html:25
@@ -332,24 +1181,9 @@ msgstr "Disponible"
 msgid "Income"
 msgstr "Revenue"
 
-#: .\fleet\templates\dashboard.html:159
-msgid "Today"
-msgstr "Aujourd'hui"
-
 #: .\fleet\templates\dashboard.html:224
 msgid "Cars to be Returned"
 msgstr "Les voitures censees rentrer"
-
-#: .\fleet\templates\dashboard.html:228
-#: .\fleet\templates\rent_a_car\contracts.html:24
-#: .\fleet\templates\rent_a_car\contracts.html:43
-#: .\fleet\templates\rent_a_car\instant_availability.html:70
-#: .\fleet\templates\rent_a_car\instant_availability.html:80
-#: .\fleet\templates\rent_a_car\reservationCreate.html:27
-#: .\fleet\templates\rent_a_car\reservations.html:22
-#: .\fleet\templates\rent_a_car\reservations.html:40
-msgid "Customer"
-msgstr "Client"
 
 #: .\fleet\templates\dashboard.html:229
 msgid "Return date"
@@ -406,10 +1240,6 @@ msgstr "Aide"
 msgid "Sign Out"
 msgstr "Se Deconnecter"
 
-#: .\fleet\templates\layout.html:338
-msgid "Dashboard"
-msgstr "Accueil"
-
 #: .\fleet\templates\layout.html:345
 msgid "Customer Management"
 msgstr "Gestion des clients"
@@ -455,14 +1285,17 @@ msgid "Route Management"
 msgstr "Gestions des lieux"
 
 #: .\fleet\templates\layout.html:412
+#: .\fleet\templates\route_management\region.html:12
 msgid "Regions"
 msgstr "Regions"
 
 #: .\fleet\templates\layout.html:418
+#: .\fleet\templates\route_management\regionCreate.html:103
 msgid "Add Region"
 msgstr "Ajouter une regions"
 
 #: .\fleet\templates\layout.html:424
+#: .\fleet\templates\route_management\stop.html:12
 msgid "Stops"
 msgstr "Stations"
 
@@ -552,10 +1385,6 @@ msgstr "Modele des Voitures"
 msgid "Add Vehicle Model"
 msgstr "Ajouter un Modele de voiture"
 
-#: .\fleet\templates\layout.html:553
-msgid "Authorization"
-msgstr "Confidentialite"
-
 #: .\fleet\templates\layout.html:558
 msgid "My Account"
 msgstr "Mon compte"
@@ -563,18 +1392,6 @@ msgstr "Mon compte"
 #: .\fleet\templates\layout.html:567
 msgid "Accounting"
 msgstr "Comptabilite"
-
-#: .\fleet\templates\layout.html:572
-msgid "Safe"
-msgstr "Revenues"
-
-#: .\fleet\templates\layout.html:577
-msgid "Income Report"
-msgstr "Rapport des revenues"
-
-#: .\fleet\templates\layout.html:582
-msgid "Expense Report"
-msgstr "Rapport des depenses"
 
 #: .\fleet\templates\layout.html:588
 msgid "My Accounting Book"
@@ -645,6 +1462,7 @@ msgid "Reminders"
 msgstr "Rappels"
 
 #: .\fleet\templates\layout.html:704
+#: .\fleet\templates\reminders\vehiclePayment.html:12
 msgid "Vehicle Payment Reminders"
 msgstr "Rappel de paiement de vehicules"
 
@@ -711,6 +1529,55 @@ msgstr ""
 msgid "Picture of the vehicle"
 msgstr ""
 
+#: .\fleet\templates\reminders\addVehiclePayment.html:103
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:109
+#, fuzzy
+#| msgid "Add Vehicle Payment Reminders"
+msgid "Add vehicle Payment Reminder"
+msgstr "Ajouter un  paiement de vehicules"
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:137
+msgid "MTV"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:151
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:197
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:242
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:287
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:333
+#, fuzzy
+#| msgid "Current Accounts"
+msgid "Payment Amount"
+msgstr "Comptes courants"
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:183
+msgid "operating Permint"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:228
+msgid "Peak"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:273
+msgid "Public insurance"
+msgstr ""
+
+#: .\fleet\templates\reminders\bulkVehiclePayment.html:319
+msgid "Private insurance"
+msgstr ""
+
+#: .\fleet\templates\reminders\vehiclePayment.html:23
+#: .\fleet\templates\reminders\vehiclePayment.html:34
+msgid "Date"
+msgstr ""
+
+#: .\fleet\templates\reminders\vehiclePayment.html:27
+#: .\fleet\templates\reminders\vehiclePayment.html:38
+#, fuzzy
+#| msgid "Return date"
+msgid "Registration"
+msgstr "Date du retour"
+
 #: .\fleet\templates\rent_a_car\contractCreate.html:9
 #, fuzzy
 #| msgid "New Contract"
@@ -722,71 +1589,58 @@ msgid "Additional people to use the Tool"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:44
+#: .\fleet\templates\rent_a_car\contract_edit.html:77
 msgid "Name and Surname"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:53
+#: .\fleet\templates\rent_a_car\contract_edit.html:86
 msgid "Identification Number"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:71
+#: .\fleet\templates\rent_a_car\contract_edit.html:105
 msgid "Birth Date"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:89
+#: .\fleet\templates\rent_a_car\contract_edit.html:123
 msgid "Telephone"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:98
+#: .\fleet\templates\rent_a_car\contract_edit.html:176
 #, fuzzy
 #| msgid "Vehicle Brand"
 msgid "Vehicle Information"
 msgstr "Marque des voitures"
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:106
-#: .\fleet\templates\rent_a_car\contracts.html:25
-#: .\fleet\templates\rent_a_car\contracts.html:44
-#: .\fleet\templates\rent_a_car\general_availability.html:12
-#: .\fleet\templates\rent_a_car\general_availability.html:71
-#: .\fleet\templates\rent_a_car\general_availability.html:82
-#: .\fleet\templates\rent_a_car\instant_availability.html:12
-#: .\fleet\templates\rent_a_car\instant_availability.html:69
-#: .\fleet\templates\rent_a_car\instant_availability.html:79
-#: .\fleet\templates\rent_a_car\instant_availability.html:98
-#: .\fleet\templates\rent_a_car\instant_availability.html:108
-#: .\fleet\templates\rent_a_car\reservations.html:23
-#: .\fleet\templates\rent_a_car\reservations.html:41
-#: .\fleet\templates\vehicle_management\carCare.html:20
-#: .\fleet\templates\vehicle_management\vehicle_history.html:23
-#: .\fleet\templates\vehicle_management\vehicle_history.html:34
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:22
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:36
-#, fuzzy
-#| msgid "Vehicles"
-msgid "Vehicle"
-msgstr "Voitures"
-
 #: .\fleet\templates\rent_a_car\contractCreate.html:121
+#: .\fleet\templates\rent_a_car\contract_edit.html:193
 msgid "Issue Point"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:137
+#: .\fleet\templates\rent_a_car\contract_edit.html:201
 #, fuzzy
 #| msgid "Return date"
 msgid "Return Point"
 msgstr "Date du retour"
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:155
+#: .\fleet\templates\rent_a_car\contract_edit.html:258
 msgid "Issue Date and Time"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:163
+#: .\fleet\templates\rent_a_car\contract_edit.html:266
 #, fuzzy
 #| msgid "Return date"
 msgid "Return Date and Time"
 msgstr "Date du retour"
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:171
+#: .\fleet\templates\rent_a_car\contract_edit.html:275
 msgid "Days"
 msgstr ""
 
@@ -795,38 +1649,48 @@ msgid "Early delivery Date"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:186
+#: .\fleet\templates\rent_a_car\contract_edit.html:284
 msgid "Gasoline Quantity"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:194
+#: .\fleet\templates\rent_a_car\contract_edit.html:292
 msgid "Transmission Km."
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:203
+#: .\fleet\templates\rent_a_car\contract_edit.html:301
+#: .\fleet\templates\rent_a_car\contract_edit.html:474
 #, fuzzy
 #| msgid "Return date"
 msgid "Return Km"
 msgstr "Date du retour"
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:212
+#: .\fleet\templates\rent_a_car\contract_edit.html:310
 msgid "Mileage Limit"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:225
+#: .\fleet\templates\rent_a_car\contract_edit.html:320
+#: .\fleet\templates\rent_a_car\contract_edit.html:443
 #, fuzzy
 #| msgid "Vehicle Brand"
 msgid "Vehicle Return Address"
 msgstr "Marque des voitures"
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:235
+#: .\fleet\templates\rent_a_car\contract_edit.html:330
 msgid "Vehicle Issue Address"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:246
+#: .\fleet\templates\rent_a_car\contract_edit.html:339
 msgid "Additional information"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:294
+#: .\fleet\templates\rent_a_car\contract_edit.html:361
 #: .\fleet\templates\rent_a_car\reservationCreate.html:218
 #, fuzzy
 #| msgid "Customer Management"
@@ -834,28 +1698,29 @@ msgid "Customer Comment"
 msgstr "Gestion des clients"
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:301
+#: .\fleet\templates\rent_a_car\contract_edit.html:573
 msgid "Payment information"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:308
+#: .\fleet\templates\rent_a_car\contract_edit.html:578
 #: .\fleet\templates\rent_a_car\reservationCreate.html:230
 msgid "Total Fee"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:317
+#: .\fleet\templates\rent_a_car\contract_edit.html:587
 msgid "Agent Percentage"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:326
+#: .\fleet\templates\rent_a_car\contract_edit.html:594
 msgid "Agent Fee"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:340
+#: .\fleet\templates\rent_a_car\contract_edit.html:601
 msgid "Intermediary Company Account"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:356
-msgid "Payment Type"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contractCreate.html:372
@@ -864,87 +1729,193 @@ msgstr ""
 msgid "Currency Point"
 msgstr "Comptes courants"
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:390
-msgid "Mail Order Pos Account"
+#: .\fleet\templates\rent_a_car\contract_edit.html:53
+msgid "EDIT CONTRACT DETAILS"
 msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:398
-msgid "Brokerage Fee"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:405
-msgid "Card Type"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:421
-#: .\fleet\templates\rent_a_car\contractCreate.html:566
-msgid "Card Holder"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:429
-msgid "Card Number"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:437
-msgid "Card Expiry Year"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:445
-msgid "Card Expiry Month"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:465
-msgid "Bank Account to be Transferred"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contractCreate.html:477
+#: .\fleet\templates\rent_a_car\contract_edit.html:57
+#: .\fleet\templates\rent_a_car\contract_edit.html:384
 #, fuzzy
-#| msgid "Account Statement"
-msgid "Account to be debited"
-msgstr "Historique des comptes"
+#| msgid "New Contract"
+msgid "Extend contract"
+msgstr "Nouveau contract"
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:483
+#: .\fleet\templates\rent_a_car\contract_edit.html:59
+#: .\fleet\templates\rent_a_car\contract_edit.html:386
+#: .\fleet\templates\rent_a_car\contract_edit.html:459
 #, fuzzy
-#| msgid "Merge Current Account"
-msgid "Create New Current Account"
-msgstr "Fusionner des comptes"
+#| msgid "Vehicles"
+msgid "Change Vehicle"
+msgstr "Voitures"
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:494
-msgid "Check Number"
+#: .\fleet\templates\rent_a_car\contract_edit.html:61
+#: .\fleet\templates\rent_a_car\contract_edit.html:388
+#, fuzzy
+#| msgid "New Contract"
+msgid "Cancel Contract"
+msgstr "Nouveau contract"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:63
+#: .\fleet\templates\rent_a_car\contract_edit.html:390
+#: .\fleet\templates\rent_a_car\contract_edit.html:566
+msgid "Make Payment"
 msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:502
+#: .\fleet\templates\rent_a_car\contract_edit.html:343
 #, fuzzy
-#| msgid "Current Accounts"
-msgid "Checking Account"
-msgstr "Comptes courants"
+#| msgid "Customer Management"
+msgid "Contract Documents"
+msgstr "Gestion des clients"
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:510
-msgid "Check Holder"
+#: .\fleet\templates\rent_a_car\contract_edit.html:343
+msgid "Visual"
 msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:518
-msgid "Check Cash"
+#: .\fleet\templates\rent_a_car\contract_edit.html:372
+#: .\fleet\templates\rent_a_car\reservationCreate.html:224
+msgid "Payment Information"
 msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:526
-msgid "Check Receipt"
+#: .\fleet\templates\rent_a_car\contract_edit.html:402
+#, fuzzy
+#| msgid "New Contract"
+msgid "Extend Contract"
+msgstr "Nouveau contract"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:410
+msgid "Previous number of rental days"
 msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:538
-#, fuzzy
-#| msgid "My Account"
-msgid "Cash Account"
-msgstr "Mon compte"
+#: .\fleet\templates\rent_a_car\contract_edit.html:414
+msgid "Number of extra days"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:550
-#, fuzzy
-#| msgid "My Account"
-msgid "Bank Pos Account"
-msgstr "Mon compte"
+#: .\fleet\templates\rent_a_car\contract_edit.html:418
+msgid "Actual number of rent days"
+msgstr ""
 
-#: .\fleet\templates\rent_a_car\contractCreate.html:558
-msgid "Bank Intermediation Fee"
+#: .\fleet\templates\rent_a_car\contract_edit.html:423
+#, fuzzy
+#| msgid "Return date"
+msgid "New Return date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:427
+msgid "Old total fee"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:431
+msgid "Extra fee"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:435
+msgid "Actual total fee"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:439
+#, fuzzy
+#| msgid "vehicles returning soon"
+msgid "Vehicle Return point"
+msgstr "des voitures qui rentrent bientot"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:447
+msgid "Submit"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:448
+#: .\fleet\templates\rent_a_car\contract_edit.html:496
+msgid "Cancel"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:466
+#, fuzzy
+#| msgid "Vehicle Brand"
+msgid "Vehicle End Position"
+msgstr "Marque des voitures"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:470
+#, fuzzy
+#| msgid "Return date"
+msgid "Change Date"
+msgstr "Date du retour"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:478
+#, fuzzy
+#| msgid "Vehicles"
+msgid "New Vehicle"
+msgstr "Voitures"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:486
+msgid "Transmission Km"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:490
+#, fuzzy
+#| msgid "Vehicle Management"
+msgid "Vehicle Change Reason"
+msgstr "Gestion des vehicules"
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:512
+msgid "Contract Cancellation Confirmation"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:518
+msgid "Are you sure you want to cancel the contract"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:524
+msgid "Yes"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:525
+msgid "No"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:609
+msgid "PAYMENT FEE"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_edit.html:616
+msgid "PAYMENT CURRENCY"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:24
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:38
+#: .\fleet\templates\rent_a_car\contracts.html:31
+#: .\fleet\templates\rent_a_car\contracts.html:50
+#: .\fleet\templates\rent_a_car\reservations.html:30
+#: .\fleet\templates\rent_a_car\reservations.html:48
+msgid "Fee"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:25
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:39
+#: .\fleet\templates\rent_a_car\contracts.html:32
+#: .\fleet\templates\rent_a_car\contracts.html:51
+msgid "Amount Paid"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:26
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:40
+#: .\fleet\templates\rent_a_car\contracts.html:33
+#: .\fleet\templates\rent_a_car\contracts.html:52
+msgid "Debt"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:27
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:41
+#: .\fleet\templates\rent_a_car\contracts.html:34
+#: .\fleet\templates\rent_a_car\contracts.html:53
+msgid "Payment Status"
+msgstr ""
+
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:28
+#: .\fleet\templates\rent_a_car\contract_in_debt.html:42
+#: .\fleet\templates\rent_a_car\contracts.html:35
+#: .\fleet\templates\rent_a_car\contracts.html:54
+#: .\fleet\templates\rent_a_car\general_availability.html:76
+#: .\fleet\templates\rent_a_car\general_availability.html:87
+msgid "Status"
 msgstr ""
 
 #: .\fleet\templates\rent_a_car\contracts.html:27
@@ -970,50 +1941,6 @@ msgstr ""
 #: .\fleet\templates\rent_a_car\contracts.html:49
 msgid "Drop address"
 msgstr ""
-
-#: .\fleet\templates\rent_a_car\contracts.html:31
-#: .\fleet\templates\rent_a_car\contracts.html:50
-#: .\fleet\templates\rent_a_car\reservations.html:30
-#: .\fleet\templates\rent_a_car\reservations.html:48
-msgid "Fee"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contracts.html:32
-#: .\fleet\templates\rent_a_car\contracts.html:51
-msgid "Amount Paid"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contracts.html:33
-#: .\fleet\templates\rent_a_car\contracts.html:52
-msgid "Debt"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contracts.html:34
-#: .\fleet\templates\rent_a_car\contracts.html:53
-msgid "Payment Status"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contracts.html:35
-#: .\fleet\templates\rent_a_car\contracts.html:54
-#: .\fleet\templates\rent_a_car\general_availability.html:76
-#: .\fleet\templates\rent_a_car\general_availability.html:87
-msgid "Status"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\contracts.html:36
-#: .\fleet\templates\rent_a_car\contracts.html:55
-#: .\fleet\templates\rent_a_car\reservations.html:32
-#: .\fleet\templates\rent_a_car\reservations.html:50
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:23
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:31
-#: .\fleet\templates\vehicle_management\vehicle_history.html:26
-#: .\fleet\templates\vehicle_management\vehicle_history.html:37
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:29
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:43
-#, fuzzy
-#| msgid "Return date"
-msgid "Registration date"
-msgstr "Date du retour"
 
 #: .\fleet\templates\rent_a_car\general_availability.html:7
 msgid "GENERAL AVAILABILITY"
@@ -1125,17 +2052,6 @@ msgstr "Date du retour"
 msgid "Additional services"
 msgstr "Gestion des services supplementaires"
 
-#: .\fleet\templates\rent_a_car\reservationCreate.html:224
-msgid "Payment Information"
-msgstr ""
-
-#: .\fleet\templates\rent_a_car\reservationCreate.html:237
-#: .\fleet\templates\rent_a_car\reservations.html:31
-#: .\fleet\templates\rent_a_car\reservations.html:49
-#: .\fleet\templates\vehicle_management\carCare.html:68
-msgid "Currency"
-msgstr ""
-
 #: .\fleet\templates\rent_a_car\reservations.html:12
 msgid "RESERVATIONS"
 msgstr ""
@@ -1150,16 +2066,56 @@ msgstr ""
 msgid "Pick Up Time"
 msgstr ""
 
+#: .\fleet\templates\route_management\region.html:22
+#: .\fleet\templates\route_management\regionCreate.html:132
+#, fuzzy
+#| msgid "Regions"
+msgid "Region Name"
+msgstr "Regions"
+
+#: .\fleet\templates\route_management\region.html:23
+#, fuzzy
+#| msgid "Account Statement"
+msgid "Zone Type"
+msgstr "Historique des comptes"
+
+#: .\fleet\templates\route_management\region.html:24
+#: .\fleet\templates\route_management\regionCreate.html:118
+#, fuzzy
+#| msgid "Add Region"
+msgid "Upper Region"
+msgstr "Ajouter une regions"
+
+#: .\fleet\templates\route_management\regionCreate.html:125
+#, fuzzy
+#| msgid "Regions"
+msgid "Region Type"
+msgstr "Regions"
+
+#: .\fleet\templates\route_management\stop.html:24
+#: .\fleet\templates\route_management\stop.html:35
+#, fuzzy
+#| msgid "Return date"
+msgid "Address"
+msgstr "Date du retour"
+
+#: .\fleet\templates\route_management\stop.html:25
+#: .\fleet\templates\route_management\stop.html:36
+#, fuzzy
+#| msgid "Regions"
+msgid "Region"
+msgstr "Regions"
+
+#: .\fleet\templates\route_management\stop.html:26
+#: .\fleet\templates\route_management\stop.html:37
+msgid "Sequence No"
+msgstr ""
+
 #: .\fleet\templates\vehicle_brands\myVehicleBrands.html:12
 #, fuzzy
 #| msgid "Vehicle Brand"
 msgid "Vehicle Brands"
 msgstr "Marque des voitures"
-
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:22
-#: .\fleet\templates\vehicle_brands\myVehicleBrands.html:30
-msgid "Item Name"
-msgstr ""
 
 #: .\fleet\templates\vehicle_brands\vehicleBrandCreate.html:117
 #, fuzzy
@@ -1195,21 +2151,11 @@ msgstr "En reparation"
 msgid "Input Km"
 msgstr ""
 
-#: .\fleet\templates\vehicle_management\carCare.html:61
-msgid "Total Amount"
-msgstr ""
-
 #: .\fleet\templates\vehicle_management\carCare.html:80
 #, fuzzy
 #| msgid "In maintenance"
 msgid "Maintenance place"
 msgstr "En reparation"
-
-#: .\fleet\templates\vehicle_management\carCare.html:86
-#, fuzzy
-#| msgid "Transactions"
-msgid "Explanation"
-msgstr "Operations"
 
 #: .\fleet\templates\vehicle_management\vehicle_history.html:22
 #: .\fleet\templates\vehicle_management\vehicle_history.html:33
@@ -1233,13 +2179,6 @@ msgstr ""
 #| msgid "Vehicle Maintenance Records"
 msgid "Vehicle Maintenance records"
 msgstr "Donnees de reparation des vehicules"
-
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:23
-#: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:37
-#, fuzzy
-#| msgid "My Account"
-msgid "Amount"
-msgstr "Mon compte"
 
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:24
 #: .\fleet\templates\vehicle_management\vehicle_maintenance_record.html:38

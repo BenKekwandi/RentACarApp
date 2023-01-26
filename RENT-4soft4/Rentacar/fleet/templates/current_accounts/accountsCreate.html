@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{%load i18n %}
 {% block content %}
 <style type="text/css">
     .nav-tabs-custom>.nav-tabs>li.active {
@@ -100,7 +101,7 @@
     <div class="col-md-12">
         <div class="card border-warning">
             <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add a Current Account
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i> {% trans "Add a Current Account" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -115,7 +116,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accountType" class="form-label">Current Account Type</label>
+                                    <label for="accountType" class="form-label">{% trans "Current Account Type" %}</label>
                                     <select name="accountType" id="accountType" class="form-control">
                                         {% for type in account_types %}
                                         <option>{{type.account_type_name}}</option>
@@ -126,7 +127,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accountHolder" class="form-label">Current Account Holder
+                                    <label for="accountHolder" class="form-label">{% trans "Current Account Holder" %}
                                         Customer</label>
                                     <select name="accountHolder" id="accountHolder" class="form-control">
                                     {% for customer in customers %}
@@ -138,14 +139,14 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accountName" class="form-label">Current Account Name</label>
+                                    <label for="accountName" class="form-label">{% trans "Current Account Name" %}</label>
                                     <input type="text" name="accountName" id="accountName" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="accountCurrency" class="form-label">Current Account Currency</label>
+                                    <label for="accountCurrency" class="form-label">{% trans "Current Account Currency" %}</label>
                                     <select name="accountCurrency" id="accounturrency" class="form-control">
                                        {% for currency in currencies%}
                                        <option>{{currency.currency_code}}</option>
@@ -156,7 +157,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="explanation" class="form-label">Explanation</label>
+                                    <label for="explanation" class="form-label">{% trans "Explanation" %}</label>
                                     <textarea name="explanation" id="explanation" class="form-control"
                                         rows="3"></textarea>
                                 </div>

@@ -100,7 +100,7 @@
     <div class="col-md-12">
         <div class="card border border-primary">
             <div class="card-header bg-primary">
-                <h3 class="card-title text-white"><i class="fa fa-globe"></i> Add Accounting Item
+                <h3 class="card-title text-white"><i class="fa fa-globe"></i>{% trans "Add Accounting Item" %}
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -115,14 +115,14 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="itemName" class="form-label">Item Name</label>
+                                    <label for="itemName" class="form-label">{% trans "Item Name" %}</label>
                                     <input type="text" name="itemName" id="itemName" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="topCategory" class="form-label">Top Category</label>
+                                    <label for="topCategory" class="form-label">{% trans "Top Category" %}</label>
                                     <select name="topCategory" id="topCategory" class="form-select">
                                         {% for category in categories %}
                                         <option>{{category.category_name}}</option>

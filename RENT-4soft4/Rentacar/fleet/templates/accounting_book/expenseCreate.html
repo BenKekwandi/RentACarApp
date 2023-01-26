@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 {% block content %}
 
 <div class="row">
@@ -46,7 +47,7 @@
                                 <div class="form-group" style="margin:30px">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <label class="input-group-text" for="paymentType">Payment Type
+                                            <label class="input-group-text" for="paymentType">{% trans "Payment Type" %}
                                             </label>
                                         </div>
                                         <select name="paymentType" id="paymentType" class="form-select" required>
@@ -69,21 +70,21 @@
                                             <option>{{account.account_name}}</option>
                                             {% endfor %}
                                             </select>
-                                            <label for="mailAccount" class="form-label">Mail Order Pos Account</label>
+                                            <label for="mailAccount" class="form-label">{% trans "Mail Order Pos Account" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="text" name="brokerageFee" id="brokerageFee"
                                                 class="form-control" placeholder="Brokerage Fee">
-                                            <label for="brokerageFee" class="form-label">Brokerage Fee</label>
+                                            <label for="brokerageFee" class="form-label">{% trans "Brokerage Fee" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="cardType">Card Type
+                                                    <label class="input-group-text" for="cardType">{% trans "Card Type" %}
                                                     </label>
                                                 </div>
                                                 <select name="cardType" id="cardType" class="form-control">
@@ -98,36 +99,35 @@
                                         <div class="form-floating">
                                             <input type="text" name="cardHolder" id="cardHolder"
                                                 class="form-control" placeholder="Card Holder ">
-                                            <label for="cardHolder" class="form-label">Card Holder</label>
+                                            <label for="cardHolder" class="form-label">{% trasns "Card Holder" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="cardNumber" id="cardNumber"
                                                 class="form-control" placeholder="Card Number">
-                                            <label for="cardNumber" class="form-label">Card Number</label>
+                                            <label for="cardNumber" class="form-label">{% trans "Card Number" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="cardExYear" id="cardExYear"
                                                 class="form-control" placeholder="Card Expiry Year">
-                                            <label for="cardExYear" class="form-label">Card Expiry Year</label>
+                                            <label for="cardExYear" class="form-label">{% trans "Card Expiry Year" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="cardExMonth" id="cardExMonth"
                                                 class="form-control" placeholder="Card Expiry Month">
-                                            <label for="cardExMonth" class="form-label">Card Expiry
-                                                Month</label>
+                                            <label for="cardExMonth" class="form-label">{% trans "Card Expiry Month" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="cvc" id="cvc" class="form-control"
                                                 placeholder="CVC">
-                                            <label for="cvc" class="form-label">CVC</label>
+                                            <label for="cvc" class="form-label">{% trans "CVC" %}</label>
                                         </div>
                                     </div>
                                 </div>
@@ -142,9 +142,7 @@
                                                 <option>{{account.account_name}}</option>
                                                 {% endfor %}
                                             </select>
-                                            <label for="transferredBankAcc" class="form-label"> Bank Account to
-                                                be
-                                                Transferred</label>
+                                            <label for="transferredBankAcc" class="form-label">{% trans "Bank Account to be Transferred" %}</label>
                                         </div>
                                     </div>
                                 </div>
@@ -158,14 +156,11 @@
                                                 <option>{{account.account_name}}</option>
                                                 {% endfor %}
                                             </select>
-                                            <label for="debitedAcc" class="form-label">Account to be
-                                                debited</label>
+                                            <label for="debitedAcc" class="form-label">{% trans "Account to be debited" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href= '/fleet/account-create/';">Create
-                                            New
-                                            Current Account</button>
+                                        <button type="button" class="btn btn-outline-primary" onclick="window.location.href= '/fleet/account-create/';">{% trans "Create New Current Account" %}</button>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +170,7 @@
                                         <div class="form-floating">
                                             <input type="text" name="checkNumber" id="checkNumber"
                                                 class="form-control" placeholder="Check Number">
-                                            <label for="checkNumber" class="form-label">Check Number</label>
+                                            <label for="checkNumber" class="form-label">{% trans "Check Number" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -185,29 +180,28 @@
                                                     <option>{{account.account_name}}</option>
                                                 {% endfor %}
                                             </select>
-                                            <label for="checkingAccount" class="form-label">Checking
-                                                Account</label>
+                                            <label for="checkingAccount" class="form-label">{% trans "Checking Account" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="checkHolder" id="checkHolder"
                                                 class="form-control" placeholder="Check Holder ">
-                                            <label for="checkHolder" class="form-label">Check Holder</label>
+                                            <label for="checkHolder" class="form-label">{% trans "Check Holder" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="checkCash" id="checkCash"
                                                 class="form-control" placeholder="Check Cash ">
-                                            <label for="checkCash" class="form-label">Check Cash</label>
+                                            <label for="checkCash" class="form-label">{% trans "Check Cash" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="checkReceipt" id="checkReceipt"
                                                 class="form-control" placeholder="Check Receipt ">
-                                            <label for="checkReceipt" class="form-label">Check Receipt</label>
+                                            <label for="checkReceipt" class="form-label">{% trans "Check Receipt" %}</label>
                                         </div>
                                     </div>
                                 </div>
@@ -222,7 +216,7 @@
                                                     <option>{{account.account_name}}</option>
                                                 {% endfor %}
                                             </select>
-                                            <label for="cashAccount" class="form-label">Cash Account</label>
+                                            <label for="cashAccount" class="form-label">{% trans "Cash Account" %}</label>
                                         </div>
                                     </div>
                                 </div>
@@ -236,22 +230,21 @@
                                                 <option>{{account.account_name}}</option>
                                                 {% endfor %}
                                             </select>
-                                            <label for="posAcc" class="form-label">Bank Pos Account</label>
+                                            <label for="posAcc" class="form-label">{% trans "Bank Pos Account" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="number" name="bankFee" id="bankFee" class="form-control"
                                                 placeholder="Bank Intermediation Fee">
-                                            <label for="bankFee" class="form-label">Bank Intermediation
-                                                Fee</label>
+                                            <label for="bankFee" class="form-label">{% trans "Bank Intermediation Fee" %}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" name="cardHolder" id="cardHolder"
                                                 class="form-control" placeholder="Card Holder ">
-                                            <label for="cardHolder" class="form-label">Card Holder</label>
+                                            <label for="cardHolder" class="form-label">{% trans "Card Holder" %}</label>
                                         </div>
                                     </div>
                                 </div>
@@ -259,14 +252,14 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="fee_amount" class="form-label">Total Amount</label>
+                                    <label for="fee_amount" class="form-label">{% trans "Total Amount" %}</label>
                                     <input type="text" name="fee_amount" id="fee_amount" value="0.0" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="currency" class="form-label">Currency</label>
+                                    <label for="currency" class="form-label">{% trans "Currency" %}</label>
                                     <select name="currency" id="currency" class="form-select">
                                         {% for currency in currencies %}
                                         <option>{{currency.currency_code}}</option>
@@ -277,14 +270,14 @@
                                                         
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="paymentDate" class="form-label">Payment Date</label>
+                                    <label for="paymentDate" class="form-label">{% trans "Payment Date" %}</label>
                                     <input type="datetime-local" name="paymentDate" id="paymentDate" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="exchangeRate" class="form-label">Exchange Rate</label>
+                                    <label for="exchangeRate" class="form-label">{% trans "Exchange Rate" %}</label>
                                     <input type="text" name="exchangeRate" id="exchangeRate" value="1"
                                         class="form-control">
                                 </div>
@@ -292,7 +285,7 @@
                             
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="expenseCategory" class="form-label">Expense Category</label>
+                                    <label for="expenseCategory" class="form-label">{% trans "Expense Category" %}</label>
                                     <select name="expenseCategory" id="expenseCategory" class="form-select">
                                         {% for category in categories %}
                                         <option>{{category.category_name}}</option>
@@ -303,7 +296,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="mtvExplanation" class="form-label">Explanation</label>
+                                    <label for="mtvExplanation" class="form-label">{% trans "Explanation" %}</label>
                                     <textarea name="mtvExplanation" id="mtvExplanation" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>

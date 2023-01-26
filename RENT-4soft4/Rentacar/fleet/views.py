@@ -47,7 +47,6 @@ from fleet.models import AccountHistoryModel
 from random import randint
 #from fleet.forms import CustomerForm
 #from fleet.forms import UserForm
-from fleet.models import UserProfileModel
 from fleet.models import UserTypeModel
 from fleet.models import AccountingEventModel
 from fleet.models import AccountingEventTypeModel
@@ -72,6 +71,7 @@ from fleet.models import ContractPaymentModel
 from fleet.models import ReservationPaymentModel
 from fleet.models import PaymentForModel
 from fleet.models import OperationStatusModel
+from fleet.models import Profile
 #from fleet.forms import VehicleBrandForm
 #from fleet.forms import VehicleTypeForm
 #from fleet.forms import VehicleModelForm
@@ -466,6 +466,7 @@ def dashboard(request):
     #reminders=SystemReminderModel.objects.all()
     data=actual(request)
     reminders=reminder(request)
+    print(request.user.profile.profile_picture.url)
     for car in rented_vehicles:
         car.customer=CustomerModel.objects.get(id=ContractModel.objects.get(vehicle_id=car.id,contract_status_id=ContractStatusModel.objects.get(contract_status='ON-GOING').id).customer_id).first_name+' '+CustomerModel.objects.get(id=ContractModel.objects.get(vehicle_id=car.id,contract_status_id=ContractStatusModel.objects.get(contract_status='ON-GOING').id).customer_id).last_name
         car.time_remaining=ContractModel.objects.get(vehicle_id=car.id,contract_status_id=ContractStatusModel.objects.get(contract_status='ON-GOING').id).return_date_and_time-datetime.datetime.now()
@@ -814,8 +815,9 @@ def reservationCreate(request):
     currencies=CurrencyModel.objects.all()
     statuses=ReservationStatusModel.objects.all()
     places=PlaceModel.objects.all()
+    vehicles=VehicleModel.objects.filter(vehicle_status='available',vehicle_status_id=VehicleStatusModel.objects.get(status='available').id)
     insert_reservation(request)
-    return render(request, 'rent_a_car/reservationCreate.html',{'customers':customers,'currencies':currencies,'statuses':statuses,'models':models,'places':places,'reminders':reminders})
+    return render(request, 'rent_a_car/reservationCreate.html',{'vehicles':vehicles,'customers':customers,'currencies':currencies,'statuses':statuses,'models':models,'places':places,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
 def reservations(request):
     reminders=reminder(request)
@@ -1119,7 +1121,7 @@ def vehicle(request):
 @login_required(login_url='/./authentication/admin-login')
 def authorization(request):
     reminders=reminder(request)
-    profile=UserProfileModel.objects.get(auth_user_id=request.user.id)
+    profile=Profile.objects.get(user_id=request.user.id)
     print(profile.profile_picture)
     return render(request, 'authorization/myAccount.html',{'profile':profile,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')

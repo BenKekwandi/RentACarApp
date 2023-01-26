@@ -1,13 +1,15 @@
 {% extends 'layout.html' %}
 {% load static%}
+{%load i18n %}
 {% block content %}
+
 <div class="pagetitle">
     <h1>Profile</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item">Authorization</li>
-            <li class="breadcrumb-item active">Profile</li>
+            <li class="breadcrumb-item"><a href="index.html">{% trans "Dashboard" %}</a></li>
+            <li class="breadcrumb-item">{% trans "Authorization" %}</li>
+            <li class="breadcrumb-item active">{% trans "Profile" %}</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -22,10 +24,9 @@
                 <!-- Profile Edit Form -->
                 <form method="post" action="" enctype="multipart/form-data" class="container-sm">
                     <div class="row mb-3">
-                        <label for="profileImage" class="form-label">Profile
-                            Image</label>
+                        <label for="profileImage" class="form-label">{% trans "Profile Image" %}</label>
                         <div class="col-md-8 col-lg-9">
-                            <img src="{% static '/img/App/users/4.jpg' %}" alt="Profile">
+                            <img src={{request.user.profile.profile_picture.url}} alt="Profile">
                             <div class="pt-2">
                                 <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i
                                         class="bi bi-upload"></i></a>
@@ -37,35 +38,35 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="openingDate" class="form-label">Account Opening Date</label>
+                                <label for="openingDate" class="form-label">{% trans "Account Opening Date" %}</label>
                                 <input type="text" name="openingDate" value="{{request.user.date_joined}}" id="openingDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="lastLogin" class="form-label">Last Login Date</label>
+                                <label for="lastLogin" class="form-label">{% trans "Last Login Date" %}</label>
                                 <input type="text" name="lastLogin" id="lastLogin" value="{{request.user.last_login}}" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="expDate" class="form-label">Expiration date</label>
+                                <label for="expDate" class="form-label">{% trans "Expiration date" %}</label>
                                 <input type="text" name="expDate" id="expDate" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="preferedLang" class="form-label">Language Preference</label>
+                                <label for="preferedLang" class="form-label">{% trans "Language Preference" %}</label>
                                 <input type="text" name="preferedLang" id="preferedLang" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="accountStatus" class="form-label">Account Status</label>
+                                <label for="accountStatus" class="form-label">{% trans "Account Status" %}</label>
                                 <input type="text" name="accountStatus" id="accountStatus" class="form-control">
                             </div>
                         </div>
@@ -74,21 +75,21 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="fullName" class="form-label">Full name</label>
+                                <label for="fullName" class="form-label">{% trans "Full name" %}</label>
                                 <input type="text" name="fullName" id="fullName" value="{{request.user.first_name}} {{request.user.last_name}}" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="password" class="form-label">Password</label>
+                                <label for="password" class="form-label">{% trans "Password" %}</label>
                                 <input type="password" name="password" id="password" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="email" class="form-label">E-mail</label>
+                                <label for="email" class="form-label">{% trans "E-mail" %}</label>
                                 <input type="email" name="email" id="email" value="{{request.user.email}}" class="form-control">
                             </div>
                         </div>
@@ -126,21 +127,21 @@
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="currentPassword">Current Password</label>
+                                <label for="currentPassword">{% trans "Current Password" %}</label>
                                 <input name="currentPassword" type="password" class="form-control" id="currentPassword">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="newPassword">New Password</label>
+                                <label for="newPassword">{% trans "New Password" %}</label>
                                 <input name="newPassword" type="password" class="form-control" id="newPassword">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="reNewPassword">Re-enter New Password</label>
+                                <label for="reNewPassword">{% trans "Re-enter New Password" %}</label>
                                 <input name="reNewPassword" type="password" class="form-control" id="reNewPassword">
                             </div>
                         </div>
@@ -148,7 +149,7 @@
 
                     <div class="col-md-12" align="right">
                         <br>
-                        <button type="submit" class="btn btn-primary">Change Password</button>
+                        <button type="submit" class="btn btn-primary">{% trans "Change Password" %}</button>
                     </div>
                 </form><!-- End Change Password Form -->
 

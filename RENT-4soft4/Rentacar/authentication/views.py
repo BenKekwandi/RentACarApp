@@ -3,10 +3,9 @@ from django.shortcuts import HttpResponseRedirect
 from django.http import HttpResponse,Http404
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-from authentication.forms import LoginForm
+#from authentication.forms import LoginForm
 from authentication.decorators import unauthenticated_user
 from django.contrib.auth.views import LogoutView
-from fleet.models import UserProfileModel
 from django.contrib.auth.views import LoginView
 from django.conf import settings
 
