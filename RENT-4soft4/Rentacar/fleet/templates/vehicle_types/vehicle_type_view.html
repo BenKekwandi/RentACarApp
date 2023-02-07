@@ -1,6 +1,78 @@
 {% extends 'layout.html' %}
-
 {% block content %}
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-plus"> Add Vehicle Type</i>
+                </h3>
+            </div>
+            <div class="card-body row::before">
 
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+
+                    {% csrf_token %}
+
+                    <div class="id-info">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="vehicleType" class="form-label">New Vehicle type name</label>
+                                    <input type="text" name="vehicleType" id="vehicleType" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="maxNoPeople" class="form-label">Maximum Number of people</label>
+                                    <input type="number" min=1 max=100 step=1 name="maxNoPeople" class="form-control" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="smallSuitcase" class="form-label">Maximum Number of Suitcase (small)</label>
+                                    <input type="number" min=1 max=100 step=1 name="smallSuitcase" class="form-control" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="largeSuitcase" class="form-label">Maximum Number of Suitcase (large)</label>
+                                    <input type="number" min=1 max=100 step=1 name="largeSuitcase" class="form-control" readonly>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="vehicleImage" class="form-label">Vehicle Type Image</label>
+                                {{form.vehicle_type_picture}}
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <br>
+
+                    <div class="col-md-12" align="right">
+                        <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                        <!--reset button instead of changing directories-->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

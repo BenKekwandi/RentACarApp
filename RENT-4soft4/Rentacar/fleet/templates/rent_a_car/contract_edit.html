@@ -67,109 +67,16 @@
             <form method="post" action="" enctype="multipart/form-data" class="container-sm">
                 {% csrf_token %}
                 <div class="driver-info">
-                    <h3>Customer Type</h3>
+                    <h3>Customer</h3>
                     <div class="row">
-
-                        <div class="col-md-3">
+                        <div class="col-md-12">
                             <div class="form-floating">
                                 <i class="icon fa-solid fa-user-tie fa-lg"></i>
                                 <input type="text" name="addFullName1" id="addFullName1" placeholder="Name and Surname"
-                                    class="form-control" value="{{contract.customer_name}}" >
+                                    class="form-control" value="{{contract.customer_name}}">
                                 <label for="addFullName1" class="form-label">{% trans "Name and Surname" %}</label>
                             </div>
                         </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-tag fa-lg"></i>
-                                <input type="text" name="addIdNo1" id="addIdNo1" class="form-control"
-                                    placeholder="Identification Number" value="{{contract.customer_id}}" >
-                                <label for="addIdNo1" class="form-label">{% trans "Identification Number" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-tag fa-lg"></i>
-                                <input type="text" name="addPassportNumber1" id="addPassportNumber1"
-                                    class="form-control" placeholder="passport Number" value={{contract.passport}}
-                                    >
-                                <label for="addPassportNumber1" class="form-label">{% trans "Passport Number" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-cake-candles fa-lg"></i>
-                                <input type="text" name="addBirthDate1" id="addBirthDate1" class="form-control"
-                                    placeholder="Birth Date" value="{{contract.birth_date}}" >
-                                <label for="addBirthDate1" class="form-label">{% trans "Birth Date" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-earth fa-lg"></i>
-                                <input type="text" name="addNationality1" id="addNationality1" class="form-control"
-                                    placeholder="Nationality" value="{{contract.nationality}}" >
-                                <label for="addNationality1" class="form-label">{% trans "Nationality" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-mobile fa-lg"></i>
-                                <input type="text" name="addtelephone1" id="addtelephone1" class="form-control"
-                                    placeholder="Telephone" value="{{contract.phone_number}}" >
-                                <label for="addtelephone1" class="form-label">{% trans "Telephone" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-location-dot fa-lg"></i>
-                                <input type="text" name="birthPlace" id="birthPlace" class="form-control"
-                                    placeholder="Place of birth" value="{{contract.birth_place}}" >
-                                <label for="birthPlace" class="form-label">{% trans "Place of birth" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-earth fa-lg"></i>
-                                <input type="text" name="country" id="country" class="form-control"
-                                    placeholder="Country" value={{contract.country}} >
-                                <label for="country" class="form-label">{% trans "Country" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-person-dress fa-lg"></i>
-                                <input type="text" name="motherName" id="motherName" class="form-control"
-                                    placeholder="Mother Name" value={{contract.mother_name}} >
-                                <label for="motherName" class="form-label">{% trans "Mother Name" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-person fa-lg"></i>
-                                <input type="text" name="fatherName" id="fatherName" class="form-control"
-                                    placeholder="Father Name" value={{contract.father_name}} >
-                                <label for="fatherName" class="form-label">{% trans "Father Name" %}</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-floating">
-                                <i class="icon fa-solid fa-gears fa-lg"></i>
-                                <input type="text" name="job" id="job" class="form-control" placeholder="Job"
-                                    value={{contract.job}} >
-                                <label for="job" class="form-label">{% trans "Job" %}</label>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
                 <!-- Contact Information part -->
@@ -445,7 +352,7 @@
                         <input type="text" name="new_return_address" class="form-control">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" name="contract_extension_submit" class="btn btn-primary">{% trans "Submit" %}</button>
+                        <input type="submit" name="contract_extension_submit" class="btn btn-primary">
                         <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
                     </div>
                 </form>
@@ -478,7 +385,7 @@
                     <div class="mb-3">
                         <label class="form-label required" style="font-weight:bolder">{% trans "New Vehicle" %}</label>
                         <select class="form-select" name="new_vehicle" required>
-                            {% for vehicle in vehicles %}
+                            {% for vehicle in available_vehicles %}
                             <option>{{vehicle.vehicle_plate_number}}</option>
                             {% endfor %}
                         </select>
@@ -510,7 +417,7 @@
         <div class="modal-content text-center">
             <!--Header-->
             <div class="modal-header d-flex justify-content-center">
-                <p class="heading">{% trans "Contract Cancellation Confirmation" %}</p>
+                <p class="heading">{% trans "Contract Termination Confirmation" %}</p>
             </div>
 
             <!--Body-->
@@ -522,7 +429,7 @@
 
             <!--Footer-->
             <div class="modal-footer flex-center">
-                <button type="submit" name="cancel_contract_submit" class="btn  btn-outline-danger">{% trans "Yes" %}</button>
+                <input type="submit" value="yes" name="cancel_contract_submit" class="btn  btn-outline-danger">
                 <button type="submit" value="no" name="no_cancel" class="btn  btn-danger waves-effect" data-bs-dismiss="modal">{% trans "No" %}</button>
             </div>
         </div>

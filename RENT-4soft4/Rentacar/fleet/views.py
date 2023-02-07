@@ -89,6 +89,9 @@ from forex_python.converter import CurrencyRates
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.template import RequestContext
+from fpdf import FPDF
+import reportlab  
+from reportlab.pdfgen import canvas
 
 
 def test(request):
@@ -685,8 +688,9 @@ def vehicle_change():
 @login_required(login_url='/./authentication/admin-login')
 def edit_contract(request,id):
     currencies=CurrencyModel.objects.all()
-    reminders=reminder(request)
+    reminders=reminder(request) 
     vehicles=VehicleModel.objects.filter(vehicle_status_id=VehicleStatusModel.objects.get(status='available').id)
+    available_vehicles=VehicleModel.objects.filter(vehicle_status_id=VehicleStatusModel.objects.get(status='available').id).exclude(id=ContractModel.objects.get(id=id).vehicle_id)
     payment_methods=PaymentMethodModel.objects.all()
     credit_card_accounts=CurrentAccountModel.objects.filter(account_type_id=AccountTypeModel.objects.get(account_type_name='Bank credit card').id)
     transfer_accounts=CurrentAccountModel.objects.filter(account_type_id=AccountTypeModel.objects.get(account_type_name='Bank transfer credit').id)
@@ -725,7 +729,7 @@ def edit_contract(request,id):
             description='Contract #'+str(contract.id)+' extended until '+str(contract.return_date_and_time)
             vehicle_history_insert(op_type,contract.vehicle_id,title,description,'closed')
             contract.save()
-            return redirect('fleet/contracts/')
+            return redirect('/fleet/contracts/')
         if request.POST.get('vehicle_change_submit'):
             contract=ContractModel.objects.get(id=id)
             old_vehicle=VehicleModel.objects.get(id=contract.vehicle_id).vehicle_plate_number
@@ -799,9 +803,21 @@ def edit_contract(request,id):
             return redirect('/fleet/contracts/')
         if request.POST.get('cancel_contract_submit'):
             contract=ContractModel.objects.get(id=id)
-            contract.delete()
+            contract_vehicle=VehicleModel.objects.get(id=contract.vehicle_id)
+            contract.return_date_and_time=datetime.datetime.now()
+            contract.contract_status_id=ContractStatusModel.objects.get(contract_status="TERMINATED").id
+            contract_vehicle.rent_start=datetime.datetime(2000,1,1)
+            contract_vehicle.rent_end=datetime.datetime(2000,1,1)
+            contract_vehicle.vehicle_status="available"
+            contract_vehicle.vehicle_status_id=VehicleStatusModel.objects.get(status="available").id
+            title='Contract - Terminated'
+            op_type='Vehicle contract terminated'
+            description='Contract #'+str(contract.id)+' is terminated'
+            vehicle_history_insert(op_type,contract.vehicle_id,title,description,'closed')
+            contract.save()
+            contract_vehicle.save()
             return redirect('/fleet/contracts/')
-    return render(request,'rent_a_car/contract_edit.html',{'contract':contract,'vehicles':vehicles,'methods':payment_methods,'customer_accounts':customer_accounts,'check_accounts':check_accounts,'credit_card_accounts':credit_card_accounts,'transfer_accounts':transfer_accounts,'cash_accounts':cash_accounts,'currencies':currencies,'reminders':reminders})
+    return render(request,'rent_a_car/contract_edit.html',{'contract':contract,'available_vehicles':available_vehicles,'vehicles':vehicles,'methods':payment_methods,'customer_accounts':customer_accounts,'check_accounts':check_accounts,'credit_card_accounts':credit_card_accounts,'transfer_accounts':transfer_accounts,'cash_accounts':cash_accounts,'currencies':currencies,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
 def delete_contract(request,id):
     contract=ContractModel.objects.get(id=id)
@@ -1098,11 +1114,13 @@ def vehicleCreate(request):
 def edit_vehicle(request,id):
     reminders=reminder(request)
     vehicle=VehicleModel.objects.get(id=id)
+    vehicle.vehicle_model=VehicleModelModel.objects.get(id=vehicle.vehicle_model_id).vehicle_model
     return render(request, 'my_tools/vehicle_edit.html',{'vehicle':vehicle,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
 def view_vehicle(request,id):
     reminders=reminder(request)
     vehicle=VehicleModel.objects.get(id=id)
+    vehicle.vehicle_model=VehicleModelModel.objects.get(id=vehicle.vehicle_model_id).vehicle_model
     return render(request, 'my_tools/vehicle_view.html',{'vehicle':vehicle,'reminders':reminders})
 @login_required(login_url='/./authentication/admin-login')
 def delete_vehicle(request,id):
@@ -1613,7 +1631,6 @@ def insert_reminder(request):
         reminder.explanation=request.POST.get('explanation')
         reminder.vehicle_id=VehicleModel.objects.get(vehicle_plate_number=request.POST.get('vehicle')).id
         reminder.save()
-        
 @login_required(login_url='/./authentication/admin-login')
 def vehicle_brand_json(request):
     data=VehicleBrandModel.objects.all().values()
@@ -1624,10 +1641,14 @@ def vehicle_type_json(request):
     data=VehicleTypeModel.objects.all().values()
     new_data=list(data)
     JsonResponse(new_data, safe=False)
+    for dt in new_data:
+        dt['transactions']='<a href="/fleet/edit-vehicle-type/'+str(dt['id'])+'/"'+' class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/delete-vehicle-type/'+str(dt['id'])+'/"'+' class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/view-vehicle-type/'+str(dt['id'])+'/"'+' class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'
 @login_required(login_url='/./authentication/admin-login')
 def vehicle_model_json(request):
     data=VehicleModelModel.objects.all().values()
     new_data=list(data)
+    for dt in new_data:
+        dt['transactions']='<a href="/fleet/edit-vehicle-model/'+str(dt['id'])+'/"'+' class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/delete-vehicle-model/'+str(dt['id'])+'/"'+' class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/view-vehicle-model/'+str(dt['id'])+'/"'+' class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'
     JsonResponse(new_data, safe=False)
 @login_required(login_url='/./authentication/admin-login')
 def current_account_json(request):
@@ -1665,7 +1686,7 @@ def contract_json(request):
             dt['payment']='<span class="btn btn-outline-warning">'+'pending'+'</span>'
         else:
             dt['payment']='<span class="btn btn-outline-success">'+'completed'+'</span>'
-        dt['transactions']='<a href="/fleet/contract-edit/'+str(dt['id'])+'/"'+'class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/contract-delete/'+str(dt['id'])+'"'+'class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/contract-view/'+str(dt['id'])+'"'+'class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'
+        dt['transactions']='<a href="/fleet/contract-edit/'+str(dt['id'])+'/"'+'class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/contract-delete/'+str(dt['id'])+'"'+'class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/contract-view/'+str(dt['id'])+'"'+'class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'+'<a href="/fleet/contract-pdf/'+str(dt['id'])+'"'+'class="col btn btn-outline-dark btn-xs"><i class="fa-solid fa-file-invoice"></i></a>'
     return JsonResponse(new_data,safe=False)
 @login_required(login_url='/./authentication/admin-login')
 def customer_json(request):
@@ -1757,6 +1778,8 @@ def available_vehicle_json(request):
 def vehicle_brand_json(request):
     data=VehicleBrandModel.objects.all().values()
     new_data=list(data)
+    for dt in new_data:
+        dt['transactions']='<a href="/fleet/edit-vehicle-brand/'+str(dt['id'])+'/"'+'class="col btn btn-outline-primary btn-xs"><i class="fa-solid fa-pencil"></i></a>'+'<a href="/fleet/delete-vehicle-brand/'+str(dt['id'])+'"'+'class="col btn btn-outline-danger btn-xs"><i class="fa-solid fa-trash-can"></i></a>'+'<a href="/fleet/view-vehicle-brand/'+str(dt['id'])+'"'+'class="col btn btn-outline-success btn-xs"><i class="fa-solid fa-eye"></i></a>'
     return JsonResponse(new_data,safe=False)
 @login_required(login_url='/./authentication/admin-login')
 def vehicle_type_json(request):

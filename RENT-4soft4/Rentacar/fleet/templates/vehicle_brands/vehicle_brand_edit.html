@@ -1,6 +1,52 @@
 {% extends 'layout.html' %}
-
 {% block content %}
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i>Edit Vehicle Brand Information
+                </h3>
+            </div>
+            <div class="card-body row::before">
 
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" class="container-sm" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="id-info">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="vehicleBrand" class="form-label">Vehicle Brand Name</label>
+                                    <input type="text" name="vehicleBrand" id="vehicleBrand" class="form-control" value="{{brand.brand_name}}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--div class="col-md-12">
+                            <div class="form-group">
+                                <label for="logoMark" class="form-label">Offcial logo Mark</label>
+                                <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                {{form.vehicle_brand_picture}}
+                                </form>
+                            </div>
+                        </div-->
+
+                    </div>
+                    <br>
+
+                    <div class="col-md-12" align="right">
+                        <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                        <!--reset button instead of changing directories-->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

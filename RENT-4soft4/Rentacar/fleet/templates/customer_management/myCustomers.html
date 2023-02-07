@@ -1,49 +1,93 @@
 {% extends 'layout.html' %}
 
-{% load i18n %}
-{% block content %}
 
+{% block content %}
+{% block extra_css %}
+<style>
+    .extend {
+        /* display: flex; */
+        /* justify-content:flex-end; */
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+
+    .extend .btn_customer {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .extend .btn_contract {
+        position: absolute;
+        top: 2rem;
+        right: 12rem;
+    }
+
+    .extend .btn_reservation {
+        position: absolute;
+        top: 2rem;
+        right: 21.25rem;
+    }
+
+    .extend .btn_report {
+        position: absolute;
+        top: 2rem;
+        right: 32rem;
+    }
+</style>
+{% endblock extra_css %}
 <div class="pageholder">
 
     <div class="row">
         <div class="col-md-12">
             <div class="card border border-primary bg bg-white">
                 <div class="card-header bg-primary">
-                    <h3 class="text-white" style="text-align:center;">{% trans "My Customers" %}</h3>
+                    <h3 class="card-title text-white">My Customers</h3>
                 </div>
 
+                <div class="extend">
+                    <button type="button" class="btn btn-outline-primary btn_customer"
+                    onclick="window.location.href= '/fleet/customer-create/';">Create Customer</button>
+                    <button type="button" class="btn btn-outline-success btn_contract"
+                    onclick="window.location.href= '/fleet/contract-create/';">Create Contract</button>
+                    <button type="button" class="btn btn-outline-warning btn_reservation"
+                    onclick="window.location.href= '/fleet/reservation-create/';">Create reservation</button>
+                    <button type="button" class="btn btn-outline-danger btn_report"
+                    onclick="window.location.href= '/fleet/income-report/';">Income report</button>
+                </div>
                 <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
 
 
                     <table id="customer" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>{% trans "id" %}</th>
-                                <th>{% trans "Type" %}</th>
-                                <th>{% trans "Name"%}</th>
-                                <th>{% trans "Surname" %}</th>
-                                <th>{% trans "Phone number"%}</th>
-                                <th>{% trans "Email" %}</th>
-                                <th>{% trans "Date of birth" %}</th>
-                                <th>{% trans "Passport No" %}</th>
-                                <th>{% trans "System Note" %}</th>
-                                <th>{% trans "Date of registration" %}</th>
-                                <th>{% trans "transactions" %}</th>
+                                <th>id</th>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Phone number</th>
+                                <th>Email</th>
+                                <th>Date of birth</th>
+                                <th>Passport No</th>
+                                <th>System Note</th>
+                                <th>Date of registration</th>
+                                <th>Transactions</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>{% trans "id" %}</th>
-                                <th>{% trans "Type" %}</th>
-                                <th>{% trans "Name" %}</th>
-                                <th>{% trans "Surname" %}</th>
-                                <th>{% trans "Phone number" %}</th>
-                                <th>{% trans "Email" %}</th>
-                                <th>{% trans "Date of birth" %}</th>
-                                <th>{% trans "Passport No" %}</th>
-                                <th>{% trans "System Note" %}</th>
-                                <th>{% trans "Date of registration" %}</th>
-                                <th>{% trans "transactions" %}</th>
+                                <th>id</th>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Phone number</th>
+                                <th>Email</th>
+                                <th>Date of birth</th>
+                                <th>Passport No</th>
+                                <th>System Note</th>
+                                <th>Date of registration</th>
+                                <th>Transactions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -90,21 +134,19 @@
                     ]);
                 }
                 var table = $('#customer').DataTable({
-                    data: dataSet
-
-
+                    data: dataSet,
+                    responsive:true,
+                    scrollX:200,
                 });
 
-                $("#customer tbody").on("dblclick", 'tr', function () {
+                // $("#customer tbody").on("dblclick", 'tr', function () {
 
-                    var row = table.row(this).data();
-                    var id = row[0];
-                    // alert("id" + id);
-                    var url = 'http://192.168.5.121:8000/fleet/customer-edit/' + id;
-                    var options = 'width=800,height=600,scrollbars=no,menubar=no,status=yes,resizable=yes,screenx=200,screeny=0';
-                    var open_mode = "_blank";
-                    window.open(url, open_mode, options);
-                });
+                //     var row = table.row(this).data();
+                //     var id = row[0];
+                //     // alert("id" + id);
+                //     var url = 'http://192.168.5.121:8000/fleet/edit-customer/' + id;
+                //     window.location.replace(url);
+                // });
             }
         });
     });

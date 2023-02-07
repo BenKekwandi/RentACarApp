@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% load i18n %}
+
 {% block content %}
 
 <div class="pageholder">
@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <div class="card border border-primary bg bg-white">
                 <div class="card-header bg-primary">
-                    <h3 class="card-title text-white">{% trans "Vehicle Models" %}</h3>
+                    <h3 class="card-title text-white">Vehicle Models</h3>
                 </div>
 
                 <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
@@ -18,35 +18,36 @@
                     <table id="contract" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>{% trans "id" %}</th>
-                                <th>{% trans "Model" %}</th>
-                                <th>{% trans "Vehicle Type" %}</th>
-                                <th>{% trans "Price class" %}</th>
-                                <th>{% trans "Number of doors" %}</th>
-                                <th>{% trans "Number of passengers" %}</th>
-                                <th>{% trans "Maximum number of large suitcases" %}</th>
-                                <th>{% trans "Maximum number of small suitcases" %}</th>
-                                <th>{% trans "Model year" %}</th>
-                                <th>{% trans "Gear" %}</th>
-                                <th>{% trans "Fuel Type" %}</th>
-                                <th>{% trans "Vehicle Components" %}</th>
-
+                                <th>id</th>
+                                <th>Model</th>
+                                <th>Vehicle Type</th>
+                                <th>Price class</th>
+                                <th>Number of doors</th>
+                                <th>Number of passengers</th>
+                                <th>Maximum number of large suitcases</th>
+                                <th>Maximum number of small suitcases</th>
+                                <th>Model year</th>
+                                <th>Gear</th>
+                                <th>Fuel Type</th>
+                                <th>Vehicle Components</th>
+                                <th>Transactions</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>{% trans "id" %}</th>
-                                <th>{% trans "Model" %}</th>
-                                <th>{% trans "Vehicle Type" %}</th>
-                                <th>{% trans "Price class" %}</th>
-                                <th>{% trans "Number of doors" %}</th>
-                                <th>{% trans "Number of passengers" %}</th>
-                                <th>{% trans "Maximum number of large suitcases" %}</th>
-                                <th>{% trans "Maximum number of small suitcases" %}</th>
-                                <th>{% trans "Model year" %}</th>
-                                <th>{% trans "Gear" %}</th>
-                                <th>{% trans "Fuel Type" %}</th>
-                                <th>{% trans "Vehicle Components" %}</th>
+                                <th>id</th>
+                                <th>Model</th>
+                                <th>Vehicle Type</th>
+                                <th>Price class</th>
+                                <th>Number of doors</th>
+                                <th>Number of passengers</th>
+                                <th>Maximum number of large suitcases</th>
+                                <th>Maximum number of small suitcases</th>
+                                <th>Model year</th>
+                                <th>Gear</th>
+                                <th>Fuel Type</th>
+                                <th>Vehicle Components</th>
+                                <th>Transactions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -91,10 +92,13 @@
                         , array[i].gear
                         , array[i].fuel_type
                         , array[i].components
+                        , array[i].transactions
                     ]);
                 }
                 var table = $('#contract').DataTable({
-                    data: dataSet
+                    data: dataSet,
+                    responsive: true,
+                    scrollX: 200
 
                 });
 

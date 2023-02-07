@@ -28,7 +28,7 @@
                                             <label class="input-group-text" for="customer">{% trans "Customers" %}
                                             </label>
                                         </div>
-                                        <select name="customer" id="customer" class="form-control">
+                                        <select name="customer" id="customer" class="form-select">
                                             {% for customer in customers %}
                                             <option>{{customer.first_name}} {{customer.last_name}}</option>
                                             {% endfor %}
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <!--div class="col-md-6">
                                 <div class="form-floating">
                                     <i class="icon fa-solid fa-user-tie fa-lg"></i>
                                     <input type="text" name="addFullName1" id="addFullName1"
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div-->
 
 
                     <!-- Vehicle Information part -->
@@ -106,7 +106,7 @@
                                                     <label class="input-group-text" for="vehicleName">{% trans "Vehicle" %}
                                                     </label>
                                                 </div>
-                                                <select name="vehicleName" id="vehicleName" class="form-control">
+                                                <select name="vehicleName" id="vehicleName" class="form-select">
                                                     {% for vehicle in vehicles %}
                                                     <option>{{vehicle.vehicle_plate_number}}</option>
                                                     {% endfor%}
@@ -301,6 +301,23 @@
                         <h3><i class="fa fa-credit-card"></i> {% trans "Payment information" %}</h3>
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="Currency">{% trans "Currency" %}
+                                            </label>
+                                        </div>
+                                        <select name="Currency" id="Currency" class="form-select">
+                                            {% for currency in currencies %}
+                                            <option>{{currency.currency_code}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
                                 <div class="form-floating">
                                     <i class="icon fa-solid fa-money-bill-1 fa-lg"></i>
                                     <input type="number" name="totalFee" id="totalFee" class="form-control"
@@ -317,6 +334,7 @@
                                     <label for="agentPercent" class="form-label">{% trans "Agent Percentage" %}</label>
                                 </div>
                             </div>
+            
 
                             <div class="col-md-4">
                                 <div class="form-floating">
@@ -349,229 +367,7 @@
                                     <label for="invoiceNo" class="form-label">Invoice No.</label>
                                 </div>
                             </div-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <label class="input-group-text" for="paymentType">{% trans "Payment Type" %}
-                                            </label>
-                                        </div>
-                                        <select name="paymentType" id="paymentType" class="form-select">
-                                            <option></option>
-                                            {% for method in methods %}
-                                            <option>{{method.method}}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <label class="input-group-text" for="currency">{% trans "Currency Point" %}
-                                            </label>
-                                        </div>
-                                        <select name="currency" id="currency" class="form-control">
-                                            {% for currency in currencies %}
-                                            <option>{{currency.currency_code}}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mailOrder" id="mailOrder">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="mailAccount" id="mailAccount" class="form-control"
-                                                placeholder="Mail Order Pos Account">
-                                            <label for="mailAccount" class="form-label">{% trans "Mail Order Pos Account" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="brokerageFee" id="brokerageFee"
-                                                class="form-control" placeholder="Brokerage Fee">
-                                            <label for="brokerageFee" class="form-label">{% trans "Brokerage Fee" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text" for="cardType">{% trans "Card Type" %}
-                                                    </label>
-                                                </div>
-                                                <select name="cardType" id="cardType" class="form-control">
-                                                    {% for currency in currencies %}
-                                                    <option>{{currency.currency_code}}</option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cardHolder" id="cardHolder" class="form-control"
-                                                placeholder="Card Holder ">
-                                            <label for="cardHolder" class="form-label">{% trans "Card Holder" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cardNumber" id="cardNumber" class="form-control"
-                                                placeholder="Card Number">
-                                            <label for="cardNumber" class="form-label">{% trans "Card Number" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cardExYear" id="cardExYear" class="form-control"
-                                                placeholder="Card Expiry Year">
-                                            <label for="cardExYear" class="form-label">{% trans "Card Expiry Year" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cardExMonth" id="cardExMonth" class="form-control"
-                                                placeholder="Card Expiry Month">
-                                            <label for="cardExMonth" class="form-label">{% trans "Card Expiry Month" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cvc" id="cvc" class="form-control"
-                                                placeholder="CVC">
-                                            <label for="cvc" class="form-label">CVC</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="transfer" id="transfer">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="transferredBankAcc" id="transferredBankAcc"
-                                                class="form-control" placeholder=" Bank Account to be Transferred">
-                                            <label for="transferredBankAcc" class="form-label">{% trans "Bank Account to be Transferred" %}</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lookFor" id="lookFor">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="debitedAcc" id="debitedAcc" class="form-control"
-                                                placeholder="Account to be debited">
-                                            <label for="debitedAcc" class="form-label">{% trans "Account to be debited" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-outline-primary"
-                                            onclick="window.location.href= '/fleet/account-create/';">
-                                            {% trans "Create New Current Account" %}</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="check" id="check">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="checkNumber" id="checkNumber" class="form-control"
-                                                placeholder="Check Number">
-                                            <label for="checkNumber" class="form-label">{% trans "Check Number" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="checkingAccount" id="checkingAccount"
-                                                class="form-control" placeholder="Checking Account">
-                                            <label for="checkingAccount" class="form-label">{% trans "Checking Account" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="checkHolder" id="checkHolder" class="form-control"
-                                                placeholder="Check Holder ">
-                                            <label for="checkHolder" class="form-label">{% trans "Check Holder" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="checkCash" id="checkCash" class="form-control"
-                                                placeholder="Check Cash ">
-                                            <label for="checkCash" class="form-label">{% trans "Check Cash" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="checkReceipt" id="checkReceipt"
-                                                class="form-control" placeholder="Check Receipt ">
-                                            <label for="checkReceipt" class="form-label">{% trans "Check Receipt" %}</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="found" id="found">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cashAccount" id="cashAccount" class="form-control"
-                                                placeholder="Cash Account">
-                                            <label for="cashAccount" class="form-label">{% trans "Cash Account" %}</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="creditCard" id="creditCard">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="posAcc" id="posAcc" class="form-control"
-                                                placeholder="Bank Pos Account">
-                                            <label for="posAcc" class="form-label">{% trans "Bank Pos Account" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="bankFee" id="bankFee" class="form-control"
-                                                placeholder="Bank Intermediation Fee">
-                                            <label for="bankFee" class="form-label">{% trans "Bank Intermediation Fee" %}</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-floating">
-                                            <i class="icon fa-solid fa-hashtag fa-lg"></i>
-                                            <input type="text" name="cardHolder" id="cardHolder" class="form-control"
-                                                placeholder="Card Holder ">
-                                            <label for="cardHolder" class="form-label">{% trans "Card Holder" %}</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                            
                     <div class="col-md-12" align="right">
                         <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
                         <!--reset button instead of changing directories-->

@@ -35,6 +35,8 @@ LOGIN_REDIRECT_URL = '/fleet/'
 LOGOUT_REDIRECT_URL = '/authentication/admin-login/'
 ALLOWED_HOSTS = [
     "192.168.5.158",
+    "192.168.5.169",
+    "192.168.5.138",
     "127.0.0.1",
     "0.0.0.0",
     "192.168.5.117",

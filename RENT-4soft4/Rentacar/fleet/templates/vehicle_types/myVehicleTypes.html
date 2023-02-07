@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 
-{% load i18n %}
 
 {% block content %}
 
@@ -10,7 +9,7 @@
         <div class="col-md-12">
             <div class="card border border-primary bg bg-white">
                 <div class="card-header bg-primary">
-                    <h3 class="card-title text-white">{% trans "Vehicle Types" %}</h3>
+                    <h3 class="card-title text-white">Vehicle Types</h3>
                 </div>
 
                 <div class="linkholder" class="border border-primary" style="margin:80px 30px 40px 30px">
@@ -19,20 +18,22 @@
                     <table id="contract" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>{% trans "id" %}</th>
-                                <th>{% trans "Vehicle Type" %}</th>
-                                <th>{% trans "Maximum number of people" %}</th>
-                                <th>{% trans "Maximum number of small suitcases" %}</th>
-                                <th>{% trans "Maximum number of large suitcases" %}</th>
+                                <th>id</th>
+                                <th>Vehicle Type</th>
+                                <th>Maximum number of people</th>
+                                <th>Maximum number of small suitcases</th>
+                                <th>Maximum number of large suitcases</th>
+                                 <th>Transactions</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>{% trans "id" %}</th>
-                                <th>{% trans "Vehicle Type" %}</th>
-                                <th>{% trans "Maximum number of people" %}</th>
-                                <th>{% trans "Maximum number of small suitcases" %}</th>
-                                <th>{% trans "Maximum number of large suitcases" %}</th>
+                                <th>id</th>
+                                <th>Vehicle Type</th>
+                                <th>Maximum number of people</th>
+                                <th>Maximum number of small suitcases</th>
+                                <th>Maximum number of large suitcases</th>
+                                 <th>Transactions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -69,24 +70,18 @@
                         , array[i].type_name
                         , array[i].max_num_of_person
                         , array[i].max_small_suitcase
-                        , array[i].max_large_suitcase]
-            )
+                        , array[i].max_large_suitcase
+                        , array[i].transactions
+                    ])
                 }
                 var table = $('#contract').DataTable({
-                    data: dataSet
+                    data: dataSet,
+                    responsive:true,
+                    scrollX:200
 
                 });
 
-                $("#contract tbody").on("dblclick", 'tr', function () {
-
-                    var row = table.row(this).data();
-                    var id = row[0];
-                    // alert("id" + id);
-                    var url = 'http://192.168.5.121:8000/fleet/edit-vehicle-type/' + id;
-                    var options = 'width=800,height=600,scrollbars=no,menubar=no,status=yes,resizable=yes,screenx=200,screeny=0';
-                    var open_mode = "_blank";
-                    window.open(url, open_mode, options);
-                });
+               
             }
         });
     });

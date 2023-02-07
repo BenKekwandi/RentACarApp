@@ -500,9 +500,9 @@ class SystemReminderTypeModel(models.Model):
 
 class VehicleHistoryModel(models.Model):
     vehicle_id=models.IntegerField()
-    operation_type=models.CharField(max_length=100)
-    explanation=models.CharField(max_length=500)
-    title=models.CharField(max_length=100)
+    operation_type=models.CharField(max_length=2500)
+    explanation=models.CharField(max_length=5000)
+    title=models.CharField(max_length=2500)
     operation_status_id=models.IntegerField()
     registration_date=models.DateTimeField(auto_now_add=True)
     user=models.CharField(max_length=100)

@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Edit Vehicle information
+                </h3>
+            </div>
+            <div class="card-body row::before">
+
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+                {% csrf_token %}
+                    <div class="id-info">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="plate" class="form-label">Plate</label>
+                                    <input type="text" name="plate" id="plate" class="form-control" value="{{vehicle.vehicle_plate_number}}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="model" class="form-label">Model</label>
+                                    <select name="model" id="model" class="form-control">
+                                        <option>{{vehicle.vehicle_model}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="trafficYear" class="form-label">Traffic Release Year</label>
+                                    <input type="number" min=2000 max=2050 step=1 name="trafficYear" id="trafficYear" class="form-control" value={{vehicle.traffic_release_year}}>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="vehicleStatus" class="form-label">Vehicle Status</label>
+                                    <select name="vehicleStatus" id="vehicleStatus" class="form-control">
+                                        <option>{{vehicle.vehicle_status}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="vehicleLocation" class="form-label">Location of Vehicle</label>
+                                    <input type="text" name="vehicleLocation" id="vehicleLocation" class="form-control" value={{vehicle.region_location}}>
+                                </div>
+                            </div>
+                            <!--div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="vehiclePicture" class="form-label">Picture of the vehicle</label>
+                                    {{form.vehicle_picture}}
+                                </div>
+                            </div-->
+
+                        </div>
+
+                    </div>
+                    <br>
+
+                    <div class="col-md-12" align="right">
+                        <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                        <!--reset button instead of changing directories-->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

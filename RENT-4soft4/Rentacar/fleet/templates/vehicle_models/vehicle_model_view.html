@@ -1,6 +1,171 @@
 {% extends 'layout.html' %}
-
 {% block content %}
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-tag"></i> Add Vehicle Model
+                </h3>
+            </div>
+            <div class="card-body row::before">
 
+                <!--  Everything inside the body -->
+
+                <!-- Customer Type part-->
+                <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+                    {% csrf_token %}
+                    <div class="id-info">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="vehicleBrand" class="form-label">Vehicle Brand</label>
+                                    <select name="vehicleBrand" id="vehicleBrand" class="form-select" readonly>
+
+                                        {% for brand in brands %}
+
+                                        <option>{{brand.brand_name}}</option>
+                                        
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="vehicleModel" class="form-label">Vehicle Model Name</label>
+                                    <input type="text" name="vehicleModel" id="vehicleModel" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="fuelType" class="form-label">Fuel Type</label>
+                                    <select name="fuelType" id="fuelType" class="form-select" readonly>
+                                        <option>Petrol</option>
+                                        <option>Diesel</option>
+                                        <option>LPG</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="gear" class="form-label">Gear</label>
+                                    <select name="gear" id="gear" class="form-select" readonly>
+                                        <option>Manual Gear</option>
+                                        <option>Automatic Transaction</option>
+                                        <option>Triptonik</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="modelYear" class="form-label">Model Year</label>
+                                    <input type="number" min=1990 max=2030 step=1 name="modelYear" id="modelYear" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="vehicleType" class="form-label">Vehicle Type</label>
+                                    <select name="vehicleType" id="vehicleType" class="form-select" readonly>
+
+                                        {% for type in types %}
+
+                                        <option>{{type.type_name}}</option>
+
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="classPrice" class="form-label">Price class</label>
+                                    <select name="classPrice" id="classPrice" class="form-select" readonly>
+                                       {% for prc in price_classes %}
+                                       <option>{{prc.price_class}}</option>
+                                       {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="maxNoPeople" class="form-label">Maximum Number of people</label>
+                                    <input type="number"  name="maxNoPeople" id="maxNoPeople" class="form-control" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="smallSuitcase" class="form-label">Maximum Number of Suitcase(small)</label>
+                                    <input type="number" name="smallSuitcase" id="smallSuitcase" class="form-control" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="largeSuitcase" class="form-label">Maximum Number of Suitcase(large)</label>
+                                    <input type="number" name="largeSuitcase" id="largeSuitcase" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="doorsNumbers" class="form-label">Number of Doors</label>
+                                    <input type="number" name="doorsNumbers" id="doorsNumbers" class="form-control" min="2" max="6" readonly>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row::after">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="vehicleComponents" class="form-label">Vehicle Components</label>
+                                    </div>
+                                    {% for component in components %}
+
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" for={{component.component_name}}>{{component.component_name}}</label>
+                                        <input type="checkbox" name={{component.component_name}} id={{component.component_name}} class="form-check-input">
+                                    </div>
+                                    
+                                    {%endfor%}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row::after">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="vehiclePic" class="form-label">Vehicle Pictures</label>
+                                    {{form.vehicle_model_picture1}}
+                                    {{form.vehicle_model_picture2}}
+                                    {{form.vehicle_model_picture3}}
+                                    {{form.vehicle_model_picture4}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="col-md-12" align="right">
+                        <input type="reset" name="cancel" id="cancel" value="Cancel" class="btn btn-secondary">
+                        <!--reset button instead of changing directories-->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-success">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

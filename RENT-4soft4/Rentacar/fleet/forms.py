@@ -14,6 +14,7 @@ from fleet.models import CreditCardPaymentModel
 from fleet.models import MailOrderPaymentModel
 from fleet.models import CheckPaymentModel
 from fleet.models import TransferPaymentModel
+#from django.contrib.Auth.Models import Authuser
 
 class FileUploadForm(ModelForm):
     file_self=forms.FileField(widget=forms.FileInput(attrs={

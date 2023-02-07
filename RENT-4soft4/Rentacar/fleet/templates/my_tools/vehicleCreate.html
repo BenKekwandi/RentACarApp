@@ -1,105 +1,11 @@
 {% extends 'layout.html' %}
 {% block content %}
-{% load i18n %}
-<style type="text/css">
-    .nav-tabs-custom>.nav-tabs>li.active {
-        border-top-color: #00a65a !important;
-    }
 
-    /* The switch - the box around the slider */
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-    }
-
-    /* Hide default HTML checkbox */
-    .switch input {
-        display: none;
-    }
-
-    /* The slider */
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .rColorInfo {
-        color: blue;
-    }
-
-    .note {
-
-        margin: 0 0 20px;
-        padding: 15px 30px 15px 15px;
-        border-left: 3px solid #e5e5e5;
-        box-sizing: border-box;
-
-    }
-
-    .note-info {
-        border-color: #5bc0dc;
-        background: #d9edf7;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked+.slider {
-        background-color: #2196F3;
-    }
-
-    input:focus+.slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked+.slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-
-    .custom .nav-link.active {
-
-        background-color: #21bc6c !important;
-
-    }
-
-    .card-header {
-        text-align: center;
-    }
-</style>
 <div class="row">
     <div class="col-md-12">
-        <div class="card border-warning">
-            <div class="card-header bg-warning">
-                <h3 class="card-title text-white"><i class="fa fa-plus"></i>{% trans "Add Vehicle" %}
+        <div class="card border-primary">
+            <div class="card-header bg-primary">
+                <h3 class="card-title text-white"><i class="fa fa-plus"></i> Add Vehicle
                 </h3>
             </div>
             <div class="card-body row::before">
@@ -114,14 +20,14 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="plate" class="form-label">{% trans "Plate number" %}</label>
+                                    <label for="plate" class="form-label">Plate</label>
                                     <input type="text" name="plate" id="plate" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="model" class="form-label">{% trans "Model" %}</label>
+                                    <label for="model" class="form-label">Model</label>
                                     <select name="model" id="model" class="form-control">
 
                                         {% for model in models %}
@@ -137,7 +43,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="trafficYear" class="form-label">{% trans "Traffic Release Year" %}</label>
+                                    <label for="trafficYear" class="form-label">Traffic Release Year</label>
                                     <input type="number" min=2000 max=2050 step=1 name="trafficYear" id="trafficYear" class="form-control">
                                 </div>
                             </div>
@@ -145,7 +51,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="vehicleStatus" class="form-label">{% trans "Vehicle Status" %}</label>
+                                    <label for="vehicleStatus" class="form-label">Vehicle Status</label>
                                     <select name="vehicleStatus" id="vehicleStatus" class="form-control">
 
 
@@ -161,13 +67,13 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="vehicleLocation" class="form-label">{% trans "Location of Vehicle" %}</label>
+                                    <label for="vehicleLocation" class="form-label">Location of Vehicle</label>
                                     <input type="text" name="vehicleLocation" id="vehicleLocation" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="vehiclePicture" class="form-label">{% trans "Picture of the vehicle" %}</label>
+                                    <label for="vehiclePicture" class="form-label">Picture of the vehicle</label>
                                     {{form.vehicle_picture}}
                                 </div>
                             </div>
