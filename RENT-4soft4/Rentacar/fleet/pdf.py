@@ -37,7 +37,7 @@ def contract_pdf(request,id):
     p = canvas.Canvas(response) 
     p.setFont("VeraBd",28)
     p.drawInlineImage(image,30,790,50,50)
-    p.drawString(170,800, "ATOLL RENTACAR")
+    p.drawString(170,800, "ATOLL RENTACAR")  
     p.setFont("VeraBd",20)
     p.drawString(220,750, "ARAÇ SÖZLEME FIŞI")
     p.setFont("Verdana",12) 

@@ -22,7 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'^i18n',include('django.conf.urls.i18n'))
+    path(r'^i18n',include('django.conf.urls.i18n')),
+    path("captcha/",include("captcha.urls")),
 ]
 urlpatterns+= i18n_patterns(
     path('fleet/', include('fleet.urls')),

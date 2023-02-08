@@ -26,6 +26,9 @@ print(LOCALE_PATHS)
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+RECAPTCHA_PUBLIC_KEY='6LfI9WMkAAAAAPremTb_uFoUUy5VPZOsb2MZVJgR'
+RECAPTCHA_PRIVATE_KEY='6LfI9WMkAAAAABacSepPCwXD77SlIWwDfbI3aRva'
+
 SECRET_KEY = 'django-insecure-h213!4nx+ld0z#)2ic@*%&1nt^wwuolsuwyq)j=l5+b881a9p4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -58,8 +61,8 @@ INSTALLED_APPS = [
     'fleet',
     'authentication',
     'crispy_forms',
-    'rosetta'
-    #'captcha'
+    'rosetta',
+    'captcha'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
