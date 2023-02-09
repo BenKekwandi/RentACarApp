@@ -14,7 +14,22 @@ from fleet.models import CreditCardPaymentModel
 from fleet.models import MailOrderPaymentModel
 from fleet.models import CheckPaymentModel
 from fleet.models import TransferPaymentModel
+from fleet.models import Profile
 #from django.contrib.Auth.Models import Authuser
+
+
+class EditProfileForm(ModelForm):
+    class Meta:
+        model=Profile
+        fields=['company_name','company_logo','default_language','default_currency','profile_picture']
+class CreateProfileForm(ModelForm):
+    class Meta:
+        model=Profile
+        fields=['company_name','company_logo','default_language','default_currency','profile_picture']
+class ViewProfileForm(ModelForm):
+    class Meta:
+        model=Profile
+        fields=['company_name','company_logo','default_language','default_currency','profile_picture']
 
 class FileUploadForm(ModelForm):
     file_self=forms.FileField(widget=forms.FileInput(attrs={

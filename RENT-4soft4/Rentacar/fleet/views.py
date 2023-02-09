@@ -92,7 +92,15 @@ from django.template import RequestContext
 from fpdf import FPDF
 import reportlab  
 from reportlab.pdfgen import canvas
-
+from django.urls import reverse_lazy
+from fleet.forms import CreateProfileForm
+from fleet.forms import EditProfileForm
+from fleet.forms import ViewProfileForm
+from django.views import generic
+from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 def test(request):
     if request.method=='POST':
@@ -1146,6 +1154,21 @@ def authorization(request):
 def auth_setting(request):
     reminders=reminder(request)
     pass
+class EditProfilePageView(generic.UpdateView):
+    model= Profile
+    template_name='authorization/editProfile.html'
+    success_url=reverse_lazy('/fleet/')
+    fields=['company_name','company_logo','default_language','default_currency','profile_picture']
+class ViewProfilePageView(DetailView):
+    model= Profile
+    template_name='authorization/viewProfile.html'
+    success_url=reverse_lazy('/fleet/')
+    fields=['company_name','company_logo','default_language','default_currency','profile_picture']
+class CreateProfilePageView(generic.CreateView):
+    model=Profile
+    templte_name='authorization/createProfile.html'
+    success_url=reverse_lazy('/fleet/')
+    fields=['company_name','company_logo','default_language','default_currency','profile_picture']
     
     
 # end of authorization

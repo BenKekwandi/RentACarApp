@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static%}
+{%load i18n %}
+{% block content %}
+
+<div class="pagetitle">
+    <h1>Profile</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">{% trans "Dashboard" %}</a></li>
+            <li class="breadcrumb-item">{% trans "Authorization" %}</li>
+            <li class="breadcrumb-item active">{% trans "Profile" %}</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+
+                <!-- Profile Edit Form -->
+                <form method="post" action="" enctype="multipart/form-data" class="container-sm">
+                    
+                    {{form.as_p}}
+
+                    <div class="col-md-12" align="right">
+                        <br>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+                <!-- End Change Password Form -->
+
+            </div>
+
+        </div><!-- End Bordered Tabs -->
+
+    </div>
+</div>
+
+
+
+
+{% endblock %} 

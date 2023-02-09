@@ -6,6 +6,13 @@ class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     #user_id=models.IntegerField()
     profile_picture=models.ImageField(default='default.jpg')
+    company_name=models.CharField(max_length=255)
+    default_language=models.CharField(max_length=5,default='en')
+    default_currency=models.CharField(max_length=5,default='TR')
+    company_logo=models.ImageField(default='logo.png')
+    #created_at=models.DateTimeField(auto_now_add=True)
+    #updated_at=models.DateTimeField(auto_now_add=True)
+    
     def __str__(self):
         return 'user_profile'
 #customer models

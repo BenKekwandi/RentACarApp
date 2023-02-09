@@ -7,6 +7,9 @@ from . import pdf
 urlpatterns = [
     #path('user-create/',views.user_create),
     #Dashboard path
+    path('edit-profile/',views.EditProfilePageView.as_view(),name='edit_profile_page'),
+    path('view-profile/',views.ViewProfilePageView.as_view(),name='view_profile_page'),
+    path('create-profile/',views.CreateProfilePageView.as_view(),name='create_profile_page'),
     path('test/',views.test),
     #path('translation/',views.translation),
     path('',views.dashboard),
